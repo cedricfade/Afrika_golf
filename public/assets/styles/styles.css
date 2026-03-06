@@ -1,0 +1,1005 @@
+@media (max-width: 576px) {
+    .galerie {
+        text-align: left;
+    }
+    .galerie .separateur {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+/* Responsive pour about-diners */
+.about-diners-container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 1200px) {
+    .about-diners-container {
+        width: 90%;
+    }
+}
+@media (max-width: 992px) {
+    .about-diners-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 576px) {
+    .about-diners-container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .about-diners h2 {
+        font-size: 1.5rem;
+    }
+    .about-diners p,
+    .about-diners ul li {
+        font-size: 15px;
+    }
+}
+
+/* Responsive pour galerie-section */
+.galerie-responsive-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+@media (max-width: 992px) {
+    .galerie-responsive-container {
+        padding: 0 5px;
+    }
+    .slider-wrapper {
+        gap: 10px;
+    }
+}
+@media (max-width: 576px) {
+    .galerie h2 {
+        font-size: 1.3rem;
+    }
+    .galerie .separateur {
+        width: 60px;
+    }
+}
+/* Aligner le titre Galerie avec le slider */
+/* Suppression de l'alignement flex du titre */
+/* HOME */
+.about {
+    background-color: #0a140f;
+    margin-bottom: -50px;
+}
+.about img {
+}
+.about {
+    padding: 100px 0;
+}
+
+.image-about img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-image {
+    position: relative;
+}
+
+.year {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    border: 1px solid #707070;
+    background: #0f1c15;
+    padding: 3em 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year span {
+    color: #b07f49;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-family: "mashRegular";
+}
+
+/* Texte */
+.about-text {
+    padding-left: 40px;
+}
+
+.about-text h2 {
+    font-family: "mashRegular";
+    color: #fff;
+}
+
+.about-text h2 span {
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: #b07f49;
+}
+
+.trait {
+    height: 2px;
+    width: 25%;
+    background: #b07f49;
+}
+
+.about-text p {
+    color: #fff;
+    font-family: "AveniNext";
+    font-size: 18px;
+}
+
+.about-text a {
+    color: #b07f49;
+    text-decoration: none;
+    font-family: "AveniNext";
+}
+
+/* FONDATION */
+.fondations {
+    background-color: #0a140f;
+    padding: 50px;
+}
+
+/* EDITION */
+.edition {
+    padding: 80px;
+    overflow: hidden;
+    height: 70vh;
+}
+.edition span {
+    color: #b07f49;
+    font-family: "AveniNext";
+}
+.edition p {
+    color: #c6c6c6;
+    font-size: 18px;
+    font-family: "AveniNext";
+    margin-bottom: 2em;
+}
+.edition h2 {
+    color: #c6c6c6;
+    font-size: 8em;
+    font-family: "mashRegular";
+    font-weight: 500;
+}
+.edition a {
+    background: #b07f49;
+    color: #0a140f;
+    padding: 13px 35px;
+    font-size: 17px;
+    text-decoration: none;
+}
+.edition a:hover {
+    background: #b07e49bd;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 100px;
+    background: #0a140f;
+
+}
+
+.contact span {
+    color: #b07f49;
+    font-family: "AveniNext";
+}
+.contact p {
+    color: #c6c6c6;
+    font-size: 18px;
+    font-family: "AveniNext";
+    margin-bottom: 2em;
+}
+.contact h2 {
+    color: #c6c6c6;
+    font-size: 2.5em;
+    font-family: "mashRegular";
+    font-weight: 500;
+}
+
+.contact .formulaire {
+    background: #0f1c15;
+    padding: 20px;
+    color: #fff;
+    border: 0.5px solid #707070;
+}
+.contact .formulaire .form-group {
+    margin-bottom: 30px;
+}
+.contact .formulaire .form-group label {
+    margin-bottom: 10px;
+    font-family: "AveniNext";
+}
+.contact .formulaire .form-group input,
+textarea {
+    color: #c6c6c6 !important;
+    background: #0e1913 !important;
+    border: 0.5px solid #b07f49 !important;
+}
+
+.contact .formulaire .form-group input,
+textarea {
+    box-shadow: none !important;
+}
+.contact .formulaire button {
+    background: #b07f49;
+    color: #0f1c15;
+    width: 100%;
+    border-radius: 0px !important;
+    height: 50px;
+}
+.fondations img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*FIN CONTACT  */
+footer {
+    background: #0a140f;
+    padding: 60px 20px;
+    border-top: 1px solid #b07f49;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer span {
+    display: block;
+    margin-bottom: 15px;
+    color: #b07f49;
+    font-family: "AveniNext";
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+footer ul li {
+    list-style: none;
+    margin-top: 10px;
+    color: #c6c6c6;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #c6c6c6;
+    font-size: 16px;
+    font-family: "AveniNext";
+}
+
+footer ul li a:hover {
+    color: #b07f49;
+}
+
+.footer-logo {
+    max-width: 180px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer span {
+        margin-top: 20px;
+    }
+
+    .footer-logo {
+        margin: auto;
+    }
+
+    .signature {
+        margin-top: 15px;
+        text-align: center;
+        opacity: 0.6;
+        font-size: 14px;
+    }
+}
+/* 
+    RESPONSIVE MOBILE
+*/
+
+@media (max-width: 992px) {
+    /* FONDATIONS */
+    .fondations {
+        padding: 40px 15px;
+    }
+
+    .fondations img {
+        max-width: 100%;
+    }
+
+    /* EDITION */
+    .edition {
+        padding: 60px 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .edition h2 {
+        font-size: clamp(3rem, 8vw, 5rem);
+    }
+
+    .edition p {
+        font-size: 16px;
+    }
+
+    /* CONTACT */
+    .contact {
+        padding: 60px 20px;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    .contact .info {
+        text-align: center;
+    }
+
+    .contact hr {
+        margin: 30px auto;
+    }
+
+    .contact .formulaire {
+        margin-top: 40px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+    /* FONDATIONS */
+    .fondations {
+        padding: 30px 15px;
+    }
+
+    .fondations h2 {
+        font-size: 1.6rem;
+    }
+
+    /* EDITION */
+    .edition h2 {
+        font-size: 3rem;
+    }
+
+    .edition a {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact p {
+        font-size: 15px;
+    }
+
+    .contact .formulaire {
+        padding: 15px;
+    }
+}
+
+/* =======    MCN ABOUT     =================== */
+
+/* SECTION */
+.about-mcn {
+    background: #0a140f;
+    padding: 100px 0;
+    
+}
+.about-mcn .container {
+    margin: 0 auto;
+    width: 78%;
+}
+
+/* INTRO */
+.about-mcn .contenu h2 {
+    color: #fff;
+    font-family: "mashRegular";
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.about-mcn .highlight {
+    color: #b07f49;
+}
+
+.about-mcn .contenu p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* SERVICES */
+.about-mcn .services {
+    padding: 40px;
+    border: 1px solid #57432d;
+    background: #0f1c15;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+}
+
+.about-mcn .services h2 {
+    color: #b07f49;
+    font-family: "mashRegular";
+    margin-bottom: 20px;
+}
+
+.about-mcn .services p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Hover premium */
+.about-mcn .services:hover {
+    transform: translateY(-6px);
+    border-color: #b07f49;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 992px) {
+    .about-mcn .container {
+        width: 100%;
+    }
+    .about-mcn {
+        padding: 70px 20px;
+    }
+
+    .about-mcn .contenu p {
+        font-size: 16px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 576px) {
+    .about-mcn {
+        padding: 60px 15px;
+    }
+
+    .about-mcn .contenu h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-mcn .services {
+        padding: 25px;
+    }
+
+    .about-mcn .services p {
+        font-size: 15px;
+    }
+}
+
+/* ======== PAGE LE TOURNOIS ========= */
+/* SECTION */
+.about-tournois {
+    background: #0a140f;
+    padding: 100px 0;
+}
+
+/* TITRES */
+.about-tournois h2 {
+    color: #fff;
+    font-family: "mashRegular";
+    margin-bottom: 25px;
+}
+
+.about-tournois h3 {
+    color: #fff;
+    font-family: "mashRegular";
+    margin-bottom: 10px;
+}
+
+/* TEXTE */
+.about-tournois .contenu p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-tournois .tournois-infos p {
+    color: #a0a0a0;
+    font-family: "AveniNext";
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* SEPARATEUR */
+.about-tournois .separateur {
+    background: #b07f49;
+    width: 2px;
+    height: 250px;
+}
+
+/* INFO ITEM spacing */
+.about-tournois .info-item {
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 992px) {
+    .about-tournois {
+        padding: 70px 20px;
+    }
+
+    .about-tournois .contenu p {
+        font-size: 16px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 576px) {
+    .about-tournois {
+        padding: 60px 15px;
+    }
+
+    .about-tournois h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-tournois h3 {
+        font-size: 1.2rem;
+    }
+}
+/* SECTION */
+.galerie-section {
+    background: #0a140f;
+    padding: 100px 0;
+   
+}
+
+/* TITRE */
+.galerie h2 {
+    color: #b07f49;
+    font-family: "mashRegular";
+    position: relative;
+    display: block;
+}
+
+.galerie .separateur {
+    background: #b07f49;
+    width: 200px;
+    height: 2px;
+    margin-top: 15px;
+}
+
+/* WRAPPER GLOBAL */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* CONTAINER IMAGE */
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* SLIDER */
+.slider {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 600px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FLÈCHES */
+.prev,
+.next {
+    background: transparent;
+    border: 1px solid #b07f49;
+    color: #b07f49;
+    font-size: 28px;
+    width: 67px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+    background: #b07f49;
+    color: #0a140f;
+}
+
+/* INDICATEURS */
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dot.active {
+    background: #b07f49;
+    transform: scale(1.2);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 992px) {
+    .slide {
+        height: 400px;
+    }
+
+    .slider-wrapper {
+        gap: 15px;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .slider-wrapper {
+        flex-direction: column;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .slide {
+        height: 300px;
+    }
+
+    .prev,
+    .next {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+}
+
+/* DINER ABOUT */
+.about-diners {
+    background: #0a140f;
+    padding: 100px 0 20px 0;
+}
+
+.about-diners h2 {
+    color: #fff;
+    font-family: "mashRegular";
+    margin-bottom: 25px;
+}
+.about-diners p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: 18px;
+    line-height: 1.8;
+}
+.about-diners ul li {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* VISION */
+.about-vision {
+    background: #0a140f;
+    border-bottom: 1px solid #57432d;
+    padding: 100px;
+}
+.about-vision .container {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.about-vision h2 {
+    color: #ffffff;
+    font-family: "mashRegular";
+    margin-bottom: 20px;
+}
+.about-vision p {
+    color: #c6c6c6;
+    font-size: 18px;
+}
+.chronologie {
+    padding: 100px 0;
+    background: #0f1c15;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.chronologie h2 {
+    color: #ffffff;
+    font-family: "mashRegular";
+    padding-top: 10px;
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+/* Timeline alternée */
+.date {
+    position: relative;
+    padding: 40px 0;
+}
+.date::before {
+    content: "";
+    position: absolute;
+ 
+    top: 50;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #b07f49;
+}
+
+.timeline {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline.left {
+    width: 48%;
+    margin-left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.timeline.right {
+    width: 48%;
+    margin-left: 52%;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+   
+    border: 2px solid white;
+    border-radius: 50%;
+    top: 0;
+}
+
+.timeline.left::after {
+    right: -60px;
+    transform: translateX(50%);
+}
+
+.timeline.right::after {
+    left: -61px;
+    transform: translateX(-50%);
+}
+
+.timeline span {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+    font-family: "MashRegular";
+    opacity: 0.2;
+    font-size: 3.5em;
+}
+
+.timeline h4 {
+    margin: 10px 0;
+    font-size: 20px;
+
+    font-size: 2.5em;
+    font-family: "NextAvenir";
+    color: #c6c6c6;
+}
+
+.timeline h5 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #666;
+    font-family: "AveniNext";
+    font-weight: 400;
+    opacity: 0.7;
+}
+.timeline p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    line-height: 1.8;
+    font-size: 18px;
+     opacity: 0.7;
+     font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .timeline.left,
+    .timeline.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 80px;
+        text-align: left;
+    }
+
+    .timeline::after {
+        left: -60px;
+        transform: translateX(-50%);
+    }
+
+    .timeline span {
+        font-size: 2.5em;
+    }
+
+    .timeline h4 {
+        font-size: 1.8em;
+    }
+
+    .timeline h5 {
+        font-size: 16px;
+    }
+
+    .timeline p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .chronologie {
+        padding: 50px 0;
+    }
+
+    .timeline {
+        margin-bottom: 30px;
+    }
+
+    .timeline.left,
+    .timeline.right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 60px;
+        text-align: left;
+    }
+
+    .timeline::after {
+        left: -45px;
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+    }
+
+    .timeline span {
+        font-size: 2em;
+    }
+
+    .timeline h4 {
+        font-size: 1.5em;
+    }
+
+    .timeline h5 {
+        font-size: 14px;
+    }
+
+    .timeline p {
+        font-size: 14px;
+    }
+
+    .about-vision {
+        padding: 40px 0;
+    }
+
+    .about-vision h2 {
+        font-size: 1.8em;
+    }
+
+    .about-vision p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .infos {
+        padding: 0 15px;
+    }
+
+    .infos h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* reservation */
+
+
+
+.reservation {
+    padding: 50px 0;
+    background: #0a140f;
+    border-top: 2px solid #57432d;
+
+}
+.reservation .container-fluid{
+    margin: 0 auto;
+    width: 87%;
+}
+
+.reservation span {
+    color: #b07f49;
+    font-family: "AveniNext";
+    font-size: 1.3em;
+}
+.reservation p {
+    color: #c6c6c6;
+    font-size: 18px;
+    font-family: "AveniNext";
+    margin-bottom: 2em;
+}
+.reservation h2 {
+    color: #c6c6c6;
+    font-size: 2.5em;
+    font-family: "mashRegular";
+    font-weight: 500;
+}
+
+.reservation .formulaire {
+    background: #0f1c15;
+    padding: 20px;
+    color: #fff;
+    border: 0.5px solid #707070;
+    
+}
+.reservation .formulaire .form-group {
+    margin-bottom: 30px;
+}
+.reservation .formulaire .form-group label {
+    margin-bottom: 10px;
+    font-family: "AveniNext";
+}
+.reservation .formulaire .form-group input,
+textarea {
+    color: #c6c6c6 !important;
+    background: #0e1913 !important;
+    border: 0.5px solid #b07f49 !important;
+}
+
+.reservation .formulaire .form-group input,
+textarea {
+    box-shadow: none !important;
+}
+.reservation .formulaire button {
+    background: #b07f49;
+    color: #0f1c15;
+    width: 100%;
+    border-radius: 0px !important;
+    height: 50px;
+}
