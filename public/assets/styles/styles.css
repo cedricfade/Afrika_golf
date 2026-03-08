@@ -187,16 +187,17 @@
 .contact span {
     color: #b07f49;
     font-family: "AveniNext";
+    font-size: 20px;
 }
 .contact p {
     color: #c6c6c6;
-    font-size: 18px;
+    font-size: 21px;
     font-family: "AveniNext";
     margin-bottom: 2em;
 }
 .contact h2 {
     color: #c6c6c6;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-family: "mashRegular";
     font-weight: 500;
 }
@@ -1002,4 +1003,700 @@ textarea {
     width: 100%;
     border-radius: 0px !important;
     height: 50px;
+}
+
+/* PARTENAIRES */
+
+.partenaires {
+    background: #0A140F;
+    padding: 100px 50px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.partenaires h2{
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.partenaires p {
+    color: #c6c6c6;
+    font-size: 20px;
+    font-family: "AveniNext";
+    margin-top: 20px;
+    margin-bottom: 3em;
+}
+
+.partenaires .card span{
+    color: #fff;
+    font-size: 1.8em;
+    font-family: "MashRegular";
+    opacity: 0.2;
+}
+
+.partenaires .clients .card{
+    background: transparent;
+    padding: 150px 30px;
+    border-radius: 0;
+    gap: 5px;
+    display: block;
+    border: 1px solid #B07F49;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.partenaires .clients .card:hover {
+    background: rgba(176, 127, 73, 0.1);
+    transform: translateY(-5px);
+}
+
+.clients .row > div {
+    margin-bottom: 20px;
+}
+
+/* Responsive Tablets (iPad) */
+@media (max-width: 1024px) {
+    .partenaires {
+        padding: 80px 40px;
+    }
+    
+    .partenaires h2 {
+        font-size: 2em;
+    }
+    
+    .partenaires p {
+        font-size: 18px;
+        margin-bottom: 2.5em;
+    }
+    
+    .partenaires .clients .card {
+        padding: 60px 25px;
+    }
+}
+
+/* Responsive Small Tablets */
+@media (max-width: 768px) {
+    .partenaires {
+        padding: 60px 30px;
+    }
+    
+    .partenaires h2 {
+        font-size: 1.8em;
+    }
+    
+    .partenaires p {
+        font-size: 16px;
+        margin-bottom: 2em;
+    }
+    
+    .partenaires .card span {
+        font-size: 1.5em;
+    }
+    
+    .partenaires .clients .card {
+        padding: 50px 20px;
+    }
+    
+    .clients .row > div {
+        margin-bottom: 15px;
+    }
+}
+
+/* Responsive Mobile Landscape */
+@media (max-width: 576px) {
+    .partenaires {
+        padding: 40px 20px;
+    }
+    
+    .partenaires h2 {
+        font-size: 1.5em;
+    }
+    
+    .partenaires p {
+        font-size: 14px;
+        margin-bottom: 1.5em;
+    }
+    
+    .partenaires .card span {
+        font-size: 1.3em;
+    }
+    
+    .partenaires .clients .card {
+        padding: 40px 15px;
+    }
+    
+    .clients .row > div {
+        margin-bottom: 12px;
+    }
+}
+
+/* Responsive Mobile Portrait */
+@media (max-width: 380px) {
+    .partenaires {
+        padding: 30px 15px;
+    }
+    
+    .partenaires h2 {
+        font-size: 1.3em;
+    }
+    
+    .partenaires p {
+        font-size: 13px;
+    }
+    
+    .partenaires .card span {
+        font-size: 1.1em;
+    }
+    
+    .partenaires .clients .card {
+        padding: 30px 10px;
+    }
+}
+
+
+/* RDV   */
+
+section.rdv {
+    background: #0A140F;
+    padding: 70px 50px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 1px solid #57432d;
+}
+
+.rdv h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'MashRegular';
+}
+
+.rdv p {
+    color: #c6c6c6;
+    font-size: 20px;
+    font-family: "AveniNext";
+    margin-top: 20px;
+}
+
+.rdv .card {
+    background: #fff;
+    padding: 150px 30px;
+    border-radius: 0;
+    display: block;
+    border: 1px solid #707070;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.rdv .card:hover {
+    box-shadow: 0 4px 12px rgba(176, 127, 73, 0.2);
+}
+
+.rdv .titre {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rdv .titre h3 {
+    margin: 0;
+    color: #B07F49;
+    font-size: 20px;
+}
+
+.rdv .date-info {
+    color: #797979;
+    font-family: "AveniNext";
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.rdv h2 {
+    text-align: left;
+    font-size: 25px;
+    color: #fff;
+    width: 90%;
+}
+
+.rdv .info-rdv p {
+    text-align: left;
+    width: 90%;
+    margin-top: 10px;
+    color: #797979;
+    font-family: "AveniNext";
+    font-size: 14px;
+}
+
+.rdv .user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.rdv .user .img {
+    padding: 3px;
+    border: 1px solid #707070;
+    overflow: hidden;
+    border-radius: 50%;
+    min-width: 50px;
+}
+
+.rdv .user .img span {
+    border-radius: 50%;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+}
+
+.rdv .user-info {
+    text-align: left;
+}
+
+.rdv .user-info .name {
+    color: #fff;
+    font-size: 17px;
+}
+
+.rdv .user-info .role {
+    color: #707070;
+}
+
+/* Responsive Tablets (iPad) */
+@media (max-width: 1024px) {
+    section.rdv {
+        padding: 60px 40px;
+    }
+
+    .rdv h1 {
+        font-size: 2.2em;
+    }
+
+    .rdv p {
+        font-size: 18px;
+    }
+
+    .rdv .card {
+        padding: 120px 25px;
+    }
+
+    .rdv h2 {
+        font-size: 22px;
+    }
+
+    .rdv .titre h3 {
+        font-size: 18px;
+    }
+
+    .rdv .date-info {
+        font-size: 16px;
+    }
+}
+
+/* Responsive Small Tablets */
+@media (max-width: 768px) {
+    section.rdv {
+        padding: 50px 30px;
+    }
+
+    .rdv h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .rdv p {
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .rdv .card {
+        padding: 100px 20px;
+    }
+
+    .rdv h2 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .rdv .info-rdv p {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .rdv .titre h3 {
+        font-size: 17px;
+    }
+
+    .rdv .date-info {
+        font-size: 15px;
+    }
+
+    .rdv .user-info .name {
+        font-size: 15px;
+    }
+}
+
+/* Responsive Mobile Landscape */
+@media (max-width: 576px) {
+    section.rdv {
+        padding: 40px 20px;
+    }
+
+    .rdv h1 {
+        font-size: 1.5em;
+        margin-bottom: 12px;
+    }
+
+    .rdv p {
+        font-size: 14px;
+        margin-top: 12px;
+        margin-bottom: 25px;
+    }
+
+    .rdv .card {
+        padding: 80px 15px;
+        margin-bottom: 15px;
+    }
+
+    .rdv h2 {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .rdv .info-rdv p {
+        width: 100%;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .rdv .titre {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rdv .titre h3 {
+        font-size: 16px;
+    }
+
+    .rdv .date-info {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .rdv .user {
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .rdv .user .img span {
+        padding: 15px;
+    }
+
+    .rdv .user-info .name {
+        font-size: 14px;
+    }
+
+    .rdv .user-info .role {
+        font-size: 12px;
+    }
+}
+
+/* Responsive Mobile Portrait */
+@media (max-width: 380px) {
+    section.rdv {
+        padding: 30px 15px;
+    }
+
+    .rdv h1 {
+        font-size: 1.3em;
+    }
+
+    .rdv p {
+        font-size: 13px;
+    }
+
+    .rdv .card {
+        padding: 60px 12px;
+    }
+
+    .rdv h2 {
+        font-size: 16px;
+    }
+
+    .rdv .info-rdv p {
+        font-size: 11px;
+    }
+
+    .rdv .titre h3 {
+        font-size: 14px;
+    }
+
+    .rdv .date-info {
+        font-size: 12px;
+    }
+
+    .rdv .user .img span {
+        padding: 12px;
+    }
+
+    .rdv .user-info .name {
+        font-size: 12px;
+    }
+
+    .rdv .user-info .role {
+        font-size: 11px;
+    }
+}
+
+/* ESPACE MEDIA */
+.medias {
+    background: #0A140F;
+    padding: 100px 50px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 1px solid #57432d;
+}
+
+.medias h1 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 150px;
+    font-family: 'MashRegular';
+}
+
+.medias h2 {
+    color: #FFF;
+    font-size: 1.8em;
+    margin-bottom: 40px;
+}
+
+.medias .separateur {
+    background: #B07F49;
+    width: 100%;
+    height: 0.1px;
+}
+
+.medias .card {
+    background: transparent;
+    padding: 30px 50px;
+    display: flex;
+    margin-top: 80px;
+    gap: 20px;
+    text-align: left;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border-radius: 0px;
+    border: 0.8px solid #B07F49;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.medias .card:hover {
+    background: rgba(176, 127, 73, 0.05);
+}
+
+.medias .card img.doc {
+    width: 8%;
+    object-fit: cover;
+    min-width: 50px;
+    flex-shrink: 0;
+}
+
+.medias .card .text {
+    flex: 1;
+    min-width: 0;
+}
+
+.medias .card h3 {
+    color: #ffffff;
+    font-family: 'AveniNext';
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.medias .card p {
+    color: #797979;
+    font-family: 'AveniNext';
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.medias .card a img.download {
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.medias .card a img.download:hover {
+    transform: translateX(5px);
+}
+
+/* Responsive Tablets (iPad) */
+@media (max-width: 1024px) {
+    .medias {
+        padding: 80px 40px;
+    }
+
+    .medias h1 {
+        font-size: 2.2em;
+        margin-bottom: 120px;
+    }
+
+    .medias h2 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+
+    .medias .card {
+        padding: 25px 40px;
+        margin-top: 60px;
+    }
+
+    .medias .card img.doc {
+        width: 10%;
+    }
+
+    .medias .card h3 {
+        font-size: 1.3em;
+    }
+
+    .medias .card p {
+        font-size: 15px;
+    }
+}
+
+/* Responsive Small Tablets */
+@media (max-width: 768px) {
+    .medias {
+        padding: 60px 30px;
+    }
+
+    .medias h1 {
+        font-size: 1.8em;
+        margin-bottom: 80px;
+    }
+
+    .medias h2 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+    }
+
+    .medias .card {
+        padding: 20px 30px;
+        margin-top: 50px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .medias .card img.doc {
+        width: 15%;
+        min-width: 40px;
+    }
+
+    .medias .card .text {
+        width: 100%;
+    }
+
+    .medias .card h3 {
+        font-size: 1.2em;
+    }
+
+    .medias .card p {
+        font-size: 14px;
+    }
+
+    .medias .card a {
+        align-self: flex-start;
+    }
+}
+
+/* Responsive Mobile Landscape */
+@media (max-width: 576px) {
+    .medias {
+        padding: 50px 20px;
+    }
+
+    .medias h1 {
+        font-size: 1.5em;
+        margin-bottom: 60px;
+    }
+
+    .medias h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .medias .card {
+        padding: 15px 20px;
+        margin-top: 40px;
+        gap: 12px;
+    }
+
+    .medias .card img.doc {
+        width: 18%;
+        min-width: 35px;
+    }
+
+    .medias .card h3 {
+        font-size: 1.1em;
+    }
+
+    .medias .card p {
+        font-size: 13px;
+    }
+
+    .medias .card a img.download {
+        width: 20px;
+        height: auto;
+    }
+}
+
+/* Responsive Mobile Portrait */
+@media (max-width: 380px) {
+    .medias {
+        padding: 40px 15px;
+    }
+
+    .medias h1 {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+    }
+
+    .medias h2 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .medias .card {
+        padding: 12px 15px;
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .medias .card img.doc {
+        width: 20%;
+        min-width: 30px;
+    }
+
+    .medias .card h3 {
+        font-size: 1em;
+    }
+
+    .medias .card p {
+        font-size: 12px;
+    }
+
+    .medias .card a img.download {
+        width: 18px;
+        height: auto;
+    }
 }

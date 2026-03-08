@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\front\AfricatArtController;
+use App\Http\Controllers\front\ContactController;
 use App\Http\Controllers\front\DestinationController;
 use App\Http\Controllers\front\DinersController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\McnController;
+use App\Http\Controllers\front\MediaController;
+use App\Http\Controllers\front\PartenairesController;
+use App\Http\Controllers\front\RdvController;
 use App\Http\Controllers\front\ReservationController;
 use App\Http\Controllers\front\TournoisController;
 use Illuminate\Support\Facades\Route;
@@ -16,3 +20,7 @@ Route::get('/diners',[DinersController::class,'index'])->name('diners');
 Route::get('/africa-art-of-golf-cup',[AfricatArtController::class,'index'])->name('africa-art');
 Route::get('/reservations',[ReservationController::class,'index'])->name('reservations');
 Route::get('/destination',[DestinationController::class,'index'])->name('destination');
+Route::get('/partenaires',[PartenairesController::class,'index'])->name('partenaires');
+Route::get('/rendez-vous-AAGC',[RdvController::class,'index'])->name('rendez-vous');
+Route::get('/medias',[MediaController::class,'index'])->name('medias');
+Route::get('/contactez-nous',[ContactController::class,'index'])->name('contact');
