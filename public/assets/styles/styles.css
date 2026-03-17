@@ -181,7 +181,6 @@
 .contact {
     padding: 100px;
     background: #0a140f;
-
 }
 
 .contact span {
@@ -398,7 +397,6 @@ footer ul li a:hover {
 .about-mcn {
     background: #0a140f;
     padding: 100px 0;
-    
 }
 .about-mcn .container {
     margin: 0 auto;
@@ -563,7 +561,6 @@ footer ul li a:hover {
 .galerie-section {
     background: #0a140f;
     padding: 100px 0;
-   
 }
 
 /* TITRE */
@@ -761,7 +758,7 @@ footer ul li a:hover {
 .date::before {
     content: "";
     position: absolute;
- 
+
     top: 50;
     transform: translateX(-50%);
     width: 2px;
@@ -793,7 +790,7 @@ footer ul li a:hover {
     position: absolute;
     width: 20px;
     height: 20px;
-   
+
     border: 2px solid white;
     border-radius: 50%;
     top: 0;
@@ -842,8 +839,8 @@ footer ul li a:hover {
     font-family: "AveniNext";
     line-height: 1.8;
     font-size: 18px;
-     opacity: 0.7;
-     font-weight: 400;
+    opacity: 0.7;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
@@ -941,15 +938,12 @@ footer ul li a:hover {
 
 /* reservation */
 
-
-
 .reservation {
     padding: 50px 0;
     background: #0a140f;
     border-top: 2px solid #57432d;
-
 }
-.reservation .container-fluid{
+.reservation .container-fluid {
     margin: 0 auto;
     width: 87%;
 }
@@ -977,7 +971,6 @@ footer ul li a:hover {
     padding: 20px;
     color: #fff;
     border: 0.5px solid #707070;
-    
 }
 .reservation .formulaire .form-group {
     margin-bottom: 30px;
@@ -1008,7 +1001,7 @@ textarea {
 /* PARTENAIRES */
 
 .partenaires {
-    background: #0A140F;
+    background: #0a140f;
     padding: 100px 50px;
     align-items: center;
     justify-content: center;
@@ -1016,7 +1009,7 @@ textarea {
     text-align: center;
 }
 
-.partenaires h2{
+.partenaires h2 {
     color: #fff;
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -1030,20 +1023,20 @@ textarea {
     margin-bottom: 3em;
 }
 
-.partenaires .card span{
+.partenaires .card span {
     color: #fff;
     font-size: 1.8em;
     font-family: "MashRegular";
     opacity: 0.2;
 }
 
-.partenaires .clients .card{
+.partenaires .clients .card {
     background: transparent;
     padding: 150px 30px;
     border-radius: 0;
     gap: 5px;
     display: block;
-    border: 1px solid #B07F49;
+    border: 1px solid #b07f49;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -1062,16 +1055,16 @@ textarea {
     .partenaires {
         padding: 80px 40px;
     }
-    
+
     .partenaires h2 {
         font-size: 2em;
     }
-    
+
     .partenaires p {
         font-size: 18px;
         margin-bottom: 2.5em;
     }
-    
+
     .partenaires .clients .card {
         padding: 60px 25px;
     }
@@ -1082,24 +1075,24 @@ textarea {
     .partenaires {
         padding: 60px 30px;
     }
-    
+
     .partenaires h2 {
         font-size: 1.8em;
     }
-    
+
     .partenaires p {
         font-size: 16px;
         margin-bottom: 2em;
     }
-    
+
     .partenaires .card span {
         font-size: 1.5em;
     }
-    
+
     .partenaires .clients .card {
         padding: 50px 20px;
     }
-    
+
     .clients .row > div {
         margin-bottom: 15px;
     }
@@ -1110,24 +1103,24 @@ textarea {
     .partenaires {
         padding: 40px 20px;
     }
-    
+
     .partenaires h2 {
         font-size: 1.5em;
     }
-    
+
     .partenaires p {
         font-size: 14px;
         margin-bottom: 1.5em;
     }
-    
+
     .partenaires .card span {
         font-size: 1.3em;
     }
-    
+
     .partenaires .clients .card {
         padding: 40px 15px;
     }
-    
+
     .clients .row > div {
         margin-bottom: 12px;
     }
@@ -1138,29 +1131,28 @@ textarea {
     .partenaires {
         padding: 30px 15px;
     }
-    
+
     .partenaires h2 {
         font-size: 1.3em;
     }
-    
+
     .partenaires p {
         font-size: 13px;
     }
-    
+
     .partenaires .card span {
         font-size: 1.1em;
     }
-    
+
     .partenaires .clients .card {
         padding: 30px 10px;
     }
 }
 
-
 /* RDV   */
 
 section.rdv {
-    background: #0A140F;
+    background: #0a140f;
     padding: 70px 50px;
     align-items: center;
     justify-content: center;
@@ -1173,7 +1165,7 @@ section.rdv {
     color: #fff;
     font-size: 2.5em;
     margin-bottom: 20px;
-    font-family: 'MashRegular';
+    font-family: "MashRegular";
 }
 
 .rdv p {
@@ -1207,7 +1199,7 @@ section.rdv {
 
 .rdv .titre h3 {
     margin: 0;
-    color: #B07F49;
+    color: #b07f49;
     font-size: 20px;
 }
 
@@ -1458,7 +1450,7 @@ section.rdv {
 
 /* ESPACE MEDIA */
 .medias {
-    background: #0A140F;
+    background: #0a140f;
     padding: 100px 50px;
     align-items: center;
     justify-content: center;
@@ -1471,17 +1463,17 @@ section.rdv {
     color: #fff;
     font-size: 2.5em;
     margin-bottom: 150px;
-    font-family: 'MashRegular';
+    font-family: "MashRegular";
 }
 
 .medias h2 {
-    color: #FFF;
+    color: #fff;
     font-size: 1.8em;
     margin-bottom: 40px;
 }
 
 .medias .separateur {
-    background: #B07F49;
+    background: #b07f49;
     width: 100%;
     height: 0.1px;
 }
@@ -1496,7 +1488,7 @@ section.rdv {
     justify-content: space-evenly;
     flex-direction: row;
     border-radius: 0px;
-    border: 0.8px solid #B07F49;
+    border: 0.8px solid #b07f49;
     align-items: center;
     transition: all 0.3s ease;
 }
@@ -1519,14 +1511,14 @@ section.rdv {
 
 .medias .card h3 {
     color: #ffffff;
-    font-family: 'AveniNext';
+    font-family: "AveniNext";
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
 .medias .card p {
     color: #797979;
-    font-family: 'AveniNext';
+    font-family: "AveniNext";
     font-size: 16px;
     line-height: 1.8;
 }
@@ -1698,5 +1690,489 @@ section.rdv {
     .medias .card a img.download {
         width: 18px;
         height: auto;
+    }
+}
+
+/* PROGRAMME */
+.programme {
+    background: #0f1c15;
+    padding: 100px 50px;
+}
+
+.programme .programme-infos-1 {
+}
+
+.programme .programme-infos-1 h3 {
+    color: #c6c6c6;
+    font-family: "cacChampagne";
+    font-size: clamp(1.8em, 5vw, 2.7em);
+    line-height: 1.2;
+}
+
+.programme .boutton a {
+    display: block;
+    padding: 15px 25px;
+    background: #b07f49;
+    color: #0f1c15;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    text-decoration: none;
+    margin-top: 30px;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    font-weight: 800;
+}
+
+.programme .boutton a:hover {
+    background: #c89a5c;
+}
+
+.programme .programme-infos-2 {
+    gap: 50px;
+}
+
+.programme .programme-infos-2 h2 {
+    color: #fff;
+    font-size: clamp(1.8em, 5vw, 2.5em);
+}
+
+.programme .programme-infos-2 p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.9em;
+    margin-top: 20px;
+}
+
+.programme .info-participation h3 {
+    color: #c6c6c6;
+    font-family: "AveniNextBold";
+    font-weight: 400;
+    line-height: 1;
+    font-size: clamp(16px, 2.5vw, 20px);
+}
+
+.programme .info-participation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    margin-top: 20px;
+}
+
+.programme .info-participation .info {
+    display: block;
+    margin-top: 10px;
+}
+
+.programme .info-participation a {
+    color: #b07f49;
+    text-decoration: none;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.programme .info-participation a:hover {
+    color: #c89a5c;
+    text-decoration: underline;
+}
+
+.programme .info-participation ul li {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 18px);
+    list-style: none;
+    line-height: 1.8;
+}
+
+/* Responsive Tablets */
+@media (max-width: 1024px) {
+    .programme {
+        padding: 80px 40px;
+    }
+
+    .programme .boutton a {
+        margin-right: 12px;
+        padding: 12px 20px;
+    }
+}
+
+/* Responsive Small Tablets */
+@media (max-width: 768px) {
+    .programme {
+        padding: 60px 30px;
+    }
+
+    .programme .programme-infos-1 h3 {
+        font-size: 1.8em;
+    }
+
+    .programme .boutton {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .programme .boutton a {
+        display: inline-block;
+        margin-right: 0;
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 14px;
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .programme .programme-infos-2 {
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    .programme .programme-infos-2 h2 {
+        font-size: 1.8em;
+    }
+
+    .programme .programme-infos-2 p {
+        font-size: 15px;
+    }
+
+    .programme .info-participation h3 {
+        font-size: 16px;
+    }
+
+    .programme .info-participation {
+        font-size: 14px;
+    }
+
+    .programme .info-participation a {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Mobile Landscape */
+@media (max-width: 576px) {
+    .programme {
+        padding: 50px 20px;
+    }
+
+    .programme .programme-infos-1 h3 {
+        font-size: 1.5em;
+        line-height: 1.3;
+    }
+
+    .programme .boutton {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .programme .boutton a {
+        display: block;
+        margin-top: 10px;
+        padding: 12px 15px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .programme .programme-infos-2 {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    .programme .programme-infos-2 h2 {
+        font-size: 1.5em;
+    }
+
+    .programme .programme-infos-2 p {
+        font-size: 14px;
+        line-height: 1.8em;
+    }
+
+    .programme .info-participation {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+
+    .programme .info-participation h3 {
+        font-size: 14px;
+    }
+
+    .programme .info-participation .info {
+        margin-top: 8px;
+    }
+
+    .programme .info-participation a {
+        font-size: 13px;
+        margin-top: 15px;
+    }
+}
+
+/* Responsive Mobile Portrait */
+@media (max-width: 380px) {
+    .programme {
+        padding: 40px 15px;
+    }
+
+    .programme .programme-infos-1 h3 {
+        font-size: 1.3em;
+    }
+
+    .programme .boutton a {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .programme .programme-infos-2 h2 {
+        font-size: 1.3em;
+    }
+
+    .programme .programme-infos-2 p {
+        font-size: 13px;
+    }
+
+    .programme .info-participation h3 {
+        font-size: 13px;
+    }
+
+    .programme .info-participation {
+        font-size: 12px;
+    }
+
+    .programme .info-participation a {
+        font-size: 12px;
+    }
+}
+
+/* CUISINIER */
+
+.cuisiniers {
+    background: #0f1c15;
+    padding: 100px 50px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 1px solid #b07f49;
+    border-bottom: 1px solid #b07f49;
+}
+
+.cuisiniers .image {
+    background-size: cover;
+  
+    height: clamp(25vh, 50vw, 40vh);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cuisiniers .image:hover {
+    transform: scale(1.02);
+}
+
+.cuisiniers p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2.5vw, 20px);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.cuisiniers .logo {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.cuisiniers .logo img {
+    width: clamp(25%, 40vw, 40%);
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cuisiniers .logo img:hover {
+    opacity: 0.9;
+}
+
+.cuisiniers .lien {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cuisiniers .lien a {
+    color: #b07f49;
+    text-decoration: none ;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 2vw, 18.5px);
+    transition: all 0.3s ease;
+   
+}
+
+.cuisiniers .lien a:hover {
+    color: #c89a5c;
+    text-decoration: underline;
+}
+
+.cuisiniers .souscrire {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.cuisiniers .souscrire a {
+    color: #0f1c15;
+    text-decoration: none;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 2vw, 20px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: #b07f49;
+    width: clamp(150px, 30vw, 350px);
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 30px);
+    border-radius: 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+.cuisiniers .souscrire a:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+}
+
+/* Responsive Tablets */
+@media (max-width: 1024px) {
+    .cuisiniers {
+        padding: 80px 40px;
+    }
+
+    .cuisiniers .image {
+        height: clamp(20vh, 45vw, 35vh);
+    }
+
+    .cuisiniers .logo img {
+        width: clamp(30%, 45vw, 45%);
+    }
+}
+
+/* Responsive Small Tablets */
+@media (max-width: 768px) {
+    .cuisiniers {
+        padding: 60px 30px;
+    }
+
+    .cuisiniers .image {
+        height: clamp(20vh, 60vw, 30vh);
+        margin-bottom: 20px;
+    }
+
+    .cuisiniers .lien {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cuisiniers .lien a {
+        display: block;
+        text-align: left;
+    }
+
+    .cuisiniers .logo img {
+        width: clamp(35%, 50vw, 50%);
+    }
+
+    .separateur {
+        margin: 30px auto !important;
+    }
+}
+
+/* Responsive Mobile Landscape */
+@media (max-width: 576px) {
+    .cuisiniers {
+        padding: 50px 20px;
+    }
+
+    .cuisiniers .image {
+        height: clamp(20vh, 70vw, 28vh);
+        margin-bottom: 20px;
+    }
+
+    .cuisiniers p {
+        font-size: 14px;
+    }
+
+    .cuisiniers .lien {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .cuisiniers .lien a {
+        font-size: 13px;
+        display: block;
+    }
+
+    .cuisiniers .souscrire {
+        margin-top: 40px;
+        gap: 10px;
+    }
+
+    .cuisiniers .souscrire a {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .cuisiniers .logo img {
+        width: clamp(40%, 55vw, 55%);
+    }
+
+    .separateur {
+        margin: 20px auto !important;
+    }
+}
+
+/* Responsive Mobile Portrait */
+@media (max-width: 380px) {
+    .cuisiniers {
+        padding: 40px 15px;
+    }
+
+    .cuisiniers .image {
+        height: clamp(18vh, 75vw, 25vh);
+    }
+
+    .cuisiniers p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .cuisiniers .lien a {
+        font-size: 12px;
+    }
+
+    .cuisiniers .souscrire {
+        margin-top: 30px;
+    }
+
+    .cuisiniers .souscrire a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .cuisiniers .logo img {
+        width: clamp(45%, 60vw, 60%);
+    }
+
+    .separateur {
+        margin: 15px auto !important;
     }
 }

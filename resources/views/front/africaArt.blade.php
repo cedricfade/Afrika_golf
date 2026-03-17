@@ -59,7 +59,7 @@
                 </div>
                 <div class="timeline left">
                     <span>2026</span>
-                <h4>Kigali, Rwanda</h4>
+                <h4 style="color: #B07F49">Kigali, Rwanda</h4>
                 <h5 style="text-transform: uppercase">ÉDITION ACTUELLE</h5>
                 <p>Innovation meets tradition in the heart of the continent.</p>
                 </div>
