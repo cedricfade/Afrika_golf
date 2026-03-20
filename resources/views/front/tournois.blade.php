@@ -116,84 +116,9 @@
 
     </section>
 
-    <section class="galerie-section">
-        <div class="container" style="margin:0 auto; width:80%">
-            <div class="galerie">
-                <h2>Galerie</h2>
-                <div class="separateur" style=""></div>
-            </div>
-            <div class="slider-wrapper">
-                <!-- Flèche gauche -->
-                <button class="prev">&#10094;</button>
-                <!-- Image Slider -->
-                <div class="slider-container">
-                    <div class="slider">
-                        <div class="slide">
-                            <img src="{{ asset('assets/images/tournois/galerie1.png') }}" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="{{ asset('assets/images/tournois/galerie1.png') }}" alt="">
-                        </div>
-                        <div class="slide">
-                            <img src="{{ asset('assets/images/tournois/galerie1.png') }}" alt="">
-                        </div>
-                    </div>
-                    <!-- Indicateurs -->
-                    <div class="indicators">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                    </div>
-                </div>
-                <!-- Flèche droite -->
-                <button class="next">&#10095;</button>
-            </div>
-
-        </div>
-    </section>
+        @include('front.galerie')
 
     @include('front.partials.footer')
-    @push('js')
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
 
-                const slider = document.querySelector('.slider');
-                const slides = document.querySelectorAll('.slide');
-                const next = document.querySelector('.next');
-                const prev = document.querySelector('.prev');
-                const dots = document.querySelectorAll('.dot');
-
-                let index = 0;
-
-                function showSlide(i) {
-                    if (i >= slides.length) index = 0;
-                    if (i < 0) index = slides.length - 1;
-
-                    slider.style.transform = `translateX(-${index * 100}%)`;
-
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
-                }
-
-                next.addEventListener('click', () => {
-                    index++;
-                    showSlide(index);
-                });
-
-                prev.addEventListener('click', () => {
-                    index--;
-                    showSlide(index);
-                });
-
-                dots.forEach(dot => {
-                    dot.addEventListener('click', function() {
-                        index = parseInt(this.getAttribute('data-slide'));
-                        showSlide(index);
-                    });
-                });
-
-            });
-        </script>
-    @endpush
 @endsection
 

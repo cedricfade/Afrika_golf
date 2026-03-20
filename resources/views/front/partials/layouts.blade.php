@@ -35,7 +35,18 @@
 
     @if (!empty($imageHeader))
              <div class="container banner-titre">
-                <img src="{{ $imageHeader }}" alt="" class="col-xl-5 col-7" >
+                <img src="{{ $imageHeader }}" alt="" class="col-xl-5 col-7 image-header">
+
+                @if (isset($citation1) && isset($citation2))
+                    <div class="citation">
+                        <h3 style="font-family: 'Avenir Next'; font-weight: 400 !important;">{{ $citation1 }}</h3>
+                    <h3 style="font-family: 'Avenir Next'; font-weight: 400 !important;">{{ $citation2 }}</h3>
+
+                    <br><br><br>
+
+                    <img src="{{ $subImage }}" alt="" class="sub-image">
+                    </div>
+                @endif
         </div>
     @endif
 

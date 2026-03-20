@@ -585,6 +585,7 @@ footer ul li a:hover {
     justify-content: center;
     gap: 30px;
     margin-top: 60px;
+    padding: 0 clamp(15px, 5vw, 40px);
 }
 
 /* CONTAINER IMAGE */
@@ -686,6 +687,36 @@ footer ul li a:hover {
         width: 45px;
         height: 45px;
         font-size: 22px;
+    }
+}
+
+/* RESPONSIVE LARGE SCREENS */
+@media (min-width: 1400px) {
+    .slider-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .slide {
+        height: 650px;
+    }
+
+    .slider-wrapper {
+        max-width: 1400px;
+        margin: 60px auto;
+    }
+
+    .prev,
+    .next {
+        width: 75px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+        margin: 0 8px;
     }
 }
 
@@ -1964,7 +1995,7 @@ section.rdv {
 
 .cuisiniers .image {
     background-size: cover;
-  
+
     height: clamp(25vh, 50vw, 40vh);
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -2008,11 +2039,10 @@ section.rdv {
 
 .cuisiniers .lien a {
     color: #b07f49;
-    text-decoration: none ;
+    text-decoration: none;
     font-family: "AveniNext";
     font-size: clamp(13px, 2vw, 18.5px);
     transition: all 0.3s ease;
-   
 }
 
 .cuisiniers .lien a:hover {
@@ -2174,5 +2204,774 @@ section.rdv {
 
     .separateur {
         margin: 15px auto !important;
+    }
+}
+
+/* PATRIMOINE */
+.patrimoine {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+}
+
+.patrimoine .container {
+}
+
+.patrimoine h2 {
+    color: #fff;
+    font-size: clamp(2.5em, 5vw, 3.2em);
+    margin-bottom: 20px;
+    font-family: "MashRegular";
+}
+.patrimoine p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(17px, 2vw, 25px);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* BLOG */
+.blog {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+}
+
+.blog .container.text {
+    max-width: 1200px;
+}
+
+.blog span {
+    color: #b07f49;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    text-align: left;
+}
+.blog h1 {
+    color: #fff;
+    font-size: clamp(2.5em, 5vw, 3.2em);
+    margin-bottom: 20px;
+    font-family: "MashRegular";
+    text-align: left;
+}
+.blog .back-header {
+    height: clamp(40vh, 60vh, 70vh);
+    background: #fff;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.blog .d-flex {
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.blog .nav button {
+    background: transparent !important;
+    text-align: left;
+    padding: clamp(10px, 2vw, 15px) clamp(12px, 3vw, 20px) !important;
+}
+
+.blog .nav button.active {
+    color: #b07f49 !important;
+    border-left: 2px solid #b07f49 !important;
+}
+
+.blog .nav button {
+    color: #c6c6c6 !important;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 20px);
+    transition: all 0.3s ease;
+    border-left: 2px solid #a0a0a0;
+    border-radius: 0;
+}
+
+.blog .nav-pills {
+    width: 100%;
+    flex-basis: 30%;
+    min-width: 200px;
+}
+
+.blog .tab-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.blog .tab-pane p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 18px);
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.blog .tab-pane h3 {
+    color: #b07f49;
+    font-family: "AveniNext";
+    font-size: clamp(1.3em, 3vw, 1.8em);
+    margin-top: 20px;
+}
+
+.blog .follow {
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.blog .follow h4 {
+    color: #fff;
+    font-family: "AveniNext";
+    font-size: clamp(1.2em, 3vw, 1.5em);
+    margin-bottom: 15px;
+}
+
+.blog .follow {
+}
+
+.blog .follow .social {
+    display: flex;
+
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.blog .follow a {
+    color: #181716;
+    text-decoration: none;
+    background: #b07f49;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 18px);
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog .follow a:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+    .blog .nav-pills {
+        flex-basis: 40%;
+    }
+
+    .blog .back-header {
+        height: clamp(35vh, 55vh, 60vh);
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+@media (max-width: 768px) {
+    .blog .d-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .blog .nav-pills {
+        width: 100%;
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .blog .nav button {
+        flex: 1;
+        min-width: 120px;
+        border-left: none !important;
+        border-bottom: 2px solid #a0a0a0 !important;
+        text-align: center;
+        padding: 12px 10px !important;
+    }
+
+    .blog .nav button.active {
+        border-bottom: 2px solid #b07f49 !important;
+        border-left: none !important;
+    }
+
+    .blog .tab-content {
+        width: 100%;
+    }
+
+    .blog .back-header {
+        height: clamp(30vh, 50vh, 55vh);
+    }
+
+    .blog .follow {
+        width: 100%;
+    }
+
+    .blog .tab-pane p {
+        font-size: clamp(13px, 2.5vw, 16px);
+    }
+
+    .blog .tab-pane h3 {
+        font-size: clamp(1.2em, 2.5vw, 1.5em);
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 576px) {
+    .blog {
+        padding: clamp(30px, 8vw, 60px) clamp(15px, 6vw, 40px);
+    }
+
+    .blog h1 {
+        font-size: clamp(2em, 4.5vw, 2.5em);
+    }
+
+    .blog .back-header {
+        height: clamp(25vh, 45vw, 45vh);
+        margin: 20px 0;
+    }
+
+    .blog .nav-pills {
+        gap: 8px;
+    }
+
+    .blog .nav button {
+        flex: 1;
+        min-width: 100px;
+        font-size: clamp(12px, 2vw, 14px);
+        padding: 10px 8px !important;
+    }
+
+    .blog .tab-pane p {
+        font-size: clamp(13px, 2.8vw, 15px);
+        line-height: 1.6;
+    }
+
+    .blog .tab-pane h3 {
+        font-size: clamp(1.1em, 2.8vw, 1.3em);
+        margin-top: 15px;
+    }
+
+    .blog .follow {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .blog .follow h4 {
+        font-size: clamp(1em, 2.5vw, 1.2em);
+    }
+
+    .blog .follow a {
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+    }
+
+    .blog .follow .social {
+        gap: 8px;
+    }
+}
+
+/* RESPONSIVE MOBILE SMALL */
+@media (max-width: 380px) {
+    .blog .nav-pills {
+        gap: 5px;
+    }
+
+    .blog .nav button {
+        min-width: 80px;
+        font-size: 12px;
+        padding: 8px 6px !important;
+    }
+
+    .blog .tab-pane p {
+        font-size: 13px;
+    }
+
+    .blog .follow a {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* EXPOSITION */
+.exposition {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+}
+
+.exposition .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.exposition p {
+    color: #c6c6c6;
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: "AveniNext";
+    max-width: 900px;
+}
+
+.exposition .souscrire {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.exposition .souscrire a {
+    background: #b07f49;
+    padding: clamp(12px, 2vw, 15px) clamp(20px, 4vw, 30px);
+    color: #0a140f;
+    text-decoration: none;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 2vw, 18px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    width: clamp(140px, 35vw, 400px);
+    min-width: 140px;
+}
+
+.exposition .souscrire a:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(176, 127, 73, 0.3);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+    .exposition .souscrire {
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .exposition .souscrire a {
+        width: clamp(130px, 40vw, 280px);
+    }
+
+    .exposition p {
+        font-size: clamp(13px, 2.3vw, 17px);
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+@media (max-width: 768px) {
+    .exposition {
+        padding: clamp(40px, 8vw, 80px) clamp(20px, 6vw, 60px);
+    }
+
+    .exposition .container {
+        max-width: 100%;
+    }
+
+    .exposition p {
+        font-size: clamp(13px, 3vw, 16px);
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .exposition .souscrire {
+        gap: 12px;
+        margin-top: 35px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exposition .souscrire a {
+        width: 100%;
+        max-width: 350px;
+        padding: 14px 20px;
+        font-size: clamp(13px, 2.5vw, 16px);
+    }
+}
+
+/* RESPONSIVE MOBILE LANDSCAPE */
+@media (max-width: 576px) {
+    .exposition {
+        padding: clamp(30px, 6vw, 60px) clamp(15px, 5vw, 40px);
+    }
+
+    .exposition p {
+        font-size: clamp(13px, 3.5vw, 15px);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .exposition .souscrire {
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .exposition .souscrire a {
+        width: 100%;
+        max-width: 320px;
+        padding: 12px 18px;
+        font-size: clamp(12px, 2.8vw, 14px);
+    }
+}
+
+/* RESPONSIVE MOBILE PORTRAIT */
+@media (max-width: 380px) {
+    .exposition {
+        padding: clamp(25px, 5vw, 50px) clamp(12px, 4vw, 30px);
+    }
+
+    .exposition p {
+        font-size: clamp(12px, 4vw, 14px);
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .exposition .souscrire {
+        gap: 8px;
+        margin-top: 25px;
+    }
+
+    .exposition .souscrire a {
+        width: 100%;
+        max-width: 280px;
+        padding: 11px 16px;
+        font-size: clamp(11px, 3vw, 13px);
+    }
+}
+
+/* experience */
+.experience {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+    border-top: 1px solid #b07f49;
+    height: auto;
+}
+
+.experience .container-fluid {
+
+   
+}
+
+.experience h1 {
+    color: #fff;
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-family: "mashRegular";
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.experience .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.experience .col-xl-4 {
+    flex: 0 1 calc(33.333% - 20px);
+    min-width: 300px;
+}
+
+.experience .card {
+    background: transparent;
+    padding: clamp(25px, 4vw, 40px);
+    display: flex;
+    margin-top: 20px;
+    height: 100%;
+    text-align: left;
+    flex-direction: column;
+    border-radius: 0px;
+    border: 0.8px solid #b07f49;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.experience .card:hover {
+    background: rgba(176, 127, 73, 0.05);
+    border-color: #c89a5c;
+    transform: translateY(-5px);
+}
+
+.experience .card-img-top {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.experience .card-body {
+    width: 100%;
+}
+
+.experience .card h3 {
+    color: #b07f49;
+    font-size: clamp(1.1em, 2.5vw, 1.5em);
+    margin-bottom: 10px;
+    font-family: "mashRegular";
+    font-weight: 600;
+}
+
+.experience .card h2 {
+    color: #fff;
+    font-size: clamp(1.3em, 2.8vw, 1.6em);
+    font-family: "AveniNext";
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.experience .card-text {
+    flex-grow: 1;
+    margin-bottom: 30px;
+}
+
+.experience .card b {
+    font-size: clamp(13px, 2vw, 18px);
+    color: #fff;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.experience .card b:first-child {
+    margin-top: 0;
+}
+
+.experience .card p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.experience .button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.experience .card a {
+    color: #0a140f;
+    text-decoration: none;
+    font-family: "AveniNext";
+    font-size: clamp(12px, 1.8vw, 16px);
+    padding: clamp(12px, 2vw, 16px) clamp(20px, 3vw, 30px);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0px;
+    background: #b07f49;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.experience .card a:hover {
+    background: #c89a5c;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(176, 127, 73, 0.3);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+    .experience .col-xl-4 {
+        flex: 0 1 calc(50% - 15px);
+        min-width: 280px;
+    }
+
+    .experience h1 {
+        font-size: clamp(26px, 4.5vw, 40px);
+        margin-bottom: 40px;
+    }
+
+    .experience .row {
+        gap: 25px;
+    }
+
+    .experience .card {
+        padding: clamp(20px, 3.5vw, 35px);
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+@media (max-width: 768px) {
+    .experience {
+        padding: clamp(40px, 8vw, 80px) clamp(15px, 6vw, 60px);
+    }
+
+    .experience .col-xl-4 {
+        flex: 0 1 100%;
+        min-width: 100%;
+    }
+
+    .experience h1 {
+        font-size: clamp(22px, 5vw, 32px);
+        margin-bottom: 30px;
+    }
+
+    .experience .row {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .experience .card {
+        padding: clamp(18px, 3vw, 30px);
+        margin-top: 15px;
+    }
+
+    .experience .card-img-top {
+        max-height: 300px;
+        margin-bottom: 15px;
+    }
+
+    .experience .card h3 {
+        font-size: clamp(1em, 3vw, 1.3em);
+    }
+
+    .experience .card h2 {
+        font-size: clamp(1.1em, 3vw, 1.4em);
+    }
+
+    .experience .card b {
+        font-size: clamp(12px, 2.5vw, 15px);
+    }
+
+    .experience .card p {
+        font-size: clamp(12px, 2vw, 14px);
+    }
+
+    .experience .button {
+        margin-top: 15px;
+    }
+
+    .experience .card a {
+        font-size: clamp(11px, 2vw, 14px);
+        padding: clamp(10px, 1.8vw, 14px) clamp(15px, 2.5vw, 25px);
+    }
+}
+
+/* RESPONSIVE MOBILE LANDSCAPE */
+@media (max-width: 576px) {
+    .experience {
+        padding: clamp(30px, 6vw, 60px) clamp(12px, 4vw, 40px);
+    }
+
+    .experience h1 {
+        font-size: clamp(20px, 4.5vw, 28px);
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+    }
+
+    .experience .row {
+        gap: 15px;
+    }
+
+    .experience .col-xl-4 {
+        flex: 0 1 100%;
+    }
+
+    .experience .card {
+        padding: clamp(16px, 2.5vw, 25px);
+        margin-top: 10px;
+    }
+
+    .experience .card-img-top {
+        max-height: 250px;
+        margin-bottom: 12px;
+    }
+
+    .experience .card h3 {
+        font-size: clamp(0.95em, 2.5vw, 1.1em);
+        margin-bottom: 8px;
+    }
+
+    .experience .card h2 {
+        font-size: clamp(0.95em, 2.5vw, 1.2em);
+        margin-bottom: 15px;
+    }
+
+    .experience .card b {
+        font-size: clamp(11px, 2.2vw, 13px);
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
+
+    .experience .card p {
+        font-size: clamp(11px, 1.8vw, 12px);
+        line-height: 1.5;
+    }
+
+    .experience .button {
+        margin-top: 12px;
+    }
+
+    .experience .card a {
+        font-size: clamp(10px, 1.6vw, 12px);
+        padding: clamp(9px, 1.5vw, 12px) clamp(12px, 2vw, 20px);
+    }
+}
+
+/* RESPONSIVE MOBILE PORTRAIT */
+@media (max-width: 380px) {
+    .experience {
+        padding: clamp(25px, 5vw, 50px) clamp(10px, 3vw, 30px);
+    }
+
+    .experience h1 {
+        font-size: clamp(18px, 4vw, 24px);
+        margin-bottom: 20px;
+    }
+
+    .experience .row {
+        gap: 12px;
+    }
+
+    .experience .card {
+        padding: clamp(14px, 2vw, 20px);
+    }
+
+    .experience .card-img-top {
+        max-height: 200px;
+        margin-bottom: 10px;
+    }
+
+    .experience .card h3 {
+        font-size: clamp(0.9em, 2.2vw, 1em);
+        margin-bottom: 6px;
+    }
+
+    .experience .card h2 {
+        font-size: clamp(0.9em, 2.2vw, 1.05em);
+        margin-bottom: 12px;
+    }
+
+    .experience .card b {
+        font-size: clamp(10px, 2vw, 12px);
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+
+    .experience .card p {
+        font-size: clamp(10px, 1.6vw, 11px);
+        line-height: 1.4;
+    }
+
+    .experience .button {
+        margin-top: 10px;
+    }
+
+    .experience .card a {
+        font-size: clamp(9px, 1.5vw, 11px);
+        padding: clamp(8px, 1.2vw, 10px) clamp(10px, 1.5vw, 15px);
     }
 }

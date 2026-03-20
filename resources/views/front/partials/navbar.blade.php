@@ -36,6 +36,11 @@
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none"><a class="dropdown-item " href="{{ route('mcn-cgp') }}">MCN CGP</a></li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none"><a class="dropdown-item" href="{{ route('tournois') }}">LE TOURNOIS</a></li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none"><a class="dropdown-item" href="{{ route('diners') }}">DINERS</a></li>
+                        <li><a class="dropdown-item" href="{{ route('patrimoine') }}">@lang('PATRIMOINE CULTUREL')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('blog') }}">@lang('BLOG')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('exposition') }}">@lang('EXPOSITION')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('experience') }}">@lang('PACKS')</a></li>
+
                         <li><a class="dropdown-item" href="{{ route('reservations') }}">@lang('RESERVATIONS')</a></li>
                         <li><a class="dropdown-item" href="{{ route('destination') }}">@lang('DESTINATION KIGALI')</a></li>
                         <li><a class="dropdown-item" href="{{ route('partenaires') }}">@lang('PARTENAIRES')</a></li>
