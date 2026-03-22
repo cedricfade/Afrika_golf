@@ -168,4 +168,5 @@
         </div>
 
     </section>
+        @include('front.partials.footer')
 @endsection

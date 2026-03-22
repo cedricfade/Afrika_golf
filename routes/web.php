@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\front\AccompagnonController;
 use App\Http\Controllers\front\AfricatArtController;
 use App\Http\Controllers\front\BlogController;
 use App\Http\Controllers\front\ContactController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\front\DestinationController;
 use App\Http\Controllers\front\DinersController;
 use App\Http\Controllers\front\ExperienceController;
 use App\Http\Controllers\front\ExpositionController;
+use App\Http\Controllers\front\FormulaireController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\McnController;
 use App\Http\Controllers\front\MediaController;
@@ -25,8 +27,10 @@ Route::get('/patrimoine-culturel',[PatrimoineController::class,'index'])->name('
 Route::get('/blog',[BlogController::class,'index'])->name('blog');
 Route::get('/exposition',[ExpositionController::class,'index'])->name('exposition');
 Route::get('/experience',[ExperienceController::class,'index'])->name('experience');
+Route::get('/accompagnon',[AccompagnonController::class,'index'])->name('accompagnon');
 Route::get('/africa-art-of-golf-cup',[AfricatArtController::class,'index'])->name('africa-art');
 Route::get('/reservations',[ReservationController::class,'index'])->name('reservations');
+Route::get('/formulaire',[FormulaireController::class,'index'])->name('formulaire');
 Route::get('/destination',[DestinationController::class,'index'])->name('destination');
 Route::get('/partenaires',[PartenairesController::class,'index'])->name('partenaires');
 Route::get('/rendez-vous-AAGC',[RdvController::class,'index'])->name('rendez-vous');

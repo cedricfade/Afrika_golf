@@ -2650,8 +2650,6 @@ section.rdv {
 }
 
 .experience .container-fluid {
-
-   
 }
 
 .experience h1 {
@@ -2973,5 +2971,749 @@ section.rdv {
     .experience .card a {
         font-size: clamp(9px, 1.5vw, 11px);
         padding: clamp(8px, 1.2vw, 10px) clamp(10px, 1.5vw, 15px);
+    }
+}
+
+/* FORMULAIRE */
+.formulaire {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+    border-top: 1px solid #b07f49;
+    height: auto;
+}
+
+.formulaire .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.formulaire h1 {
+    text-align: center;
+    color: #fff;
+    font-family: "AveniNext";
+    font-size: clamp(28px, 5vw, 48px);
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: clamp(30px, 5vw, 50px);
+    line-height: 1.4;
+}
+
+.formulaire .info {
+    padding: clamp(25px, 4vw, 40px);
+    border: 1px solid #b07f49;
+
+    margin-bottom: 40px;
+}
+
+.formulaire .info img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+   
+    display: block;
+}
+
+.formulaire .info h3 {
+    color: #b07f49;
+    font-family: "MashRegular";
+    font-size: clamp(1.2em, 3vw, 1.5em);
+    margin-bottom: 15px;
+}
+
+.formulaire h2 {
+    color: #fff;
+    font-family: "AveniNext";
+    font-size: clamp(1.5em, 3vw, 1.8em);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.formulaire .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulaire .info p {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.formulaire b {
+    color: #fff;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 2vw, 16px);
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.formulaire .form {
+    margin-top: clamp(30px, 5vw, 60px);
+}
+
+.formulaire .form .row {
+    padding: clamp(25px, 4vw, 40px);
+    background: #0f1c15;
+    border: 1px solid #707070;
+  
+}
+
+.formulaire .form .row > div {
+    margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.formulaire .form .row > div:last-child {
+    margin-bottom: 0;
+}
+
+.formulaire .form label {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+.formulaire .form .form-group {
+    margin-bottom: 0;
+}
+
+.formulaire .form .form-group input {
+    height: 45px;
+    background: #0E1913;
+    border: 0.35px solid #B07F49;
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    padding: 0 clamp(8px, 2vw, 12px);
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.formulaire .form .form-group input:focus {
+    outline: none;
+    border-color: #b07f49;
+    background: #0f1c15;
+    box-shadow: 0 0 8px rgba(176, 127, 73, 0.2);
+}
+
+.formulaire .form .form-group button {
+    background: #b07f49;
+    color: #0a140f;
+    border: none;
+    padding: clamp(12px, 2vw, 15px) clamp(25px, 4vw, 35px);
+    font-family: "AveniNext";
+    font-size: clamp(12px, 1.8vw, 16px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0px !important;
+    width: clamp(130px, 30vw, 300px);
+    min-width: 130px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.formulaire .form .form-group button:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(176, 127, 73, 0.3);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+    .formulaire h1 {
+        width: 95%;
+        margin-bottom: clamp(25px, 4vw, 40px);
+    }
+
+    .formulaire .info {
+        padding: clamp(20px, 3.5vw, 35px);
+    }
+
+    .formulaire .form .row {
+        padding: clamp(20px, 3.5vw, 35px);
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+@media (max-width: 768px) {
+    .formulaire {
+        padding: clamp(40px, 8vw, 80px) clamp(15px, 6vw, 60px);
+    }
+
+    .formulaire h1 {
+        width: 100%;
+        font-size: clamp(24px, 4.5vw, 36px);
+        margin-bottom: clamp(25px, 4vw, 35px);
+    }
+
+    .formulaire .info {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(20px, 3vw, 30px);
+        padding: clamp(20px, 3vw, 30px);
+    }
+
+    .formulaire .info img {
+        order: 1;
+        max-height: 350px;
+    }
+
+    .formulaire .info > div {
+        order: 2;
+    }
+
+    .formulaire h2 {
+        font-size: clamp(1.3em, 3vw, 1.6em);
+        margin-bottom: 15px;
+    }
+
+    .formulaire .info h3 {
+        font-size: clamp(1.1em, 2.5vw, 1.3em);
+    }
+
+    .formulaire .info p {
+        font-size: clamp(12px, 2vw, 14px);
+    }
+
+    .formulaire b {
+        font-size: clamp(12px, 1.8vw, 14px);
+    }
+
+    .formulaire .form .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: clamp(20px, 3vw, 30px);
+        gap: clamp(15px, 2.5vw, 20px);
+    }
+
+    .formulaire .form .row > div {
+        margin-bottom: 0;
+    }
+
+    .formulaire .form label {
+        font-size: clamp(12px, 1.8vw, 14px);
+        margin-bottom: 8px;
+    }
+
+    .formulaire .form .form-group input {
+        height: 42px;
+        font-size: clamp(12px, 1.8vw, 14px);
+    }
+
+    .formulaire .form .form-group button {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(11px, 1.6vw, 13px);
+        padding: clamp(11px, 1.8vw, 13px) clamp(20px, 3vw, 25px);
+    }
+}
+
+/* RESPONSIVE MOBILE LANDSCAPE */
+@media (max-width: 576px) {
+    .formulaire {
+        padding: clamp(30px, 6vw, 60px) clamp(12px, 4vw, 40px);
+    }
+
+    .formulaire .container {
+        max-width: 100%;
+    }
+
+    .formulaire h1 {
+        font-size: clamp(20px, 4vw, 28px);
+        margin-bottom: clamp(20px, 3vw, 30px);
+        width: 100%;
+    }
+
+    .formulaire .info {
+        gap: clamp(15px, 2.5vw, 20px);
+        padding: clamp(16px, 2.5vw, 25px);
+        margin-bottom: 25px;
+    }
+
+    .formulaire .info img {
+        max-height: 300px;
+    }
+
+    .formulaire h2 {
+        font-size: clamp(1.2em, 2.5vw, 1.4em);
+        margin-bottom: 12px;
+    }
+
+    .formulaire .info h3 {
+        font-size: clamp(1em, 2.2vw, 1.2em);
+        margin-bottom: 10px;
+    }
+
+    .formulaire .info p {
+        font-size: clamp(11px, 1.6vw, 13px);
+        line-height: 1.6;
+    }
+
+    .formulaire b {
+        font-size: clamp(11px, 1.6vw, 12px);
+        margin-bottom: 6px;
+    }
+
+    .formulaire .form {
+        margin-top: clamp(25px, 4vw, 40px);
+    }
+
+    .formulaire .form .row {
+        padding: clamp(15px, 2.5vw, 25px);
+        gap: clamp(12px, 2vw, 18px);
+    }
+
+    .formulaire .form label {
+        font-size: clamp(11px, 1.6vw, 12px);
+        margin-bottom: 6px;
+    }
+
+    .formulaire .form .form-group input {
+        height: 40px;
+        font-size: clamp(11px, 1.6vw, 12px);
+        padding: 0 8px;
+    }
+
+    .formulaire .form .form-group button {
+        width: 100%;
+        font-size: clamp(10px, 1.4vw, 11px);
+        padding: clamp(10px, 1.5vw, 12px) clamp(15px, 2.5vw, 20px);
+    }
+}
+
+/* RESPONSIVE MOBILE PORTRAIT */
+@media (max-width: 380px) {
+    .formulaire {
+        padding: clamp(25px, 5vw, 50px) clamp(10px, 3vw, 30px);
+    }
+
+    .formulaire h1 {
+        font-size: clamp(18px, 3.5vw, 24px);
+        margin-bottom: clamp(18px, 3vw, 25px);
+    }
+
+    .formulaire .info {
+        gap: clamp(12px, 2vw, 15px);
+        padding: clamp(14px, 2vw, 20px);
+        margin-bottom: 20px;
+    }
+
+    .formulaire .info img {
+        max-height: 250px;
+    }
+
+    .formulaire h2 {
+        font-size: clamp(1.1em, 2vw, 1.2em);
+        margin-bottom: 10px;
+    }
+
+    .formulaire .info h3 {
+        font-size: clamp(0.95em, 2vw, 1.05em);
+        margin-bottom: 8px;
+    }
+
+    .formulaire .info p {
+        font-size: clamp(10px, 1.5vw, 11px);
+        line-height: 1.5;
+    }
+
+    .formulaire b {
+        font-size: clamp(10px, 1.5vw, 11px);
+        margin-bottom: 4px;
+    }
+
+    .formulaire .form {
+        margin-top: clamp(20px, 3vw, 30px);
+    }
+
+    .formulaire .form .row {
+        padding: clamp(12px, 2vw, 18px);
+        gap: clamp(10px, 1.5vw, 15px);
+    }
+
+    .formulaire .form label {
+        font-size: clamp(10px, 1.4vw, 11px);
+        margin-bottom: 5px;
+    }
+
+    .formulaire .form .form-group input {
+        height: 38px;
+        font-size: clamp(10px, 1.4vw, 11px);
+        padding: 0 6px;
+    }
+
+    .formulaire .form .form-group button {
+        width: 100%;
+        font-size: clamp(9px, 1.2vw, 10px);
+        padding: clamp(9px, 1.2vw, 10px) clamp(12px, 2vw, 15px);
+    }
+}
+
+
+/* ACCOMPAGNON */
+
+.accompagnon {
+    background: #0a140f;
+    padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
+    height: auto;
+}
+.accompagnon p{
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(14px, 2vw, 18px);
+}
+.accompagnon .souscrire {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+.accompagnon h2{
+    color: #fff;
+    font-family: "MashRegular";
+    font-size: clamp(1.5em, 3vw, 1.8em);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.accompagnon .souscrire a {
+    color: #0f1c15;
+    text-decoration: none;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 2vw, 20px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: #b07f49;
+    width: clamp(150px, 30vw, 350px);
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 30px);
+    border-radius: 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+.accompagnon .souscrire a:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+}
+
+
+.accompagnon .form {
+    margin-top: clamp(30px, 5vw, 60px);
+}
+
+.accompagnon .form .row {
+    padding: clamp(25px, 4vw, 40px);
+    background: #0f1c15;
+    border: 1px solid #707070;
+}
+
+.accompagnon .form .row > div {
+    margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.accompagnon .form .row > div:last-child {
+    margin-bottom: 0;
+}
+
+.accompagnon .form label {
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+.accompagnon .form .form-group {
+    margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.accompagnon .form .form-group input {
+    height: 45px;
+    background: #0E1913;
+    border: 0.35px solid #B07F49;
+    color: #c6c6c6;
+    font-family: "AveniNext";
+    font-size: clamp(13px, 1.8vw, 16px);
+    padding: 0 clamp(8px, 2vw, 12px);
+    width: 100%;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.accompagnon .form .form-group input:focus {
+    outline: none;
+    border-color: #b07f49;
+    background: #0f1c15;
+    box-shadow: 0 0 8px rgba(176, 127, 73, 0.2);
+}
+
+.accompagnon .form .form-group button {
+    background: #b07f49;
+    color: #0a140f;
+    border: none;
+    padding: clamp(12px, 2vw, 15px) clamp(25px, 4vw, 35px);
+    font-family: "AveniNext";
+    font-size: clamp(12px, 1.8vw, 16px);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 0px !important;
+    width: clamp(130px, 30vw, 300px);
+    min-width: 130px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.accompagnon .form .form-group button:hover {
+    background: #c89a5c;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(176, 127, 73, 0.3);
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1024px) {
+    .accompagnon {
+        padding: clamp(45px, 9vw, 100px) clamp(18px, 7vw, 70px);
+    }
+
+    .accompagnon p {
+        font-size: clamp(13px, 2vw, 17px);
+    }
+
+    .accompagnon .souscrire {
+        gap: 15px;
+        margin-top: 40px;
+    }
+
+    .accompagnon .souscrire a {
+        width: clamp(140px, 28vw, 320px);
+        font-size: clamp(12px, 1.8vw, 18px);
+    }
+
+    .accompagnon h2 {
+        font-size: clamp(1.4em, 2.8vw, 1.7em);
+        margin-bottom: 18px;
+    }
+
+    .accompagnon .form .row {
+        padding: clamp(20px, 3.5vw, 35px);
+    }
+
+    .accompagnon .form label {
+        font-size: clamp(12px, 1.7vw, 15px);
+    }
+
+    .accompagnon .form .form-group input {
+        font-size: clamp(12px, 1.7vw, 15px);
+    }
+
+    .accompagnon .form .form-group button {
+        width: clamp(120px, 28vw, 280px);
+        font-size: clamp(11px, 1.7vw, 15px);
+    }
+}
+
+/* RESPONSIVE SMALL TABLET */
+@media (max-width: 768px) {
+    .accompagnon {
+        padding: clamp(40px, 8vw, 80px) clamp(15px, 6vw, 60px);
+    }
+
+    .accompagnon p {
+        font-size: clamp(12px, 2.5vw, 15px);
+        line-height: 1.7;
+    }
+
+    .accompagnon .souscrire {
+        gap: 12px;
+        margin-top: 35px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accompagnon .souscrire a {
+        width: clamp(130px, 70vw, 300px);
+        font-size: clamp(11px, 2vw, 16px);
+        padding: clamp(10px, 1.8vw, 12px) clamp(20px, 3vw, 28px);
+    }
+
+    .accompagnon h2 {
+        font-size: clamp(1.3em, 2.5vw, 1.5em);
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .accompagnon .form {
+        margin-top: clamp(25px, 4vw, 45px);
+    }
+
+    .accompagnon .form .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: clamp(20px, 3vw, 30px);
+        gap: clamp(15px, 2.5vw, 20px);
+    }
+
+    .accompagnon .form .row > div {
+        margin-bottom: 0;
+        grid-column: 1;
+    }
+
+    .accompagnon .form .col-xl-6 {
+        width: 100%;
+    }
+
+    .accompagnon .form label {
+        font-size: clamp(11px, 1.8vw, 14px);
+        margin-bottom: 8px;
+    }
+
+    .accompagnon .form .form-group {
+        margin-bottom: 0;
+    }
+
+    .accompagnon .form .form-group input {
+        height: 42px;
+        font-size: clamp(11px, 1.8vw, 14px);
+    }
+
+    .accompagnon .form .form-group button {
+        width: 100%;
+        max-width: none;
+        font-size: clamp(10px, 1.6vw, 13px);
+        padding: clamp(11px, 1.8vw, 13px) clamp(20px, 3vw, 25px);
+        margin-top: clamp(10px, 2vw, 15px);
+    }
+
+    .accompagnon .form .form-group.text-center {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* RESPONSIVE MOBILE LANDSCAPE */
+@media (max-width: 576px) {
+    .accompagnon {
+        padding: clamp(30px, 6vw, 60px) clamp(12px, 4vw, 40px);
+    }
+
+    .accompagnon p {
+        font-size: clamp(11px, 2.2vw, 13px);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .accompagnon .souscrire {
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .accompagnon .souscrire a {
+        width: 100%;
+        max-width: 280px;
+        font-size: clamp(10px, 1.8vw, 14px);
+        padding: clamp(9px, 1.6vw, 11px) clamp(18px, 2.5vw, 24px);
+    }
+
+    .accompagnon h2 {
+        font-size: clamp(1.2em, 2.2vw, 1.4em);
+        margin-bottom: 12px;
+    }
+
+    .accompagnon .form {
+        margin-top: clamp(20px, 3.5vw, 35px);
+    }
+
+    .accompagnon .form .row {
+        padding: clamp(15px, 2.5vw, 25px);
+        gap: clamp(12px, 2vw, 18px);
+    }
+
+    .accompagnon .form label {
+        font-size: clamp(10px, 1.6vw, 12px);
+        margin-bottom: 6px;
+    }
+
+    .accompagnon .form .form-group input {
+        height: 40px;
+        font-size: clamp(10px, 1.6vw, 12px);
+        padding: 0 8px;
+    }
+
+    .accompagnon .form .form-group button {
+        font-size: clamp(9px, 1.4vw, 11px);
+        padding: clamp(10px, 1.5vw, 12px) clamp(15px, 2.5vw, 20px);
+        margin-top: clamp(8px, 1.5vw, 12px);
+    }
+}
+
+/* RESPONSIVE MOBILE PORTRAIT */
+@media (max-width: 380px) {
+    .accompagnon {
+        padding: clamp(25px, 5vw, 50px) clamp(10px, 3vw, 30px);
+    }
+
+    .accompagnon p {
+        font-size: clamp(10px, 2vw, 12px);
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .accompagnon .souscrire {
+        margin-top: 25px;
+        gap: 8px;
+    }
+
+    .accompagnon .souscrire a {
+        width: 100%;
+        max-width: 260px;
+        font-size: clamp(9px, 1.6vw, 12px);
+        padding: clamp(8px, 1.4vw, 10px) clamp(16px, 2vw, 20px);
+    }
+
+    .accompagnon h2 {
+        font-size: clamp(1.1em, 2vw, 1.2em);
+        margin-bottom: 10px;
+    }
+
+    .accompagnon .form {
+        margin-top: clamp(18px, 3vw, 28px);
+    }
+
+    .accompagnon .form .row {
+        padding: clamp(12px, 2vw, 18px);
+        gap: clamp(10px, 1.5vw, 15px);
+    }
+
+    .accompagnon .form label {
+        font-size: clamp(9px, 1.4vw, 11px);
+        margin-bottom: 5px;
+    }
+
+    .accompagnon .form .form-group input {
+        height: 38px;
+        font-size: clamp(9px, 1.4vw, 11px);
+        padding: 0 6px;
+    }
+
+    .accompagnon .form .form-group button {
+        font-size: clamp(8px, 1.2vw, 10px);
+        padding: clamp(9px, 1.2vw, 10px) clamp(12px, 2vw, 15px);
+        margin-top: clamp(6px, 1vw, 10px);
     }
 }

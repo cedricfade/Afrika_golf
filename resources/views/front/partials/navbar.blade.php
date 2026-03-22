@@ -41,6 +41,8 @@
                         <li><a class="dropdown-item" href="{{ route('exposition') }}">@lang('EXPOSITION')</a></li>
                         <li><a class="dropdown-item" href="{{ route('experience') }}">@lang('PACKS')</a></li>
 
+                        <li><a class="dropdown-item" href="{{ route('accompagnon') }}">@lang('ACCOMPAGNON')</a></li>
+                        <li><a class="dropdown-item" href="{{ route('formulaire') }}">@lang('FORMULAIRE')</a></li>
                         <li><a class="dropdown-item" href="{{ route('reservations') }}">@lang('RESERVATIONS')</a></li>
                         <li><a class="dropdown-item" href="{{ route('destination') }}">@lang('DESTINATION KIGALI')</a></li>
                         <li><a class="dropdown-item" href="{{ route('partenaires') }}">@lang('PARTENAIRES')</a></li>
