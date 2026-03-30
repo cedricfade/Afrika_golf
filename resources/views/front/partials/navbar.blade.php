@@ -52,28 +52,20 @@
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
                             <a class="dropdown-item" href="{{ route('diners') }}">@lang('LE DÎNER')</a>
                         </li>
-                        {{--
-                        <li>
-                            <a class="dropdown-item" href="{{ route('patrimoine') }}">@lang('PATRIMOINE CULTUREL')</a>
-                        </li>
-                        --}}
-                        <li>
-                            <a class="dropdown-item" href="{{ route('blog') }}">@lang('BLOG')</a>
-                        </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('exposition') }}">@lang('EXPOSITION')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('experience') }}">@lang('PACKS')</a>
+                            <a class="dropdown-item" href="{{ route('rendez-vous') }}">@lang('LES RENDEZ-VOUS AAGC')</a>
                         </li>
-                        <li>
+                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
                             <a class="dropdown-item" href="{{ route('accompagnon') }}">@lang('ACCOMPAGNON')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('formulaire') }}">@lang('FORMULAIRE')</a>
+                            <a class="dropdown-item" href="{{ route('reservations') }}">@lang('RESERVATIONS')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('reservations') }}">@lang('RESERVATIONS')</a>
+                            <a class="dropdown-item" href="{{ route('experience') }}">@lang('PACKS')</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('destination') }}">@lang('DESTINATION KIGALI')</a>
@@ -82,13 +74,10 @@
                             <a class="dropdown-item" href="{{ route('partenaires') }}">@lang('PARTENAIRES')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('rendez-vous') }}">@lang('LES RENDEZ-VOUS AAGC')</a>
+                            <a class="dropdown-item" href="{{ route('medias') }}">@lang('ESPACE MEDIA')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('medias') }}">@lang('espace média')</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ route('contact') }}">@lang('contact')</a>
+                            <a class="dropdown-item" href="{{ route('contact') }}">@lang('CONTACT')</a>
                         </li>
                     </ul>
                 </li>

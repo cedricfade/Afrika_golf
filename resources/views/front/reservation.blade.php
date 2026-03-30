@@ -39,17 +39,7 @@
                     <hr style=" width:80%; height:2px; background:#707070; border:none;">
                     <div class="row">
                         <div class="col">
-                            <div class="info mb-5">
-                                <h3 style="font-family: 'mashRegular'; font-size: 30px; color:#C6C6C6;">MCN</h3>
-                                <address style="color: #C6C6C6; font-family: 'AveniNext';">Abidjan Plateau, Côte d’Ivoire
-                                </address>
-                                <h3 style="font-family: 'mashRegular'; font-size: 30px; color:#C6C6C6">Concierge</h3>
-                                <a href="" style="color: #C6C6C6; text-decoration:none; font-family: 'AveniNext';"
-                                    class="mb-5">Concierge@africaartgolfcup.com</a>
-                                <br>
-                                <a href="" style="color: #C6C6C6;  text-decoration:none; font-family: 'AveniNext';"
-                                    class="">+225 27 20 00 00 00</a>
-                            </div>
+                            @include('front.partials.info-reservation')
                         </div>
                         <div class="col">
                             @include('front.partials.info-participation')
