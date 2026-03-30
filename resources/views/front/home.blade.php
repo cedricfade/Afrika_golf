@@ -1,11 +1,9 @@
 @extends('front.main', [
     'title' => 'Accueil',
     'bannerImage' => asset('assets/images/home/banner.png'),
-    'bannerTitle' => 'Africa Art Golf Cup',
-    'bannerButton' => [
-        'text' => "Découvrir l'expérience",
-        'link' => '#',
-    ],
+    'middleImage' => asset('assets_custom/home/svg/aagc-kigali.svg'),
+    'bottomImage' => asset('assets_custom/home/svg/aagc-golfeur.svg'),
+    'bannerContent' => __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
 ])
 
 <style>
@@ -198,34 +196,8 @@
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <div class="formulaire">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="">Nom & prénoms</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Adresse Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Objet</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Message</label>
-
-                                <textarea name="" id="" cols="25" rows="6" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn">ENVOYER</button>
-                            </div>
-
-                        </form>
-                    </div>
+                    @include('front.partials.form-reservation')
                 </div>
-
-
             </div>
         </div>
     </section>
