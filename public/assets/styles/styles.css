@@ -2523,7 +2523,7 @@ section.rdv {
     line-height: 1.8;
     margin-bottom: 20px;
     font-family: "AveniNext";
-    max-width: 900px;
+    /* max-width: 900px; */
 }
 
 .exposition .souscrire {
@@ -2659,9 +2659,6 @@ section.rdv {
     padding: clamp(50px, 10vw, 120px) clamp(20px, 8vw, 80px);
     border-top: 1px solid #b07f49;
     height: auto;
-}
-
-.experience .container-fluid {
 }
 
 .experience h1 {

@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function Home(){
+    public function Home()
+    {
 
-    return view('front.home');
+        return view('front.home');
     }
 }

@@ -1,0 +1,15 @@
+@extends('back.main', ['title' => 'Dinners'])
+@section('content')
+    @include('pageContent.diners', [
+        'bannerTitle' => 'Le diners',
+        'bannerImage' => asset('assets/images/diners/banner.png'),
+    ])
+
+    @push('pageModal')
+        <span>Teste</span>
+    @endpush
+@endsection
+
+@push('css')
+    @stack('css2')
+@endpush

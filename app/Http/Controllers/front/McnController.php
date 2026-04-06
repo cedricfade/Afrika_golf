@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\front;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class McnController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-    return view('front.mcn');
+        return view('front.mcn');
     }
 }
