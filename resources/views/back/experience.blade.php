@@ -95,7 +95,7 @@
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label fw-semibold">Symbole / Description</label>
-                                            <textarea class="form-control" name="symbole" rows="3" required>{{ $pack->symbole }}</textarea>
+                                            <textarea class="form-control summernote-pack-edit" name="symbole" rows="3" required>{!! $pack->symbole !!}</textarea>
                                         </div>
                                         <div class="col-12">
                                             <label class="form-label fw-semibold">Nouvelle image (optionnel)</label>
@@ -139,7 +139,8 @@
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label fw-semibold">Symbole / Description</label>
-                                    <textarea class="form-control" name="symbole" rows="3" placeholder="Description HTML du pack..." required></textarea>
+                                    <textarea class="form-control" id="addPackSymbole" name="symbole" rows="3"
+                                        placeholder="Description HTML du pack..." required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label fw-semibold">Image du pack</label>
@@ -163,4 +164,29 @@
 
 @push('css')
     @stack('css2')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+@endpush
+
+@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var summernoteConfig = {
+                lang: 'fr-FR',
+                height: 180,
+                toolbar: summernoteToolbarConfig,
+            };
+
+            // Summernote pour le formulaire d'ajout
+            $('#addPackSymbole').summernote(summernoteConfig);
+
+            // Summernote dans les collapses d'édition (initialisation au moment de l'ouverture)
+            $('[id^="edit-pack-"]').on('shown.bs.collapse', function() {
+                var $ta = $(this).find('.summernote-pack-edit');
+                if (!$ta.next('.note-editor').length) {
+                    $ta.summernote(summernoteConfig);
+                }
+            });
+        });
+    </script>
 @endpush

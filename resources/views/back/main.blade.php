@@ -107,9 +107,9 @@
 
     @yield('content')
 
-    <button class="btnClick btnSetting" onclick="pageSetting()">
+    <a href="" class="btnClick btnSetting" onclick="pageSetting()">
         <i class="fe fe-settings"></i>
-    </button>
+    </a>
     <button class="btnClick btnEdit" onclick="page()">
         <i class="fe fe-edit"></i>
     </button>
@@ -177,6 +177,16 @@
         });
     </script>
     <script>
+        var summernoteToolbarConfig = [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['font-size', ['fontname', 'fontsize']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'codeview']],
+        ];
+    </script>
+    <script>
         var route_home = "{{ route('home') }}";
         var route_actual = "{{ url()->current() }}";
         var font_size_menu = "1.1rem";
@@ -214,7 +224,7 @@
         }
 
         var pageSetting = function() {
-            // document.location.href = "{{ __('back.settings') }}";
+            document.location.href = "{{ route('back.settings') }}";
         }
     </script>
     @stack('js')

@@ -277,12 +277,7 @@
             var summernoteConfig = {
                 lang: 'fr-FR',
                 height: 180,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             };
 
             // Initialise les summernotes non-collapse
