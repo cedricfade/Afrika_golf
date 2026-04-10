@@ -29,7 +29,9 @@
 
 <section class='accompagnon'>
     <div id="content"></div>
-    <div id="formPage"></div>
+    <div id="formPage">
+        @include('pageContent.ajaxContent.accompagnon.formPage')
+    </div>
 </section>
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')
@@ -40,13 +42,8 @@
             $('#content').load("{{ route('accompagnon.ajax.content') }}");
         };
 
-        var formPageView = function() {
-            $('#formPage').load("{{ route('accompagnon.ajax.formPage') }}");
-        };
-
         $(document).ready(function() {
             contentView();
-            formPageView();
         });
     </script>
 @endpush

@@ -12,4 +12,5 @@
 
 @push('js')
     @stack('js2')
+    @stack('jsAccompagnon')
 @endpush

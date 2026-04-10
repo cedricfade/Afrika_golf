@@ -24,7 +24,7 @@ class InvitationConfirmation extends Notification
     {
         return (new MailMessage)
             ->subject('Confirmation de votre demande — Africa Art Golf Cup')
-            ->greeting('Bonjour ' . $this->invitation->nom_complet . ',')
+            ->greeting('Bonjour ' . $this->invitation->nomComplet . ',')
             ->line('Nous avons bien reçu votre demande d\'invitation et nous vous en remercions.')
             ->line('**Objet :** ' . $this->invitation->objet)
             ->line('**Message :**')

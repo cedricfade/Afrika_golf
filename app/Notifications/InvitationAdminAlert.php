@@ -27,13 +27,13 @@ class InvitationAdminAlert extends Notification
             ->greeting('Nouvelle demande reçue')
             ->line('Un visiteur vient de soumettre une demande d\'invitation via le site.')
             ->line('---')
-            ->line('**Nom & prénoms :** ' . $this->invitation->nom_complet)
+            ->line('**Nom & prénoms :** ' . $this->invitation->nomComplet)
             ->line('**Email :** ' . $this->invitation->email)
             ->line('**Objet :** ' . $this->invitation->objet)
             ->line('**Message :**')
             ->line($this->invitation->message)
             ->line('**Page source :** ' . ($this->invitation->page ?? 'non renseignée'))
-            ->line('**Date :** ' . $this->invitation->created_at->format('d/m/Y à H:i'))
+            ->line('**Date :** ' . ($this->invitation->created_at ? \Carbon\Carbon::createFromTimestamp($this->invitation->created_at)->format('d/m/Y à H:i') : now()->format('d/m/Y à H:i')))
             ->salutation('Africa Art Golf Cup — Système de notification automatique');
     }
 }

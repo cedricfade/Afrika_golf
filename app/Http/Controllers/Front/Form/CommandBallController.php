@@ -15,11 +15,11 @@ class CommandBallController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'       => 'required|string|max:255',
-            'first_name' => 'required|string|max:255',
-            'phone'      => 'nullable|string|max:30',
+            'nom'       => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'telephone'      => 'nullable|string|max:30',
             'email'      => 'required|email|max:255',
-            'balls'      => 'required|integer|min:1',
+            'nombre_de_balles'      => 'required|integer|min:1',
         ]);
 
         $command = CommandBall::create($validated);

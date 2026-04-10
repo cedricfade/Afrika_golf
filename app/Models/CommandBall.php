@@ -9,13 +9,7 @@ class CommandBall extends Model
 {
     use AutoCreateAttributes;
 
-    protected $fillable = [
-        'name',
-        'first_name',
-        'phone',
-        'email',
-        'balls',
-    ];
+    protected $guarded = ['id'];
 
     public $timestamps = false;
 }

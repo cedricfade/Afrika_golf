@@ -13,10 +13,6 @@ class SendInvitationConfirmation implements ShouldQueue
     public function handle(InvitationSubmitted $event): void
     {
         $invitation = $event->invitation;
-        
-        info('_invitation->email' . $invitation->email);
-        
-        info('_invitation->nomComplet' . $invitation->nomComplet);
 
         // 1. Accusé de réception à l'expéditeur
         (new AnonymousNotifiable)
