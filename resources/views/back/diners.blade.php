@@ -280,6 +280,7 @@
                 toolbar: [
                     ['style', ['bold', 'italic', 'underline', 'clear']],
                     ['para', ['ul', 'ol', 'paragraph']],
+                    ['fontsize', ['fontsize']],
                     ['insert', ['link']],
                     ['view', ['codeview']],
                 ],

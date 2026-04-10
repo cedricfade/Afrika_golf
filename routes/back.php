@@ -80,7 +80,7 @@ Route::group([
     });
 
     Route::group(['prefix' => 'experience', 'as' => 'experience.'], function () {
-        Route::post('/', [ExperienceController::class, 'store'])->middleware('recaptcha')->name('experience.store');
+        Route::post('/', [ExperienceController::class, 'store'])->middleware('recaptcha')->name('store');
         Route::group(['prefix' => 'packs', 'as' => 'packs.'], function () {
             Route::post('/', [PackController::class, 'store'])->name('store');
             Route::put('update/{pack}', [PackController::class, 'update'])->name('update');
