@@ -29,8 +29,6 @@
     <link rel="stylesheet" href="{{ asset('assets/styles/main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/styles/styles.css') }}">
-
-
 </head>
 
 <body>
@@ -38,9 +36,6 @@
     @include('front.partials.layouts')
 
     @yield('content')
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 

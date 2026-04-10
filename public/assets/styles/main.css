@@ -29,11 +29,100 @@
     font-style: normal;
 }
 
-
-
 body h2,h3,h4{
-     font-family: "mashRegular";
+    font-family: "mashRegular" !important;
 }
+
+.ff-mash {
+    font-family: "mashRegular" !important;
+}
+
+.ff-avenir {
+    font-family: "AveniNext" !important;
+}
+
+.ff-avenir-bold {
+    font-family: "AveniNextBold" !important;
+}
+
+.ff-cac {
+    font-family: "cacChampagne" !important;
+}
+
+/* Colors */
+
+/* bg */
+
+.bg-color {
+    background-color: #B07F49 !important;
+}
+.bg-grey {
+    background-color: #c6c6c6 !important;
+}
+.bg-dark {
+    background-color: #0e1913 !important;
+}
+
+/* text */
+
+.text-grey {
+    color: #c6c6c6 !important;
+}
+.text-dark {
+    color: #0f1c15 !important;
+}
+.text-color {
+    color: #B07F49 !important;
+}
+
+/* border */
+
+.border-color {
+    border: solid 1px #B07F49 !important;
+}
+
+/* Font Size */
+
+.fs-xxl { 
+    font-size: clamp(32px, 6vw, 48px) !important; 
+}
+.fs-xl { 
+    font-size: clamp(24px, 4vw, 32px) !important; 
+}
+.fs-lg { 
+    font-size: clamp(20px, 3vw, 24px) !important; 
+}
+.fs { 
+    font-size: clamp(14px, 2vw, 18px) !important; 
+}
+.fs-sm { 
+    font-size: clamp(12px, 1.5vw, 14px) !important; 
+}
+.fs-xs { 
+    font-size: clamp(10px, 1vw, 12px) !important; 
+}
+
+/* Line Height */
+
+.lh-xxl { 
+    line-height: clamp(2.5, 6vw, 3.5) !important; 
+}
+.lh-xl  { 
+    line-height: clamp(2, 4vw, 2.5) !important; 
+}
+.lh-lg  { 
+    line-height: clamp(1.7, 3vw, 2) !important; 
+}
+.lh     { 
+    line-height: clamp(1.4, 2vw, 1.7) !important; 
+}
+.lh-sm  { 
+    line-height: clamp(1.2, 1.5vw, 1.4) !important; 
+}
+.lh-xs  { 
+    line-height: clamp(1, 1vw, 1.2) !important; 
+}
+
 
 
 /* NAVBAR */
@@ -43,6 +132,7 @@ body h2,h3,h4{
     display: flex;
     align-items: center;
     padding: 20px 0;
+    font-family: "AveniNext";
 }
 
 .navbar-brand {
@@ -67,7 +157,7 @@ body h2,h3,h4{
 
 .nav-primary .nav-item a {
     color: #fff;
-    font-family: "MyArial";
+    font-family: "AveniNext";
     text-transform: uppercase;
     font-size: clamp(14px, 2vw, 18px);
     text-decoration: none;
@@ -108,20 +198,21 @@ body h2,h3,h4{
     margin-top: 15px !important;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 0px !important;
-    padding: 50px 30px;
+    padding: 40px 60px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     animation: slideDown 0.3s ease-out;
 }
 .dropdown-menu li a {
-    padding: clamp(5px, 1vw, 10px) 0 !important;
+    padding: clamp(5px, 1vw, 8px) 0 !important;
     color: #fff;
-    font-family: "MyArial";
-    font-size: clamp(13px, 2vw, 18px) ;
+    font-family: "AveniNext";
+    font-size: clamp(12px, 2vw, 16px) ;
     text-decoration: none;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 @keyframes slideDown {
@@ -147,7 +238,7 @@ body h2,h3,h4{
 }
 
 .dropdown-menu li {
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 .dropdown-menu li:last-child {
@@ -165,6 +256,7 @@ body h2,h3,h4{
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 30px);
+    overflow: hidden;
 }
 
 .menu-top i {
@@ -197,7 +289,7 @@ body h2,h3,h4{
 }
 
 .menu-wrapper .trait {
-    height: clamp(20px, 4vw, 30px);
+    height: clamp(20px, 4vw, 70px);
     width: 2px;
     background: #fff;
 }
@@ -261,7 +353,7 @@ body h2,h3,h4{
     }
 
     .menu-top i {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .menu-text {

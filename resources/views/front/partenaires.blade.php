@@ -1,6 +1,10 @@
 @extends('front.main', [
     'title' => 'Partenaires',
     'bannerTitle' => 'Partenaires',
+    'bannerButton' => [
+        'text' => "JOIGNEZ L'EXPEREINCE",
+        'link' => route('experience'), 
+    ],
     'bannerImage' => asset('assets/images/partenaire/banner.png'),
 ])
 

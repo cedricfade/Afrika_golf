@@ -19,7 +19,7 @@
 </style>
 
 @section('content')
-  <section class="contact">
+    <section class="contact">
         <div class="container">
             <div class="row">
                 <div class="col-xl-7">
@@ -33,48 +33,19 @@
                         l’accréditation presse.
                     </p>
                     <hr style=" width:80%; height:2px; background:#707070; border:none;">
-                    <div class="info">
-                        <h3 style="font-family: 'mashRegular'; font-size: 40px; color:#C6C6C6;">MCN</h3>
-                        <address style="color: #C6C6C6; font-family: 'AveniNext';font-size: 20px; ">Abidjan Plateau, Côte d’Ivoire</address>
-                        <h3 style="font-family: 'mashRegular'; font-size: 40px; color:#C6C6C6">Concierge</h3>
-                        <a href="" style="color: #C6C6C6; text-decoration:none; font-family: 'AveniNext';font-size: 20px; "
-                            class="mb-5">Concierge@africaartgolfcup.com</a>
-                        <br>
-                        <a href="" style="color: #C6C6C6;  text-decoration:none; font-family: 'AveniNext';font-size: 20px; "
-                            class="">+225 27 20 00 00 00</a>
+                    <div class="row">
+                        <div class="col">
+                            @include('front.partials.info-reservation')
+                        </div>
+                        <div class="col">
+                            @include('front.partials.info-participation')
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <div class="formulaire">
-                        <form action="">
-                            <div class="form-group">
-                                <label for="">Nom & prénoms</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Adresse Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Objet</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Message</label>
-
-                                <textarea name="" id="" cols="25" rows="6" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn">ENVOYER</button>
-                            </div>
-
-                        </form>
-                    </div>
+                    @include('front.partials.form-reservation')
                 </div>
-
-
             </div>
-        </div>
     </section>
     @include('front.partials.footer')
 @endsection

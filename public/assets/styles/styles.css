@@ -208,7 +208,7 @@
     border: 0.5px solid #707070;
 }
 .contact .formulaire .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .contact .formulaire .form-group label {
     margin-bottom: 10px;
@@ -772,6 +772,7 @@ footer ul li a:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
 }
 .chronologie h2 {
     color: #ffffff;
@@ -969,6 +970,7 @@ footer ul li a:hover {
 
 /* reservation */
 
+/*
 .reservation {
     padding: 50px 0;
     background: #0a140f;
@@ -1004,7 +1006,7 @@ footer ul li a:hover {
     border: 0.5px solid #707070;
 }
 .reservation .formulaire .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 .reservation .formulaire .form-group label {
     margin-bottom: 10px;
@@ -1028,6 +1030,8 @@ textarea {
     border-radius: 0px !important;
     height: 50px;
 }
+
+*/
 
 /* PARTENAIRES */
 
@@ -1775,7 +1779,9 @@ section.rdv {
     margin-top: 20px;
 }
 
-.programme .info-participation h3 {
+/*
+
+.info-participation h3 {
     color: #c6c6c6;
     font-family: "AveniNextBold";
     font-weight: 400;
@@ -1783,7 +1789,7 @@ section.rdv {
     font-size: clamp(16px, 2.5vw, 20px);
 }
 
-.programme .info-participation {
+.info-participation {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1793,12 +1799,12 @@ section.rdv {
     margin-top: 20px;
 }
 
-.programme .info-participation .info {
+.info-participation .info {
     display: block;
     margin-top: 10px;
 }
 
-.programme .info-participation a {
+.info-participation a {
     color: #b07f49;
     text-decoration: none;
     font-family: "AveniNext";
@@ -1807,18 +1813,20 @@ section.rdv {
     transition: all 0.3s ease;
 }
 
-.programme .info-participation a:hover {
+.info-participation a:hover {
     color: #c89a5c;
     text-decoration: underline;
 }
 
-.programme .info-participation ul li {
+.info-participation ul li {
     color: #c6c6c6;
     font-family: "AveniNext";
     font-size: clamp(14px, 2vw, 18px);
     list-style: none;
     line-height: 1.8;
 }
+
+*/
 
 /* Responsive Tablets */
 @media (max-width: 1024px) {
@@ -1872,17 +1880,21 @@ section.rdv {
         font-size: 15px;
     }
 
-    .programme .info-participation h3 {
+    /*
+
+    .info-participation h3 {
         font-size: 16px;
     }
 
-    .programme .info-participation {
+    .info-participation {
         font-size: 14px;
     }
 
-    .programme .info-participation a {
+    .info-participation a {
         font-size: 14px;
     }
+
+    */
 }
 
 /* Responsive Mobile Landscape */
@@ -1925,20 +1937,20 @@ section.rdv {
         line-height: 1.8em;
     }
 
-    .programme .info-participation {
+    .info-participation {
         font-size: 13px;
         margin-top: 15px;
     }
 
-    .programme .info-participation h3 {
+    .info-participation h3 {
         font-size: 14px;
     }
 
-    .programme .info-participation .info {
+    .info-participation .info {
         margin-top: 8px;
     }
 
-    .programme .info-participation a {
+    .info-participation a {
         font-size: 13px;
         margin-top: 15px;
     }
@@ -1967,15 +1979,15 @@ section.rdv {
         font-size: 13px;
     }
 
-    .programme .info-participation h3 {
+    .info-participation h3 {
         font-size: 13px;
     }
 
-    .programme .info-participation {
+    .info-participation {
         font-size: 12px;
     }
 
-    .programme .info-participation a {
+    .info-participation a {
         font-size: 12px;
     }
 }
@@ -3086,9 +3098,9 @@ section.rdv {
 }
 
 .formulaire .form .form-group input {
-    height: 45px;
+    height: 60px;
     background: #0E1913;
-    border: 0.35px solid #B07F49;
+    border: 0.35px solid #a07d56;
     color: #c6c6c6;
     font-family: "AveniNext";
     font-size: clamp(13px, 1.8vw, 16px);

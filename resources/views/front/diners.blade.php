@@ -1,6 +1,6 @@
 @extends('front.main', [
     'title' => 'MCN CGP',
-    'bannerTitle' => 'Le diners',
+    'bannerTitle' => 'Le diner',
     'bannerImage' => asset('assets/images/diners/banner.png'),
 ])
 
@@ -19,6 +19,7 @@
 </style>
 
 @section('content')
+    {{--
     <section class="about-diners">
 
         <div class="container about-diners-container">
@@ -46,6 +47,7 @@
 
         </div>
     </section>
+    --}}
 
     <section class="cuisiniers">
         <div class="container">

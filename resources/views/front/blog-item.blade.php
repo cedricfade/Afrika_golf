@@ -66,7 +66,7 @@
                     <button class="nav-link" id="v-pills-lifestyle-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-lifestyle" type="button" role="tab" aria-controls="v-pills-lifestyle"
                         aria-selected="false">Lifestyle</button>
-
+                  
                     <div class="follow">
                         <h4>Suivez-nous :</h4>
                         <div class="social">
@@ -168,5 +168,5 @@
         </div>
 
     </section>
-    @include('front.partials.footer')
+        @include('front.partials.footer')
 @endsection
