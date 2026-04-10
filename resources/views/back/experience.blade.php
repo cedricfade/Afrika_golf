@@ -102,6 +102,19 @@
                                             <input type="file" class="form-control" name="image" accept="image/*">
                                         </div>
                                         <div class="col-12">
+                                            <label class="form-label fw-semibold">Brochure PDF (optionnel)</label>
+                                            @if ($pack->brochure)
+                                                <div class="mb-2">
+                                                    <a href="{{ Storage::url($pack->brochure) }}" target="_blank"
+                                                        class="btn btn-sm btn-outline-secondary">
+                                                        <i class="fe fe-file-text me-1"></i> Voir la brochure actuelle
+                                                    </a>
+                                                </div>
+                                            @endif
+                                            <input type="file" class="form-control" name="brochure"
+                                                accept="application/pdf">
+                                        </div>
+                                        <div class="col-12">
                                             <button type="submit" class="btn btn-primary">
                                                 <i class="fe fe-save me-1"></i> Enregistrer les modifications
                                             </button>
@@ -145,6 +158,10 @@
                                 <div class="col-12">
                                     <label class="form-label fw-semibold">Image du pack</label>
                                     <input type="file" class="form-control" name="image" accept="image/*" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Brochure PDF (optionnel)</label>
+                                    <input type="file" class="form-control" name="brochure" accept="application/pdf">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary w-100">

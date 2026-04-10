@@ -13,17 +13,24 @@ class PackController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title'   => 'required|string|max:255',
-            'symbole' => 'required|string',
-            'space'   => 'required|string|max:255',
-            'price'   => 'required|numeric',
+            'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title'    => 'required|string|max:255',
+            'symbole'  => 'required|string',
+            'space'    => 'required|string|max:255',
+            'price'    => 'required|numeric',
+            'brochure' => 'nullable|file|mimes:pdf|max:10240',
         ]);
 
         $path = $request->file('image')->store('packs', 'public');
 
+        $brochurePath = null;
+        if ($request->hasFile('brochure')) {
+            $brochurePath = $request->file('brochure')->store('brochures', 'public');
+        }
+
         Pack::create([
             'image'      => $path,
+            'brochure'   => $brochurePath,
             'title'      => $request->input('title'),
             'symbole'    => $request->input('symbole'),
             'space'      => $request->input('space'),
@@ -39,11 +46,12 @@ class PackController extends Controller
     public function update(Request $request, Pack $pack)
     {
         $request->validate([
-            'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title'   => 'required|string|max:255',
-            'symbole' => 'required|string',
-            'space'   => 'required|string|max:255',
-            'price'   => 'required|numeric',
+            'image'    => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'title'    => 'required|string|max:255',
+            'symbole'  => 'required|string',
+            'space'    => 'required|string|max:255',
+            'price'    => 'required|numeric',
+            'brochure' => 'nullable|file|mimes:pdf|max:10240',
         ]);
 
         $data = [
@@ -60,6 +68,13 @@ class PackController extends Controller
             $data['image'] = $request->file('image')->store('packs', 'public');
         }
 
+        if ($request->hasFile('brochure')) {
+            if ($pack->brochure && Storage::disk('public')->exists($pack->brochure)) {
+                Storage::disk('public')->delete($pack->brochure);
+            }
+            $data['brochure'] = $request->file('brochure')->store('brochures', 'public');
+        }
+
         $pack->update($data);
 
         return redirect()->back()->with('success', 'Pack mis à jour avec succès.');
@@ -69,6 +84,10 @@ class PackController extends Controller
     {
         if ($pack->image && Storage::disk('public')->exists($pack->image)) {
             Storage::disk('public')->delete($pack->image);
+        }
+
+        if ($pack->brochure && Storage::disk('public')->exists($pack->brochure)) {
+            Storage::disk('public')->delete($pack->brochure);
         }
 
         $pack->update([

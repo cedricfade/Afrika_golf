@@ -31,11 +31,12 @@
             @forelse ($packs ?? [] as $pack)
                 <div class="col-xl-4">
                     @include((Auth::user() ? 'back' : 'front') . '.partials.pack-item', [
-                        'link' => route('formulaire'),
+                        'link' => route('formulaire.pack', ['pack' => $pack->id]),
                         'image' => Storage::url($pack->image),
                         'title' => $pack->title,
                         'subtitle' => $pack->space . ': ' . number_format($pack->price, 0, ',', ' ') . ' USD',
                         'content' => $pack->symbole,
+                        'brochure' => $pack->brochure ? Storage::url($pack->brochure) : null,
                     ])
                 </div>
             @empty

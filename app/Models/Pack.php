@@ -10,6 +10,7 @@ class Pack extends Model
 
     protected $fillable = [
         'image',
+        'brochure',
         'title',
         'symbole',
         'space',

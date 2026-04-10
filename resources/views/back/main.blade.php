@@ -182,6 +182,7 @@
             ['font', ['strikethrough']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['font-size', ['fontname', 'fontsize']],
+            ['color', ['color']],
             ['insert', ['link']],
             ['view', ['fullscreen', 'codeview']],
         ];

@@ -39,6 +39,7 @@ Route::group(['prefix' => 'accompagnon', 'as' => 'accompagnon.ajax.'], function 
 Route::get('/africa-art-of-golf-cup', [AfricatArtController::class, 'index'])->name('africa-art');
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');
 Route::get('/formulaire', [FormulaireController::class, 'index'])->name('formulaire');
+Route::get('/formulaire/{pack}', [FormulaireController::class, 'show'])->name('formulaire.pack');
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 Route::get('/partenaires', [PartenairesController::class, 'index'])->name('partenaires');
 Route::get('/rendez-vous-AAGC', [RdvController::class, 'index'])->name('rendez-vous');
