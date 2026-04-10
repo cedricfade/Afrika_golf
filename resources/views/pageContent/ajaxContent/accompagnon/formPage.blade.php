@@ -1,5 +1,6 @@
 <div class="container">
     <div class="form">
+        <div id="commandBallAlert" class="alert d-none mb-3" role="alert"></div>
         <form action="{{ route('form-command-ball') }}" method="POST" id="commandBallForm">
             @csrf
             <div class="row">
@@ -11,7 +12,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Prénom</label>
-                        <input type="text" class="form-control" name="prenoms" required>
+                        <input type="text" class="form-control" name="prenom" required>
                     </div>
                     <div class="form-group">
                         <label for="">Téléphone</label>
@@ -37,8 +38,7 @@
     </div>
 </div>
 
-
-@push('js2')
+@push('jsAccompagnon')
     @if (config('services.recaptcha.site_key'))
         <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}" async defer>
         </script>

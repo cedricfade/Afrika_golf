@@ -35,46 +35,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/plugins/jquery.min.js') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slide');
-            const next = document.querySelector('.next');
-            const prev = document.querySelector('.prev');
-            const dots = document.querySelectorAll('.dot');
-
-            let index = 0;
-
-            function showSlide(i) {
-                if (i >= slides.length) index = 0;
-                if (i < 0) index = slides.length - 1;
-
-                slider.style.transform = `translateX(-${index * 100}%)`;
-
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-            }
-
-            next.addEventListener('click', () => {
-                index++;
-                showSlide(index);
-            });
-
-            prev.addEventListener('click', () => {
-                index--;
-                showSlide(index);
-            });
-
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    index = parseInt(this.getAttribute('data-slide'));
-                    showSlide(index);
-                });
-            });
-
-        });
-    </script>
+    
     @stack('js')
 </body>
 

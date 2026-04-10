@@ -12,3 +12,7 @@
 @push('css')
     @stack('css2')
 @endpush
+
+@push('js')
+    @stack('jsSlide')
+@endpush
