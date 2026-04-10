@@ -132,10 +132,10 @@ Route::group([
     });
 
     Route::group(['prefix' => 'medias', 'as' => 'medias.'], function () {
-        Route::post('/', [MediaController::class, 'store'])->middleware('recaptcha')->name('medias.store');
+        Route::post('/', [MediaController::class, 'store'])->middleware('recaptcha')->name('store');
         Route::group(['prefix' => 'media-spaces', 'as' => 'media-spaces.'], function () {
-            Route::post('/', [MediasController::class, 'store'])->name('media-spaces.store');
-            Route::delete('/destroy/{mediaSpace}', [MediasController::class, 'destroy'])->name('media-spaces.destroy');
+            Route::post('/', [MediasController::class, 'store'])->name('store');
+            Route::delete('/destroy/{mediaSpace}', [MediasController::class, 'destroy'])->name('destroy');
         });
     });
 
