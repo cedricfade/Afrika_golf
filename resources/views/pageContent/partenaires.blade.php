@@ -28,9 +28,9 @@
             <div class="row">
                 @foreach ($partners ?? [] as $partner)
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                        <div class="card">
+                        <div class="card p-0">
                             <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->libelle }}"
-                                style="max-height:80px; object-fit:contain;">
+                                style="width:100%; object-fit:contain;">
                         </div>
                     </div>
                 @endforeach

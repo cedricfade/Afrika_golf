@@ -1,38 +1,113 @@
-@extends('back.main', ['title' => 'Paramètres'])
+<!DOCTYPE html>
+<html lang="fr">
 
-@push('css')
-    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatable.min.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> {{ config('app.name') }} | {{ $title ?? '' }} </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
     <style>
-        .nav-tabs .nav-link {
-            color: #495057;
-            font-weight: 600;
+        /* Boutons flottants améliorés */
+        .btnClick {
+            cursor: pointer;
+            position: fixed;
+            z-index: 1000;
+            bottom: 40px;
+            right: 40px;
+            min-width: 56px;
+            min-height: 56px;
+            border-radius: 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            color: #fff;
+            border: none;
+            outline: none;
         }
 
-        .nav-tabs .nav-link.active {
-            color: #000;
-            border-bottom: 3px solid #000;
+        .btnClick span {
+            display: none;
+            margin-left: 8px;
+            font-size: 1rem;
         }
 
-        .tab-badge {
-            font-size: .7rem;
-            vertical-align: middle;
+        .btnSetting {
+            background: #333;
+            right: 110px;
         }
 
-        .dataTables_wrapper .dataTables_filter input,
-        .dataTables_wrapper .dataTables_length select {
-            border: 1px solid #ced4da;
-            border-radius: .25rem;
-            padding: .25rem .5rem;
+        .btnEdit {
+            background: #34b7a7;
+            right: 40px;
         }
 
-        .btn-voir {
-            min-width: 34px;
+        @media (max-width: 768px) {
+
+            .btnClick,
+            #pageModal {
+                display: none !important;
+            }
+        }
+
+        #pageModal .modal-dialog {
+            position: fixed;
+            margin: auto;
+            width: 75%;
+            height: 100%;
+            transition: none;
+        }
+
+        #pageModal .modal-content {
+            height: 100%;
+            overflow-y: auto;
+            border-radius: 0px;
+        }
+
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 100%;
+                margin: 1.75rem auto;
+            }
         }
     </style>
-@endpush
+    <style>
+        .preloader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
 
-@section('content')
-    @include('back.partials.navbar')
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btnClick btnSetting" onclick="pageSetting()">
+        <i class="fe fe-settings"></i>
+    </button>
+    <button class="btnClick btnEdit" onclick="page()">
+        <i class="fe fe-edit"></i>
+    </button>
 
     <div class="container-fluid py-4 px-4">
 
@@ -54,14 +129,14 @@
                 <button class="nav-link active d-flex align-items-center gap-2" id="tab-invitations" data-bs-toggle="tab"
                     data-bs-target="#pane-invitations" type="button" role="tab">
                     <i class="fe fe-mail"></i> Invitations Web
-                    <span class="badge bg-dark tab-badge">{{ $invitations->count() }}</span>
+                    <span class="badge bg-dark tab-badge"></span>
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link d-flex align-items-center gap-2" id="tab-balls" data-bs-toggle="tab"
                     data-bs-target="#pane-balls" type="button" role="tab">
                     <i class="fe fe-shopping-cart"></i> Commandes de Balles
-                    <span class="badge bg-dark tab-badge">{{ $commandBalls->count() }}</span>
+                    <span class="badge bg-dark tab-badge"></span>
                 </button>
             </li>
             {{-- Boutons export alignés à droite --}}
@@ -80,7 +155,7 @@
         <div class="tab-content">
 
             {{-- ===== ONGLET 1 — INVITATIONS ===== --}}
-            <div class="tab-pane fade show active" id="pane-invitations" role="tabpanel">
+            <div class="tab-pane fade show active p-5" id="pane-invitations" role="tabpanel">
                 <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
                     <div class="card-body p-3">
                         <div class="table-responsive">
@@ -97,38 +172,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($invitations as $inv)
-                                        <tr>
-                                            <td>{{ $inv->id }}</td>
-                                            <td>{{ $inv->nomComplet }}</td>
-                                            <td><a href="mailto:{{ $inv->email }}">{{ $inv->email }}</a></td>
-                                            <td>{{ $inv->objet }}</td>
-                                            <td><span class="badge bg-secondary">{{ $inv->page }}</span></td>
-                                            <td>
-                                                @if ($inv->created_at)
-                                                    {{ \Carbon\Carbon::createFromTimestamp($inv->created_at)->format('d/m/Y H:i') }}
-                                                @else
-                                                    —
-                                                @endif
-                                            </td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn btn-sm btn-outline-dark btn-voir"
-                                                    data-bs-toggle="modal" data-bs-target="#modalInvitation"
-                                                    data-id="{{ $inv->id }}" data-nom="{{ $inv->nomComplet }}"
-                                                    data-email="{{ $inv->email }}" data-objet="{{ $inv->objet }}"
-                                                    data-page="{{ $inv->page }}" data-message="{{ $inv->message }}"
-                                                    data-date="{{ $inv->created_at ? \Carbon\Carbon::createFromTimestamp($inv->created_at)->format('d/m/Y H:i') : '—' }}">
-                                                    <i class="fe fe-eye"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="7" class="text-center text-muted py-4">
-                                                <i class="fe fe-inbox me-1"></i> Aucune invitation enregistrée.
-                                            </td>
-                                        </tr>
-                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -137,7 +180,7 @@
             </div>
 
             {{-- ===== ONGLET 2 — COMMANDES DE BALLES ===== --}}
-            <div class="tab-pane fade" id="pane-balls" role="tabpanel">
+            <div class="tab-pane fade p-5" id="pane-balls" role="tabpanel">
                 <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
                     <div class="card-body p-3">
                         <div class="table-responsive">
@@ -155,41 +198,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($commandBalls as $cmd)
-                                        <tr>
-                                            <td>{{ $cmd->id }}</td>
-                                            <td>{{ $cmd->nom }}</td>
-                                            <td>{{ $cmd->prenom }}</td>
-                                            <td><a href="tel:{{ $cmd->telephone }}">{{ $cmd->telephone }}</a></td>
-                                            <td><a href="mailto:{{ $cmd->email }}">{{ $cmd->email }}</a></td>
-                                            <td><span class="badge bg-success">{{ $cmd->nombre_de_balles }}</span></td>
-                                            <td>
-                                                @if ($cmd->created_at)
-                                                    {{ \Carbon\Carbon::createFromTimestamp($cmd->created_at)->format('d/m/Y H:i') }}
-                                                @else
-                                                    —
-                                                @endif
-                                            </td>
-                                            <td class="text-center">
-                                                <button type="button" class="btn btn-sm btn-outline-dark btn-voir"
-                                                    data-bs-toggle="modal" data-bs-target="#modalCommandBall"
-                                                    data-id="{{ $cmd->id }}" data-nom="{{ $cmd->nom }}"
-                                                    data-prenom="{{ $cmd->prenom }}"
-                                                    data-telephone="{{ $cmd->telephone }}"
-                                                    data-email="{{ $cmd->email }}"
-                                                    data-balles="{{ $cmd->nombre_de_balles }}"
-                                                    data-date="{{ $cmd->created_at ? \Carbon\Carbon::createFromTimestamp($cmd->created_at)->format('d/m/Y H:i') : '—' }}">
-                                                    <i class="fe fe-eye"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="8" class="text-center text-muted py-4">
-                                                <i class="fe fe-inbox me-1"></i> Aucune commande enregistrée.
-                                            </td>
-                                        </tr>
-                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -286,9 +294,10 @@
             </div>
         </div>
     </div>
-@endsection
 
-@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/plugins/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/cute-alert/cute-alert.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables/datatable.min.js') }}"></script>
     <script>
         $(document).ready(function() {
@@ -299,28 +308,12 @@
 
             // ── INVITATIONS ──────────────────────────────────────
             $('#tableInvitations').DataTable({
-                language: dtLang,
-                order: [
-                    [0, 'desc']
-                ],
-                pageLength: 10,
-                columnDefs: [{
-                    orderable: false,
-                    targets: [6]
-                }]
+                ajax:"{{ route('back.settings.ajax.invitations') }}",
             });
 
             // ── COMMANDES BALLES ─────────────────────────────────
             $('#tableCommandBalls').DataTable({
-                language: dtLang,
-                order: [
-                    [0, 'desc']
-                ],
-                pageLength: 10,
-                columnDefs: [{
-                    orderable: false,
-                    targets: [7]
-                }]
+                ajax:"{{ route('back.settings.ajax.command-balls') }}",
             });
 
             // ── SWITCH BOUTON EXPORT SELON ONGLET ACTIF ──────────
@@ -370,4 +363,5 @@
 
         });
     </script>
-@endpush
+
+</body>
