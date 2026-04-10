@@ -25,7 +25,9 @@ use App\Http\Controllers\Back\Items\MediasController;
 use App\Http\Controllers\Back\Items\ImageSlideController;
 use App\Http\Controllers\Back\Items\CookerController;
 use App\Http\Controllers\Back\Items\PostsController;
+use App\Http\Controllers\Back\ExportController;
 use App\Http\Controllers\Back\ReservationController;
+use App\Http\Controllers\Back\SettingController;
 use App\Http\Controllers\Back\TournoisController;
 
 
@@ -36,6 +38,19 @@ Route::group([
 ], function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function () {
+        Route::get('/', [SettingController::class, 'index'])->name('index');
+        Route::group(['prefix' => 'ajax', 'as' => 'ajax.'], function () {
+            Route::get('/invitations', [SettingController::class, 'ajaxWebInvitations'])->name('invitations');
+            Route::get('/command-balls', [SettingController::class, 'ajaxCommandBalls'])->name('command-balls');
+        });
+    });
+
+    Route::group(['prefix' => 'export', 'as' => 'export.'], function () {
+        Route::get('/invitations', [ExportController::class, 'invitations'])->name('invitations');
+        Route::get('/command-balls', [ExportController::class, 'commandBalls'])->name('command-balls');
+    });
+
     Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');
     Route::get('/tournois', [TournoisController::class, 'index'])->name('tournois');
     Route::get('/diners', [DinersController::class, 'index'])->name('diners');
@@ -117,10 +132,10 @@ Route::group([
     });
 
     Route::group(['prefix' => 'medias', 'as' => 'medias.'], function () {
-        Route::post('/', [MediaController::class, 'store'])->middleware('recaptcha')->name('medias.store');
+        Route::post('/', [MediaController::class, 'store'])->middleware('recaptcha')->name('store');
         Route::group(['prefix' => 'media-spaces', 'as' => 'media-spaces.'], function () {
-            Route::post('/', [MediasController::class, 'store'])->name('media-spaces.store');
-            Route::delete('/destroy/{mediaSpace}', [MediasController::class, 'destroy'])->name('media-spaces.destroy');
+            Route::post('/', [MediasController::class, 'store'])->name('store');
+            Route::delete('/destroy/{mediaSpace}', [MediasController::class, 'destroy'])->name('destroy');
         });
     });
 

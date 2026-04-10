@@ -107,12 +107,12 @@
                     <div class="mb-3">
                         <label for="date_vernissage" class="form-label fw-semibold">Date du vernissage</label>
                         <input type="text" class="form-control" id="date_vernissage" name="date_vernissage"
-                        value="{{ $dateVernissage }}">
+                            value="{{ $dateVernissage }}">
                     </div>
                     <div class="mb-3">
                         <label for="date_catalogue" class="form-label fw-semibold">Date du catalogue</label>
                         <input type="text" class="form-control" id="date_catalogue" name="date_catalogue"
-                        value="{{ $dateCatalogue }}">
+                            value="{{ $dateCatalogue }}">
                     </div>
                     <button type="submit" class="btn btn-primary w-100">
                         <i class="fe fe-save me-1"></i> Enregistrer
@@ -135,12 +135,7 @@
             $('.summernote-expo').summernote({
                 lang: 'fr-FR',
                 height: 180,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             });
             document.getElementById('banner_color_expo').addEventListener('input', function() {
                 document.getElementById('banner_color_text_expo').value = this.value;

@@ -165,12 +165,7 @@
             $('.summernote-mcn').summernote({
                 lang: 'fr-FR',
                 height: 180,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             });
         });
     </script>

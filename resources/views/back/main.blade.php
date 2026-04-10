@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {{ config('app.name') }} | {{ $title }} </title>
+    <title> {{ config('app.name') }} | {{ $title ?? '' }} </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
@@ -177,6 +177,16 @@
         });
     </script>
     <script>
+        var summernoteToolbarConfig = [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['font-size', ['fontname', 'fontsize']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'codeview']],
+        ];
+    </script>
+    <script>
         var route_home = "{{ route('home') }}";
         var route_actual = "{{ url()->current() }}";
         var font_size_menu = "1.1rem";
@@ -214,7 +224,7 @@
         }
 
         var pageSetting = function() {
-            // document.location.href = "{{ __('back.settings') }}";
+            document.location.href = "{{ route('back.settings.index') }}";
         }
     </script>
     @stack('js')

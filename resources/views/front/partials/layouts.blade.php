@@ -97,6 +97,4 @@
         <img src="{{ $bottomImage }}" class="d-block d-sm-none"
             style="display: block; width: 90%; margin: auto; margin-top: 75px;" alt="AFRICA GOLF CUP">
     @endif
-
-
 </div>

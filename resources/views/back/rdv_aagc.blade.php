@@ -186,23 +186,12 @@
             $('.summernote-rdvaagc').summernote({
                 lang: 'fr-FR',
                 height: 180,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             });
             $('.summernote-post').summernote({
                 lang: 'fr-FR',
                 height: 200,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             });
             $('#banner_color').on('input', function() {
                 $('#banner_color_hex').val($(this).val());

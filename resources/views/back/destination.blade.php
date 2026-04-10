@@ -122,13 +122,7 @@
             $('.summernote').summernote({
                 lang: 'fr-FR',
                 height: 200,
-                toolbar: [
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['insert', ['link']],
-                    ['view', ['fullscreen', 'codeview']],
-                ],
+                toolbar: summernoteToolbarConfig,
             });
         });
     </script>
