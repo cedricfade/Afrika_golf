@@ -10,11 +10,11 @@ class CommandBall extends Model
     use AutoCreateAttributes;
 
     protected $fillable = [
-        'name',
-        'first_name',
-        'phone',
+        'nom',
+        'prenom',
+        'telephone',
         'email',
-        'balls',
+        'nombre_de_balles',
     ];
 
     public $timestamps = false;
