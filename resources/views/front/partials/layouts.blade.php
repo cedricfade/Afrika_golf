@@ -53,22 +53,28 @@
     @endif
 
     @if (!empty($bannerContent))
-        <div
-            style="
-            width: 100%;
-            background-color: #bbb;
-            color: white;
-            text-align: center;
-            padding: 10px 0px;
-            font-family: 'AveniNext';
-            margin-top: 20px;">
-            {{ $bannerContent }}
+        <div class="d-none d-md-block">
+            <div
+                style="
+                    width: 100%;
+                    background-color: #bbb;
+                    color: white;
+                    text-align: center;
+                    padding: 10px 0px;
+                    font-family: 'AveniNext';
+                    margin-top: 20px;">
+                {{ $bannerContent }}
+            </div>
         </div>
     @endif
 
     @if (!empty($middleImage))
-        <img src="{{ $middleImage }}" style="display: block; width: 20%;margin: auto;margin-top: 50px;"
-            alt="AFRICA GOLF CUP">
+        {{-- Desktop (≥ 768px) --}}
+        <img src="{{ $middleImage }}" class="d-none d-md-block"
+            style="display: block; width: 20%;margin: auto;margin-top: 50px;" alt="AFRICA GOLF CUP">
+        {{-- Tablette (576px – 767px) --}}
+        <img src="{{ $middleImage }}" class="d-md-none d-block"
+            style="display: block; width: 65%;margin: auto;margin-top: 70px;" alt="AFRICA GOLF CUP">
     @endif
 
     @if (!empty($rightImage))
@@ -81,8 +87,15 @@
     @endif
 
     @if (!empty($bottomImage))
-        <img src="{{ $bottomImage }}" style="display: block; width: 25%;margin: auto;margin-top: 50px;"
-            alt="AFRICA GOLF CUP">
+        {{-- Desktop (≥ 768px) --}}
+        <img src="{{ $bottomImage }}" class="d-none d-md-block"
+            style="display: block; width: 25%; margin: auto; margin-top: 50px;" alt="AFRICA GOLF CUP">
+        {{-- Tablette (576px – 767px) --}}
+        <img src="{{ $bottomImage }}" class="d-none d-sm-block d-md-none"
+            style="display: block; width: 55%; margin: auto; margin-top: 50px;" alt="AFRICA GOLF CUP">
+        {{-- Mobile (< 576px) --}}
+        <img src="{{ $bottomImage }}" class="d-block d-sm-none"
+            style="display: block; width: 90%; margin: auto; margin-top: 75px;" alt="AFRICA GOLF CUP">
     @endif
 
 
