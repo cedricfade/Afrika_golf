@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row align-items-start text-center text-md-start">
-            
+
             <div class="col-12 col-md-6 col-xl-3 mb-4">
                 <img src="{{ asset('assets/images/Image_logo_MCN.png') }}" alt="" class="img-fluid footer-logo">
             </div>
@@ -18,9 +18,9 @@
             <div class="col-6 col-md-3 col-xl-3 mb-4">
                 <ul>
                     <span>@lang('CONNEXION')</span>
-                    <li><a href="">Partenaires</a></li>
-                    <li><a href="">Espace média</a></li>
-                    <li><a href="">Contacts</a></li>
+                    <li><a href="{{ route('partenaires') }}">Partenaires</a></li>
+                    <li><a href="{{ route('medias') }}">Espace média</a></li>
+                    <li><a href="{{ route('contact') }}">Contacts</a></li>
                 </ul>
             </div>
 

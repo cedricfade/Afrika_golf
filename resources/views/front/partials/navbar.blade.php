@@ -7,16 +7,24 @@
             <!-- Menu principal - visible sur desktop -->
             <ul class="navbar-nav nav-primary d-none d-lg-flex">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tournois') }}">@lang('LE TOURNOI')</a>
+                    <a class="nav-link" href="{{ route('tournois') }}">
+                        @lang('LE TOURNOIS')
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('diners') }}">@lang('LE DÎNER')</a>
+                    <a class="nav-link" href="{{ route('diners') }}">
+                        @lang('LE DÎNER')
+                    </a>
                 </li>
                 <li class="nav-item" style="border: 1px solid white; padding: 0px 5px">
-                    <a class="nav-link" href="{{ route('reservations') }}">@lang('RESERVER')</a>
+                    <a class="nav-link" href="{{ route('reservations') }}">
+                        @lang('RESERVER')
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: yellow" href="{{ route('accompagnon') }}">@lang('ACCOMPAGNONS LES AUTISTES ADULTES')</a>
+                    <a class="nav-link" style="color: yellow" href="{{ route('accompagnon') }}">
+                        @lang('ACCOMPAGNONS LES AUTISTES ADULTES')
+                    </a>
                 </li>
             </ul>
 
@@ -38,46 +46,73 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="{{ route('home') }}">@lang('accueil')</a>
+                            <a class="dropdown-item" href="{{ route('home') }}">
+                                @lang('accueil')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('mcn-cgp') }}">@lang('MCN')</a>
+                            <a class="dropdown-item" href="{{ route('mcn-cgp') }}">
+                                @lang('MCN')
+                            </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item " href="{{ route('mcn-cgp') }}">@lang('LE TOURNOIS')</a>
+                            <a class="dropdown-item " href="{{ route('mcn-cgp') }}">
+                                @lang('LE TOURNOIS')
+                            </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item" href="{{ route('tournois') }}">@lang('LE TOURNOIS')</a>
+                            <a class="dropdown-item" href="{{ route('tournois') }}">
+                                @lang('LE TOURNOIS')
+                            </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item" href="{{ route('diners') }}">@lang('LE DÎNER')</a>
+                            <a class="dropdown-item" href="{{ route('diners') }}">
+                                @lang('LE DÎNER')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('exposition') }}">@lang('EXPOSITION')</a>
+                            <a class="dropdown-item" href="{{ route('exposition') }}">
+                                @lang('EXPOSITION')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('rendez-vous') }}">@lang('LES RENDEZ-VOUS AAGC')</a>
+                            <a class="dropdown-item" href="{{ route('rendez-vous') }}">
+                                @lang('LES RENDEZ-VOUS AAGC')
+                            </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item" href="{{ route('accompagnon') }}">@lang('ACCOMPAGNON')</a>
+                            <a class="dropdown-item" href="{{ route('accompagnon') }}">
+                                @lang('ACCOMPAGNON')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('reservations') }}">@lang('RESERVATIONS')</a>
+                            <a class="dropdown-item" href="{{ route('reservations') }}">
+                                @lang('RESERVATIONS')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('experience') }}">@lang('PACKS')</a>
+                            <a class="dropdown-item" href="{{ route('experience') }}">
+                                @lang('PACKS')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('destination') }}">@lang('DESTINATION KIGALI')</a>
+                            <a class="dropdown-item" href="{{ route('destination') }}">
+                                @lang('DESTINATION KIGALI')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('partenaires') }}">@lang('PARTENAIRES')</a>
+                            <a class="dropdown-item" href="{{ route('partenaires') }}">
+                                @lang('PARTENAIRES')
+                            </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('medias') }}">@lang('ESPACE MEDIA')</a>
+                            <a class="dropdown-item" href="{{ route('medias') }}">
+                                @lang('ESPACE MEDIA')</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('contact') }}">@lang('CONTACT')</a>
+                            <a class="dropdown-item" href="{{ route('contact') }}">
+                                @lang('CONTACT')
+                            </a>
                         </li>
                     </ul>
                 </li>

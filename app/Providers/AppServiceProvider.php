@@ -2,21 +2,20 @@
 
 namespace App\Providers;
 
+use App\Events\CommandBallSubmitted;
+use App\Events\InvitationSubmitted;
+use App\Listeners\SendCommandBallConfirmation;
+use App\Listeners\SendInvitationConfirmation;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Enregistrez les services de l'application.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
         // Enregistrement des services dans le container d'applications
     }
-
     /**
      * Effectuez les actions nécessaires après l'enregistrement des services.
      *
@@ -26,7 +25,15 @@ class AppServiceProvider extends ServiceProvider
     {
         // Définition de la longueur maximale des colonnes de type string dans la base de données
         Schema::defaultStringLength(191);
+        
+        Event::listen(
+            InvitationSubmitted::class,
+            SendInvitationConfirmation::class,
+        );
 
-        // Autres configurations possibles
+        Event::listen(
+            CommandBallSubmitted::class,
+            SendCommandBallConfirmation::class,
+        );
     }
 }
