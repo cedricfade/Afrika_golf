@@ -81,7 +81,7 @@
     @endif
 
     @if (!empty($bottomImage))
-        <img src="{{ $bottomImage }}" style="display: block; width: 5%;margin: auto;margin-top: 50px;"
+        <img src="{{ $bottomImage }}" style="display: block; width: 25%;margin: auto;margin-top: 50px;"
             alt="AFRICA GOLF CUP">
     @endif
 
