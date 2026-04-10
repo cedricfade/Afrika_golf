@@ -26,27 +26,24 @@
 
 <section class="rdv">
     <div class="container text-center infos">
-        <h1>Nos rendez-vous</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Duis aute irure dolor
-            in reprehenderit in voluptate velit esse cillum dolore.</p>
+        <h1>{{ $sectionTitle ?? 'Nos rendez-vous' }}</h1>
+        <p>{!! $sectionText ?? '' !!}</p>
     </div>
     <br>
     <br>
     <div class="container">
         <div class="row">
 
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
-
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
-
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
-            @include('pageContent.partials.card-item')
+            @forelse ($posts ?? [] as $post)
+                @include('pageContent.partials.card-item', [
+                    'image' => $post->image ? Storage::url($post->image) : null,
+                    'title' => $post->title,
+                    'description' => $post->content,
+                    'date' => $post->formatted_date,
+                ])
+            @empty
+                <p class="text-muted fst-italic text-center w-100">Aucun rendez-vous publié pour l'instant.</p>
+            @endforelse
 
         </div>
 </section>

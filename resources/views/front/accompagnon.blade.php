@@ -9,3 +9,7 @@
 @push('css')
     @stack('css2')
 @endpush
+
+@push('js')
+    @stack('js2')
+@endpush

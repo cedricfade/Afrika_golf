@@ -21,27 +21,16 @@
 
 <section class="partenaires">
     <div class="container">
-        <h2>Partenaires distingués</h2>
-        <p>Nous sommes fiers de collaborer avec des institutions et des marques prestigieuses qui partagent notre
-            engagement envers l’excellence, l’innovation et la célébration du patrimoine africain.</p>
+        <h2>{{ $sectionTitle ?? 'Partenaires distingués' }}</h2>
+        {!! $sectionIntro ??
+            '<p>Nous sommes fiers de collaborer avec des institutions et des marques prestigieuses qui partagent notre engagement envers l\'excellence, l\'innovation et la célébration du patrimoine africain.</p>' !!}
         <div class="clients">
             <div class="row">
-                @php
-                    $partners = [
-                        (object) ['name' => 'Logo1'],
-                        (object) ['name' => 'Logo2'],
-                        (object) ['name' => 'Logo3'],
-                        (object) ['name' => 'Logo4'],
-                        (object) ['name' => 'Logo5'],
-                        (object) ['name' => 'Logo6'],
-                        (object) ['name' => 'Logo7'],
-                        (object) ['name' => 'Logo8'],
-                    ];
-                @endphp
-                @foreach ($partners as $partner)
+                @foreach ($partners ?? [] as $partner)
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
                         <div class="card">
-                            <span>{{ $partner->name }}</span>
+                            <img src="{{ Storage::url($partner->image) }}" alt="{{ $partner->libelle }}"
+                                style="max-height:80px; object-fit:contain;">
                         </div>
                     </div>
                 @endforeach

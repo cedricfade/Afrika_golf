@@ -61,11 +61,6 @@
                             </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item" href="{{ route('back.tournois') }}">
-                                @lang('LE TOURNOIS')
-                            </a>
-                        </li>
-                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
                             <a class="dropdown-item" href="{{ route('back.diners') }}">
                                 @lang('LE DÎNER')
                             </a>
@@ -85,7 +80,7 @@
                                 @lang('ACCOMPAGNON')
                             </a>
                         </li>
-                        <li>
+                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
                             <a class="dropdown-item" href="{{ route('back.reservations') }}">
                                 @lang('RESERVATIONS')
                             </a>
@@ -107,7 +102,8 @@
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('back.medias') }}">
-                                @lang('ESPACE MEDIA')</a>
+                                @lang('ESPACE MEDIA')
+                            </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('back.contact') }}">

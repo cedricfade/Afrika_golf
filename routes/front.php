@@ -19,6 +19,7 @@ use App\Http\Controllers\Front\PatrimoineController;
 use App\Http\Controllers\Front\RdvController;
 use App\Http\Controllers\Front\ReservationController;
 use App\Http\Controllers\Front\TournoisController;
+use App\Http\Controllers\Front\Form\ReservationController as FormReservationController;
 
 Route::get('/', [HomeController::class, 'Home'])->name('home');
 Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');
@@ -28,7 +29,13 @@ Route::get('/patrimoine-culturel', [PatrimoineController::class, 'index'])->name
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/exposition', [ExpositionController::class, 'index'])->name('exposition');
 Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
+
 Route::get('/accompagnon', [AccompagnonController::class, 'index'])->name('accompagnon');
+Route::group(['prefix' => 'accompagnon', 'as' => 'accompagnon.ajax.'], function () {
+    Route::get('/content', [AccompagnonController::class, 'ajaxContent'])->name('content');
+    Route::get('/formPage', [AccompagnonController::class, 'ajaxFormPage'])->name('formPage');
+});
+
 Route::get('/africa-art-of-golf-cup', [AfricatArtController::class, 'index'])->name('africa-art');
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');
 Route::get('/formulaire', [FormulaireController::class, 'index'])->name('formulaire');
@@ -37,3 +44,7 @@ Route::get('/partenaires', [PartenairesController::class, 'index'])->name('parte
 Route::get('/rendez-vous-AAGC', [RdvController::class, 'index'])->name('rendez-vous');
 Route::get('/medias', [MediaController::class, 'index'])->name('medias');
 Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact');
+
+
+Route::post('/form/reservation', [FormReservationController::class, 'store'])->name('form-reservation');
+Route::post('/form/command-ball', [\App\Http\Controllers\Front\Form\CommandBallController::class, 'store'])->name('form-command-ball');

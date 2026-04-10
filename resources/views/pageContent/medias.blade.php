@@ -35,84 +35,39 @@
             <div class="col-xl-6 presse mb-5">
                 <h2>Sortie de presse</h2>
                 <div class="separateur"></div>
-                @php
-
-                    $pressReleases = [
-                        (object) [
-                            'title' => 'AAGC 2026 Official Launch Press Release',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'AAGC 2026 Official Launch Press Release',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'AAGC 2026 Official Launch Press Release',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                    ];
-                @endphp
-                @foreach ($pressReleases as $pressRelease)
+                @forelse ($pressReleases ?? [] as $pressRelease)
                     <div class='card'>
                         <img src="{{ asset('assets/images/medias/doc.svg') }}" alt="" style=""
                             class="doc">
                         <div class="text">
                             <p class="ff-mash fs-lg text-white">{{ $pressRelease->title }}</p>
-                            <p>{{ $pressRelease->date }}</p>
+                            <p>{{ $pressRelease->formatted_date }}</p>
                         </div>
-                        <a href="{{ $pressRelease->file_url }}">
+                        <a href="{{ Storage::url($pressRelease->file) }}">
                             <img src="{{ asset('assets/images/medias/arrow.svg') }}" alt="" class="download">
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <p class="text-muted fst-italic mb-3">Aucune sortie de presse pour l'instant.</p>
+                @endforelse
             </div>
             <div class="col-xl-6 kit-media mb-5">
                 <h2>Kit média</h2>
                 <div class="separateur"></div>
-                @php
-                    $mediaKits = [
-                        (object) [
-                            'title' => 'Official Brand Guidelines',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'Official Brand Guidelines',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'Official Brand Guidelines',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'Official Brand Guidelines',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                        (object) [
-                            'title' => 'Official Brand Guidelines',
-                            'date' => '20 février 2026',
-                            'file_url' => '#',
-                        ],
-                    ];
-                @endphp
-                @foreach ($mediaKits as $mediaKit)
+                @forelse ($mediaKits ?? [] as $mediaKit)
                     <div class='card'>
                         <img src="{{ asset('assets/images/medias/doc.svg') }}" alt="" class="doc">
                         <div class="text">
                             <p class="ff-mash fs-lg text-white">{{ $mediaKit->title }}</p>
-                            <p>{{ $mediaKit->date }}</p>
+                            <p>{{ $mediaKit->formatted_date }}</p>
                         </div>
-                        <a href="{{ $mediaKit->file_url }}">
+                        <a href="{{ Storage::url($mediaKit->file) }}">
                             <img src="{{ asset('assets/images/medias/arrow.svg') }}" alt="" class="download">
                         </a>
                     </div>
-                @endforeach
+                @empty
+                    <p class="text-muted fst-italic mb-3">Aucun kit média pour l'instant.</p>
+                @endforelse
             </div>
         </div>
     </div>

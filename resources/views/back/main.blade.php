@@ -129,6 +129,10 @@
         </div>
     </div>
 
+    @if (config('services.recaptcha.site_key'))
+        <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}" async defer>
+        </script>
+    @endif
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/plugins/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/cute-alert/cute-alert.js') }}"></script>
@@ -214,6 +218,60 @@
         }
     </script>
     @stack('js')
+
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                cuteAlert({
+                    type: 'success',
+                    title: 'Succès',
+                    message: '{{ addslashes(session('success')) }}',
+                    btnText: 'OK'
+                });
+            });
+        </script>
+    @endif
+
+    @if ($errors->has('recaptcha'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                cuteAlert({
+                    type: 'error',
+                    title: 'Vérification échouée',
+                    message: '{{ addslashes($errors->first('recaptcha')) }}',
+                    btnText: 'Réessayer'
+                });
+            });
+        </script>
+    @endif
+
+    @if (config('services.recaptcha.site_key'))
+        <script>
+            // reCAPTCHA v3 — intercepte automatiquement tous les formulaires POST
+            grecaptcha.ready(function() {
+                document.querySelectorAll('form[method="POST"]').forEach(function(form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        var submittedForm = this;
+                        grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {
+                                action: 'submit'
+                            })
+                            .then(function(token) {
+                                var existing = submittedForm.querySelector(
+                                    'input[name="g-recaptcha-response"]');
+                                if (existing) existing.remove();
+                                var input = document.createElement('input');
+                                input.type = 'hidden';
+                                input.name = 'g-recaptcha-response';
+                                input.value = token;
+                                submittedForm.appendChild(input);
+                                submittedForm.submit();
+                            });
+                    });
+                });
+            });
+        </script>
+    @endif
 </body>
 
 </html>

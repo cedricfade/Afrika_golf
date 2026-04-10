@@ -29,9 +29,12 @@
 
 <body>
 
-    @yield('content')
+    <div id="pageContent">
+        @yield('content')
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/plugins/jquery.min.js') }}"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
 

@@ -28,56 +28,19 @@
     <div class="container-fluid ">
         <h1>REJOIGNEZ L’EXPERIENCE</h1>
         <div class="row">
-            <div class="col-xl-4">
-                @include('front.partials.pack-item', [
-                    'link' => route('formulaire'),
-                    'image' => asset('assets/images/packs/card1.png'),
-                    'title' => 'IMIGONGO',
-                    'subtitle' => '<h2>PARTENAIRE elégance: <br> 7.500 USD</h2>',
-                    'content' =>
-                        '<b>Symbole:</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto voluptates soluta repudiandae obcaecati quaerat cupiditate </p><b>Valeur:</b><p>Créativité, patrimoine, esthétique.</p>',
-                ])
-            </div>
-            <div class="col-xl-4">
-                @include('front.partials.pack-item', [
-                    'link' => route('formulaire'),
-                    'image' => asset('assets/images/packs/card2.png'),
-                    'title' => 'Gorille des montagnes',
-                    'subtitle' => 'PARTENAIRE MAJESTUEUX: 15.000 USD',
-                    'content' =>
-                        '<b>Symbole:</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto voluptates soluta repudiandae obcaecati quaerat cupiditate </p><b>Valeur:</b><p>Créativité, patrimoine, esthétique.</p>',
-                ])
-            </div>
-            <div class="col-xl-4">
-                @include('front.partials.pack-item', [
-                    'link' => route('formulaire'),
-                    'image' => asset('assets/images/packs/card3.png'),
-                    'title' => 'KARISMBI',
-                    'subtitle' => 'PARTENAIRE suprême: 30.000 USD',
-                    'content' =>
-                        '<b>Symbole:</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto voluptates soluta repudiandae obcaecati quaerat cupiditate </p><b>Valeur:</b><p>Créativité, patrimoine, esthétique.</p>',
-                ])
-            </div>
-            <div class="col-xl-4">
-                @include('front.partials.pack-item', [
-                    'link' => route('formulaire'),
-                    'image' => asset('assets/images/packs/card4.png'),
-                    'title' => 'IMIGONGO',
-                    'subtitle' => '<h2>PARTENAIRE elégance: <br> 7.500 USD</h2>',
-                    'content' =>
-                        '<b>Symbole:</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto voluptates soluta repudiandae obcaecati quaerat cupiditate </p><b>Valeur:</b><p>Créativité, patrimoine, esthétique.</p>',
-                ])
-            </div>
-            <div class="col-xl-4">
-                @include('front.partials.pack-item', [
-                    'link' => route('formulaire'),
-                    'image' => asset('assets/images/packs/card5.png'),
-                    'title' => 'IMIGONGO',
-                    'subtitle' => '<h2>PARTENAIRE elégance: <br> 7.500 USD</h2>',
-                    'content' =>
-                        '<b>Symbole:</b><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto voluptates soluta repudiandae obcaecati quaerat cupiditate </p><b>Valeur:</b><p>Créativité, patrimoine, esthétique.</p>',
-                ])
-            </div>
+            @forelse ($packs ?? [] as $pack)
+                <div class="col-xl-4">
+                    @include((Auth::user() ? 'back' : 'front') . '.partials.pack-item', [
+                        'link' => route('formulaire'),
+                        'image' => Storage::url($pack->image),
+                        'title' => $pack->title,
+                        'subtitle' => $pack->space . ': ' . number_format($pack->price, 0, ',', ' ') . ' USD',
+                        'content' => $pack->symbole,
+                    ])
+                </div>
+            @empty
+                <p class="text-muted fst-italic">Aucun pack disponible pour le moment.</p>
+            @endforelse
         </div>
     </div>
 </section>

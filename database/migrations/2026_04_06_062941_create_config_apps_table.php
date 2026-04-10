@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->string('value');
+            $table->string('page')->nullable();
+            $table->enum('type', ['image', 'string'])->default('string');
+
+            $table->integer('created_at')->nullable();
+            $table->integer('created_by')->nullable();
+            $table->boolean('deleted')->default(false);
+            $table->integer('deleted_at')->nullable();
+            $table->integer('deleted_by')->nullable();
         });
     }
 

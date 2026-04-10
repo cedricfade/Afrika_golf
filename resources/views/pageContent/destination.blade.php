@@ -46,6 +46,6 @@
 @endpush
 
 
-@include((Auth::user() ? 'back' : 'front') . '.galerie')
+@include('pageContent.galerie', ['galleryImages' => $galleryImages ?? collect()])
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')

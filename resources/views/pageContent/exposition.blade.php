@@ -111,4 +111,6 @@
     </div>
 </section>
 
+@include('front.galerie')
+
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')

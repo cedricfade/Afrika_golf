@@ -80,7 +80,7 @@
     </div>
 </section>
 
-@include((Auth::user() ? 'back' : 'front') . '.galerie')
+@include('pageContent.galerie')
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')
 
