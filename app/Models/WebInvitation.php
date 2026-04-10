@@ -10,7 +10,7 @@ class WebInvitation extends Model
     use AutoCreateAttributes;
 
     protected $fillable = [
-        'nom_complet',
+        'nomComplet',
         'email',
         'objet',
         'message',

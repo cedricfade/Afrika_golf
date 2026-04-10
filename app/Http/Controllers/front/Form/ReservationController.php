@@ -23,11 +23,11 @@ class ReservationController extends Controller
         ]);
 
         $invitation = WebInvitation::create([
-            'nom_complet' => $validated['nomComplet'],
-            'email'       => $validated['email'],
-            'objet'       => $validated['objet'],
-            'message'     => $validated['message'],
-            'page'        => $validated['page'] ?? null,
+            'nomComplet' => $validated['nomComplet'],
+            'email'      => $validated['email'],
+            'objet'      => $validated['objet'],
+            'message'    => $validated['message'],
+            'page'       => $validated['page'] ?? request()->url(),
         ]);
 
         InvitationSubmitted::dispatch($invitation);
