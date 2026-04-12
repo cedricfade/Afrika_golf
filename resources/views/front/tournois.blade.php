@@ -1,8 +1,8 @@
-@extends('front.main', ['title' => 'Tournois'])
+@extends('front.main', ['title' => 'Tournoi'])
 
 @section('content')
     @include('pageContent.tournois', [
-        'bannerTitle' => 'Le tournois',
+        'bannerTitle' => 'Le tournoi',
         'bannerImage' => asset('assets/images/tournois/banner.png'),
     ])
 @endsection
