@@ -26,25 +26,17 @@
             <div class="col-xl-7">
                 <span>ENTRER EN CONTACT</span>
                 <br><br>
-                <h2 class="col-xl-8">Demander une Invitation</h2>
-                <br>
-                <p class="col-xl-9">
-                    L’Africa Art Golf Cup est un événement exclusif, sur invitation uniquement. Veuillez contacter notre
-                    service de conciergerie pour toute question relative à la participation, aux partenariats ou à
-                    l’accréditation presse.
-                </p>
-                <hr style=" width:80%; height:2px; background:#707070; border:none;">
                 <div class="row">
-                    <div class="col">
-                        @include('front.partials.info-reservation')
-                    </div>
-                    <div class="col">
+                    <div class="col-lg-12">
                         @include('front.partials.info-participation')
+                    </div>
+                    <div class="col-lg-12">
+                        @include('front.partials.info-reservation')
                     </div>
                 </div>
             </div>
             <div class="col-xl-5">
-                @include('front.partials.form-reservation')
+                @include('pageContent.partials.form-reservation')
             </div>
         </div>
 </section>

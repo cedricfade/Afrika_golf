@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\ConfigApp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\LogoPartner;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('back.home');
+        return view('back.home', [
+            'partners' => LogoPartner::where('deleted', false)->get(),
+        ]);
     }
 
     public function store(Request $request)

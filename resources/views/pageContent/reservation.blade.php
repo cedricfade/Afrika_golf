@@ -51,29 +51,15 @@
     style="padding: 50px 0;background: {{ $bannerColor ?? '#0a140f' }};border-top: 2px solid #57432d;">
     <div class="container-fluid" style="margin: 0 auto;width: 87%;">
         <div class="row">
-            <div class="col-xl-5">
-                <span class="text-color ff-avenir">RÉSERVATION</span>
-                <br><br>
-                <h2 class="col-xl-6 text-grey ff-mash">Réserver maintenant</h2>
-                <br>
-                <p class="col-xl-7 text-grey ff-avenir" style="font-size: 20px; line-height: 1.8;">
-                    L’Africa Art Golf Cup est un événement exclusif, sur invitation uniquement. Veuillez contacter notre
-                    service de conciergerie pour toute question relative à la participation, aux partenariats ou à
-                    l’accréditation presse.
-                </p>
-                <hr style=" width:80%; height:2px; background:#707070; border:none;">
-                <div class="row g-3">
-                    <div class="col-12 col-sm-6">
-                        @include('front.partials.info-reservation')
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        @include('front.partials.info-participation')
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                @include('front.partials.info-participation')
             </div>
-            <div class="col-xl-7">
-                @include('front.partials.form-reservation')
+            <div class="col-lg-6">
+                @include('front.partials.info-reservation')
             </div>
+        </div>
+        <div class="col-lg-12">
+            @include('front.partials.form-reservation')
         </div>
     </div>
 </section>

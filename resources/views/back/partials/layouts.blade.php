@@ -4,7 +4,7 @@
     @elseif(isset($bannerColor))
           style='background-color: {{ $bannerColor }}' @endif>
 
-    @include('back.partials.navbar')
+    @include('front.partials.navbar')
 
     @if (!empty($bannerTitle))
         <div class="container banner-titre">
@@ -53,22 +53,49 @@
     @endif
 
     @if (!empty($bannerContent))
-        <div
-            style="
-            width: 100%;
-            background-color: #bbb;
-            color: white;
-            text-align: center;
-            padding: 10px 0px;
-            font-family: 'AveniNext';
-            margin-top: 20px;">
-            {{ $bannerContent }}
+        <div class="d-none d-md-block"
+            style="width:100%; overflow:hidden; background-color:#bbb; padding:5px 0; margin-top:20px;">
+            <div class="banner-ticker">
+                <span>{{ $bannerContent }} <a href="{{ route('accompagnon') }}#formPage">CLIQUEZ
+                        ICI</a></span>
+                <span aria-hidden="true">{{ $bannerContent }}</span>
+            </div>
         </div>
+        <style>
+            .banner-ticker {
+                display: flex;
+                white-space: nowrap;
+                animation: bannerScroll 10s linear infinite;
+                color: white;
+                font-family: 'AveniNext';
+                text-align: center;
+            }
+
+            .banner-ticker span {
+                flex-shrink: 0;
+                min-width: 100%;
+                padding: 0 2rem;
+            }
+
+            @keyframes bannerScroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        </style>
     @endif
 
     @if (!empty($middleImage))
-        <img src="{{ $middleImage }}" style="display: block; width: 20%;margin: auto;margin-top: 50px;"
-            alt="AFRICA GOLF CUP">
+        {{-- Desktop (≥ 768px) --}}
+        <img src="{{ $middleImage }}" class="d-none d-md-block"
+            style="display: block; width: 20%;margin: auto;margin-top: 50px;" alt="AFRICA GOLF CUP">
+        {{-- Tablette (576px – 767px) --}}
+        <img src="{{ $middleImage }}" class="d-md-none d-block"
+            style="display: block; width: 65%;margin: auto;margin-top: 70px;" alt="AFRICA GOLF CUP">
     @endif
 
     @if (!empty($rightImage))
@@ -81,9 +108,20 @@
     @endif
 
     @if (!empty($bottomImage))
-        <img src="{{ $bottomImage }}" style="display: block; width: 5%;margin: auto;margin-top: 50px;"
-            alt="AFRICA GOLF CUP">
+        {{-- Desktop (≥ 768px) --}}
+        <a href="{{ route('tournois') }}">
+            <img src="{{ $bottomImage }}" class="d-none d-md-block"
+                style="display: block; width: 25%; margin: auto; margin-top: 50px;" alt="AFRICA GOLF CUP">
+        </a>
+        {{-- Tablette (576px – 767px) --}}
+        <a href="{{ route('tournois') }}">
+            <img src="{{ $bottomImage }}" class="d-none d-sm-block d-md-none"
+                style="display: block; width: 55%; margin: auto; margin-top: 50px;" alt="AFRICA GOLF CUP">
+        </a>
+        {{-- Mobile (< 576px) --}}
+        <a href="{{ route('tournois') }}">
+            <img src="{{ $bottomImage }}" class="d-block d-sm-none"
+                style="display: block; width: 90%; margin: auto; margin-top: 75px;" alt="AFRICA GOLF CUP">
+        </a>
     @endif
-
-
 </div>

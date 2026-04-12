@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-7">
-                @include('pageContent.partials.enter-contacts')
+                @include('pageContent.partials.enter-contacts', compact('partners'))
             </div>
             <div class="col-xl-5">
                 @include('pageContent.partials.form-reservation')
