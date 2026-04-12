@@ -43,12 +43,14 @@ Route::group([
         Route::group(['prefix' => 'ajax', 'as' => 'ajax.'], function () {
             Route::get('/invitations', [SettingController::class, 'ajaxWebInvitations'])->name('invitations');
             Route::get('/command-balls', [SettingController::class, 'ajaxCommandBalls'])->name('command-balls');
+            Route::get('/invites', [SettingController::class, 'ajaxInvites'])->name('invites');
         });
     });
 
     Route::group(['prefix' => 'export', 'as' => 'export.'], function () {
         Route::get('/invitations', [ExportController::class, 'invitations'])->name('invitations');
         Route::get('/command-balls', [ExportController::class, 'commandBalls'])->name('command-balls');
+        Route::get('/invites', [ExportController::class, 'invites'])->name('invites');
     });
 
     Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');

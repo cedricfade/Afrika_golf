@@ -20,6 +20,29 @@
                 height: 15vh !important;
             }
         }
+
+        /* ── Responsive section reservation ── */
+        @media (max-width: 767px) {
+            .reservation {
+                padding: 30px 0 !important;
+            }
+
+            .reservation .container-fluid {
+                width: 95% !important;
+            }
+
+            .reservation h2 {
+                font-size: 1.6rem;
+            }
+
+            .reservation p {
+                font-size: 16px !important;
+            }
+
+            .reservation hr {
+                width: 100% !important;
+            }
+        }
     </style>
 @endpush
 
@@ -28,7 +51,7 @@
     style="padding: 50px 0;background: {{ $bannerColor ?? '#0a140f' }};border-top: 2px solid #57432d;">
     <div class="container-fluid" style="margin: 0 auto;width: 87%;">
         <div class="row">
-            <div class="col-xl-7">
+            <div class="col-xl-5">
                 <span class="text-color ff-avenir">RÉSERVATION</span>
                 <br><br>
                 <h2 class="col-xl-6 text-grey ff-mash">Réserver maintenant</h2>
@@ -39,16 +62,16 @@
                     l’accréditation presse.
                 </p>
                 <hr style=" width:80%; height:2px; background:#707070; border:none;">
-                <div class="row">
-                    <div class="col">
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6">
                         @include('front.partials.info-reservation')
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-sm-6">
                         @include('front.partials.info-participation')
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-7">
                 @include('front.partials.form-reservation')
             </div>
         </div>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatable.min.css') }}">
     <style>
         /* Boutons flottants améliorés */
         .btnClick {
@@ -109,7 +110,7 @@
         <i class="fe fe-edit"></i>
     </button>
 
-    <div class="container-fluid py-4 px-4">
+    <div class="container-fluid p-5">
 
         {{-- En-tête --}}
         <div class="d-flex align-items-center gap-3 mb-4">
@@ -126,8 +127,8 @@
         {{-- ===== ONGLETS ===== --}}
         <ul class="nav nav-tabs mb-0 border-bottom" id="settingTabs" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active d-flex align-items-center gap-2" id="tab-invitations" data-bs-toggle="tab"
-                    data-bs-target="#pane-invitations" type="button" role="tab">
+                <button class="nav-link active d-flex align-items-center gap-2" id="tab-invitations"
+                    data-bs-toggle="tab" data-bs-target="#pane-invitations" type="button" role="tab">
                     <i class="fe fe-mail"></i> Invitations Web
                     <span class="badge bg-dark tab-badge"></span>
                 </button>
@@ -139,67 +140,123 @@
                     <span class="badge bg-dark tab-badge"></span>
                 </button>
             </li>
-            {{-- Boutons export alignés à droite --}}
-            <li class="ms-auto d-flex align-items-center gap-2 pe-1">
-                <a href="{{ route('back.export.invitations') }}" id="btn-export-invitations"
-                    class="btn btn-sm btn-success d-flex align-items-center gap-1">
-                    <i class="fe fe-download"></i> Exporter Invitations
-                </a>
-                <a href="{{ route('back.export.command-balls') }}" id="btn-export-balls"
-                    class="btn btn-sm btn-success d-flex align-items-center gap-1 d-none">
-                    <i class="fe fe-download"></i> Exporter Commandes
-                </a>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link d-flex align-items-center gap-2" id="tab-invites" data-bs-toggle="tab"
+                    data-bs-target="#pane-invites" type="button" role="tab">
+                    <i class="fe fe-flag"></i> Inscriptions Tournoi
+                    <span class="badge bg-dark tab-badge"></span>
+                </button>
             </li>
         </ul>
 
-        <div class="tab-content">
+        <div class="tab-content bg-light border-0 shadow-sm rounded-0 rounded-bottom p-0" id="settingTabsContent">
 
             {{-- ===== ONGLET 1 — INVITATIONS ===== --}}
-            <div class="tab-pane fade show active p-5" id="pane-invitations" role="tabpanel">
-                <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
-                    <div class="card-body p-3">
-                        <div class="table-responsive">
-                            <table id="tableInvitations" class="table table-hover table-striped align-middle w-100">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nom complet</th>
-                                        <th>Email</th>
-                                        <th>Objet</th>
-                                        <th>Page</th>
-                                        <th>Date</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+            <div class="tab-pane fade show active px-3 py-2" id="pane-invitations" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-2 mt-3">
+                        <a href="{{ route('back.export.invitations') }}" id="btn-export-invitations"
+                            class="btn btn-sm btn-outline-primary">
+                            <i class="fe fe-download"></i> Exporter
+                        </a>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
+                            <div class="card-body p-3">
+                                <div class="table-responsive">
+                                    <table id="tableInvitations"
+                                        class="table table-hover table-striped align-middle w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nom complet</th>
+                                                <th>Email</th>
+                                                <th>Objet</th>
+                                                <th>Page</th>
+                                                <th>Date</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- ===== ONGLET 2 — COMMANDES DE BALLES ===== --}}
-            <div class="tab-pane fade p-5" id="pane-balls" role="tabpanel">
-                <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
-                    <div class="card-body p-3">
-                        <div class="table-responsive">
-                            <table id="tableCommandBalls" class="table table-hover table-striped align-middle w-100">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nom</th>
-                                        <th>Prénom</th>
-                                        <th>Téléphone</th>
-                                        <th>Email</th>
-                                        <th>Nb balles</th>
-                                        <th>Date</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+            <div class="tab-pane fade p-4" id="pane-balls" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-2 mt-3">
+                        <a href="{{ route('back.export.command-balls') }}" id="btn-export-balls"
+                            class="btn btn-sm btn-outline-primary">
+                            <i class="fe fe-download"></i> Exporter
+                        </a>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
+                            <div class="card-body p-3">
+                                <div class="table-responsive">
+                                    <table id="tableCommandBalls"
+                                        class="table table-hover table-striped align-middle w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nom</th>
+                                                <th>Prénom</th>
+                                                <th>Téléphone</th>
+                                                <th>Email</th>
+                                                <th>Nb balles</th>
+                                                <th>Date</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ===== ONGLET 3 — INSCRIPTIONS TOURNOI ===== --}}
+            <div class="tab-pane fade px-3 py-2" id="pane-invites" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-2 mt-3">
+                        <a href="{{ route('back.export.invites') }}" id="btn-export-invites"
+                            class="btn btn-sm btn-outline-primary">
+                            <i class="fe fe-download"></i> Exporter
+                        </a>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
+                            <div class="card-body p-3">
+                                <div class="table-responsive">
+                                    <table id="tableInvites"
+                                        class="table table-hover table-striped align-middle w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Groupe</th>
+                                                <th>Type</th>
+                                                <th>Nom complet</th>
+                                                <th>Email</th>
+                                                <th>Polo</th>
+                                                <th>Session</th>
+                                                <th>Date</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,13 +268,12 @@
     {{-- ===== MODAL DÉTAIL INVITATION ===== --}}
     <div class="modal fade" id="modalInvitation" tabindex="-1" aria-labelledby="modalInvitationLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered" style="width:75%;">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalInvitationLabel">
                         <i class="fe fe-mail me-2"></i>Détail de l'invitation
                     </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <dl class="row mb-0">
@@ -256,9 +312,9 @@
     {{-- ===== MODAL DÉTAIL COMMANDE BALLE ===== --}}
     <div class="modal fade" id="modalCommandBall" tabindex="-1" aria-labelledby="modalCommandBallLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-dialog modal-md modal-dialog-centered" style="width:75%;">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalCommandBallLabel">
                         <i class="fe fe-shopping-cart me-2"></i>Détail de la commande
                     </h5>
@@ -295,6 +351,65 @@
         </div>
     </div>
 
+    {{-- ===== MODAL DÉTAIL INSCRIPTION TOURNOI ===== --}}
+    <div class="modal fade" id="modalInvite" tabindex="-1" aria-labelledby="modalInviteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width:75%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalInviteLabel">
+                        <i class="fe fe-flag me-2"></i>Détail de l'inscription — Tournoi de Golf
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">ID</dt>
+                        <dd class="col-sm-8" id="inv2-id">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Groupe ID</dt>
+                        <dd class="col-sm-8"><code id="inv2-groupe">—</code></dd>
+
+                        <dt class="col-sm-4 text-muted">Type</dt>
+                        <dd class="col-sm-8" id="inv2-type">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Civilité</dt>
+                        <dd class="col-sm-8" id="inv2-civilite">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Nom complet</dt>
+                        <dd class="col-sm-8" id="inv2-nom">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Email</dt>
+                        <dd class="col-sm-8"><a id="inv2-email" href="#">—</a></dd>
+
+                        <dt class="col-sm-4 text-muted">Téléphone</dt>
+                        <dd class="col-sm-8"><a id="inv2-telephone" href="#">—</a></dd>
+
+                        <dt class="col-sm-4 text-muted">Index golf</dt>
+                        <dd class="col-sm-8" id="inv2-index">—</dd>
+
+                        <dt class="col-sm-4 text-muted">N° licence</dt>
+                        <dd class="col-sm-8" id="inv2-licence">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Taille polo</dt>
+                        <dd class="col-sm-8" id="inv2-polo">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Session</dt>
+                        <dd class="col-sm-8" id="inv2-session">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Page source</dt>
+                        <dd class="col-sm-8"><span id="inv2-page" class="badge bg-secondary">—</span></dd>
+
+                        <dt class="col-sm-4 text-muted">Date inscription</dt>
+                        <dd class="col-sm-8" id="inv2-date">—</dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('assets/plugins/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/cute-alert/cute-alert.js') }}"></script>
@@ -308,23 +423,37 @@
 
             // ── INVITATIONS ──────────────────────────────────────
             $('#tableInvitations').DataTable({
-                ajax:"{{ route('back.settings.ajax.invitations') }}",
+                ajax: "{{ route('back.settings.ajax.invitations') }}",
+                language: dtLang,
             });
 
             // ── COMMANDES BALLES ─────────────────────────────────
             $('#tableCommandBalls').DataTable({
-                ajax:"{{ route('back.settings.ajax.command-balls') }}",
+                ajax: "{{ route('back.settings.ajax.command-balls') }}",
+                language: dtLang,
+            });
+
+            // ── INSCRIPTIONS TOURNOI ─────────────────────────────
+            $('#tableInvites').DataTable({
+                ajax: "{{ route('back.settings.ajax.invites') }}",
+                language: dtLang,
+                order: [
+                    [7, 'desc']
+                ],
             });
 
             // ── SWITCH BOUTON EXPORT SELON ONGLET ACTIF ──────────
             function updateExportButton() {
                 var activeTab = $('[data-bs-toggle="tab"].active').attr('data-bs-target');
+                $('#btn-export-invitations').addClass('d-none');
+                $('#btn-export-balls').addClass('d-none');
+                $('#btn-export-invites').addClass('d-none');
                 if (activeTab === '#pane-invitations') {
-                    $('#btn-export-invitations').show();
-                    $('#btn-export-balls').hide();
-                } else {
-                    $('#btn-export-invitations').hide();
-                    $('#btn-export-balls').show();
+                    $('#btn-export-invitations').removeClass('d-none');
+                } else if (activeTab === '#pane-balls') {
+                    $('#btn-export-balls').removeClass('d-none');
+                } else if (activeTab === '#pane-invites') {
+                    $('#btn-export-invites').removeClass('d-none');
                 }
             }
 
@@ -359,6 +488,25 @@
                 $('#cmd-email').text(btn.dataset.email).attr('href', 'mailto:' + btn.dataset.email);
                 $('#cmd-balles').text(btn.dataset.balles);
                 $('#cmd-date').text(btn.dataset.date);
+            });
+
+            // ── MODAL INSCRIPTION TOURNOI ────────────────────────
+            $('#modalInvite').on('show.bs.modal', function(e) {
+                var btn = e.relatedTarget;
+                $('#inv2-id').text(btn.dataset.id);
+                $('#inv2-groupe').text(btn.dataset.groupe);
+                $('#inv2-type').text(btn.dataset.type);
+                $('#inv2-civilite').text(btn.dataset.civilite);
+                $('#inv2-nom').text(btn.dataset.nom);
+                $('#inv2-email').text(btn.dataset.email).attr('href', 'mailto:' + btn.dataset.email);
+                $('#inv2-telephone').text(btn.dataset.telephone || '—').attr('href', 'tel:' + btn.dataset
+                    .telephone);
+                $('#inv2-index').text(btn.dataset.index || '—');
+                $('#inv2-licence').text(btn.dataset.licence || '—');
+                $('#inv2-polo').text(btn.dataset.polo || '—');
+                $('#inv2-session').text(btn.dataset.session || 'N/A');
+                $('#inv2-page').text(btn.dataset.page || '—');
+                $('#inv2-date').text(btn.dataset.date);
             });
 
         });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use App\Models\CommandBall;
+use App\Models\Invite;
 use App\Models\WebInvitation;
 
 class SettingController extends Controller
@@ -37,6 +38,45 @@ class SettingController extends Controller
                     e($invitation->email),
                     e($invitation->objet),
                     e($invitation->page),
+                    $date,
+                    $btn,
+                ];
+            }),
+        ]);
+    }
+
+    public function ajaxInvites()
+    {
+        return response()->json([
+            'data' => Invite::where('deleted', false)->orderByDesc('created_at')->get()->map(function ($invite) {
+                $date = $invite->created_at ? date('d/m/Y H:i', $invite->created_at) : '—';
+                $btn = '<button type="button"'
+                    . ' class="btn btn-sm btn-outline-dark btn-voir"'
+                    . ' data-bs-toggle="modal"'
+                    . ' data-bs-target="#modalInvite"'
+                    . ' data-id="' . $invite->id . '"'
+                    . ' data-groupe="' . e($invite->groupe_id) . '"'
+                    . ' data-type="' . e($invite->type) . '"'
+                    . ' data-civilite="' . e($invite->civilite) . '"'
+                    . ' data-nom="' . e($invite->prenom . ' ' . $invite->nom) . '"'
+                    . ' data-email="' . e($invite->email) . '"'
+                    . ' data-telephone="' . e($invite->telephone) . '"'
+                    . ' data-polo="' . e($invite->taille_polo) . '"'
+                    . ' data-session="' . e($invite->session) . '"'
+                    . ' data-index="' . e($invite->index_golf) . '"'
+                    . ' data-licence="' . e($invite->numero_licence) . '"'
+                    . ' data-page="' . e($invite->page) . '"'
+                    . ' data-date="' . $date . '">' .
+                    '<i class="fe fe-eye"></i>'
+                    . '</button>';
+                return [
+                    $invite->id,
+                    substr($invite->groupe_id, 0, 8) . '…',
+                    e($invite->type),
+                    e($invite->civilite . ' ' . $invite->prenom . ' ' . $invite->nom),
+                    e($invite->email),
+                    e($invite->taille_polo ?? '—'),
+                    e($invite->session ?: 'N/A'),
                     $date,
                     $btn,
                 ];
