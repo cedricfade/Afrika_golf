@@ -8,7 +8,7 @@
             <ul class="navbar-nav nav-primary d-none d-lg-flex">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('tournois') }}">
-                        @lang('LE TOURNOIS')
+                        @lang('LE TOURNOI')
                     </a>
                 </li>
                 <li class="nav-item">
@@ -56,13 +56,8 @@
                             </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
-                            <a class="dropdown-item " href="{{ route('mcn-cgp') }}">
-                                @lang('LE TOURNOIS')
-                            </a>
-                        </li>
-                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
                             <a class="dropdown-item" href="{{ route('tournois') }}">
-                                @lang('LE TOURNOIS')
+                                @lang('LE TOURNOI')
                             </a>
                         </li>
                         <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
