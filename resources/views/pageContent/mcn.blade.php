@@ -33,14 +33,13 @@
                 </h2>
 
                 <p style="font-size: 1.3rem;">
-                    Le cabinet MCN est l’aboutissement de nombreuses années d’expérience et d’interventions sur le
-                    marché de
-                    l’art, de ventes et d’expositions organisées en Afrique et en Europe.
-                    <br><br>
-                    Nous incarnons la réponse jeune, moderne et dynamique pour la gestion et la constitution de
-                    collections d’art africain.
-                    Nous vous accompagnons avec des conseils indépendants et professionnels lors de transactions sur le
-                    marché de l’art dans la perspective de l’optimisation des collections.
+                    Tel est l’engagement de notre cabinet à vos côtés. Notre objectif est de vous accompagner dans la gestion et la valorisation de vos collections d’art et autres actifs alternatifs. Spécialisé en gestion et valorisation de patrimoine, le cabinet-conseil vous accompagne dans : <br>
+                    •&nbsp;&nbsp;&nbsp;&nbsp; ⁠L’administration de votre collection : inventaire, catalogage et mise à jour documentaire ;<br>
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠Le conseil à l’achat et à la vente d’œuvres d’art : accompagnement et représentation lors de ventes publiques et privées ;<br>
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La conservation et la restauration des œuvres ;<br>
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La valorisation des collections et la promotion des artistes dont les œuvres composent vos collections.<br>
+                    C’est dans le cadre de cette activité de valorisation et de promotion que nous avons conçu Africa Art Golf Cup, un événement premium à la croisée de l’art et du golf.<br> 
+                    <a href="a href="https://www.mcn-cgp.com/" target="_blan">EN SAVOIR PLUS</a>
                 </p>
             </div>
         </div>

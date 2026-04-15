@@ -5,8 +5,7 @@
             <span class="">HÔTE DE L’ÉDITION 2026</span>
             <h2 style="font" class="mt-4">Kigali</h2>
             <p>
-                Découvrez le Pays des Mille Collines. Ville marquée par une transformation remarquable, l’innovation
-                et une beauté immaculée, elle offre un cadre idéal à l’édition de cette année.
+                La magnifique ville de Kigali reçoit la première édition de l’Africa Art Golf Cup les 28 - 29 - 30 octobre 2026… 
             </p>
             <a href="{{ route('destination') }}" class="">EXPLORER LA DESTINATION</a>
         </div>

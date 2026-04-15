@@ -4,7 +4,7 @@
     'bottomImage' => $bottomImage ?? asset('assets_custom/home/svg/aagc-golfeur.svg'),
     'bannerContent' => $bannerContent ?? __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
 ])
-<section class="about">
+<section class="about" id="sectionAbout">
     @include('pageContent.ajaxContent.home.about')
 </section>
 

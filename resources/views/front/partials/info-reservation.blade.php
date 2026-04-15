@@ -5,21 +5,21 @@
                 <h3 class="text-white" style="font-size: 30px">
                     Concierge
                 </h3>
-                <a href="mailto:concierge@africaartgolfcup.com"
+                <a href="mailto:cmangoua@mcn-cgp.com"
                     style="
                     color: #C6C6C6; 
                     text-decoration:none; 
                     font-family: 'AveniNext'; font-size: 20px;"
                     class="mb-5">
-                    concierge@africaartgolfcup.com
+                    cmangoua@mcn-cgp.com
                 </a>
                 <br>
-                <a href="tel:+225 27 20 00 00 00"
+                <a href="tel:+225 07 87 05 03 15"
                     style="
                     color: #C6C6C6;  
                     text-decoration: none; 
                     font-family: 'AveniNext'; font-size: 22px;">
-                    +225 27 20 00 00 00
+                    +225 07 87 05 03 15
                 </a>
             </div>
         </div>

@@ -5,10 +5,8 @@
 </div>
 <div style="background: #0f1c15; padding: 30px; color: #fff; border: 0.5px solid #707070;">
     <h3 style="font-family: 'mashRegular'; font-size: 30px; color:#C6C6C6">Concierge</h3>
-    <a href="" style="color: #C6C6C6; text-decoration:none; font-family: 'AveniNext';"
-        class="mb-5">Concierge@africaartgolfcup.com</a>
+    <a href="mailto:cmangoua@mcn-cgp.com" style="color: #C6C6C6; text-decoration:none; font-family: 'AveniNext';"
+        class="mb-5">cmangoua@mcn-cgp.com</a>
     <br>
-    <a href="" style="color: #C6C6C6;  text-decoration:none; font-family: 'AveniNext';" class="">+225 27
-        20 00
-        00 00</a>
+    <a href="tel:+225 07 87 05 03 15" style="color: #C6C6C6;  text-decoration:none; font-family: 'AveniNext';" class="">+225 07 87 05 03 15</a>
 </div>

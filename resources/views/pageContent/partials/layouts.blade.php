@@ -24,7 +24,7 @@
 
                 @if (!empty($bannerDescription))
                     <p style="color: #fff; font-family: 'MyArial'; margin-top: 20px; font-size: 1.2em;">
-                        {{ $bannerDescription }}
+                        {!! $bannerDescription !!}
                     </p>
                 @endif
             </div>
@@ -62,7 +62,7 @@
             padding: 10px 0px;
             font-family: 'AveniNext';
             margin-top: 20px;">
-            {{ $bannerContent }}
+            {!! $bannerContent !!}
         </div>
     @endif
 

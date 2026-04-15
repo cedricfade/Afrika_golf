@@ -25,7 +25,7 @@
 
 <section class="formulaire">
     <div class="container">
-        <h1>Remplissez ce formulaire pour recevoir le bulletin de sponsoring par mail.</h1>
+        <h2 style="text-center">RECEVEZ NOTRE OFFRE DE SPONSORING PAR MAIL EN REMPLISSANT CE FORMULAIRE.</h2>
 
         <div class="row info">
             <div class="col-xl-6">

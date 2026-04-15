@@ -9,7 +9,7 @@
         'bannerImage' => asset('assets/images/home/banner.png'),
         'middleImage' => asset('assets_custom/home/svg/aagc-kigali.svg'),
         'bottomImage' => asset('assets_custom/home/png/aagc-golfeur.png'),
-        'bannerContent' => __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
+        'bannerContent' => __('CONTRIBUER A L’ACCOMPAGNEMENT ET A L’EPANOUISSEMENT DES AUTISTES ADULTES'),
     ])
 @endsection
 

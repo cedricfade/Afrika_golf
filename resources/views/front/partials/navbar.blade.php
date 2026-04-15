@@ -7,13 +7,13 @@
             <!-- Menu principal - visible sur desktop -->
             <ul class="navbar-nav nav-primary d-none d-lg-flex">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tournois') }}">
-                        @lang('LE TOURNOI')
+                    <a class="nav-link" href="{{ route('home') }}#sectionAbout">
+                        @lang('LE CONCEPT')
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('diners') }}">
-                        @lang('LE DÎNER')
+                    <a class="nav-link" href="{{ route('mcn-cgp') }}">
+                        @lang('MCN-CGP')
                     </a>
                 </li>
                 <li class="nav-item" style="border: 1px solid white; padding: 0px 5px">
@@ -87,7 +87,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('experience') }}">
-                                @lang('PACKS')
+                                @lang('PACKS SPONSOR')
                             </a>
                         </li>
                         <li>
