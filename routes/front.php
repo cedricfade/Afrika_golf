@@ -49,3 +49,4 @@ Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contac
 
 Route::post('/form/reservation', [FormReservationController::class, 'store'])->name('form-reservation');
 Route::post('/form/command-ball', [\App\Http\Controllers\Front\Form\CommandBallController::class, 'store'])->name('form-command-ball');
+Route::post('/form/sponsoring', [\App\Http\Controllers\Front\Form\SponsoringController::class, 'store'])->name('form-sponsoring');

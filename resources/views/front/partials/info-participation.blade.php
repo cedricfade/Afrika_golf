@@ -1,3 +1,11 @@
+<style>
+    @media (max-width: 767px) {
+        .info-participation span {
+            font-size: 16px !important;
+        }
+    }
+</style>
+
 <div class="info-participation mb-3">
     <div
         style="
@@ -12,7 +20,7 @@
                     Participation
                 </h3>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 d">
                 <span
                     style="
                     color: #C6C6C6; 
@@ -29,6 +37,7 @@
                     non-nationaux : <b class="text-white">1750$</b> </span>
             </div>
         </div>
-        <a href="{{ route('experience') }}" target="__blank" class="text-color ff-avenir mt-3 fs-lg lh">Découvrez nos offres de partenariat</a>
+        <a href="{{ route('experience') }}" target="__blank" class="text-color ff-avenir mt-3 fs-lg lh">Découvrez nos
+            offres de partenariat</a>
     </div>
 </div>
