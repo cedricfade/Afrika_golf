@@ -4,7 +4,7 @@
         <form action="{{ route('form-command-ball') }}" method="POST" id="commandBallForm">
             @csrf
             <div class="row">
-                <h2 class="fs-xl text-center">INTERVENTION D'ACHAT DE BALLE</h2>
+                <h2 class="fs-xl text-center">SOUTENEZ UN AUTISTE ADULTE</h2>
                 <div class="col-xl-6">
                     <div class="form-group">
                         <label for="">Nom</label>

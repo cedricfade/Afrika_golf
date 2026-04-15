@@ -3,10 +3,9 @@
     'bannerImage' => $bannerImage ?? asset('assets/images/tournois/banner.png'),
 ])
 
-<section class="about-tournois">
+<!--section class="about-tournois">
     <div class="container">
         <div class="row align-items-center g-5">
-            <!-- TEXTE GAUCHE -->
             <div class="col-lg-5">
                 <div class="contenu">
                     <h2>Un jeu réinventé</h2>
@@ -18,11 +17,9 @@
                     </p>
                 </div>
             </div>
-            <!-- SEPARATEUR (visible desktop seulement) -->
             <div class="col-lg-1 d-none d-lg-flex justify-content-center">
                 <div class="separateur"></div>
             </div>
-            <!-- INFOS DROITE -->
             <div class="col-lg-6">
                 <div class="tournois-infos">
                     <div class="info-item">
@@ -43,12 +40,12 @@
             </div>
         </div>
     </div>
-</section>
+</section-->
 
 <section class="programme">
     <div class="container">
         <div class="row align-items-center g-4">
-            <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12">
+            <div class="col-lg-3 col-md-12 col-sm-12">
                 <div class="programme-infos-1 text-center">
                     <h3>Un rendez-vous d’exception ou la gastronomie fine, l’Art, le Luxe à l’Africaine et le Golf
                         fusionnent.</h3>
@@ -59,19 +56,22 @@
                 </div>
             </div>
             <div class="col-xl-1 col-lg-1 d-none d-lg-block"></div>
-            <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12">
+            <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="programme-infos-2">
-                    <h2>Offrez-vous l’expérience Africa Art Golf Cup</h2>
                     <p>
-                        Africa Art Golf Cup est un rendez-vous artistique et sportif qui ambitionne de réunir, sur un
-                        même lieu — parcours de golf — les amateurs et collectionneurs d’art ainsi que les passionnés de
-                        golf. Il est annuel, itinérant en Afrique et hors du continent dans les villes à fort potentiel
-                        culturel, favorisant ainsi le rayonnement de l’art et du sport.
+                        <b class="text-white">AFRICA ART GOLF CUP</b>, c’est tout un programme orchestré pour satisfaire vos passions et enrichir votre carnet d’adresses.
+                    </p>
+
+                    <p>
+                        <b class="text-white">Pour les Golfeurs </b>:<br>
+                        Formule de jeu : Scramble à 2 joueurs
+                        Le départ de la compétition se fera du Tee n°1 et du Tee n°10 et s’échelonnera de 7h30 à 10h00 toutes les 10 minutes.
+                        Le palmarès récompensera les 3 meilleures équipes en Net et les 2 meilleures en Brut, plus les gagnants des concours de Drive et de Précision, soit 20 primés. Consultez le règlement sportif.<br>
                         <br>
-                        <br>
-                        Participer à Africa Art Golf Cup, c’est Vivre une expérience artistique, gastronomique et
-                        golfique unique dans la cinquième meilleure destination à visiter selon Forbes, le Rwanda ; sur
-                        un magnifique golf, pensé dans une démarche écologiquement responsable par Gary Player.
+                        <b class="text-white">Pour les non-golfeurs </b>:<br>
+                        Initiation au golf<br>
+                        Un programme d’initiation encadré par des Coachs du Kigali Golf Resort & Villas sera prévu en parallèle de la compétition. Practice, putting, approches et plus longs coups seront enseignés aux initiés. L’initiation se terminera par un concours de putting dont les 3 premiers seront primés. L’initiation durera environ 3 heures.<br>
+
                     </p>
                     @include('front.partials.info-participation')
                 </div>

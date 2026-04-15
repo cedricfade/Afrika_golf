@@ -2,8 +2,7 @@
     'bannerImage' => $bannerImage ?? asset('assets/images/destination/banner.png'),
     'bannerTitle' => $bannerTitle ?? 'Kigali, Rwanda',
     'bannerDescription' =>
-        $bannerDescription ??
-        'Ville de collines, d’innovation et d’élégance immaculée, Kigali offre un cadre idéal pour l’Africa Art Golf Cup, alliant infrastructures de classe mondiale et beauté naturelle à couper le souffle.',
+        "Le Rwanda offre des paysages époustouflants et une population chaleureuse et accueillante, pour une expérience unique dans l'un des pays les plus remarquables au monde. Doté d'une biodiversité extraordinaire, il abrite une faune incroyable qui peuple ses volcans, ses forêts tropicales de montagne et ses vastes plaines. Les voyageurs viennent de loin pour apercevoir les magnifiques gorilles, mais il y a tant d'autres choses à voir et à vivre.",
     'sousTitle' => $sousTitle ?? 'ÉDITION 2026',
 ])
 

@@ -9,4 +9,5 @@
 
 @push('css')
     @stack('css2')
+    @stack('jsSlide')
 @endpush

@@ -31,31 +31,26 @@
                     <span class="text-uppercase">à</span> propos de
                     <span class="highlight">MCN</span>
                 </h2>
-
                 <p style="font-size: 1.3rem;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠Mettre ce texte en remplacement du texte existant : <br>
                     Tel est l’engagement de notre cabinet à vos côtés. Notre objectif est de vous accompagner dans la
                     gestion et la valorisation de vos collections d’art et autres actifs alternatifs. Spécialisé en
                     gestion et valorisation de patrimoine, le cabinet-conseil vous accompagne dans : <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠L’administration de votre collection : inventaire, catalogage et mise à
+                    •&nbsp;&nbsp;&nbsp;&nbsp; ⁠L’administration de votre collection : inventaire, catalogage et mise à
                     jour documentaire ;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠Le conseil à l’achat et à la vente d’œuvres d’art : accompagnement et
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠Le conseil à l’achat et à la vente d’œuvres d’art : accompagnement et
                     représentation lors de ventes publiques et privées ;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠La conservation et la restauration des œuvres ;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠La valorisation des collections et la promotion des artistes dont les
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La conservation et la restauration des œuvres ;<br>
+                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La valorisation des collections et la promotion des artistes dont les
                     œuvres composent vos collections.<br>
-
                     C’est dans le cadre de cette activité de valorisation et de promotion que nous avons conçu Africa
-                    Art Golf Cup, un événement premium à la croisée de l’art et du golf. EN SAVOIR PLUS<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;•⁠ ⁠Ne pas oublier de mettre le lien de redirection vers le site <a
-                        href="https://www.mcn-cgp.com/" target="_blank">https://www.mcn-cgp.com/</a><br>
+                    Art Golf Cup, un événement premium à la croisée de l’art et du golf.<br>
+                    <a href="a href="https://www.mcn-cgp.com/" target="_blan">EN SAVOIR PLUS</a>
                 </p>
             </div>
         </div>
 
         <!-- SERVICES -->
         <div class="row g-4 services-row mt-5">
-
             <div class="col-xl-6 d-flex">
                 <div class="services w-100">
                     <h2 class="text-center">Nos actions</h2>
@@ -81,11 +76,8 @@
                     </p>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')

@@ -5,9 +5,11 @@ namespace App\Providers;
 use App\Events\CommandBallSubmitted;
 use App\Events\InvitationSubmitted;
 use App\Events\InviteGroupSubmitted;
+use App\Events\SponsoringSubmitted;
 use App\Listeners\SendCommandBallConfirmation;
 use App\Listeners\SendInvitationConfirmation;
 use App\Listeners\SendInviteGroupNotification;
+use App\Listeners\SendSponsoringConfirmation;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -41,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
         Event::listen(
             CommandBallSubmitted::class,
             SendCommandBallConfirmation::class,
+        );
+
+        Event::listen(
+            SponsoringSubmitted::class,
+            SendSponsoringConfirmation::class,
         );
     }
 }

@@ -44,10 +44,6 @@
         margin: 20px 0;
     }
 
-    .session-section {
-        display: none;
-    }
-
     .btn-remove-participant {
         background: transparent;
         border: 1px solid #c0392b;
@@ -174,7 +170,7 @@
                 {{-- Date de naissance --}}
                 <div class="mb-2">
                     <input type="date" class="form-control ff-avenir" name="participants[0][date_naissance]"
-                        title="Date de naissance">
+                        title="Date de naissance" placeholder="Date de naissance">
                 </div>
 
                 {{-- Adresse --}}
