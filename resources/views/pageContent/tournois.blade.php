@@ -47,11 +47,10 @@
         <div class="row align-items-center g-4">
             <div class="col-lg-3 col-md-12 col-sm-12">
                 <div class="programme-infos-1 text-center">
-                    <h3>Un rendez-vous d’exception ou la gastronomie fine, l’Art, le Luxe à l’Africaine et le Golf
-                        fusionnent.</h3>
+                    <h3>{{ __('pages.tournois_rendezvous') }}</h3>
                     <div class="boutton">
-                        <a href="">CONSULTER LE PROGRAMME</a>
-                        <a href="">RESERVER</a>
+                        <a href="">@lang('CONSULTER LE PROGRAMME')</a>
+                        <a href="">@lang('RESERVER')</a>
                     </div>
                 </div>
             </div>
@@ -59,18 +58,15 @@
             <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="programme-infos-2">
                     <p>
-                        <b class="text-white">AFRICA ART GOLF CUP</b>, c’est tout un programme orchestré pour satisfaire vos passions et enrichir votre carnet d’adresses.
+                        <b class="text-white">AFRICA ART GOLF CUP</b>, {{ __('pages.tournois_intro') }}
                     </p>
 
                     <p>
-                        <b class="text-white">Pour les Golfeurs </b>:<br>
-                        Formule de jeu : Scramble à 2 joueurs
-                        Le départ de la compétition se fera du Tee n°1 et du Tee n°10 et s’échelonnera de 7h30 à 10h00 toutes les 10 minutes.
-                        Le palmarès récompensera les 3 meilleures équipes en Net et les 2 meilleures en Brut, plus les gagnants des concours de Drive et de Précision, soit 20 primés. Consultez le règlement sportif.<br>
+                        <b class="text-white">{{ __('pages.pour_les_golfeurs') }}</b> :<br>
+                        {!! nl2br(e(__('pages.tournois_golfers'))) !!}
                         <br>
-                        <b class="text-white">Pour les non-golfeurs </b>:<br>
-                        Initiation au golf<br>
-                        Un programme d’initiation encadré par des Coachs du Kigali Golf Resort & Villas sera prévu en parallèle de la compétition. Practice, putting, approches et plus longs coups seront enseignés aux initiés. L’initiation se terminera par un concours de putting dont les 3 premiers seront primés. L’initiation durera environ 3 heures.<br>
+                        <b class="text-white">{{ __('pages.pour_les_non_golfeurs') }}</b> :<br>
+                        {!! nl2br(e(__('pages.tournois_non_golfers'))) !!}
 
                     </p>
                     @include('front.partials.info-participation')

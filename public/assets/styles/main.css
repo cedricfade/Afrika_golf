@@ -286,6 +286,32 @@ body h2,h3,h4{
     font-size: clamp(12px, 2vw, 14px);
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+}
+
+.lang:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.lang.lang-active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: clamp(5px, 1vw, 9px);
+}
+
+.lang-sep {
+    color: #fff;
+    opacity: 0.4;
+    font-size: clamp(10px, 1.5vw, 12px);
 }
 
 .menu-wrapper .trait {

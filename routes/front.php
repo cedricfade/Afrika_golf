@@ -21,6 +21,13 @@ use App\Http\Controllers\Front\ReservationController;
 use App\Http\Controllers\Front\TournoisController;
 use App\Http\Controllers\Front\Form\ReservationController as FormReservationController;
 
+Route::get('/langue/{locale}', function (string $locale) {
+    if (in_array($locale, ['fr', 'en'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('locale.switch');
+
 Route::get('/', [HomeController::class, 'Home'])->name('home');
 Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');
 Route::get('/tournois', [TournoisController::class, 'index'])->name('tournois');

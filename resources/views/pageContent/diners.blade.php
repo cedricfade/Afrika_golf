@@ -61,8 +61,8 @@
         @endforeach
 
         <div class="souscrire">
-            <a href="" class="btn">CONSULTER LE PROGRAMME</a>
-            <a href="" class="btn">RESERVER</a>
+            <a href="" class="btn">@lang('CONSULTER LE PROGRAMME')</a>
+            <a href="" class="btn">@lang('RESERVER')</a>
         </div>
     </div>
 </section>

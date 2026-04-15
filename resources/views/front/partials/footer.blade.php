@@ -18,18 +18,18 @@
             <div class="col-6 col-md-3 col-xl-3 mb-4">
                 <ul>
                     <span>@lang('CONNEXION')</span>
-                    <li><a href="{{ route('partenaires') }}">Partenaires</a></li>
-                    <li><a href="{{ route('medias') }}">Espace média</a></li>
-                    <li><a href="{{ route('contact') }}">Contacts</a></li>
+                    <li><a href="{{ route('partenaires') }}">@lang('Partenaires')</a></li>
+                    <li><a href="{{ route('medias') }}">@lang('Espace média')</a></li>
+                    <li><a href="{{ route('contact') }}">@lang('Contacts')</a></li>
                 </ul>
             </div>
 
             <div class="col-12 col-md-6 col-xl-3">
                 <ul>
                     <span>@lang('légale')</span>
-                    <li><a href="">Politique de confidentialité</a></li>
-                    <li><a href="">Conditions d’utilisation</a></li>
-                    <li class="signature">© 2026 MCN. tous droits réservés</li>
+                    <li><a href="">@lang('Politique de confidentialité')</a></li>
+                    <li><a href="">@lang("Conditions d'utilisation")</a></li>
+                    <li class="signature">@lang('© 2026 MCN. tous droits réservés')</li>
                 </ul>
             </div>
 
