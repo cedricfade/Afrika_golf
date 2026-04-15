@@ -8,7 +8,9 @@
             border: 0.5px solid #707070;">
         <div class="row mb-3">
             <div class="col-lg-12">
-                <h3 class="text-white">Participation</h3>
+                <h3 class="text-white" style="font-size: 30px">
+                    Participation
+                </h3>
             </div>
             <div class="col-lg-5">
                 <span
