@@ -29,19 +29,25 @@
             </ul>
 
             <!-- Menu hamburger -->
+            <ul class="navbar-nav ms-auto">
+                <div class="lang-switcher">
+                    <a href="{{ route('locale.switch', 'fr') }}"
+                        class="lang {{ app()->getLocale() === 'fr' ? 'lang-active' : '' }} fs-lg">
+                        FR
+                    </a>
+                    <span class="lang-sep fs-lg">|</span>
+                    <a href="{{ route('locale.switch', 'en') }}"
+                        class="lang {{ app()->getLocale() === 'en' ? 'lang-active' : '' }} fs-lg">
+                        EN
+                    </a>
+                </div>
+            </ul>
             <div class="nav-menu-toggle">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle-custom" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <div class="menu-wrapper">
                             <div class="menu-top">
-                                <div class="lang-switcher">
-                                    <a href="{{ route('locale.switch', 'fr') }}"
-                                        class="lang {{ app()->getLocale() === 'fr' ? 'lang-active' : '' }}">FR</a>
-                                    <span class="lang-sep">|</span>
-                                    <a href="{{ route('locale.switch', 'en') }}"
-                                        class="lang {{ app()->getLocale() === 'en' ? 'lang-active' : '' }}">EN</a>
-                                </div>
                                 <div class="trait"></div>
                                 <div>
                                     <i class="fa-solid fa-bars"></i>
