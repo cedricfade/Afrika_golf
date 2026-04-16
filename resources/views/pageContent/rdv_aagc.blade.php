@@ -42,7 +42,7 @@
                     'date' => $post->formatted_date,
                 ])
             @empty
-                <p class="text-muted fst-italic text-center w-100">Aucun rendez-vous publié pour l'instant.</p>
+                <p class="text-muted fst-italic text-center w-100">@lang('Aucun rendez-vous publié pour l\'instant.')</p>
             @endforelse
 
         </div>

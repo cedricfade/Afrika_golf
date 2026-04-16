@@ -28,12 +28,12 @@
 
 <section class="medias">
     <div class="container-fluid">
-        <h1>Espace média</h1>
+        <h1>@lang('Espace média')</h1>
     </div>
     <div class="container-fluid" style="padding:0 85px;text-align:left">
         <div class="row">
             <div class="col-xl-6 presse mb-5">
-                <h2>Sortie de presse</h2>
+                <h2>@lang('Sortie de presse')</h2>
                 <div class="separateur"></div>
                 @forelse ($pressReleases ?? [] as $pressRelease)
                     <div class='card'>
@@ -48,11 +48,11 @@
                         </a>
                     </div>
                 @empty
-                    <p class="text-muted fst-italic mb-3">Aucune sortie de presse pour l'instant.</p>
+                    <p class="text-muted fst-italic mb-3">@lang('Aucune sortie de presse pour l\'instant.')</p>
                 @endforelse
             </div>
             <div class="col-xl-6 kit-media mb-5">
-                <h2>Kit média</h2>
+                <h2>@lang('Kit média')</h2>
                 <div class="separateur"></div>
                 @forelse ($mediaKits ?? [] as $mediaKit)
                     <div class='card'>
@@ -66,7 +66,7 @@
                         </a>
                     </div>
                 @empty
-                    <p class="text-muted fst-italic mb-3">Aucun kit média pour l'instant.</p>
+                    <p class="text-muted fst-italic mb-3">@lang('Aucun kit média pour l\'instant.')</p>
                 @endforelse
             </div>
         </div>

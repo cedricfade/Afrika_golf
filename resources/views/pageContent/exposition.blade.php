@@ -1,6 +1,6 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'citation1' => 'QUAND L’ART RACONTE L’AFRIQUE',
-    'citation2' => 'QUAND LE GOLF CRÉE LE LIEN.',
+    'citation1' => __('pages.citation1'),
+    'citation2' => __('pages.citation2'),
     'bannerColor' => '#FFFCF8',
     'subImage' => asset('assets/images/exposition/image.png'),
     'imageHeader' => asset('assets/images/exposition/banner.png'),
@@ -95,18 +95,15 @@
 <section class="exposition">
     <div class="container">
         <p class="fs">
-            Une Exposition-ventes mettra en valeur des œuvres d’art d’exception réalisées par des artistes originaires
-            du Rwanda et de la sous-région Est-africaine.
-            <br>
-            <br>
-            MERCREDI 28 OCTOBRE 2026 A partir de 18h30 : Vernissage de l’exposition Africa Art Golf Cup
-            <br>
-            <br>
-            Rendez-vous le 31 juillet 2026 pour télécharger le catalogue des oeuvres.
+            {{ __('pages.exposition_intro') }}
+            <br><br>
+            {{ __('pages.exposition_date') }}
+            <br><br>
+            {{ __('pages.exposition_catalogue') }}
         </p>
         <div class="souscrire">
-            <a href="">CONSULTER LE PROGRAMME</a>
-            <a href="">RESERVER</a>
+            <a href="">@lang('CONSULTER LE PROGRAMME')</a>
+            <a href="">@lang('RESERVER')</a>
         </div>
     </div>
 </section>

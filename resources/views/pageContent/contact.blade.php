@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-7">
-                <span>ENTRER EN CONTACT</span>
+                <span>@lang('ENTRER EN CONTACT')</span>
                 <br><br>
                 <div class="row">
                     <div class="col-lg-12">

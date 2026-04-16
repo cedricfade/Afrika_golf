@@ -25,19 +25,19 @@
                     style="
                     color: #C6C6C6; 
                     text-decoration:none; 
-                    font-family: 'AveniNext'; font-size: 22px;">Golfeurs
-                    nationaux : <b class="text-white">1400$</b> </span>
+                    font-family: 'AveniNext'; font-size: 22px;">@lang('Golfeurs nationaux :')
+                    <b class="text-white">1400$</b> </span>
             </div>
             <div class="col-lg-7">
                 <span
                     style="
                         color: #C6C6C6; 
                         text-decoration:none; 
-                        font-family: 'AveniNext'; font-size: 22px;">Golfeurs
-                    non-nationaux : <b class="text-white">1750$</b> </span>
+                        font-family: 'AveniNext'; font-size: 22px;">@lang('Golfeurs non-nationaux :')
+                    <b class="text-white">1750$</b> </span>
             </div>
         </div>
-        <a href="{{ route('experience') }}" target="__blank" class="text-color ff-avenir mt-3 fs-lg lh">Découvrez nos
-            offres de partenariat</a>
+        <a href="{{ route('experience') }}" target="__blank"
+            class="text-color ff-avenir mt-3 fs-lg lh">@lang('Découvrez nos offres de partenariat')</a>
     </div>
 </div>

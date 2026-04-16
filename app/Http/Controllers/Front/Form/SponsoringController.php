@@ -62,31 +62,3 @@ class SponsoringController extends Controller
         return $this->successResponse('Votre demande a bien été enregistrée. Un email de confirmation vous a été adressé.');
     }
 }
-
-            'companyName' => 'required|string|max:255',
-            'nomPrenoms'  => 'required|string|max:255',
-            'country'     => 'required|string|max:100',
-            'email'       => 'required|email|max:255',
-            'sector'      => 'required|string|max:255',
-            'telePhone'   => 'nullable|string|max:30',
-            'packId'      => 'nullable|integer|exists:packs,id',
-        ]);
-
-        $pack = isset($validated['packId']) ? Pack::find($validated['packId']) : null;
-
-        $sponsoring = SponsoringRequest::create([
-            'company_name' => $validated['companyName'],
-            'nom_prenoms'  => $validated['nomPrenoms'],
-            'country'      => $validated['country'],
-            'email'        => $validated['email'],
-            'sector'       => $validated['sector'],
-            'telephone'    => $validated['telePhone'] ?? null,
-            'pack_id'      => $pack?->id,
-            'pack_title'   => $pack?->title,
-        ]);
-
-        SponsoringSubmitted::dispatch($sponsoring);
-
-        return $this->successResponse('Votre demande a bien été enregistrée. Un email de confirmation vous a été adressé.');
-    }
-}

@@ -25,7 +25,7 @@
 
 <section class="formulaire">
     <div class="container">
-        <h2 style="text-center">RECEVEZ NOTRE OFFRE DE SPONSORING PAR MAIL EN REMPLISSANT CE FORMULAIRE.</h2>
+        <h2 style="text-center">@lang('RECEVEZ NOTRE OFFRE DE SPONSORING PAR MAIL EN REMPLISSANT CE FORMULAIRE.')</h2>
 
         <div class="row info">
             <div class="col-xl-6">
@@ -74,32 +74,32 @@
                     <input type="hidden" name="packId" value="{{ $pack->id ?? '' }}">
                     <div class="row">
                         <div class="form-group col-xl-6">
-                            <label for="">Nom de l'entreprise</label>
+                            <label for="">@lang('Nom de l\'entreprise')</label>
                             <input type="text" class="form-control" name="companyName" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">Nom & prénoms</label>
+                            <label for="">@lang('Nom & prénoms')</label>
                             <input type="text" class="form-control" name="nomPrenoms" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">Pays</label>
+                            <label for="">@lang('Pays')</label>
                             <input type="text" class="form-control" name="country" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">Email</label>
+                            <label for="">@lang('Email')</label>
                             <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">Secteur d'activité</label>
+                            <label for="">@lang('Secteur d\'activité')</label>
                             <input type="text" class="form-control" name="sector" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">Téléphone</label>
+                            <label for="">@lang('Téléphone')</label>
                             <input type="text" class="form-control" name="telePhone">
                         </div>
 
                         <div class="form-group text-center">
-                            <button type="submit" class="btn" id="sponsoring-btn">Envoyer</button>
+                            <button type="submit" class="btn" id="sponsoring-btn">@lang('Envoyer')</button>
                         </div>
                     </div>
                 </form>
@@ -114,7 +114,7 @@
                     const alert = document.getElementById('sponsoring-alert');
 
                     btn.disabled = true;
-                    btn.textContent = 'Envoi en cours…';
+                    btn.textContent = '{{ __('Envoi en cours…') }}';
                     alert.className = 'alert d-none mb-3';
                     alert.textContent = '';
 
@@ -144,23 +144,24 @@
                                 if (res.ok && json.success) {
                                     alert.className = 'alert alert-success mb-3';
                                     alert.textContent = json.message ||
-                                        'Votre demande a bien été envoyée. Un email de confirmation vous a été adressé.';
+                                        '{{ __('Votre demande a bien été envoyée. Un email de confirmation vous a été adressé.') }}';
                                     form.reset();
                                 } else {
                                     const msg = json.message || (json.errors ? Object.values(json.errors).flat()
                                         .join(
-                                            ' ') : 'Une erreur est survenue. Veuillez réessayer.');
+                                            ' ') : '{{ __('Une erreur est survenue. Veuillez réessayer.') }}');
                                     alert.className = 'alert alert-danger mb-3';
                                     alert.textContent = msg;
                                 }
                             })
                             .catch(function() {
                                 alert.className = 'alert alert-danger mb-3';
-                                alert.textContent = 'Erreur réseau. Veuillez vérifier votre connexion et réessayer.';
+                                alert.textContent =
+                                    '{{ __('Erreur réseau. Veuillez vérifier votre connexion et réessayer.') }}';
                             })
                             .finally(function() {
                                 btn.disabled = false;
-                                btn.textContent = 'Envoyer';
+                                btn.textContent = '{{ __('Envoyer') }}';
                                 alert.classList.remove('d-none');
                                 alert.scrollIntoView({
                                     behavior: 'smooth',

@@ -35,7 +35,13 @@
                         aria-expanded="false">
                         <div class="menu-wrapper">
                             <div class="menu-top">
-                                <span class="lang">FR</span>
+                                <div class="lang-switcher">
+                                    <a href="{{ route('locale.switch', 'fr') }}"
+                                        class="lang {{ app()->getLocale() === 'fr' ? 'lang-active' : '' }}">FR</a>
+                                    <span class="lang-sep">|</span>
+                                    <a href="{{ route('locale.switch', 'en') }}"
+                                        class="lang {{ app()->getLocale() === 'en' ? 'lang-active' : '' }}">EN</a>
+                                </div>
                                 <div class="trait"></div>
                                 <div>
                                     <i class="fa-solid fa-bars"></i>

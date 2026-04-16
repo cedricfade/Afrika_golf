@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerTitle' => $bannerTitle ?? 'MENER UNE VIE PLEINE ET RICHE AVEC L’AUTISME',
+    'bannerTitle' => $bannerTitle ?? __('pages.accompagnon_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/accompagnon/banner.jpg'),
 ])
 

@@ -26,7 +26,7 @@
 
 <section class="experience">
     <div class="container-fluid ">
-        <h1>REJOIGNEZ L’EXPERIENCE</h1>
+        <h1>@lang('REJOIGNEZ L\'EXPERIENCE')</h1>
         <div class="row">
             @forelse ($packs ?? [] as $pack)
                 <div class="col-xl-4">
@@ -40,7 +40,7 @@
                     ])
                 </div>
             @empty
-                <p class="text-muted fst-italic">Aucun pack disponible pour le moment.</p>
+                <p class="text-muted fst-italic">@lang('Aucun pack disponible pour le moment.')</p>
             @endforelse
         </div>
     </div>
