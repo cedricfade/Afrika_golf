@@ -9,12 +9,12 @@
             </a>
         </div>
         <div class="col-xl-4">
-            <a href="{{ route('tournoi') }}" target="_blank">
+            <a href="{{ route('tournois') }}" target="_blank">
                 <img src="{{ asset('assets/images/home/img3.png') }}" alt="" class="col-xl-12 col-12 mb-4">
             </a>
         </div>
         <div class="col-xl-4">
-            <a href="{{ route('diner') }}" target="_blank">
+            <a href="{{ route('diners') }}" target="_blank">
                 <img src="{{ asset('assets/images/home/img5.jpeg') }}" alt="" class="col-xl-12 col-12 mb-4">
             </a>
         </div>
