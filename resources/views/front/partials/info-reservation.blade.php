@@ -3,7 +3,7 @@
         <div class="col-lg-6">
             <div style="background: #0f1c15; height: 170px; padding: 30px; color: #fff; border: 0.5px solid #707070;">
                 <h3 class="text-white" style="font-size: 30px">
-                    Conciergerie
+                    {{ __('partials.conciergerie') }}
                 </h3>
                 <a href="mailto:cmangoua@mcn-cgp.com"
                     style="

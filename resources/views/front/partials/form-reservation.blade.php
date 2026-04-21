@@ -96,8 +96,7 @@
 
     <div class="text-center mb-4">
         <span class="ff-avenir"
-            style="color:#b07f49; letter-spacing:3px; border:1px solid #b07f49; padding:8px 24px; display:inline-block; font-size:14px; font-weight:bold;">TOURNOI
-            DE GOLF</span>
+            style="color:#b07f49; letter-spacing:3px; border:1px solid #b07f49; padding:8px 24px; display:inline-block; font-size:14px; font-weight:bold;">{{ __("partials.tournoi_label") }}</span>
     </div>
 
     <div id="reservationAlertFront" class="alert d-none mb-3" role="alert"></div>
@@ -110,23 +109,23 @@
 
             {{-- ===== PARTICIPANT 1 (index 0, Blade-rendered) ===== --}}
             <div class="participant-block" data-index="0">
-                <span class="participant-title ff-avenir">Participant 1</span>
+                <span class="participant-title ff-avenir">{{ __("partials.form_participant_label") }} 1</span>
                 <hr class="section-divider">
 
                 {{-- Type --}}
                 <div class="mb-3">
                     <label class="ff-avenir d-block mb-2"
-                        style="font-size:13px; color:#b07f49; letter-spacing:1px;">TYPE *</label>
+                        style="font-size:13px; color:#b07f49; letter-spacing:1px;">{{ __("partials.form_type_label") }}</label>
                     <div class="d-flex gap-4 flex-wrap">
                         <div class="form-check mb-0">
                             <input class="form-check-input type-radio" type="radio" name="participants[0][type]"
                                 id="p_0_type_golfeur" value="Golfeur" required>
-                            <label class="form-check-label ff-avenir" for="p_0_type_golfeur">Golfeur</label>
+                            <label class="form-check-label ff-avenir" for="p_0_type_golfeur">{{ __("partials.form_golfer") }}</label>
                         </div>
                         <div class="form-check mb-0">
                             <input class="form-check-input type-radio" type="radio" name="participants[0][type]"
                                 id="p_0_type_non_golfeur" value="Non golfeur">
-                            <label class="form-check-label ff-avenir" for="p_0_type_non_golfeur">Non golfeur</label>
+                            <label class="form-check-label ff-avenir" for="p_0_type_non_golfeur">{{ __("partials.form_non_golfer") }}</label>
                         </div>
                     </div>
                 </div>
@@ -134,23 +133,23 @@
                 {{-- Civilité --}}
                 <div class="mb-3">
                     <label class="ff-avenir d-block mb-2"
-                        style="font-size:13px; color:#b07f49; letter-spacing:1px;">CIVILITÉ *</label>
+                        style="font-size:13px; color:#b07f49; letter-spacing:1px;">{{ __("partials.form_civility") }}</label>
                     <div class="d-flex gap-4 flex-wrap">
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="radio" name="participants[0][civilite]"
                                 id="p_0_civilite_madame" value="Madame" required>
-                            <label class="form-check-label ff-avenir" for="p_0_civilite_madame">Madame</label>
+                            <label class="form-check-label ff-avenir" for="p_0_civilite_madame">{{ __("partials.form_madame") }}</label>
                         </div>
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="radio" name="participants[0][civilite]"
                                 id="p_0_civilite_mademoiselle" value="Mademoiselle">
                             <label class="form-check-label ff-avenir"
-                                for="p_0_civilite_mademoiselle">Mademoiselle</label>
+                                for="p_0_civilite_mademoiselle">{{ __("partials.form_mademoiselle") }}</label>
                         </div>
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="radio" name="participants[0][civilite]"
                                 id="p_0_civilite_monsieur" value="Monsieur">
-                            <label class="form-check-label ff-avenir" for="p_0_civilite_monsieur">Monsieur</label>
+                            <label class="form-check-label ff-avenir" for="p_0_civilite_monsieur">{{ __("partials.form_monsieur") }}</label>
                         </div>
                     </div>
                 </div>
@@ -159,39 +158,39 @@
                 <div class="row g-2 mb-2">
                     <div class="col-sm-6">
                         <input type="text" class="form-control ff-avenir" name="participants[0][nom]"
-                            placeholder="Nom *" required>
+                            placeholder="{{ __("partials.form_placeholder_nom") }}" required>
                     </div>
                     <div class="col-sm-6">
                         <input type="text" class="form-control ff-avenir" name="participants[0][prenom]"
-                            placeholder="Prénom">
+                            placeholder="{{ __("partials.form_placeholder_prenom") }}">
                     </div>
                 </div>
 
                 {{-- Date de naissance --}}
                 <div class="mb-2">
                     <input type="date" class="form-control ff-avenir" name="participants[0][date_naissance]"
-                        title="Date de naissance" placeholder="Date de naissance">
+                        title="{{ __('partials.form_placeholder_dob') }}" placeholder="{{ __('partials.form_placeholder_dob') }}">
                 </div>
 
                 {{-- Adresse --}}
                 <div class="mb-2">
                     <input type="text" class="form-control ff-avenir" name="participants[0][adresse]"
-                        placeholder="Adresse">
+                        placeholder="{{ __("partials.form_placeholder_address") }}">
                 </div>
 
                 {{-- Pays, Ville, Code Postal --}}
                 <div class="row g-2 mb-2">
                     <div class="col-sm-4">
                         <input type="text" class="form-control ff-avenir" name="participants[0][pays]"
-                            placeholder="Pays">
+                            placeholder="{{ __("partials.form_placeholder_country") }}">
                     </div>
                     <div class="col-sm-4">
                         <input type="text" class="form-control ff-avenir" name="participants[0][ville]"
-                            placeholder="Ville">
+                            placeholder="{{ __("partials.form_placeholder_city") }}">
                     </div>
                     <div class="col-sm-4">
                         <input type="text" class="form-control ff-avenir" name="participants[0][code_postal]"
-                            placeholder="Code Postal">
+                            placeholder="{{ __("partials.form_placeholder_postal") }}">
                     </div>
                 </div>
 
@@ -199,11 +198,11 @@
                 <div class="row g-2 mb-2">
                     <div class="col-sm-6">
                         <input type="tel" class="form-control ff-avenir" name="participants[0][telephone]"
-                            placeholder="Téléphone (indicatif)">
+                            placeholder="{{ __("partials.form_placeholder_phone") }}">
                     </div>
                     <div class="col-sm-6">
                         <input type="email" class="form-control ff-avenir" name="participants[0][email]"
-                            placeholder="E-mail *" required>
+                            placeholder="{{ __("partials.form_placeholder_email") }}" required>
                     </div>
                 </div>
 
@@ -211,17 +210,17 @@
                 <div class="row g-2 mb-2">
                     <div class="col-sm-6">
                         <input type="text" class="form-control ff-avenir" name="participants[0][index_golf]"
-                            placeholder="Index golf">
+                            placeholder="{{ __("partials.form_placeholder_golf_index") }}">
                     </div>
                     <div class="col-sm-6">
                         <input type="text" class="form-control ff-avenir" name="participants[0][numero_licence]"
-                            placeholder="N° licence">
+                            placeholder="{{ __("partials.form_placeholder_licence") }}">
                     </div>
                 </div>
 
                 {{-- Taille Polo --}}
                 <div class="mb-2">
-                    <label class="ff-avenir mb-2 d-block" style="font-size:13px; color:#aaa;">Taille de polo :</label>
+                    <label class="ff-avenir mb-2 d-block" style="font-size:13px; color:#aaa;">{{ __("partials.form_polo_size_label") }}</label>
                     <div class="d-flex flex-wrap gap-3">
                         @foreach (['S', 'M', 'L', 'XL', 'XXL', 'Autre'] as $t)
                             <div class="form-check mb-0">
@@ -236,19 +235,17 @@
 
                 {{-- Session (Non golfeur only) --}}
                 <div class="session-section mt-2">
-                    <small class="ff-avenir" style="color:#888;">* Session (cocher votre choix) :</small>
+                    <small class="ff-avenir" style="color:#888;">{{ __("partials.form_session_hint") }}</small>
                     <div class="d-flex flex-wrap gap-3 mt-1">
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="radio" name="participants[0][session]"
                                 id="p_0_session_1" value="Session 1 : 9h00 - 12h00">
-                            <label class="form-check-label ff-avenir" for="p_0_session_1">Session 1 : 9h00 -
-                                12h00</label>
+                            <label class="form-check-label ff-avenir" for="p_0_session_1">{{ __("partials.form_session_1") }}</label>
                         </div>
                         <div class="form-check mb-0">
                             <input class="form-check-input" type="radio" name="participants[0][session]"
                                 id="p_0_session_2" value="Session 2 : 12h00 - 15h00">
-                            <label class="form-check-label ff-avenir" for="p_0_session_2">Session 2 : 12h00 -
-                                15h00</label>
+                            <label class="form-check-label ff-avenir" for="p_0_session_2">{{ __("partials.form_session_2") }}</label>
                         </div>
                     </div>
                 </div>
@@ -260,13 +257,12 @@
         {{-- / participantsContainer --}}
 
         <div class="my-3">
-            <button type="button" id="addParticipantBtn" class="btn-add-participant ff-avenir">+ Ajouter un
-                participant</button>
+            <button type="button" id="addParticipantBtn" class="btn-add-participant ff-avenir">{{ __("partials.form_add_participant") }}</button>
         </div>
 
         <div class="text-center">
             <button type="submit" id="reservationBtnFront" class="btn"
-                style="background:#b07f49; color:#0f1c15; width:100%; border-radius:0; height:50px; font-weight:bold; letter-spacing:2px;">ENVOYER</button>
+                style="background:#b07f49; color:#0f1c15; width:100%; border-radius:0; height:50px; font-weight:bold; letter-spacing:2px;">{{ __("partials.btn_send") }}</button>
         </div>
     </form>
 </div>
@@ -276,47 +272,45 @@
     <div class="participant-block" data-index="__INDEX__">
         <hr class="section-divider">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <span class="participant-title ff-avenir">Participant __NUM__</span>
+            <span class="participant-title ff-avenir">{{ __("partials.form_participant_label") }} __NUM__</span>
             <button type="button" class="btn-remove-participant ff-avenir"
-                onclick="tournoiRemoveParticipant(this)">&#x2715; Supprimer</button>
+                onclick="tournoiRemoveParticipant(this)">&#x2715; {{ __("partials.form_remove") }}</button>
         </div>
 
         <div class="mb-3">
-            <label class="ff-avenir d-block mb-2" style="font-size:13px; color:#b07f49; letter-spacing:1px;">TYPE
-                *</label>
+            <label class="ff-avenir d-block mb-2" style="font-size:13px; color:#b07f49; letter-spacing:1px;">{{ __("partials.form_type_label") }}</label>
             <div class="d-flex gap-4 flex-wrap">
                 <div class="form-check mb-0">
                     <input class="form-check-input type-radio" type="radio" name="participants[__INDEX__][type]"
                         id="p___INDEX___type_golfeur" value="Golfeur">
-                    <label class="form-check-label ff-avenir" for="p___INDEX___type_golfeur">Golfeur</label>
+                    <label class="form-check-label ff-avenir" for="p___INDEX___type_golfeur">{{ __("partials.form_golfer") }}</label>
                 </div>
                 <div class="form-check mb-0">
                     <input class="form-check-input type-radio" type="radio" name="participants[__INDEX__][type]"
                         id="p___INDEX___type_non_golfeur" value="Non golfeur">
-                    <label class="form-check-label ff-avenir" for="p___INDEX___type_non_golfeur">Non golfeur</label>
+                    <label class="form-check-label ff-avenir" for="p___INDEX___type_non_golfeur">{{ __("partials.form_non_golfer") }}</label>
                 </div>
             </div>
         </div>
 
         <div class="mb-3">
-            <label class="ff-avenir d-block mb-2" style="font-size:13px; color:#b07f49; letter-spacing:1px;">CIVILITÉ
-                *</label>
+            <label class="ff-avenir d-block mb-2" style="font-size:13px; color:#b07f49; letter-spacing:1px;">{{ __("partials.form_civility") }}</label>
             <div class="d-flex gap-4 flex-wrap">
                 <div class="form-check mb-0">
                     <input class="form-check-input" type="radio" name="participants[__INDEX__][civilite]"
                         id="p___INDEX___civilite_madame" value="Madame">
-                    <label class="form-check-label ff-avenir" for="p___INDEX___civilite_madame">Madame</label>
+                    <label class="form-check-label ff-avenir" for="p___INDEX___civilite_madame">{{ __("partials.form_madame") }}</label>
                 </div>
                 <div class="form-check mb-0">
                     <input class="form-check-input" type="radio" name="participants[__INDEX__][civilite]"
                         id="p___INDEX___civilite_mademoiselle" value="Mademoiselle">
                     <label class="form-check-label ff-avenir"
-                        for="p___INDEX___civilite_mademoiselle">Mademoiselle</label>
+                        for="p___INDEX___civilite_mademoiselle">{{ __("partials.form_mademoiselle") }}</label>
                 </div>
                 <div class="form-check mb-0">
                     <input class="form-check-input" type="radio" name="participants[__INDEX__][civilite]"
                         id="p___INDEX___civilite_monsieur" value="Monsieur">
-                    <label class="form-check-label ff-avenir" for="p___INDEX___civilite_monsieur">Monsieur</label>
+                    <label class="form-check-label ff-avenir" for="p___INDEX___civilite_monsieur">{{ __("partials.form_monsieur") }}</label>
                 </div>
             </div>
         </div>
@@ -324,63 +318,63 @@
         <div class="row g-2 mb-2">
             <div class="col-sm-6">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][nom]"
-                    placeholder="Nom *">
+                    placeholder="{{ __("partials.form_placeholder_nom") }}">
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][prenom]"
-                    placeholder="Prénom">
+                    placeholder="{{ __("partials.form_placeholder_prenom") }}">
             </div>
         </div>
 
         <div class="mb-2">
             <input type="date" class="form-control ff-avenir" name="participants[__INDEX__][date_naissance]"
-                title="Date de naissance">
+                title="{{ __('partials.form_placeholder_dob') }}">
         </div>
 
         <div class="mb-2">
             <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][adresse]"
-                placeholder="Adresse">
+                placeholder="{{ __("partials.form_placeholder_address") }}">
         </div>
 
         <div class="row g-2 mb-2">
             <div class="col-sm-4">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][pays]"
-                    placeholder="Pays">
+                    placeholder="{{ __("partials.form_placeholder_country") }}">
             </div>
             <div class="col-sm-4">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][ville]"
-                    placeholder="Ville">
+                    placeholder="{{ __("partials.form_placeholder_city") }}">
             </div>
             <div class="col-sm-4">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][code_postal]"
-                    placeholder="Code Postal">
+                    placeholder="{{ __("partials.form_placeholder_postal") }}">
             </div>
         </div>
 
         <div class="row g-2 mb-2">
             <div class="col-sm-6">
                 <input type="tel" class="form-control ff-avenir" name="participants[__INDEX__][telephone]"
-                    placeholder="Téléphone (indicatif)">
+                    placeholder="{{ __("partials.form_placeholder_phone") }}">
             </div>
             <div class="col-sm-6">
                 <input type="email" class="form-control ff-avenir" name="participants[__INDEX__][email]"
-                    placeholder="E-mail *">
+                    placeholder="{{ __("partials.form_placeholder_email") }}">
             </div>
         </div>
 
         <div class="row g-2 mb-2">
             <div class="col-sm-6">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][index_golf]"
-                    placeholder="Index golf">
+                    placeholder="{{ __("partials.form_placeholder_golf_index") }}">
             </div>
             <div class="col-sm-6">
                 <input type="text" class="form-control ff-avenir" name="participants[__INDEX__][numero_licence]"
-                    placeholder="N° licence">
+                    placeholder="{{ __("partials.form_placeholder_licence") }}">
             </div>
         </div>
 
         <div class="mb-2">
-            <label class="ff-avenir mb-2 d-block" style="font-size:13px; color:#aaa;">Taille de polo :</label>
+            <label class="ff-avenir mb-2 d-block" style="font-size:13px; color:#aaa;">{{ __("partials.form_polo_size_label") }}</label>
             <div class="d-flex flex-wrap gap-3">
                 <div class="form-check mb-0">
                     <input class="form-check-input" type="radio" name="participants[__INDEX__][taille_polo]"
@@ -416,7 +410,7 @@
         </div>
 
         <div class="session-section mt-2" style="display:none;">
-            <small class="ff-avenir" style="color:#888;">* Session (cocher votre choix) :</small>
+            <small class="ff-avenir" style="color:#888;">{{ __("partials.form_session_hint") }}</small>
             <div class="d-flex flex-wrap gap-3 mt-1">
                 <div class="form-check mb-0">
                     <input class="form-check-input" type="radio" name="participants[__INDEX__][session]"
@@ -463,7 +457,7 @@
                 function tournoiUpdateTitles() {
                     document.querySelectorAll('#participantsContainer .participant-block').forEach(function(block, i) {
                         var titleEl = block.querySelector('.participant-title');
-                        if (titleEl) titleEl.textContent = 'Participant ' + (i + 1);
+                        if (titleEl) titleEl.textContent = '{{ __("partials.form_participant_label") }} ' + (i + 1);
                     });
                 }
 
@@ -498,7 +492,7 @@
 
                 function tournoiDoSubmit(token) {
                     submitBtn.disabled = true;
-                    submitBtn.textContent = 'Envoi en cours...';
+                    submitBtn.textContent = '{{ __("partials.sending") }}';
                     alertBox.className = 'alert d-none mb-3';
                     alertBox.textContent = '';
 
@@ -527,7 +521,7 @@
                             if (data.success) {
                                 alertBox.className = 'alert alert-success mb-3';
                                 alertBox.textContent = data.message ||
-                                    'Votre inscription a bien \u00e9t\u00e9 enregistr\u00e9e.';
+                                    '{{ __("partials.form_registered") }}';
                                 form.reset();
                                 // Remove extra participant blocks
                                 document.querySelectorAll('#participantsContainer .participant-block').forEach(
@@ -540,7 +534,7 @@
                                 });
                                 participantCount = 1;
                             } else {
-                                var msg = data.message || 'Une erreur est survenue.';
+                                var msg = data.message || '{{ __("partials.error_generic") }}';
                                 if (data.errors) {
                                     msg = Object.values(data.errors).flat().join(' ');
                                 }
@@ -550,11 +544,11 @@
                         })
                         .catch(function() {
                             alertBox.className = 'alert alert-danger mb-3';
-                            alertBox.textContent = 'Une erreur de connexion est survenue.';
+                            alertBox.textContent = '{{ __("partials.error_connection") }}';
                         })
                         .finally(function() {
                             submitBtn.disabled = false;
-                            submitBtn.textContent = 'ENVOYER';
+                            submitBtn.textContent = '{{ __("partials.btn_send") }}';
                         });
                 }
 

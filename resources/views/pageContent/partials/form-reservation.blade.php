@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <span>@lang('CONTACTEZ-NOUS')</span>
+    <span>{{ __('partials.contact_us') }}</span>
 </div>
 <div class="formulaire" style="background: #0f1c15; padding: 20px; color: #fff; border: 0.5px solid #707070;">
     <div id="reservationAlert" class="alert d-none mb-3" role="alert"></div>
@@ -7,28 +7,28 @@
         @csrf
         <input type="hidden" name="page" value="{{ url()->current() }}">
         <div class="mb-4">
-            <label class="ff-avenir mb-1" for="">Nom & prénoms</label>
+            <label class="ff-avenir mb-1" for="">{{ __('partials.label_full_name') }}</label>
             <input type="text" name="nomComplet" class="form-control ff-avenir bg-dark text-grey py-2 border-color"
                 required>
         </div>
         <div class="mb-4">
-            <label class="ff-avenir mb-1" for="">Adresse Email</label>
+            <label class="ff-avenir mb-1" for="">{{ __('partials.label_email') }}</label>
             <input type="email" name="email" class="form-control ff-avenir bg-dark text-grey py-2 border-color"
                 required>
         </div>
         <div class="mb-4">
-            <label class="ff-avenir mb-1" for="">Objet</label>
+            <label class="ff-avenir mb-1" for="">{{ __('partials.label_subject') }}</label>
             <input type="text" name="objet" class="form-control ff-avenir bg-dark text-grey py-2 border-color"
                 required>
         </div>
         <div class="mb-4">
-            <label class="ff-avenir mb-1" for="">Message</label>
+            <label class="ff-avenir mb-1" for="">{{ __('partials.label_message') }}</label>
             <textarea name="message" cols="20" rows="5"
                 class="form-control ff-avenir text-grey bg-dark text-grey py-2 border-color" required></textarea>
         </div>
         <div class="mb-4 text-center">
             <button type="submit" class="btn"
-                style="background: #b07f49;color: #0f1c15;width: 100%; border-radius: 0px; height: 50px;">ENVOYER</button>
+                style="background: #b07f49;color: #0f1c15;width: 100%; border-radius: 0px; height: 50px;">{{ __('partials.btn_send') }}</button>
         </div>
     </form>
 </div>
@@ -60,7 +60,7 @@
                 var btn = form.querySelector('[type="submit"]');
                 if (btn) {
                     btn.disabled = true;
-                    btn.textContent = 'Envoi en cours...';
+                    btn.textContent = '{{ __("partials.sending") }}';
                 }
                 alertBox.className = 'alert d-none mb-3';
 
@@ -86,7 +86,7 @@
                             alertBox.textContent = result.data.message;
                             form.reset();
                         } else {
-                            var msg = result.data.message || 'Une erreur est survenue.';
+                            var msg = result.data.message || '{{ __("partials.error_generic") }}';
                             if (result.data.errors) {
                                 msg = Object.values(result.data.errors).flat().join(' ');
                             }
@@ -96,12 +96,12 @@
                     })
                     .catch(function() {
                         alertBox.className = 'alert alert-danger mb-3';
-                        alertBox.textContent = 'Une erreur de connexion est survenue.';
+                        alertBox.textContent = '{{ __("partials.error_connection") }}';
                     })
                     .finally(function() {
                         if (btn) {
                             btn.disabled = false;
-                            btn.textContent = 'ENVOYER';
+                            btn.textContent = '{{ __("partials.btn_send") }}';
                         }
                     });
             }

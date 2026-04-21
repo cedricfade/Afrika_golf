@@ -9,9 +9,9 @@
             <div class="col-6 col-md-3 col-xl-3 mb-4">
                 <ul>
                     <span>@lang('EVENT')</span>
-                    <li><a href="">Concept</a></li>
-                    <li><a href="">Golf</a></li>
-                    <li><a href="">Art</a></li>
+                    <li><a href="">{{ __('partials.footer_concept') }}</a></li>
+                    <li><a href="">{{ __('partials.footer_golf') }}</a></li>
+                    <li><a href="">{{ __('partials.footer_art') }}</a></li>
                 </ul>
             </div>
 

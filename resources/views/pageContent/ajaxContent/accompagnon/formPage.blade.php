@@ -4,34 +4,34 @@
         <form action="{{ route('form-command-ball') }}" method="POST" id="commandBallForm">
             @csrf
             <div class="row">
-                <h2 class="fs-xl text-center">SOUTENEZ UN AUTISTE ADULTE</h2>
+                <h2 class="fs-xl text-center">{{ __('ajax_accompagnon.form_title') }}</h2>
                 <div class="col-xl-6">
                     <div class="form-group">
-                        <label for="">Nom</label>
+                        <label for="">{{ __('ajax_accompagnon.label_nom') }}</label>
                         <input type="text" class="form-control" name="nom" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Prénom</label>
+                        <label for="">{{ __('ajax_accompagnon.label_prenom') }}</label>
                         <input type="text" class="form-control" name="prenom" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Téléphone</label>
+                        <label for="">{{ __('ajax_accompagnon.label_phone') }}</label>
                         <input type="text" class="form-control" name="telephone">
                     </div>
                 </div>
                 <div class="col-xl-6">
                     <div class="form-group ">
-                        <label for="">Adresse Email</label>
+                        <label for="">{{ __('ajax_accompagnon.label_email') }}</label>
                         <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Nombre de balles</label>
+                        <label for="">{{ __('ajax_accompagnon.label_balls') }}</label>
                         <input type="number" class="form-control" name="nombre_de_balles" min="1" required>
                     </div>
                 </div>
                 <div id="commandBallAlert" class="alert d-none mb-3"></div>
                 <div class="form-group text-center">
-                    <button type="submit" class="btn">Envoyer</button>
+                    <button type="submit" class="btn">{{ __('ajax_accompagnon.btn_send') }}</button>
                 </div>
             </div>
         </form>
@@ -63,7 +63,7 @@
                 var btn = form.querySelector('[type="submit"]');
                 if (btn) {
                     btn.disabled = true;
-                    btn.textContent = 'Envoi en cours...';
+                    btn.textContent = '{{ __("ajax_accompagnon.sending") }}';
                 }
                 alertBox.className = 'alert d-none mb-3';
 
@@ -89,7 +89,7 @@
                             alertBox.textContent = result.data.message;
                             form.reset();
                         } else {
-                            var msg = result.data.message || 'Une erreur est survenue.';
+                            var msg = result.data.message || '{{ __("ajax_accompagnon.error_generic") }}';
                             if (result.data.errors) {
                                 msg = Object.values(result.data.errors).flat().join(' ');
                             }
@@ -99,12 +99,12 @@
                     })
                     .catch(function() {
                         alertBox.className = 'alert alert-danger mb-3';
-                        alertBox.textContent = 'Une erreur de connexion est survenue.';
+                        alertBox.textContent = '{{ __("ajax_accompagnon.error_network") }}';
                     })
                     .finally(function() {
                         if (btn) {
                             btn.disabled = false;
-                            btn.textContent = 'ENVOYER';
+                            btn.textContent = '{{ __("ajax_accompagnon.btn_send_caps") }}';
                         }
                     });
             }

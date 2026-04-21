@@ -3,13 +3,12 @@
     <div class="info-rdv">
         <div class="card"></div>
         <div class="titre">
-            <h3>Actualité</h3>
-            <span class="date-info">20 février 2026</span>
+            <h3>{{ __('partials.front_card_category') }}</h3>
+            <span class="date-info">{{ __('partials.front_card_date') }}</span>
         </div>
-        <h2>Le golf africain comme vous ne l'avez jamais vécu</h2>
+        <h2>{{ __('partials.front_card_title') }}</h2>
         <p class="description">
-            Découvrez les coulisses de l'Africa Art Golf Cup, ses artistes, ses champions et les
-            moments qui font de cet événement une expérience unique en son genre.
+            {{ __('partials.front_card_desc') }}
         </p>
         <div class="user">
             <div class="img">
@@ -18,7 +17,7 @@
             <div class="user-info">
                 <span class="name">Lionel AKE</span>
                 <br>
-                <span class="role">Lead développeur</span>
+                <span class="role">{{ __('partials.front_card_author_role') }}</span>
             </div>
         </div>
     </div>

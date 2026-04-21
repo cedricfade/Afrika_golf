@@ -9,10 +9,9 @@
         <div class="button">
             @if (!empty($brochure))
                 <a href="{{ $brochure }}" target="_blank" download onclick="event.stopPropagation()"
-                    class="btn">Télécharger le formulaire</a>
+                    class="btn">{{ __('partials.download_form') }}</a>
             @else
-                <a href="#" class="btn" onclick="event.stopPropagation(); event.preventDefault();">Télécharger
-                    le formulaire</a>
+                <a href="#" class="btn" onclick="event.stopPropagation(); event.preventDefault();">{{ __('partials.download_form') }}</a>
             @endif
         </div>
     </div>

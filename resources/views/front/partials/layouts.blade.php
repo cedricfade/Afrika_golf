@@ -91,8 +91,7 @@
         <div class="d-none d-md-block"
             style="width:100%; overflow:hidden; background-color:#bbb; padding:5px 0; margin-top:20px;">
             <div class="banner-ticker">
-                <span class="text-dark">{{ $bannerContent }} <a href="{{ route('accompagnon') }}#formPage">CLIQUEZ
-                        ICI</a></span>
+                <span class="text-dark">{{ $bannerContent }} <a href="{{ route('accompagnon') }}#formPage">{{ __('partials.click_here') }}</a></span>
                 <span aria-hidden="true">{{ $bannerContent }}</span>
             </div>
         </div>

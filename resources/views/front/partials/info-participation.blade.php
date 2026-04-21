@@ -21,7 +21,7 @@
         <div class="row mb-3">
             <div class="col-lg-12">
                 <h3 class="text-white" style="font-size: 30px">
-                    Participation
+                    {{ __('partials.participation_heading') }}
                 </h3>
             </div>
             <div class="col-lg-5 d">
@@ -44,13 +44,13 @@
         <!--a href="{{ route('experience') }}" target="__blank"
             class="text-color ff-avenir mt-3 fs-lg lh">@lang('Découvrez nos offres de partenariat')</a-->
         <div>
-            <h3>PACKAGE AFRICA ART GOLF CUP<h3>
-            • <span class="spanDetail">Déplacement pendant l'événement</span> <br>
-            • <span class="spanDetail">Participation au tournoi (caddie personnel, location de matériels)</span>  <br>
-            • <span class="spanDetail">Dîner</span>  <br>
-            • <span class="spanDetail">Brunch</span> <br>
+            <h3>{{ __('partials.package_title') }}<h3>
+            • <span class="spanDetail">{{ __('partials.package_item1') }}</span> <br>
+            • <span class="spanDetail">{{ __('partials.package_item2') }}</span>  <br>
+            • <span class="spanDetail">{{ __('partials.package_item3') }}</span>  <br>
+            • <span class="spanDetail">{{ __('partials.package_item4') }}</span> <br>
             <br>
-            <a href="{{ route('tournois') }}" style="text-decoration: none;color: #b07f49;"><span class="spanDetail">Plus de détails</span></a>
+            <a href="{{ route('tournois') }}" style="text-decoration: none;color: #b07f49;"><span class="spanDetail">{{ __('partials.package_details') }}</span></a>
         </div>
     </div>
 </div>
