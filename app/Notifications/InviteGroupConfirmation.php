@@ -28,19 +28,22 @@ class InviteGroupConfirmation extends Notification
         $first = $this->invites[0];
 
         $mail = (new MailMessage)
-            ->subject('Confirmation de votre inscription — Tournoi de Golf Africa Art Golf Cup')
+            ->subject('Confirmation de votre inscription — Africa Art Golf Cup 2026')
             ->greeting('Bonjour ' . $first->civilite . ' ' . $first->prenom . ' ' . $first->nom . ',')
-            ->line('Nous avons bien reçu votre inscription au **Tournoi de Golf** et nous vous en remercions.');
+            ->line('C\'est un plaisir de compter sur votre participation à l\'Africa Art Golf Cup 2026 ! Nous avons hâte de vous retrouver à Kigali du 28 au 30 octobre.');
 
         foreach ($this->invites as $i => $invite) {
-            $mail->line('---')
-                ->line('**Participant ' . ($i + 1) . ' :** ' . $invite->civilite . ' ' . $invite->prenom . ' ' . $invite->nom)
+            $mail->line('———————————————————')
+                ->line('**Participant ' . ($i + 1) . ' :**')
+                ->line($invite->civilite . ' ' . $invite->prenom . ' ' . $invite->nom)
                 ->line('**Statut :** ' . $invite->type)
                 ->line('**Email :** ' . $invite->email);
         }
 
         return $mail
-            ->line('Notre équipe vous contactera dans les plus brefs délais.')
+            ->line('———————————————————')
+            ->line('Votre demande est bien reçue. Comme les places sont limitées, les inscriptions sont validées par ordre de confirmation.')
+            ->line('Un membre de notre équipe vous contactera sous peu pour vous accompagner dans la suite des démarches.')
             ->salutation('Cordialement, l\'équipe Africa Art Golf Cup');
     }
 }

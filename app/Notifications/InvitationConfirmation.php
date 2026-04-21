@@ -26,23 +26,24 @@ class InvitationConfirmation extends Notification
         $p1 = $data['participant_1'] ?? [];
 
         $mail = (new MailMessage)
-            ->subject('Confirmation de votre inscription — Tournoi de Golf Africa Art Golf Cup')
+            ->subject('Confirmation de votre inscription — Africa Art Golf Cup 2026')
             ->greeting('Bonjour ' . ($p1['civilite'] ?? '') . ' ' . ($p1['prenom'] ?? '') . ' ' . ($p1['nom'] ?? '') . ',')
-            ->line('Nous avons bien reçu votre inscription au **Tournoi de Golf** et nous vous en remercions.')
-            ->line('**Participant 1 :** ' . ($p1['civilite'] ?? '') . ' ' . ($p1['prenom'] ?? '') . ' ' . ($p1['nom'] ?? ''))
-            ->line('**Type :** ' . ($p1['type'] ?? ''))
-            ->line('**Email :** ' . ($p1['email'] ?? ''));
+            ->line('C\'est un plaisir de compter sur votre participation à l\'Africa Art Golf Cup 2026 ! Nous avons hâte de vous retrouver à Kigali du 28 au 30 octobre.');
 
-        if (!empty($data['participant_2'])) {
-            $p2 = $data['participant_2'];
-            $mail->line('---')
-                ->line('**Participant 2 :** ' . ($p2['civilite'] ?? '') . ' ' . ($p2['prenom'] ?? '') . ' ' . ($p2['nom'] ?? ''))
-                ->line('**Type :** ' . ($p2['type'] ?? ''))
-                ->line('**Email :** ' . ($p2['email'] ?? ''));
+        foreach (range(1, 4) as $i) {
+            $p = $data['participant_' . $i] ?? [];
+            if (empty($p)) continue;
+            $mail->line('———————————————————')
+                ->line('**Participant ' . $i . ' :**')
+                ->line(trim(($p['civilite'] ?? '') . ' ' . ($p['prenom'] ?? '') . ' ' . ($p['nom'] ?? '')))
+                ->line('**Type :** ' . ($p['type'] ?? ''))
+                ->line('**Email :** ' . ($p['email'] ?? ''));
         }
 
         return $mail
-            ->line('Notre équipe vous contactera dans les plus brefs délais.')
+            ->line('———————————————————')
+            ->line('Votre demande est bien reçue. Comme les places sont limitées, les inscriptions sont validées par ordre de confirmation.')
+            ->line('Un membre de notre équipe vous contactera sous peu pour vous accompagner dans la suite des démarches.')
             ->salutation('Cordialement, l\'équipe Africa Art Golf Cup');
     }
 }
