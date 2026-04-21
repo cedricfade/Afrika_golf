@@ -39,7 +39,27 @@
             text-align: left;
         }
 
-        @media screen and (max-width: 799px) {}
+        @media screen and (max-width: 799px) {
+            
+            .banner .banner-titre {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                padding-right: 0px !important;
+                padding-left: 30px !important;
+            }
+            
+            .banner .banner-titre .titre {
+                width: 100%;
+            }
+            
+            .banner .banner-titre .titre h1 {
+                width: 50%;
+            }
+            
+            .banner .banner-titre .titre {
+                font-size: 13px;
+            }
+        }
     </style>
 @endpush
 

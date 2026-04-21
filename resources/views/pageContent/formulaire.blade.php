@@ -39,7 +39,7 @@
             <div class="col-xl-5">
                 @isset($pack)
                     <h3>{{ $pack->title }}</h3>
-                    <h2>{{ $pack->space }} : <br>{{ number_format($pack->price, 0, ',', ' ') }} USD</h2>
+                    <h2>{{ $pack->space }} <br>{{ number_format($pack->price, 0, ',', ' ') }} USD</h2>
                     <div class="card-text">
                         {!! $pack->symbole !!}
                     </div>

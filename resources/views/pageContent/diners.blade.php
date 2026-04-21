@@ -61,8 +61,8 @@
         @endforeach
 
         <div class="souscrire">
-            <a href="" class="btn">@lang('CONSULTER LE PROGRAMME')</a>
-            <a href="" class="btn">@lang('RESERVER')</a>
+            <a href="{{ asset('assets/images/program-aagc.pdf') }}" class="btn">@lang('CONSULTER LE PROGRAMME')</a>
+            <a href="{{ route('reservations') }}" class="btn">@lang('RESERVER')</a>
         </div>
     </div>
 </section>

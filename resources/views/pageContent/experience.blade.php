@@ -34,7 +34,7 @@
                         'link' => route('formulaire.pack', ['pack' => $pack->id]),
                         'image' => Storage::url($pack->image),
                         'title' => $pack->title,
-                        'subtitle' => $pack->space . '<br> ' . number_format($pack->price, 0, ',', ' ') . ' USD',
+                        'subtitle' => $pack->space . ' <b style="color:#b07f49">' . number_format($pack->price, 0, ',', ' ') . ' USD</b>',
                         'content' => $pack->symbole,
                         'brochure' => $pack->brochure ? Storage::url($pack->brochure) : null,
                     ])

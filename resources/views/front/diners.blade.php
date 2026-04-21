@@ -1,7 +1,7 @@
 @extends('front.main', ['title' => 'Diner'])
 @section('content')
     @include('pageContent.diners', [
-        'bannerTitle' => 'Le diner',
+        'bannerTitle' => __('Un diner sur mesure'),
         'bannerImage' => asset('assets/images/diners/banner.png'),
     ])
 @endsection

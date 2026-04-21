@@ -24,8 +24,45 @@
 
                 @if (!empty($bannerDescription))
                     <p style="color: #fff; font-family: 'MyArial'; margin-top: 20px; font-size: 1.2em;">
-                        {!! $bannerDescription !!}
+                        {{ $bannerDescription }}
                     </p>
+                @endif
+            </div>
+        </div>
+    @elseif(!empty($bannerSentenceTitle))
+        <div class="container banner-titre">
+            @if (!empty($sousTitle))
+                <h4 style="color: #B07F49; font-family: 'AveniNext'; text-transform: uppercase; margin-bottom: 20px;">
+                    {{ $sousTitle }}</h4>
+                <br>
+            @endif
+            <div class="titre">
+                    <div class="d-none d-sm-block">
+                        <h4 style="font-size: 24px;color:white">{{ $bannerSentenceTitle }}</h4>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <h4 style="margin-top: 50px;font-size: 18px;color:white">{{ $bannerSentenceTitle }}</h4>
+                    </div>
+
+                @if (!empty($bannerButton))
+                    <a href="{{ $bannerButton['link'] }}">
+                        {{ $bannerButton['text'] }}
+                    </a>
+                @endif
+
+                @if (!empty($bannerDescription))
+                    <div class="d-block d-sm-none">
+                        <p style="color: #fff; font-family: 'MyArial'; margin-top: 20px; font-size: .9em;">
+                            {{ $bannerDescription }}
+                        </p>
+                    </div>
+                    
+                    <!-- SM et plus -->
+                    <div class="d-none d-sm-block">
+                        <p style="color: #fff; font-family: 'MyArial'; margin-top: 20px; font-size: 1.2em;">
+                            {{ $bannerDescription }}
+                        </p>
+                    </div>
                 @endif
             </div>
         </div>
@@ -44,7 +81,9 @@
                         {{ $citation2 }}
                     </h3>
 
-                    <br><br><br>
+                    <br>
+                    <br>
+                    <br>
 
                     <img src="{{ $subImage }}" alt="" class="sub-image">
                 </div>

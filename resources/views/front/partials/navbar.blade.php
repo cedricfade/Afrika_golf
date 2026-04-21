@@ -1,7 +1,7 @@
     <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('assets_custom/home/svg/logo.svg') }}" alt="AFRICA GOLF" class="logo">
+                <img src="{{ asset('assets/images/logo-aagc-by-mcn.svg') }}" alt="AFRICA GOLF" class="logo">
             </a>
 
             <!-- Menu principal - visible sur desktop -->
@@ -32,12 +32,12 @@
             <ul class="navbar-nav ms-auto">
                 <div class="lang-switcher">
                     <a href="{{ route('locale.switch', 'fr') }}"
-                        class="lang {{ app()->getLocale() === 'fr' ? 'lang-active' : '' }} fs-lg">
+                        class="lang {{ app()->getLocale() === 'fr' ? 'lang-active' : '' }} fs">
                         FR
                     </a>
-                    <span class="lang-sep fs-lg">|</span>
+                    <span class="lang-sep text-white fs-lg">|</span>
                     <a href="{{ route('locale.switch', 'en') }}"
-                        class="lang {{ app()->getLocale() === 'en' ? 'lang-active' : '' }} fs-lg">
+                        class="lang {{ app()->getLocale() === 'en' ? 'lang-active' : '' }} fs">
                         EN
                     </a>
                 </div>
@@ -67,12 +67,12 @@
                                 @lang('MCN')
                             </a>
                         </li>
-                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
+                        <li>
                             <a class="dropdown-item" href="{{ route('tournois') }}">
                                 @lang('LE TOURNOI')
                             </a>
                         </li>
-                        <li class="d-block d-sm-block d-lg-none d-xl-none d-md-none d-xxl-none">
+                        <li>
                             <a class="dropdown-item" href="{{ route('diners') }}">
                                 @lang('LE DÎNER')
                             </a>

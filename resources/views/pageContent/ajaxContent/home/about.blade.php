@@ -18,11 +18,11 @@
                 <div class="trait mb-5"></div>
                 <p>
                     Africa Art Golf Cup est un rendez-vous culturel et sportif qui ambitionne de réunir, en un même lieu — le parcours de golf — amateurs et collectionneurs d’art ainsi que passionnés de golf.
-                    Événement premium annuel et itinérant dans les grandes villes africaines, il contribue au rayonnement de l’art, de la culture et du golf sur le continent. Africa Art Golf Cup est articulé autour de :<br>
+                    Événement premium annuel et itinérant dans les grandes villes africaines, il contribue au rayonnement de l’art, de la culture et du golf sur le continent. Africa Art Golf Cup est articulé autour des centres d’intérêts suivants :<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•⁠  ⁠Expositions privées et ventes d’œuvres d’art, de bijoux et d’articles de luxe ;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•⁠  ⁠Tournoi de golf ;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•⁠  ⁠Dîner de prestige et actions caritatives ;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•⁠  ⁠Brunchs<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•⁠  ⁠Brunch<br>
                 </p>
             </div>
             <div class="info">
