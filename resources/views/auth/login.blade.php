@@ -3,7 +3,7 @@
 @section('content')
     <form class="theme-form" method="post" action="{{ route('login') }}">
         @csrf
-        <h2 class="text-center">@lang('Login')</h2>
+        <h2 class="text-center">@lang('Connexion')</h2>
         <p class="text-center">Bienvenue sur votre compte</p>
         @if (session('status'))
             <div class="alert alert-success" role="alert">
@@ -21,7 +21,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label class="col-form-label">@lang('Password')</label>
+            <label class="col-form-label">@lang('Mot de passe')</label>
             <div class="form-input position-relative">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                     name="password" required placeholder="@lang('********')" autocomplete="current-password">

@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerTitle' => $bannerTitle ?? 'Partenaires',
+    'bannerTitle' => $bannerTitle ?? __('partenaires.banner_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/partenaire/banner.png'),
 ])
 
@@ -21,9 +21,8 @@
 
 <section class="partenaires">
     <div class="container">
-        <h2>{{ $sectionTitle ?? 'Partenaires distingués' }}</h2>
-        {!! $sectionIntro ??
-            '<p>Nous sommes fiers de collaborer avec des institutions et des marques prestigieuses qui partagent notre engagement envers l\'excellence, l\'innovation et la célébration du patrimoine africain.</p>' !!}
+        <h2>{{ $sectionTitle ?? __('partenaires.section_title') }}</h2>
+        {!! $sectionIntro ?? '<p>' . e(__('partenaires.section_intro')) . '</p>' !!}
         <div class="clients">
             <div class="row">
                 @foreach ($partners ?? [] as $partner)

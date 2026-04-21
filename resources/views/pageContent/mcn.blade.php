@@ -28,19 +28,13 @@
         <div class="row">
             <div class="col-lg-12 contenu">
                 <p style="font-size: 1.3rem;">
-                    Tel est l’engagement de notre cabinet à vos côtés. Notre objectif est de vous accompagner dans la
-                    gestion et la valorisation de vos collections d’art et autres actifs alternatifs. Spécialisé en
-                    gestion et valorisation de patrimoine, le cabinet-conseil vous accompagne dans : <br>
-                    •&nbsp;&nbsp;&nbsp;&nbsp; ⁠L’administration de votre collection : inventaire, catalogage et mise à
-                    jour documentaire ;<br>
-                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠Le conseil à l’achat et à la vente d’œuvres d’art : accompagnement et
-                    représentation lors de ventes publiques et privées ;<br>
-                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La conservation et la restauration des œuvres ;<br>
-                    •&nbsp;&nbsp;&nbsp;&nbsp;⁠ ⁠La valorisation des collections et la promotion des artistes dont les
-                    œuvres composent vos collections.<br>
-                    C’est dans le cadre de cette activité de valorisation et de promotion que nous avons conçu Africa
-                    Art Golf Cup, un événement premium à la croisée de l’art et du golf.<br>
-                    <a href="https://www.mcn-cgp.com/" style="text-decoration: none;">EN SAVOIR PLUS</a>
+                    {{ __('mcn.intro') }} <br>
+                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_admin') }}<br>
+                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_conseil') }}<br>
+                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_conservation') }}<br>
+                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_valorisation') }}<br>
+                    {{ __('mcn.intro_closing') }}<br>
+                    <a href="https://www.mcn-cgp.com/" style="text-decoration: none;">{{ __('mcn.learn_more') }}</a>
                 </p>
             </div>
         </div>
@@ -49,26 +43,22 @@
         <div class="row g-4 services-row mt-5">
             <div class="col-xl-6 d-flex">
                 <div class="services w-100">
-                    <h2 class="text-center">Nos actions</h2>
+                    <h2 class="text-center">{{ __('mcn.actions_title') }}</h2>
                     <p style="font-size: 1.3rem;">
-                        Notre cabinet fournit des conseils spécialisés et des solutions sur mesure aux clients privés,
-                        banques, sociétés de gestion, entreprises, institutions publiques et privées sur tous les
-                        aspects de la gestion de patrimoine artistique.
+                        {{ __('mcn.actions_text') }}
                     </p>
                 </div>
             </div>
 
             <div class="col-xl-6 d-flex">
                 <div class="services w-100">
-                    <h2 class="text-center">Notre valeur ajoutée</h2>
+                    <h2 class="text-center">{{ __('mcn.value_title') }}</h2>
                     <p style="font-size: 1.3rem;">
-                        Le conseil en gestion de patrimoine artistique sur le marché de l’art africain.
+                        {{ __('mcn.value_text1') }}
                         <br><br>
-                        La gestion et la sécurisation des collections qui va de l’inventaire physique et numérique à la
-                        souscription de police d’assurance.
+                        {{ __('mcn.value_text2') }}
                         <br><br>
-                        Notre connaissance approfondie du marché de l’art s’étend des artistes aux professionnels de
-                        tous les corps de métier.
+                        {{ __('mcn.value_text3') }}
                     </p>
                 </div>
             </div>

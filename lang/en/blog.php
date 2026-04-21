@@ -1,0 +1,22 @@
+<?php
+return [
+    'meta_description'     => "Discover the latest news, analysis and trends from the world of golf in Africa on our dedicated blog. Dive into captivating articles, exclusive interviews and expert advice to enrich your passion for this fascinating sport.",
+    'featured'             => "Featured",
+    'headline'             => "News, trends and analysis from African golf",
+    'follow_us'            => "Follow us:",
+    'tab_technology'       => "Technology",
+    'tab_health'           => "Health & Wellness",
+    'tab_travel'           => "Travel",
+    'tab_entrepreneurship' => "Entrepreneurship",
+    'tab_personal_dev'     => "Personal Development",
+    'tab_education'        => "Education",
+    'tab_finance'          => "Finance",
+    'tab_environment'      => "Environment",
+    'tab_lifestyle'        => "Lifestyle",
+    'article_intro1'       => "He shares his journey building and growing a thriving business, offering valuable insights and lessons learned along the way. From initial idea to growth, this blog guides aspiring entrepreneurs with practical advice and inspiration. He shares his journey building and growing a thriving business, offering valuable insights and lessons learned along the way. From initial idea to growth.",
+    'article_intro2'       => "He shares his journey building and growing a thriving business, offering valuable insights and lessons learned along the way. From initial idea to growth, this blog guides aspiring entrepreneurs with practical advice and inspiration. He shares his journey building and growing a thriving business, offering valuable insights and lessons learned along the way.",
+    'article_title_1'      => "Building a Successful Startup",
+    'article_para_1'       => "He shares his journey building and growing a thriving business, offering valuable insights and lessons learned along the way. From initial idea to growth, this blog guides aspiring entrepreneurs with practical advice.",
+    'article_title_2'      => "Lessons from the Trenches",
+    'article_para_2'       => "She takes you off the beaten path to discover lesser-known travel destinations. From secluded beaches to charming mountain villages, find out why these hidden gems deserve a spot on your travel bucket list.",
+];

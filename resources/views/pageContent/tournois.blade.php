@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerSentenceTitle' => $bannerSentenceTitle ?? __("Un rendez-vous d'exception où la gastronomie fine, l'art, le luxe à l'africaine et le golf fusionnent ."),
+    'bannerSentenceTitle' => $bannerSentenceTitle ?? __('tournois.rendezvous'),
     'bannerImage' => $bannerImage ?? asset('assets/images/tournois/banner.png'),
 ])
 
@@ -57,28 +57,27 @@
             <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="programme-infos-2">
                     <p>
-                        <b class="text-white">AFRICA ART GOLF CUP</b>, {{ __('pages.tournois_intro') }}
+                        <b class="text-white">AFRICA ART GOLF CUP</b>, {{ __('tournois.intro') }}
                     </p>
 
                     <p>
-                        <b class="text-white">{{ __('pages.pour_les_golfeurs') }}</b> :<br>
-                        {!! nl2br(e(__('pages.tournois_golfers'))) !!}
-
-                    <p>
-                        <b class="text-white">{{ __('pages.pour_les_non_golfeurs') }}</b> :<br>
-                        {!! nl2br(e(__('pages.tournois_non_golfers'))) !!}
+                        <b class="text-white">{{ __('tournois.golfers_title') }}</b> :<br>
+                        {!! nl2br(e(__('tournois.golfers_text'))) !!}
                     </p>
 
                     <p>
-                        <b class="text-white">Pour les fins gourmets </b> :<br>
-                        Expériences culinaires signées Dieuveil Malonga
-                        Les fourneaux de l’Atelier des vins seront un véritable laboratoire de découvertes des saveurs issues des produits locaux et des épices les plus insolites d’Afrique. 
-                        Tamsir NDir, le Chef-DJ pour qui les plats et les platines n’ont pas de secrets, vous offrira un brunch des plus branchés sur les belles rives du lac Muhazi.
+                        <b class="text-white">{{ __('tournois.non_golfers_title') }}</b> :<br>
+                        {!! nl2br(e(__('tournois.non_golfers_text'))) !!}
                     </p>
 
                     <p>
-                        <b class="text-white">Pour l’oeil d’esthète  </b> :<br>
-                        Tout est fait pour vous faire baigner dans un équilibre entre raffinement et Art. Du 28 au 30 octobre 2026, une exposition vous fera découvrir des oeuvres d’art d’exception.
+                        <b class="text-white">{{ __('tournois.gourmets_title') }}</b> :<br>
+                        {!! nl2br(e(__('tournois.gourmets_text'))) !!}
+                    </p>
+
+                    <p>
+                        <b class="text-white">{{ __('tournois.esthete_title') }}</b> :<br>
+                        {{ __('tournois.esthete_text') }}
                     </p>
                 </div>
             </div>

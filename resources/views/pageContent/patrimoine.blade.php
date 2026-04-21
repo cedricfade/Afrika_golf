@@ -1,5 +1,5 @@
 @extends('front.main', [
-    'bannerTitle' => $bannerTitle ?? 'Patrimoine culturel',
+    'bannerTitle' => $bannerTitle ?? __('patrimoine.banner_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/patrimoine/banner.png'),
 ])
 <style>
@@ -19,8 +19,8 @@
 @section('content')
     <section class="patrimoine">
         <div class="container">
-            <h2>{{ __('pages.patrimoine_title') }}</h2>
-            <p>{!! nl2br(e(__('pages.patrimoine_intro'))) !!}</p>
+            <h2>{{ __('patrimoine.title') }}</h2>
+            <p>{!! nl2br(e(__('patrimoine.intro'))) !!}</p>
         </div>
     </section>
 

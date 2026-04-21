@@ -1,0 +1,22 @@
+<?php
+return [
+    'meta_description' => "Découvrez les dernières actualités, analyses et tendances du monde du golf en Afrique sur notre blog dédié. Plongez dans des articles captivants, des interviews exclusives et des conseils d'experts pour enrichir votre passion pour ce sport fascinant.",
+    'featured'             => "À la une",
+    'headline'             => "Actualités, tendances et analyses du golf africain",
+    'follow_us'            => "Suivez-nous :",
+    'tab_technology'       => "Technologie",
+    'tab_health'           => "Santé et Bien-être",
+    'tab_travel'           => "Voyage",
+    'tab_entrepreneurship' => "Entrepreneuriat",
+    'tab_personal_dev'     => "Développement personnel",
+    'tab_education'        => "Éducation",
+    'tab_finance'          => "Finance",
+    'tab_environment'      => "Environnement",
+    'tab_lifestyle'        => "Mode de vie",
+    'article_intro1'       => "Il partage son parcours pour créer et développer une entreprise prospère, offrant des perspectives précieuses et des leçons apprises en chemin. De l'idée initiale à la croissance, ce blog guide les entrepreneurs en herbe avec des conseils pratiques et des sources d'inspiration. Il partage son parcours pour créer et développer une entreprise prospère, offrant des perspectives précieuses et des leçons apprises en chemin. De l'idée initiale à la croissance.",
+    'article_intro2'       => "Il partage son parcours pour créer et développer une entreprise prospère, offrant des perspectives précieuses et des leçons apprises en chemin. De l'idée initiale à la croissance, ce blog guide les entrepreneurs en herbe avec des conseils pratiques et des sources d'inspiration. Il partage son parcours pour créer et développer une entreprise prospère, offrant des perspectives précieuses et des leçons apprises en chemin.",
+    'article_title_1'      => "Créer une startup qui réussit",
+    'article_para_1'       => "Il partage son parcours pour créer et développer une entreprise prospère, offrant des perspectives précieuses et des leçons apprises en chemin. De l'idée initiale à la croissance, ce blog guide les entrepreneurs en herbe avec des conseils pratiques.",
+    'article_title_2'      => "Leçons du terrain",
+    'article_para_2'       => "Elle vous emmène hors des sentiers battus à la découverte de destinations de voyage méconnues. Des plages isolées aux charmants villages de montagne, découvrez pourquoi ces joyaux cachés méritent une place sur votre liste de voyages à faire.",
+];

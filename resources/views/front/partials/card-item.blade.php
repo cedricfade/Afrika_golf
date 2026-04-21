@@ -3,13 +3,13 @@
     <div class="info-rdv">
         <div class="card"></div>
         <div class="titre">
-            <h3>lorem ipsum</h3>
+            <h3>Actualité</h3>
             <span class="date-info">20 février 2026</span>
         </div>
-        <h2>Lorem ipsum amethist Onor admet sit vit</h2>
+        <h2>Le golf africain comme vous ne l'avez jamais vécu</h2>
         <p class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            Découvrez les coulisses de l'Africa Art Golf Cup, ses artistes, ses champions et les
+            moments qui font de cet événement une expérience unique en son genre.
         </p>
         <div class="user">
             <div class="img">

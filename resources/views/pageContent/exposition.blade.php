@@ -1,6 +1,6 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'citation1' => __('pages.citation1'),
-    'citation2' => __('pages.citation2'),
+    'citation1' => __('exposition.citation1'),
+    'citation2' => __('exposition.citation2'),
     'bannerColor' => '#FFFCF8',
     'subImage' => asset('assets/images/exposition/image.png'),
     'imageHeader' => asset('assets/images/exposition/banner.png'),
@@ -97,10 +97,10 @@
 <section class="exposition">
     <div class="container">
         <p class="fs-lg">
-            {{ __('pages.exposition_intro') }}
+            {{ __('exposition.intro') }}
             <br>
             <br>
-            <b style="color: white">{{ __('pages.exposition_date') }}</b>
+            <b style="color: white">{{ __('exposition.date') }}</b>
             <br>
         </p>
         <div class="souscrire">

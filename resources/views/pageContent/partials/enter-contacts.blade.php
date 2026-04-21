@@ -1,4 +1,4 @@
-<span>PARTENAIRES</span>
+<span>{{ __('partials.partners_title') }}</span>
 <div class="row my-4">
     @foreach ($partners ?? [] as $partner)
         <div class="col-4 col-md-3 col-lg-2">
@@ -8,7 +8,7 @@
             </div>
         </div>
     @endforeach
-    <a href="{{ route('experience') }}" class="text-color ff-avenir fs lh"><span>{{ utf8_encode('Découvrez nos offres de partenariat') }}</span></a>
+    <a href="{{ route('experience') }}" class="text-color ff-avenir fs lh"><span>{{ __('partials.discover_offers') }}</span></a>
 </div>
 <div class="row">
     <div class="col-lg-12">

@@ -1,7 +1,7 @@
 <section class="galerie-section">
     <div class="container" style="margin:0 auto; width:80%">
         <div class="galerie">
-            <h2>Galerie</h2>
+            <h2>{{ __('galerie.title') }}</h2>
             <div class="separateur" style=""></div>
         </div>
         @if (($galleryImages ?? collect())->isNotEmpty())

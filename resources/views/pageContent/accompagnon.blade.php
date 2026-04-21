@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerTitle' => $bannerTitle ?? __('pages.accompagnon_title'),
+    'bannerTitle' => $bannerTitle ?? __('accompagnon.banner_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/accompagnon/banner.jpg'),
 ])
 

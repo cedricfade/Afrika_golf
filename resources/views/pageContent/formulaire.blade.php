@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'title' => 'FORMULAIRE',
+    'title' => __('formulaire.page_title'),
     'bannerColor' => '#0A140F',
 ])
 
@@ -25,7 +25,7 @@
 
 <section class="formulaire">
     <div class="container">
-        <h2 style="text-center">@lang('RECEVEZ NOTRE OFFRE DE SPONSORING PAR MAIL EN REMPLISSANT CE FORMULAIRE.')</h2>
+        <h2 style="text-center">{{ __('formulaire.form_title') }}</h2>
 
         <div class="row info">
             <div class="col-xl-6">
@@ -44,20 +44,13 @@
                         {!! $pack->symbole !!}
                     </div>
                 @else
-                    <h3>
-                        IMIGONGO
-                    </h3>
-                    <h2>Partenaire elégance: <br>7.500 USD </h2>
+                    <h3>{{ __('formulaire.default_pack_name') }}</h3>
+                    <h2>{{ __('formulaire.default_pack_label') }} <br>{{ __('formulaire.default_pack_price') }}</h2>
                     <div class="card-text">
-                        <b>Symbole:</b>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae expedita, architecto
-                            voluptates soluta repudiandae obcaecati quaerat cupiditate
-                        </p>
-                        <b>Valeur:</b>
-                        <p>
-                            Créativité,patrimoine,esthétique.
-                        </p>
+                        <b>{{ __('formulaire.default_symbol') }}</b>
+                        <p>{{ __('formulaire.default_symbol_text') }}</p>
+                        <b>{{ __('formulaire.default_value') }}</b>
+                        <p>{{ __('formulaire.default_value_text') }}</p>
                     </div>
                 @endisset
             </div>
@@ -74,32 +67,32 @@
                     <input type="hidden" name="packId" value="{{ $pack->id ?? '' }}">
                     <div class="row">
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Nom de l\'entreprise')</label>
+                            <label for="">{{ __('formulaire.label_company') }}</label>
                             <input type="text" class="form-control" name="companyName" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Nom & prénoms')</label>
+                            <label for="">{{ __('formulaire.label_name') }}</label>
                             <input type="text" class="form-control" name="nomPrenoms" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Pays')</label>
+                            <label for="">{{ __('formulaire.label_country') }}</label>
                             <input type="text" class="form-control" name="country" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Email')</label>
+                            <label for="">{{ __('formulaire.label_email') }}</label>
                             <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Secteur d\'activité')</label>
+                            <label for="">{{ __('formulaire.label_sector') }}</label>
                             <input type="text" class="form-control" name="sector" required>
                         </div>
                         <div class="form-group col-xl-6">
-                            <label for="">@lang('Téléphone')</label>
+                            <label for="">{{ __('formulaire.label_phone') }}</label>
                             <input type="text" class="form-control" name="telePhone">
                         </div>
 
                         <div class="form-group text-center">
-                            <button type="submit" class="btn" id="sponsoring-btn">@lang('Envoyer')</button>
+                            <button type="submit" class="btn" id="sponsoring-btn">{{ __('formulaire.btn_send') }}</button>
                         </div>
                     </div>
                 </form>
@@ -114,7 +107,7 @@
                     const alert = document.getElementById('sponsoring-alert');
 
                     btn.disabled = true;
-                    btn.textContent = '{{ __('Envoi en cours…') }}';
+                    btn.textContent = '{{ __("formulaire.sending") }}';
                     alert.className = 'alert d-none mb-3';
                     alert.textContent = '';
 
@@ -144,12 +137,12 @@
                                 if (res.ok && json.success) {
                                     alert.className = 'alert alert-success mb-3';
                                     alert.textContent = json.message ||
-                                        '{{ __('Votre demande a bien été envoyée. Un email de confirmation vous a été adressé.') }}';
+                                        '{{ __("formulaire.success") }}';
                                     form.reset();
                                 } else {
                                     const msg = json.message || (json.errors ? Object.values(json.errors).flat()
                                         .join(
-                                            ' ') : '{{ __('Une erreur est survenue. Veuillez réessayer.') }}');
+                                            ' ') : '{{ __("formulaire.error_generic") }}');
                                     alert.className = 'alert alert-danger mb-3';
                                     alert.textContent = msg;
                                 }
@@ -157,11 +150,11 @@
                             .catch(function() {
                                 alert.className = 'alert alert-danger mb-3';
                                 alert.textContent =
-                                    '{{ __('Erreur réseau. Veuillez vérifier votre connexion et réessayer.') }}';
+                                    '{{ __("formulaire.error_network") }}';
                             })
                             .finally(function() {
                                 btn.disabled = false;
-                                btn.textContent = '{{ __('Envoyer') }}';
+                                btn.textContent = '{{ __("formulaire.btn_send") }}';
                                 alert.classList.remove('d-none');
                                 alert.scrollIntoView({
                                     behavior: 'smooth',

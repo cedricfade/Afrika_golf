@@ -2,7 +2,7 @@
 
 @section('content')
     @include('pageContent.tournois', [
-        'bannerSentenceTitle' => __("Un rendez-vous d'exception où la gastronomie fine, l'art, le luxe à l'africaine et le golf fusionnent ."),
+        'bannerSentenceTitle' => __("Un rendez-vous d'exception oÃ¹ la gastronomie fine, l'art, le luxe Ã  l'africaine et le golf fusionnent ."),
         'bannerImage' => asset('assets/images/tournois/banner.png'),
     ])
 @endsection

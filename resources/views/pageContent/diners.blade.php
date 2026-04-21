@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerTitle' => $bannerTitle ?? 'Le diners',
+    'bannerTitle' => $bannerTitle ?? __('diners.banner_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/diners/banner.png'),
 ])
 
@@ -23,7 +23,7 @@
     <div class="container about-diners-container">
         <div class="row">
             <div class="col-xl-10 col-lg-11 col-md-12">
-                <h2>{{ $introTitle ?? 'Un diner sur mesure' }}</h2>
+                <h2>{{ $introTitle ?? __('diners.intro_title') }}</h2>
                 <div>{!! $introText ?? '' !!}</div>
                 @if (!empty($cities))
                     <ul>

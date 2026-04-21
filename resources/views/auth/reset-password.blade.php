@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-form-label">@lang('Password')</label>
+                        <label class="col-form-label">@lang('Mot de passe')</label>
                         <div class="form-input position-relative">
                             <input id="password" type="password"
                                 class="form-control @error('password') is-invalid @enderror" name="password" required
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-form-label">{{ __('Confirm Password') }}</label>
+                        <label class="col-form-label">{{ __('Confirmer le mot de passe') }}</label>
                         <div class="form-input position-relative">
                             <input id="password-confirm" type="password"
                                 class="form-control @error('password_confirmation') is-invalid @enderror"
@@ -55,7 +55,7 @@
 
                     <div class="text-end mt-3">
                         <button class="btn btn-primary btn-block w-100" type="submit">
-                            {{ __('Reset Password') }}
+                            {{ __('Réinitialiser le mot de passe') }}
                         </button>
                     </div>
                 </form>

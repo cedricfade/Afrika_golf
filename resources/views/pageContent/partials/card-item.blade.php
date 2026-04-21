@@ -4,7 +4,7 @@
             @if (!empty($image)) style="background-image:url('{{ $image }}'); background-size:cover; background-position:center;" @endif>
         </div>
         <div class="titre">
-            <h3>Actualité</h3>
+            <h3>{{ __('partials.card_category') }}</h3>
             <span class="date-info">{{ $date ?? '' }}</span>
         </div>
         <h2>{{ $title ?? '' }}</h2>

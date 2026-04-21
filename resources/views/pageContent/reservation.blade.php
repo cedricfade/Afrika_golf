@@ -61,7 +61,7 @@
                     <div class="row mb-3">
                         <div class="col-lg-12">
                             <h3 class="text-white" style="font-size: 18px;font-family: 'AveniNext'">
-                                PARTICIPATION
+                                {{ __('reservation.participation_title') }}
                             </h3>
                         </div>
                         <div class="col-lg-12">
@@ -69,13 +69,13 @@
                                 style="
                                 color: #C6C6C6; 
                                 text-decoration:none; 
-                                font-family: 'AveniNext'; font-size: 14px;">@lang('Golfeurs nationaux :')
+                                font-family: 'AveniNext'; font-size: 14px;">{{ __('reservation.national_golfers') }}
                                 <b style="font-size: 14px;" class="text-white">1400$</b> </span><br>
                             <span
                                 style="
                                     color: #C6C6C6; 
                                     text-decoration:none; 
-                                    font-family: 'AveniNext'; font-size: 14px;">@lang('Golfeurs non-nationaux :')
+                                    font-family: 'AveniNext'; font-size: 14px;">{{ __('reservation.international_golfers') }}
                                 <b style="font-size: 14px;" class="text-white">1750$</b> </span>
                         </div>
                     </div>
@@ -92,14 +92,14 @@
                     <div class="row mb-3">
                         <div class="col-lg-12">
                             <h3 style="color: white;font-family: 'AveniNext';font-size: 18px;">
-                                PACKAGE AFRICA ART GOLF CUP
+                                {{ __('reservation.package_title') }}
                             <h3>
                         </div>
                         <div class="col-lg-12">
-                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- Déplacement pendant l'événement</span><br>
-                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- Participation au tournoi (caddie personnel, location de matériels)</span>
-                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- Dîner</span>
-                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- Brunch</span>
+                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- {{ __('reservation.package_transport') }}</span><br>
+                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- {{ __('reservation.package_tournament') }}</span>
+                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- {{ __('reservation.package_dinner') }}</span>
+                            <span style="color: #c6c6c6; font-size: 14px;font-family: 'AveniNext'">- {{ __('reservation.package_brunch') }}</span>
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     <div class="row mb-3">
                         <div class="col-lg-12">
                             <h3 class="text-white" style="font-size: 18px;font-family: 'AveniNext'">
-                                CONTACTS
+                                {{ __('reservation.contacts_title') }}
                             </h3>
                         </div>
                         <div class="col-lg-12">

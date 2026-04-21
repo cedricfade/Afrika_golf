@@ -1,0 +1,23 @@
+<?php
+return [
+    'page_title'          => "FORMULAIRE",
+    'form_title'          => "RECEVEZ NOTRE OFFRE DE SPONSORING PAR MAIL EN REMPLISSANT CE FORMULAIRE.",
+    'default_pack_name'   => "IMIGONGO",
+    'default_pack_label'  => "Partenaire élégance :",
+    'default_pack_price'  => "7 500 USD",
+    'default_symbol'      => "Symbole :",
+    'default_symbol_text' => "Un symbole de distinction et d'élégance, ce partenariat vous positionne au cœur d'un événement premium alliant art, golf et gastronomie.",
+    'default_value'       => "Valeur :",
+    'default_value_text'  => "Créativité, patrimoine, esthétique.",
+    'label_company'       => "Nom de l'entreprise",
+    'label_name'          => "Nom & prénoms",
+    'label_country'       => "Pays",
+    'label_email'         => "Email",
+    'label_sector'        => "Secteur d'activité",
+    'label_phone'         => "Téléphone",
+    'btn_send'            => "Envoyer",
+    'sending'             => "Envoi en cours…",
+    'success'             => "Votre demande a bien été envoyée. Un email de confirmation vous a été adressé.",
+    'error_generic'       => "Une erreur est survenue. Veuillez réessayer.",
+    'error_network'       => "Erreur réseau. Veuillez vérifier votre connexion et réessayer.",
+];

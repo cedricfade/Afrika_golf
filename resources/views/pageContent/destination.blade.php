@@ -1,8 +1,8 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
     'bannerImage' => $bannerImage ?? asset('assets/images/destination/banner.png'),
-    'bannerTitle' => $bannerTitle ?? 'Kigali, Rwanda',
-    'bannerDescription' => __('pages.destination_description'),
-    'sousTitle' => $sousTitle ?? 'ÉDITION 2026',
+    'bannerTitle' => $bannerTitle ?? __('destination.banner_title'),
+    'bannerDescription' => __('destination.description'),
+    'sousTitle' => $sousTitle ?? __('destination.edition'),
 ])
 
 @push('css2')

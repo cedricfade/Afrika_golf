@@ -1,0 +1,23 @@
+<?php
+return [
+    'page_title'          => "FORM",
+    'form_title'          => "RECEIVE OUR SPONSORSHIP OFFER BY EMAIL BY FILLING IN THIS FORM.",
+    'default_pack_name'   => "IMIGONGO",
+    'default_pack_label'  => "Elegance Partner:",
+    'default_pack_price'  => "7,500 USD",
+    'default_symbol'      => "Symbol:",
+    'default_symbol_text' => "A symbol of distinction and elegance, this partnership places you at the heart of a premium event combining art, golf and gastronomy.",
+    'default_value'       => "Value:",
+    'default_value_text'  => "Creativity, heritage, aesthetics.",
+    'label_company'       => "Company name",
+    'label_name'          => "Full name",
+    'label_country'       => "Country",
+    'label_email'         => "Email",
+    'label_sector'        => "Business sector",
+    'label_phone'         => "Phone",
+    'btn_send'            => "Send",
+    'sending'             => "Sending…",
+    'success'             => "Your request has been sent. A confirmation email has been sent to you.",
+    'error_generic'       => "An error occurred. Please try again.",
+    'error_network'       => "Network error. Please check your connection and try again.",
+];

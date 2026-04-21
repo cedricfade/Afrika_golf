@@ -26,9 +26,8 @@
 
 <section class="rdv">
     <div class="container text-center infos">
-        <h1>{{ $sectionTitle ?? 'Nos rendez-vous' }}</h1>
-        <p>{!! $sectionText ?? "<span style='font-family: Avenir Next'>L’ART RENCONTRE LE GREEN </span><br>
-Plus qu’une simple compétition, l’Africa Art Golf Cup est une célébration itinérante où le geste sportif rencontre l’expression artistique. Nous vous invitons à retrouvez ici le détail de nos prochaines escales. Préparez-vous à vivre l'expérience. Kigali vous attend, le green vous appelle." !!}</p>
+        <h1>{{ $sectionTitle ?? __('rdv_aagc.section_title') }}</h1>
+        <p>{!! $sectionText ?? '<span style="font-family: Avenir Next">' . e(__('rdv_aagc.art_line')) . '</span><br>' . e(__('rdv_aagc.section_text')) !!}</p>
     </div>
     <br>
     <br>
