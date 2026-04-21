@@ -27,7 +27,8 @@
 <section class="rdv">
     <div class="container text-center infos">
         <h1>{{ $sectionTitle ?? 'Nos rendez-vous' }}</h1>
-        <p>{!! $sectionText ?? '' !!}</p>
+        <p>{!! $sectionText ?? "<span style='font-family: Avenir Next'>L’ART RENCONTRE LE GREEN </span><br>
+Plus qu’une simple compétition, l’Africa Art Golf Cup est une célébration itinérante où le geste sportif rencontre l’expression artistique. Nous vous invitons à retrouvez ici le détail de nos prochaines escales. Préparez-vous à vivre l'expérience. Kigali vous attend, le green vous appelle." !!}</p>
     </div>
     <br>
     <br>
@@ -42,7 +43,7 @@
                     'date' => $post->formatted_date,
                 ])
             @empty
-                <p class="text-muted fst-italic text-center w-100">@lang('Aucun rendez-vous publié pour l\'instant.')</p>
+                <p class="text-muted fst-italic text-center w-100"></p>
             @endforelse
 
         </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ConfigApp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\ImageSlide;
 
 class ExpositionController extends Controller
 {
@@ -27,6 +28,7 @@ class ExpositionController extends Controller
             'expoText'        => $config->get('expo_text', ''),
             'dateVernissage'  => $config->get('date_vernissage', ''),
             'dateCatalogue'   => $config->get('date_catalogue', ''),
+            'galleryImages'     => ImageSlide::where('page', 'destination')->where('deleted', false)->orderBy('ranking')->get(),
         ]);
     }
 

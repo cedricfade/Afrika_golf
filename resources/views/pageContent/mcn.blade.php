@@ -27,10 +27,6 @@
         <!-- INTRO -->
         <div class="row">
             <div class="col-lg-12 contenu">
-                <h2>
-                    <span class="text-uppercase">à</span> propos de
-                    <span class="highlight">MCN</span>
-                </h2>
                 <p style="font-size: 1.3rem;">
                     Tel est l’engagement de notre cabinet à vos côtés. Notre objectif est de vous accompagner dans la
                     gestion et la valorisation de vos collections d’art et autres actifs alternatifs. Spécialisé en
@@ -44,7 +40,7 @@
                     œuvres composent vos collections.<br>
                     C’est dans le cadre de cette activité de valorisation et de promotion que nous avons conçu Africa
                     Art Golf Cup, un événement premium à la croisée de l’art et du golf.<br>
-                    <a href="a href="https://www.mcn-cgp.com/" target="_blan">EN SAVOIR PLUS</a>
+                    <a href="https://www.mcn-cgp.com/" style="text-decoration: none;">EN SAVOIR PLUS</a>
                 </p>
             </div>
         </div>
@@ -54,7 +50,7 @@
             <div class="col-xl-6 d-flex">
                 <div class="services w-100">
                     <h2 class="text-center">Nos actions</h2>
-                    <p>
+                    <p style="font-size: 1.3rem;">
                         Notre cabinet fournit des conseils spécialisés et des solutions sur mesure aux clients privés,
                         banques, sociétés de gestion, entreprises, institutions publiques et privées sur tous les
                         aspects de la gestion de patrimoine artistique.
@@ -65,7 +61,7 @@
             <div class="col-xl-6 d-flex">
                 <div class="services w-100">
                     <h2 class="text-center">Notre valeur ajoutée</h2>
-                    <p>
+                    <p style="font-size: 1.3rem;">
                         Le conseil en gestion de patrimoine artistique sur le marché de l’art africain.
                         <br><br>
                         La gestion et la sécurisation des collections qui va de l’inventaire physique et numérique à la

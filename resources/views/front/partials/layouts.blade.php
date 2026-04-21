@@ -29,11 +29,46 @@
                 @endif
             </div>
         </div>
+    @elseif(!empty($bannerSentenceTitle))
+        <div class="container banner-titre">
+            @if (!empty($sousTitle))
+                <h4 style="color: #B07F49; font-family: 'AveniNext'; text-transform: uppercase; margin-bottom: 20px;">
+                    {{ $sousTitle }}</h4>
+                <br>
+            @endif
+            <div class="titre">
+                    <div class="d-none d-sm-block">
+                        <h4 style="font-size: 35px;color:white;width: 70%;margin:auto">{{ utf8_encode(__($bannerSentenceTitle)) }}</h4>
+                    </div>
+                    <div class="d-block d-sm-none">
+                        <h4 style="margin-top: 50px;font-size: 25px;color:white">{{ utf8_encode(__($bannerSentenceTitle)) }}</h4>
+                    </div>
+
+                @if (!empty($bannerButton))
+                    <a href="{{ $bannerButton['link'] }}">
+                        {{ $bannerButton['text'] }}
+                    </a>
+                @endif
+
+                @if (!empty($bannerDescription))
+                    <p style="color: #fff; font-family: 'MyArial'; margin-top: 20px; font-size: 1.2em;">
+                        {{ $bannerDescription }}
+                    </p>
+                @endif
+            </div>
+        </div>
     @endif
 
     @if (!empty($imageHeader))
         <div class="container banner-titre">
-            <img src="{{ $imageHeader }}" alt="" class="col-xl-5 col-7 image-header">
+            <!-- img src="{{ $imageHeader }}" alt="" class="col-xl-5 col-7 image-header" -->
+            
+            
+            <img src="{{ $imageHeader }}" class="d-none d-md-block"
+                style="display: block; width: 30%;margin: auto;margin-top: 150px;" alt="AFRICA GOLF CUP">
+            {{-- Tablette (576px – 767px) --}}
+            <img src="{{ $imageHeader }}" class="d-md-none d-block"
+                style="display: block; width: 65%;margin: auto;margin-top: 350px;" alt="AFRICA GOLF CUP">
 
             @if (isset($citation1) && isset($citation2))
                 <div class="citation">
@@ -56,7 +91,7 @@
         <div class="d-none d-md-block"
             style="width:100%; overflow:hidden; background-color:#bbb; padding:5px 0; margin-top:20px;">
             <div class="banner-ticker">
-                <span>{{ $bannerContent }} <a href="{{ route('accompagnon') }}#formPage">CLIQUEZ
+                <span class="text-dark">{{ $bannerContent }} <a href="{{ route('accompagnon') }}#formPage">CLIQUEZ
                         ICI</a></span>
                 <span aria-hidden="true">{{ $bannerContent }}</span>
             </div>

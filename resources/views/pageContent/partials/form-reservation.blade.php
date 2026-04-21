@@ -1,3 +1,6 @@
+<div class="mb-3">
+    <span>@lang('CONTACTEZ-NOUS')</span>
+</div>
 <div class="formulaire" style="background: #0f1c15; padding: 20px; color: #fff; border: 0.5px solid #707070;">
     <div id="reservationAlert" class="alert d-none mb-3" role="alert"></div>
     <form id="reservationForm" action="{{ route('form-reservation') }}" method="POST">
