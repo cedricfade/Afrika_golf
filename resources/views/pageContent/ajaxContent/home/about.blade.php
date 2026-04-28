@@ -22,7 +22,7 @@
             </div>
             <div class="info">
                 <h2 class="mb-4">
-                    <span>à</span> {!! __('ajax_home.about_mcn_title') !!}
+                    {!! __('ajax_home.about_mcn_title') !!}
                 </h2>
                 <div class="trait mb-5"></div>
                 <p>

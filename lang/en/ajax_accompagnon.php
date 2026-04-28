@@ -1,8 +1,8 @@
 <?php
 return [
     // content.blade.php
-    'content_text'         => "<b>MCN-CGP</b> is fully committed to the mission of the Bright Future Foundation, an American NGO dedicated to the autonomy and fulfilment of autistic adults. Through the proceeds of the Africa Art Golf Cup, we fund bespoke support to give everyone the keys to a dignified and fulfilling life. This project is implemented in Rwanda by a specialised local organisation, with the technical support of our American partner.<br> <b class=\"text-white\">Show your solidarity: buy a golf ball for $150 and directly support this cause</b>.",
-    'content_btn_programme'=> "VIEW PROGRAMME",
+    'content_text'         => "<b>MCN-CGP</b> fully supports the mission of the Bright Future Foundation, an American NGO dedicated to the autonomy and well-being of autistic adults. Thanks to the proceeds from the Africa Art Golf Cup, we contribute to a support program that provides each individual with the tools for a dignified and fulfilling life. This project is implemented in Rwanda by a specialized local organization, with technical support from our American partner.<br> <b class=\"text-white\">Show your solidarity: buy a golf ball for $150 and directly support this cause</b>.",
+    'content_btn_programme'=> "VIEW PROGRAM",
     'content_btn_reserve'  => "BOOK",
 
     // formPage.blade.php

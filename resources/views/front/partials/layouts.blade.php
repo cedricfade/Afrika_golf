@@ -5,6 +5,7 @@
           style='background-color: {{ $bannerColor }}' @endif>
 
     @include('front.partials.navbar')
+    
 
     @if (!empty($bannerTitle))
         <div class="container banner-titre">
@@ -38,10 +39,10 @@
             @endif
             <div class="titre">
                     <div class="d-none d-sm-block">
-                        <h4 style="font-size: 35px;color:white;width: 70%;margin:auto">{{ utf8_encode(__($bannerSentenceTitle)) }}</h4>
+                        <h4 style="font-size: 35px;color:white;width: 70%;margin:auto">{{ __($bannerSentenceTitle) }}</h4>
                     </div>
                     <div class="d-block d-sm-none">
-                        <h4 style="margin-top: 50px;font-size: 25px;color:white">{{ utf8_encode(__($bannerSentenceTitle)) }}</h4>
+                        <h4 style="margin-top: 50px;font-size: 25px;color:white">{{ __($bannerSentenceTitle) }}</h4>
                     </div>
 
                 @if (!empty($bannerButton))

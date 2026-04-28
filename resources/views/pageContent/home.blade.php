@@ -2,7 +2,7 @@
     'bannerImage' => $bannerImage ?? asset('assets/images/home/banner.png'),
     'middleImage' => $middleImage ?? asset('assets_custom/home/svg/aagc-kigali.svg'),
     'bottomImage' => $bottomImage ?? asset('assets_custom/home/svg/aagc-golfeur.svg'),
-    'bannerContent' => $bannerContent ?? __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
+    'bannerContent' => __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
 ])
 <section class="about" id="sectionAbout">
     @include('pageContent.ajaxContent.home.about')
