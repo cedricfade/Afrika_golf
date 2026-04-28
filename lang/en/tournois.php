@@ -3,7 +3,7 @@ return [
     'rendezvous'       => "An exceptional gathering where fine gastronomy, Art, African Luxury and Golf converge.",
     'intro'            => "is a full programme orchestrated to satisfy your passions and expand your network.",
     'golfers_title'    => "For Golfers",
-    'golfers_text'     => "Game format: 2-player Scramble\nThe competition tee-off will be from Tee no. 1 and Tee no. 10, starting every 10 minutes from 7:30 AM to 10:00 AM.\nThe leaderboard will reward the top 3 teams in Net and the top 2 in Gross, plus the winners of the Drive and Accuracy contests — 20 prize-winners in total. Please consult the sporting rules.",
+    'golfers_text'     => "Game format: 2-player Scramble\nThe competition tee-off will be from Tee no. 1 and Tee no. 10, starting every 10 minutes from 7:30 AM to 10:00 AM.\nThe leaderboard will reward the top 3 teams in Net and the top 2 in Gross, plus the winners of the Drive and Accuracy contests — 20 prize-winners in total. <a href=\"https://africa-art-golfcup.com/assets/images/reglement-sportif-fr.pdf\">Please consult the sporting rules</a>.",
     'non_golfers_title'=> "For non-golfers",
     'non_golfers_text' => "Golf introduction\nAn introductory programme supervised by coaches from the Kigali Golf Resort & Villas will run alongside the competition. Practice, putting, approaches and longer shots will be taught to beginners. The session will conclude with a putting contest where the top 3 players will be awarded prizes. The introduction will last approximately 3 hours.",
     'gourmets_title'   => "For Food Lovers",

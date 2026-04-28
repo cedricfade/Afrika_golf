@@ -1,7 +1,7 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
     'bannerImage' => $bannerImage ?? asset('assets_custom/mcn-cgp/bg.jpg'),
     'rightImage' => $rightImage ?? asset('assets_custom/mcn-cgp/logo-mcn-cgp.png'),
-    'rightBottomImage' => $rightBottomImage ?? asset('assets_custom/mcn-cgp/valoriser-votre-passion.png'),
+    'rightBottomImage' => asset(__('assets_custom/mcn-cgp/valoriser-votre-passion.png')),
 ])
 
 @push('css2')
@@ -17,6 +17,13 @@
             background-size: cover;
             background-image: linear-gradient(rgba(0, 0, 0, 0.049), rgba(0, 0, 0, 0.049)), url({{ $bannerImage ?? asset('assets/images/mcn/banner.png') }});
         }
+        
+        .contenu li {
+            color: #c6c6c6;
+            font-family: "AveniNext";
+            font-size: 1.3rem;
+            line-height: .8;
+        }
     </style>
 @endpush
 
@@ -28,14 +35,18 @@
         <div class="row">
             <div class="col-lg-12 contenu">
                 <p style="font-size: 1.3rem;">
-                    {{ __('mcn.intro') }} <br>
-                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_admin') }}<br>
-                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_conseil') }}<br>
-                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_conservation') }}<br>
-                    â¢&nbsp;&nbsp;&nbsp;&nbsp; {{ __('mcn.bullet_valorisation') }}<br>
-                    {{ __('mcn.intro_closing') }}<br>
-                    <a href="https://www.mcn-cgp.com/" style="text-decoration: none;">{{ __('mcn.learn_more') }}</a>
+                    {{ __('mcn.intro') }}
                 </p>
+                <ul>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <li>{{ __('mcn.bullet_admin') }}</li>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <li>{{ __('mcn.bullet_conseil') }}</li>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <li>{{ __('mcn.bullet_conservation') }}</li>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <li>{{ __('mcn.bullet_valorisation') }}</li>
+                </ul>
+                <p style="font-size: 1.3rem;">
+                    {{ __('mcn.intro_closing') }}
+                </p>
+                <a href="https://www.mcn-cgp.com/" style="text-decoration: none;">{{ __('mcn.learn_more') }}</a>
             </div>
         </div>
 

@@ -8,7 +8,7 @@
         'image' => asset('assets/images/home/banner.png'),
         'bannerImage' => asset('assets/images/home/banner.png'),
         'middleImage' => asset('assets_custom/home/svg/aagc-kigali.svg'),
-        'bottomImage' => asset('assets_custom/home/png/aagc-golfeur.png'),
+        'bottomImage' => asset(__('assets_custom/home/png/aagc-golfeur.png')),
         'bannerContent' => __('CONTRIBUER A L’ACCOMPAGNEMENT ET A L’EPANOUISSEMENT DES AUTISTES ADULTES'),
     ])
 @endsection

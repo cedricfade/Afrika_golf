@@ -4,9 +4,9 @@ return [
     'card_category'           => "News",
 
     // info-participation (pageContent)
-    'participation_title'     => "Participation:",
-    'nationals'               => "Nationals:",
-    'non_nationals'           => "Non-nationals:",
+    'participation_title'     => "Participation :",
+    'nationals'               => "Nationals :",
+    'non_nationals'           => "Non-nationals :",
     'national_price'          => "1,400 $",
     'non_national_price'      => "1,750 $",
     'discover_offers'         => "Discover our partnership offers",

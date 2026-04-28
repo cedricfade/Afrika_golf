@@ -7,6 +7,6 @@ return [
     'package_dinner'        => "Dinner",
     'package_brunch'        => "Brunch",
     'contacts_title'        => "CONTACTS",
-    'national_golfers'      => "National golfers:",
-    'international_golfers' => "International golfers:",
+    'national_golfers'      => "National:",
+    'international_golfers' => "International:",
 ];

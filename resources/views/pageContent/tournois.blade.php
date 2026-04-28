@@ -1,46 +1,7 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerSentenceTitle' => $bannerSentenceTitle ?? __('tournois.rendezvous'),
+    'bannerSentenceTitle' => __('tournois.rendezvous'),
     'bannerImage' => $bannerImage ?? asset('assets/images/tournois/banner.png'),
 ])
-
-<!--section class="about-tournois">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-5">
-                <div class="contenu">
-                    <h2>Un jeu réinventé</h2>
-                    <p>
-                        Ce tournoi prestigieux se déroule sur des parcours de championnat, offrant un cadre idéal pour
-                        es rencontres professionnelles et sportives. Organisé sur des parcours de grande qualité, il
-                        favorise les échanges et le réseautage, où les affaires se conjuguent harmonieusement avec le
-                        jeu.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-1 d-none d-lg-flex justify-content-center">
-                <div class="separateur"></div>
-            </div>
-            <div class="col-lg-6">
-                <div class="tournois-infos">
-                    <div class="info-item">
-                        <h3>Format</h3>
-                        <p>
-                            Tournoi en équipe avec formule adaptée favorisant compétition et convivialité.
-                        </p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Participants</h3>
-                        <p>Plus de 000 participants</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>Remise des prix</h3>
-                        <p>Cérémonie lors du dîner de gala</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section-->
 
 <section class="programme">
     <div class="container">
@@ -62,7 +23,7 @@
 
                     <p>
                         <b class="text-white">{{ __('tournois.golfers_title') }}</b> :<br>
-                        {!! nl2br(e(__('tournois.golfers_text'))) !!}
+                        {!! __('tournois.golfers_text') !!}
                     </p>
 
                     <p>

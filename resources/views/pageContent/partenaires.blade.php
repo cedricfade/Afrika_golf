@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerTitle' => $bannerTitle ?? __('partenaires.banner_title'),
+    'bannerTitle' => __('partenaires.banner_title'),
     'bannerImage' => $bannerImage ?? asset('assets/images/partenaire/banner.png'),
 ])
 
@@ -23,6 +23,7 @@
     <div class="container">
         <h2>{{ $sectionTitle ?? __('partenaires.section_title') }}</h2>
         {!! $sectionIntro ?? '<p>' . e(__('partenaires.section_intro')) . '</p>' !!}
+        <p class="fs-xl" style="color: yellow">{{ __('partenaires.join_experience') }}</p>
         <div class="clients">
             <div class="row">
                 @foreach ($partners ?? [] as $partner)

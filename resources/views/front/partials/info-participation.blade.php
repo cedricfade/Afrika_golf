@@ -29,7 +29,7 @@
                     style="
                     color: #C6C6C6; 
                     text-decoration:none; 
-                    font-family: 'AveniNext'; font-size: 22px;">@lang('Nationaux :')
+                    font-family: 'AveniNext'; font-size: 22px;">@lang('nationals')
                     <b class="text-white">1400$</b> </span>
             </div>
             <div class="col-lg-7">
@@ -37,7 +37,7 @@
                     style="
                         color: #C6C6C6; 
                         text-decoration:none; 
-                        font-family: 'AveniNext'; font-size: 22px;">@lang('Non-nationaux :')
+                        font-family: 'AveniNext'; font-size: 22px;">@lang('non_nationals')
                     <b class="text-white">1750$</b> </span>
             </div>
         </div>

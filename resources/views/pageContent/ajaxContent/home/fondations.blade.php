@@ -5,17 +5,17 @@
     <div class="row">
         <div class="col-xl-4">
             <a href="{{ route('exposition') }}">
-                <img src="{{ asset('assets/images/home/img-2.jpeg') }}" alt="" class="col-xl-12 col-12 mb-4">
+                <img src="{{ asset(__('assets/images/home/img-2.jpeg')) }}" alt="" class="col-xl-12 col-12 mb-4">
             </a>
         </div>
         <div class="col-xl-4">
             <a href="{{ route('tournois') }}">
-                <img src="{{ asset('assets/images/home/img-3.jpeg') }}" alt="" class="col-xl-12 col-12 mb-4">
+                <img src="{{ asset(__('assets/images/home/img-3.jpeg')) }}" alt="" class="col-xl-12 col-12 mb-4">
             </a>
         </div>
         <div class="col-xl-4">
             <a href="{{ route('diners') }}">
-                <img src="{{ asset('assets/images/home/img-1.jpeg') }}" alt="" class="col-xl-12 col-12 mb-4">
+                <img src="{{ asset(__('assets/images/home/img-1.jpeg')) }}" alt="" class="col-xl-12 col-12 mb-4">
             </a>
         </div>
     </div>
