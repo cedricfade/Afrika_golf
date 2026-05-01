@@ -105,6 +105,8 @@
 
 <body>
 
+    @php $state = $state ?? 'back'; @endphp
+
     @yield('content')
 
     <button class="btnClick btnSetting" onclick="pageSetting()">

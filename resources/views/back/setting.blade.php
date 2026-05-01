@@ -112,6 +112,14 @@
 
     <div class="container-fluid p-5">
 
+        {{-- Retour au site --}}
+        <div class="mb-3">
+            <a href="{{ route('home') }}"
+                class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center gap-2">
+                <i class="fe fe-arrow-left"></i> Retour au site
+            </a>
+        </div>
+
         {{-- En-tête --}}
         <div class="d-flex align-items-center gap-3 mb-4">
             <div class="bg-dark text-white rounded-circle d-flex align-items-center justify-content-center"
@@ -120,7 +128,8 @@
             </div>
             <div>
                 <h1 class="h5 mb-0 fw-bold">Paramètres & Données</h1>
-                <small class="text-muted">Invitations web &amp; commandes de balles</small>
+                <small class="text-muted">Invitations web, commandes de balles, sponsoring &amp; inscriptions
+                    tournoi</small>
             </div>
         </div>
 
@@ -137,6 +146,13 @@
                 <button class="nav-link d-flex align-items-center gap-2" id="tab-balls" data-bs-toggle="tab"
                     data-bs-target="#pane-balls" type="button" role="tab">
                     <i class="fe fe-shopping-cart"></i> Commandes de Balles
+                    <span class="badge bg-dark tab-badge"></span>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link d-flex align-items-center gap-2" id="tab-sponsoring" data-bs-toggle="tab"
+                    data-bs-target="#pane-sponsoring" type="button" role="tab">
+                    <i class="fe fe-briefcase"></i> Sponsoring
                     <span class="badge bg-dark tab-badge"></span>
                 </button>
             </li>
@@ -224,7 +240,44 @@
                 </div>
             </div>
 
-            {{-- ===== ONGLET 3 — INSCRIPTIONS TOURNOI ===== --}}
+            {{-- ===== ONGLET 3 — SPONSORING ===== --}}
+            <div class="tab-pane fade px-3 py-2" id="pane-sponsoring" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-2 mt-3">
+                        <a href="{{ route('back.export.sponsorings') }}" id="btn-export-sponsorings"
+                            class="btn btn-sm btn-outline-primary">
+                            <i class="fe fe-download"></i> Exporter
+                        </a>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="card border-0 shadow-sm rounded-0 rounded-bottom">
+                            <div class="card-body p-3">
+                                <div class="table-responsive">
+                                    <table id="tableSponsorings"
+                                        class="table table-hover table-striped align-middle w-100">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Société</th>
+                                                <th>Nom &amp; Prénoms</th>
+                                                <th>Pays</th>
+                                                <th>Email</th>
+                                                <th>Pack</th>
+                                                <th>Date</th>
+                                                <th class="text-center">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ===== ONGLET 4 — INSCRIPTIONS TOURNOI ===== --}}
             <div class="tab-pane fade px-3 py-2" id="pane-invites" role="tabpanel">
                 <div class="row">
                     <div class="col-lg-2 mt-3">
@@ -263,6 +316,54 @@
             </div>
 
         </div>{{-- /tab-content --}}
+    </div>
+
+    {{-- ===== MODAL DÉTAIL SPONSORING ===== --}}
+    <div class="modal fade" id="modalSponsoring" tabindex="-1" aria-labelledby="modalSponsoringLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="width:75%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalSponsoringLabel">
+                        <i class="fe fe-briefcase me-2"></i>Détail de la demande de sponsoring
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">ID</dt>
+                        <dd class="col-sm-8" id="spo-id">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Société</dt>
+                        <dd class="col-sm-8" id="spo-company">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Nom &amp; Prénoms</dt>
+                        <dd class="col-sm-8" id="spo-nom">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Pays</dt>
+                        <dd class="col-sm-8" id="spo-country">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Email</dt>
+                        <dd class="col-sm-8"><a id="spo-email" href="#">—</a></dd>
+
+                        <dt class="col-sm-4 text-muted">Téléphone</dt>
+                        <dd class="col-sm-8"><a id="spo-telephone" href="#">—</a></dd>
+
+                        <dt class="col-sm-4 text-muted">Secteur</dt>
+                        <dd class="col-sm-8" id="spo-sector">—</dd>
+
+                        <dt class="col-sm-4 text-muted">Pack</dt>
+                        <dd class="col-sm-8"><span id="spo-pack" class="badge bg-success">—</span></dd>
+
+                        <dt class="col-sm-4 text-muted">Date</dt>
+                        <dd class="col-sm-8" id="spo-date">—</dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{-- ===== MODAL DÉTAIL INVITATION ===== --}}
@@ -433,6 +534,15 @@
                 language: dtLang,
             });
 
+            // ── SPONSORING ───────────────────────────────────────
+            $('#tableSponsorings').DataTable({
+                ajax: "{{ route('back.settings.ajax.sponsorings') }}",
+                language: dtLang,
+                order: [
+                    [6, 'desc']
+                ],
+            });
+
             // ── INSCRIPTIONS TOURNOI ─────────────────────────────
             $('#tableInvites').DataTable({
                 ajax: "{{ route('back.settings.ajax.invites') }}",
@@ -447,11 +557,14 @@
                 var activeTab = $('[data-bs-toggle="tab"].active').attr('data-bs-target');
                 $('#btn-export-invitations').addClass('d-none');
                 $('#btn-export-balls').addClass('d-none');
+                $('#btn-export-sponsorings').addClass('d-none');
                 $('#btn-export-invites').addClass('d-none');
                 if (activeTab === '#pane-invitations') {
                     $('#btn-export-invitations').removeClass('d-none');
                 } else if (activeTab === '#pane-balls') {
                     $('#btn-export-balls').removeClass('d-none');
+                } else if (activeTab === '#pane-sponsoring') {
+                    $('#btn-export-sponsorings').removeClass('d-none');
                 } else if (activeTab === '#pane-invites') {
                     $('#btn-export-invites').removeClass('d-none');
                 }
@@ -488,6 +601,21 @@
                 $('#cmd-email').text(btn.dataset.email).attr('href', 'mailto:' + btn.dataset.email);
                 $('#cmd-balles').text(btn.dataset.balles);
                 $('#cmd-date').text(btn.dataset.date);
+            });
+
+            // ── MODAL SPONSORING ─────────────────────────────────
+            $('#modalSponsoring').on('show.bs.modal', function(e) {
+                var btn = e.relatedTarget;
+                $('#spo-id').text(btn.dataset.id);
+                $('#spo-company').text(btn.dataset.company);
+                $('#spo-nom').text(btn.dataset.nom);
+                $('#spo-country').text(btn.dataset.country);
+                $('#spo-email').text(btn.dataset.email).attr('href', 'mailto:' + btn.dataset.email);
+                $('#spo-telephone').text(btn.dataset.telephone || '—').attr('href', 'tel:' + btn.dataset
+                    .telephone);
+                $('#spo-sector').text(btn.dataset.sector || '—');
+                $('#spo-pack').text(btn.dataset.pack || '—');
+                $('#spo-date').text(btn.dataset.date);
             });
 
             // ── MODAL INSCRIPTION TOURNOI ────────────────────────

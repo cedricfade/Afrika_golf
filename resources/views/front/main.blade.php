@@ -29,6 +29,8 @@
 
 <body>
 
+    @php $state = $state ?? 'back'; @endphp
+
     <div id="pageContent">
         @yield('content')
     </div>

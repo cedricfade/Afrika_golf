@@ -20,6 +20,7 @@ use App\Http\Controllers\Front\RdvController;
 use App\Http\Controllers\Front\ReservationController;
 use App\Http\Controllers\Front\TournoisController;
 use App\Http\Controllers\Front\Form\ReservationController as FormReservationController;
+use App\Http\Controllers\Front\Form\WebInvitationController;
 
 Route::get('/langue/{locale}', function (string $locale) {
     if (in_array($locale, ['fr', 'en'])) {
@@ -55,5 +56,6 @@ Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contac
 
 
 Route::post('/form/reservation', [FormReservationController::class, 'store'])->name('form-reservation');
+Route::post('/form/contact', [WebInvitationController::class, 'store'])->name('form-contact');
 Route::post('/form/command-ball', [\App\Http\Controllers\Front\Form\CommandBallController::class, 'store'])->name('form-command-ball');
 Route::post('/form/sponsoring', [\App\Http\Controllers\Front\Form\SponsoringController::class, 'store'])->name('form-sponsoring');

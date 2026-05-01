@@ -64,7 +64,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('mcn-cgp') }}">
-                                @lang('MCN')
+                                @lang('MCN-CGP')
                             </a>
                         </li>
                         <li>

@@ -1,9 +1,9 @@
 @extends('back.main', ['title' => 'MCN CGP'])
 @section('content')
     @include('pageContent.mcn', [
-        'bannerImage' => $bannerImage ?? asset('assets_custom/mcn-cgp/bg.jpg'),
-        'rightImage' => $rightImage ?? asset('assets_custom/mcn-cgp/logo-mcn-cgp.png'),
-        'rightBottomImage' => $rightBottomImage ?? asset('assets_custom/mcn-cgp/valoriser-votre-passion.png'),
+        'bannerImage' => asset('assets_custom/mcn-cgp/bg.jpg'),
+        'rightImage' => asset('assets_custom/mcn-cgp/logo-mcn-cgp.png'),
+        'rightBottomImage' => asset(__('assets_custom/mcn-cgp/valoriser-votre-passion.png')),
     ])
 
     @push('pageModal')
@@ -14,101 +14,138 @@
                     <span class="fw-semibold">Bannière — MCN CGP</span>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('back.mcn-cgp.store') }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row g-3 mb-3">
-                            <div class="col-md-4">
-                                <div class="border rounded p-3 h-100">
-                                    <label for="banner_image" class="form-label fw-semibold">
-                                        <i class="fe fe-image me-1"></i> Image fond bannière
-                                        <small class="text-muted fw-normal d-block">bannerImage</small>
-                                    </label>
-                                    <input type="file" class="form-control form-control-sm mb-2" id="banner_image"
-                                        name="banner_image" accept="image/*">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="m-2">
+                                    <i class="fe fe-image"></i> Image de fond
+                                </div>
+                                <div class="m-2">
                                     @if (!empty($bannerImage))
-                                        <div class="text-center">
-                                            <img src="{{ $bannerImage }}" alt="Bannière actuelle" class="img-fluid rounded"
-                                                style="max-height:90px; object-fit:cover;">
-                                            <small class="d-block text-muted mt-1">Image actuelle</small>
-                                        </div>
+                                        <img src="{{ $bannerImage }}" alt="Bannière actuelle" class="my-1 rounded"
+                                            style="height:150px;width:100%; object-fit:cover;">
                                     @endif
+                                    <input type="file" class="form-control my-2" name="banner_image" accept="image/*">
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="border rounded p-3 h-100">
-                                    <label for="right_image" class="form-label fw-semibold">
-                                        <i class="fe fe-image me-1"></i> Logo MCN-CGP
-                                        <small class="text-muted fw-normal d-block">rightImage</small>
-                                    </label>
-                                    <input type="file" class="form-control form-control-sm mb-2" id="right_image"
-                                        name="right_image" accept="image/*">
-                                    @if (!empty($rightImage))
-                                        <div class="text-center">
-                                            <img src="{{ $rightImage }}" alt="Logo actuel" class="img-fluid rounded"
-                                                style="max-height:90px; object-fit:contain;">
-                                            <small class="d-block text-muted mt-1">Image actuelle</small>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="border rounded p-3 h-100">
-                                    <label for="right_bottom_image" class="form-label fw-semibold">
-                                        <i class="fe fe-image me-1"></i> Image bas droite
-                                        <small class="text-muted fw-normal d-block">rightBottomImage</small>
-                                    </label>
-                                    <input type="file" class="form-control form-control-sm mb-2" id="right_bottom_image"
-                                        name="right_bottom_image" accept="image/*">
-                                    @if (!empty($rightBottomImage))
-                                        <div class="text-center">
-                                            <img src="{{ $rightBottomImage }}" alt="Image bas actuelle"
-                                                class="img-fluid rounded" style="max-height:90px; object-fit:contain;">
-                                            <small class="d-block text-muted mt-1">Image actuelle</small>
-                                        </div>
-                                    @endif
+                                <div class="card-footer">
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-sm btn-primary">
+                                            <i class="fe fe-save"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fe fe-save me-1"></i> Enregistrer
-                        </button>
-                    </form>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="m-2">
+                                    <i class="fe fe-image"></i> Logo MCN CGP
+                                </div>
+                                <div class="m-2 bg-secondary">
+                                    @if (!empty($rightImage))
+                                        <img src="{{ $rightImage }}" alt="Logo actuel" class="my-1 rounded"
+                                            style="height:150px;width:100%; object-fit:cover;">
+                                    @endif
+                                    <input type="file" class="form-control my-2" name="right_image" accept="image/*">
+                                </div>
+                                <div class="card-footer">
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-sm btn-primary">
+                                            <i class="fe fe-save"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="m-2">
+                                    <i class="fe fe-image"></i> Logo MCN CGP
+                                </div>
+                                <div class="m-2 bg-secondary">
+                                    @if (!empty($rightBottomImage))
+                                        <img src="{{ $rightBottomImage }}" alt="Logo actuel" class="my-1 rounded"
+                                            style="height:150px;width:100%; object-fit:cover;">
+                                    @endif
+                                    <input type="file" class="form-control my-2" name="right_bottom_image" accept="image/*">
+                                </div>
+                                <div class="card-footer">
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-sm btn-primary">
+                                            <i class="fe fe-save"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             {{-- ===== SECTION INTRO ===== --}}
-            <div class="card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
-                    <i class="fe fe-info"></i>
-                    <span class="fw-semibold">Section "À propos de MCN"</span>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('back.mcn-cgp.store') }}">
+            <div class="row">
+                <div class="col-lg-6">
+                    <form method="post" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
                         @csrf
-                        <div class="mb-3">
-                            <label for="about_title" class="form-label fw-semibold">Titre</label>
-                            <input type="text" class="form-control" id="about_title" name="about_title"
-                                value="{{ $aboutTitle }}">
+                        <div class="card-header">
+                            <i class="fe fe-info"></i>
+                            <span class="fw-semibold">Section "À propos de MCN"</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="about_text" class="form-label fw-semibold">Texte d'introduction</label>
-                            <textarea class="form-control summernote-mcn" id="about_text" name="about_text" rows="5">{!! $aboutText ?? '' !!}</textarea>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="about_title" class="form-label fw-semibold">Titre</label>
+                                <input type="text" class="form-control" id="about_title" name="about_title"
+                                    value="{{ $aboutTitle }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="about_text" class="form-label fw-semibold">Texte d'introduction</label>
+                                <textarea class="form-control summernote-mcn" id="about_text" name="about_text" rows="5">{!! $aboutText ?? '' !!}</textarea>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fe fe-save me-1"></i> Enregistrer
-                        </button>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fe fe-save me-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form method="POST" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
+                        @csrf
+                        <div class="card-header">
+                            <i class="fe fe-info"></i>
+                            <span class="fw-semibold">Section "À propos de MCN"</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="about_title" class="form-label fw-semibold">Titre</label>
+                                <input type="text" class="form-control" id="about_title" name="about_title"
+                                    value="{{ $aboutTitle }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="about_text" class="form-label fw-semibold">Texte d'introduction</label>
+                                <textarea class="form-control summernote-mcn" id="about_text" name="about_text" rows="5">{!! $aboutText ?? '' !!}</textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="fe fe-save me-1"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
+        </div>
 
-            {{-- ===== SERVICE 1 ===== --}}
-            <div class="card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
-                    <i class="fe fe-layers"></i>
-                    <span class="fw-semibold">Service — Nos actions</span>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('back.mcn-cgp.store') }}">
-                        @csrf
+        {{-- ===== SERVICE 1 ===== --}}
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="POST" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
+                    @csrf
+                    <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                        <i class="fe fe-layers"></i>
+                        <span class="fw-semibold">Service — Nos actions</span>
+                    </div>
+                    <div class="card-body">
                         <div class="mb-3">
                             <label for="service1_title" class="form-label fw-semibold">Titre</label>
                             <input type="text" class="form-control" id="service1_title" name="service1_title"
@@ -118,22 +155,51 @@
                             <label for="service1_text" class="form-label fw-semibold">Texte</label>
                             <textarea class="form-control summernote-mcn" id="service1_text" name="service1_text" rows="4">{!! $service1Text ?? '' !!}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fe fe-save me-1"></i> Enregistrer
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="fe fe-save me-1"></i>
                         </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
+            <div class="col-lg-6">
+                <form method="POST" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
+                    @csrf
+                    <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                        <i class="fe fe-layers"></i>
+                        <span class="fw-semibold">Service — Nos actions</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="service1_title" class="form-label fw-semibold">Titre</label>
+                            <input type="text" class="form-control" id="service1_title" name="service1_title"
+                                value="{{ $service1Title }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service1_text" class="form-label fw-semibold">Texte</label>
+                            <textarea class="form-control summernote-mcn" id="service1_text" name="service1_text" rows="4">{!! $service1Text ?? '' !!}</textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="fe fe-save me-1"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
-            {{-- ===== SERVICE 2 ===== --}}
-            <div class="card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
-                    <i class="fe fe-layers"></i>
-                    <span class="fw-semibold">Service — Notre valeur ajoutée</span>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('back.mcn-cgp.store') }}">
-                        @csrf
+        {{-- ===== SERVICE 2 ===== --}}
+        <div class="row">
+            <div class="col-lg-6">
+                <form method="POST" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
+                    @csrf
+                    <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                        <i class="fe fe-layers"></i>
+                        <span class="fw-semibold">Service — Notre valeur ajoutée</span>
+                    </div>
+                    <div class="card-body">
                         <div class="mb-3">
                             <label for="service2_title" class="form-label fw-semibold">Titre</label>
                             <input type="text" class="form-control" id="service2_title" name="service2_title"
@@ -143,11 +209,38 @@
                             <label for="service2_text" class="form-label fw-semibold">Texte</label>
                             <textarea class="form-control summernote-mcn" id="service2_text" name="service2_text" rows="5">{!! $service2Text ?? '' !!}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fe fe-save me-1"></i> Enregistrer
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="fe fe-save me-1"></i>
                         </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <form method="POST" action="{{ route('back.mcn-cgp.store') }}" class="card mb-4">
+                    @csrf
+                    <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                        <i class="fe fe-layers"></i>
+                        <span class="fw-semibold">Service — Notre valeur ajoutée</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="service2_title" class="form-label fw-semibold">Titre</label>
+                            <input type="text" class="form-control" id="service2_title" name="service2_title"
+                                value="{{ $service2Title }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service2_text" class="form-label fw-semibold">Texte</label>
+                            <textarea class="form-control summernote-mcn" id="service2_text" name="service2_text" rows="5">{!! $service2Text ?? '' !!}</textarea>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-sm btn-primary">
+                            <i class="fe fe-save me-1"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     @endpush

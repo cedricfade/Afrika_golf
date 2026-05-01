@@ -4,7 +4,7 @@
     @elseif(isset($bannerColor))
           style='background-color: {{ $bannerColor }}' @endif>
 
-    @include('front.partials.navbar')
+    @include('back.partials.navbar')
 
     @if (!empty($bannerTitle))
         <div class="container banner-titre">

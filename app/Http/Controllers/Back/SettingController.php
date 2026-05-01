@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\CommandBall;
 use App\Models\Invite;
+use App\Models\SponsoringRequest;
 use App\Models\WebInvitation;
 
 class SettingController extends Controller
@@ -109,6 +110,40 @@ class SettingController extends Controller
                     e($command->telephone),
                     e($command->email),
                     $command->nombre_de_balles,
+                    $date,
+                    $btn,
+                ];
+            }),
+        ]);
+    }
+
+    public function ajaxSponsorings()
+    {
+        return response()->json([
+            'data' => SponsoringRequest::where('deleted', false)->orderByDesc('created_at')->get()->map(function ($s) {
+                $date = $s->created_at ? date('d/m/Y H:i', $s->created_at) : '—';
+                $btn = '<button type="button"'
+                    . ' class="btn btn-sm btn-outline-dark btn-voir"'
+                    . ' data-bs-toggle="modal"'
+                    . ' data-bs-target="#modalSponsoring"'
+                    . ' data-id="' . $s->id . '"'
+                    . ' data-company="' . e($s->company_name) . '"'
+                    . ' data-nom="' . e($s->nom_prenoms) . '"'
+                    . ' data-country="' . e($s->country) . '"'
+                    . ' data-email="' . e($s->email) . '"'
+                    . ' data-sector="' . e($s->sector) . '"'
+                    . ' data-telephone="' . e($s->telephone) . '"'
+                    . ' data-pack="' . e($s->pack_title ?? '—') . '"'
+                    . ' data-date="' . $date . '">'
+                    . '<i class="fe fe-eye"></i>'
+                    . '</button>';
+                return [
+                    $s->id,
+                    e($s->company_name),
+                    e($s->nom_prenoms),
+                    e($s->country),
+                    e($s->email),
+                    e($s->pack_title ?? '—'),
                     $date,
                     $btn,
                 ];

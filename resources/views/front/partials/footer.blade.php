@@ -3,7 +3,8 @@
         <div class="row align-items-start text-center text-md-start">
 
             <div class="col-12 col-md-6 col-xl-3 mb-4">
-                <img src="{{ asset('assets/images/logo-mcn-cgp.svg') }}"style="height: 150px" alt="" class="img-fluid footer-logo">
+                <img src="{{ asset('assets/images/logo-mcn-cgp.svg') }}"style="height: 150px" alt=""
+                    class="img-fluid footer-logo">
             </div>
 
             <div class="col-6 col-md-3 col-xl-3 mb-4">

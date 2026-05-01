@@ -12,6 +12,7 @@ class HomeController extends Controller
     {
         return view('front.home', [
             'partners' => LogoPartner::where('deleted', false)->get(),
+            'state' => 'front',
         ]);
     }
 }

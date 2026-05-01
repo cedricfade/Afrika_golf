@@ -1,4 +1,4 @@
-@include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
+@include($state . '.partials.layouts', [
     'bannerImage' => $bannerImage ?? asset('assets/images/home/banner.png'),
     'middleImage' => $middleImage ?? asset('assets_custom/home/svg/aagc-kigali.svg'),
     'bottomImage' => $bottomImage ?? asset('assets_custom/home/svg/aagc-golfeur.svg'),

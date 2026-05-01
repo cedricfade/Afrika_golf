@@ -38,12 +38,14 @@ Route::group([
 ], function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+
     Route::group(['prefix' => 'settings', 'as' => 'settings.'], function () {
         Route::get('/', [SettingController::class, 'index'])->name('index');
         Route::group(['prefix' => 'ajax', 'as' => 'ajax.'], function () {
             Route::get('/invitations', [SettingController::class, 'ajaxWebInvitations'])->name('invitations');
             Route::get('/command-balls', [SettingController::class, 'ajaxCommandBalls'])->name('command-balls');
             Route::get('/invites', [SettingController::class, 'ajaxInvites'])->name('invites');
+            Route::get('/sponsorings', [SettingController::class, 'ajaxSponsorings'])->name('sponsorings');
         });
     });
 
@@ -51,6 +53,7 @@ Route::group([
         Route::get('/invitations', [ExportController::class, 'invitations'])->name('invitations');
         Route::get('/command-balls', [ExportController::class, 'commandBalls'])->name('command-balls');
         Route::get('/invites', [ExportController::class, 'invites'])->name('invites');
+        Route::get('/sponsorings', [ExportController::class, 'sponsorings'])->name('sponsorings');
     });
 
     Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');

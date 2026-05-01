@@ -1,9 +1,20 @@
 <div class="mb-3">
     <span>{{ __('partials.contact_us') }}</span>
 </div>
+<div class="mb-3 d-flex gap-3">
+    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+</div>
 <div class="formulaire" style="background: #0f1c15; padding: 20px; color: #fff; border: 0.5px solid #707070;">
     <div id="reservationAlert" class="alert d-none mb-3" role="alert"></div>
-    <form id="reservationForm" action="{{ route('form-reservation') }}" method="POST">
+    <form id="reservationForm" action="{{ route('form-contact') }}" method="POST">
         @csrf
         <input type="hidden" name="page" value="{{ url()->current() }}">
         <div class="mb-4">
@@ -60,7 +71,7 @@
                 var btn = form.querySelector('[type="submit"]');
                 if (btn) {
                     btn.disabled = true;
-                    btn.textContent = '{{ __("partials.sending") }}';
+                    btn.textContent = '{{ __('partials.sending') }}';
                 }
                 alertBox.className = 'alert d-none mb-3';
 
@@ -86,7 +97,7 @@
                             alertBox.textContent = result.data.message;
                             form.reset();
                         } else {
-                            var msg = result.data.message || '{{ __("partials.error_generic") }}';
+                            var msg = result.data.message || '{{ __('partials.error_generic') }}';
                             if (result.data.errors) {
                                 msg = Object.values(result.data.errors).flat().join(' ');
                             }
@@ -96,12 +107,12 @@
                     })
                     .catch(function() {
                         alertBox.className = 'alert alert-danger mb-3';
-                        alertBox.textContent = '{{ __("partials.error_connection") }}';
+                        alertBox.textContent = '{{ __('partials.error_connection') }}';
                     })
                     .finally(function() {
                         if (btn) {
                             btn.disabled = false;
-                            btn.textContent = '{{ __("partials.btn_send") }}';
+                            btn.textContent = '{{ __('partials.btn_send') }}';
                         }
                     });
             }
@@ -121,8 +132,7 @@
                     submitForm(null);
                 @endif
             });
-            
-        });
 
+        });
     </script>
 @endpush
