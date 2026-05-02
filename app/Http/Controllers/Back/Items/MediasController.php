@@ -12,17 +12,22 @@ class MediasController extends Controller
 {
     public function store(Request $request)
     {
+        
+        dd($request->all());
+        
         $request->validate([
             'title' => 'required|string|max:255',
             'type'  => 'required|in:Sortie de presse,Kit media',
+            'form'  => 'required|in:lien,fichier_externe',
             'file'  => 'required|file|mimes:pdf,doc,docx,zip,png,jpg,jpeg|max:10240',
         ]);
 
-        $path = $request->file('file')->store('medias', 'public');
+        $path = $request->form === 'fichier_externe' ? $request->file('file')->store('medias', 'public') : $request->file('file');
 
         MediaSpace::create([
             'title'      => $request->input('title'),
             'type'       => $request->input('type'),
+            'form'       => $request->input('form'),
             'file'       => $path,
             'created_at' => time(),
             'created_by' => Auth::id(),

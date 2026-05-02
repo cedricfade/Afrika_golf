@@ -1,7 +1,7 @@
 {
     "LE CONCEPT": "THE CONCEPT",
     "MCN-CGP": "MCN-CGP",
-    "RESERVER": "BOOK",
+    "RESERVER": "RESERVATION",
     "ACCOMPAGNONS LES AUTISTES ADULTES": "SUPPORTING ADULTS WITH AUTISM",
     "accueil": "Home",
     "MCN": "MCN",
@@ -61,7 +61,10 @@
     "assets/images/home/img-3.jpeg": "assets/images/home/img-en-3.jpeg",
     "assets_custom/home/png/aagc-golfeur.png": "assets_custom/home/png/aagc-golfeur-en.png",
     "Contactez-nous":"Contact us",
-    "assets/images/valoriser-votre-passion.png":"assets/images/value-passion.png",
+    "assets_custom/mcn-cgp/valoriser-votre-passion.png":"assets_custom/mcn-cgp/valoriser-votre-passion-en.png",
     "nationals":"Nationals :",
-    "non_nationals":"Non-nationals :"
+    "non_nationals":"Non-nationals :",
+    "Votre commande de balles a bien été enregistrée. Un email de confirmation vous a été adressé.":"Your order for balls has been successfully registered. A confirmation email has been sent to you.",
+    "Votre inscription au tournoi a été envoyée avec succès. Un email de confirmation vous a été adressé.":"Your tournament registration has been successfully submitted. A confirmation email has been sent to you.",
+    "Votre demande a bien été enregistrée. Un email de confirmation vous a été adressé.":"Your request has been successfully registered. A confirmation email has been sent to you."
 }

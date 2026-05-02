@@ -10,7 +10,17 @@
                 <div class="programme-infos-1 text-center">
                     <img src="{{ asset('assets/images/logo-kigali-resort-blanc.png') }}" style="width:60%">
                     <div class="boutton">
-                        <a href="{{ asset('assets/images/program-aagc.pdf') }}">@lang('CONSULTER LE PROGRAMME')</a>
+                        @php 
+                        
+                            $href = asset('assets/images/program-aagc.pdf');
+                            
+                            if (app()->getLocale() == 'en') {
+                                $href = 'https://drive.google.com/file/d/1iIpycTtR3POdFtjkw2KK3hfJZQfWCt9G/view?usp=sharing';
+                            }
+                        
+                        @endphp
+                        
+                        <a href="{{ $href }}">@lang('CONSULTER LE PROGRAMME')</a>
                         <a href="{{ route('reservations') }}">@lang('RESERVER')</a>
                     </div>
                 </div>

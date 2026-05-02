@@ -86,15 +86,34 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="Sortie de presse">
-                                <div class="mb-2">
-                                    <label class="form-label">Titre <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="title"
-                                        placeholder="Ex: AAGC 2026 Official Launch Press Release">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="mb-2">
+                                            <label class="form-label">Titre <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="title"
+                                                placeholder="Ex: Official Brand Guidelines">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-2">
+                                            <label class="form-label">Forme <span class="text-danger">*</span></label>
+                                            <select name="form" class="form-control">
+                                                <option value="fichier_externe" selected>Fichier externe</option>
+                                                <option value="lien">lien</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Fichier (PDF, DOC, DOCX) <span
+                                <div class="mb-3" id="press_select_file">
+                                    <label class="form-label">Fichier (PDF, ZIP, DOC, image) <span
                                             class="text-danger">*</span></label>
-                                    <input type="file" class="form-control" name="file" accept=".pdf,.doc,.docx">
+                                    <input type="file" class="form-control" name="file"
+                                        accept=".pdf,.zip,.doc,.docx,.png,.jpg,.jpeg">
+                                </div>
+                                <div class="mb-3" id="press_select_link" style="display:none">
+                                    <label class="form-label">Lien <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="file">
                                 </div>
                                 <button type="submit" class="btn btn-success w-100">
                                     <i class="fe fe-plus me-1"></i> Ajouter la sortie de presse
@@ -143,16 +162,34 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="type" value="Kit media">
-                                <div class="mb-2">
-                                    <label class="form-label">Titre <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="title"
-                                        placeholder="Ex: Official Brand Guidelines">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="mb-2">
+                                            <label class="form-label">Titre <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="title"
+                                                placeholder="Ex: Official Brand Guidelines">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-2">
+                                            <label class="form-label">Forme <span class="text-danger">*</span></label>
+                                            <select name="form" class="form-control">
+                                                <option value="fichier_externe" selected>Fichier externe</option>
+                                                <option value="lien">lien</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-3" id="kit_select_file">
                                     <label class="form-label">Fichier (PDF, ZIP, DOC, image) <span
                                             class="text-danger">*</span></label>
                                     <input type="file" class="form-control" name="file"
                                         accept=".pdf,.zip,.doc,.docx,.png,.jpg,.jpeg">
+                                </div>
+                                <div class="mb-3" id="kit_select_link" style="display:none">
+                                    <label class="form-label">Lien <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="file">
                                 </div>
                                 <button type="submit" class="btn btn-success w-100">
                                     <i class="fe fe-plus me-1"></i> Ajouter le kit média
@@ -165,6 +202,21 @@
         </div>
     @endpush
 @endsection
+
+@push('js')
+    <script>
+        $('select[name="form"]').on('change', function() {
+            var $form = $(this).closest('form');
+            if ($(this).val() === 'lien') {
+                $form.find('[id*="_select_file"]').hide();
+                $form.find('[id*="_select_link"]').show();
+            } else {
+                $form.find('[id*="_select_file"]').show();
+                $form.find('[id*="_select_link"]').hide();
+            }
+        });
+    </script>
+@endpush
 
 @push('css')
     @stack('css2')

@@ -23,7 +23,7 @@
     <div class="container">
         <h2>{{ $sectionTitle ?? __('partenaires.section_title') }}</h2>
         {!! $sectionIntro ?? '<p>' . e(__('partenaires.section_intro')) . '</p>' !!}
-        <p class="fs-xl" style="color: yellow">{{ __('partenaires.join_experience') }}</p>
+        <p><a href="{{ route('experience') }}" class="fs-xl" style="text-decoration:none;color: yellow">{{ __('partenaires.join_experience') }}</a></p>
         <div class="clients">
             <div class="row">
                 @foreach ($partners ?? [] as $partner)

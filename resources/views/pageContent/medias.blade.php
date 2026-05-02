@@ -43,7 +43,17 @@
                             <p class="ff-mash fs-lg text-white">{{ $pressRelease->title }}</p>
                             <p>{{ $pressRelease->formatted_date }}</p>
                         </div>
-                        <a href="{{ Storage::url($pressRelease->file) }}">
+                        @php
+                            if ($pressRelease->form == 'lien') {
+                                $href = filter_var($pressRelease->file, FILTER_VALIDATE_URL)
+                                    ? $pressRelease->file  // URL externe → on l'utilise directement
+                                    : str_replace('/storage/', '', $pressRelease->file); // chemin local
+                            } else {
+                                $href = Storage::url($pressRelease->file); // fichier uploadé
+                            }
+                        @endphp
+                        
+                        <a href="{{ $href }}" target="_blank">
                             <img src="{{ asset('assets/images/medias/arrow.svg') }}" alt="" class="download">
                         </a>
                     </div>
@@ -61,7 +71,17 @@
                             <p class="ff-mash fs-lg text-white">{{ $mediaKit->title }}</p>
                             <p>{{ $mediaKit->formatted_date }}</p>
                         </div>
-                        <a href="{{ Storage::url($mediaKit->file) }}">
+                        @php
+                            if ($mediaKit->form == 'lien') {
+                                $href = filter_var($mediaKit->file, FILTER_VALIDATE_URL)
+                                    ? $mediaKit->file  // URL externe → on l'utilise directement
+                                    : str_replace('/storage/', '', $mediaKit->file); // chemin local
+                            } else {
+                                $href = Storage::url($mediaKit->file); // fichier uploadé
+                            }
+                        @endphp
+                        
+                        <a href="{{ $href }}" target="_blank">
                             <img src="{{ asset('assets/images/medias/arrow.svg') }}" alt="" class="download">
                         </a>
                     </div>
