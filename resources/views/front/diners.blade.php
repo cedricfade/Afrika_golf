@@ -1,8 +1,13 @@
 @extends('front.main', ['title' => 'Diner'])
 @section('content')
     @include('pageContent.diners', [
-        'bannerTitle' => __('Un diner sur mesure'),
-        'bannerImage' => asset('assets/images/diners/banner.png'),
+        'bannerTitle'   => $bannerTitle ?? __('diners.banner_title'),
+        'bannerImage'   => $bannerImage ?? asset('assets/images/diners/banner.png'),
+        'introTitle'    => $introTitle ?? __('diners.intro_title'),
+        'introText'     => $introText ?? '',
+        'cities'        => $cities ?? [],
+        'chefs'         => $chefs ?? collect(),
+        'galleryImages' => $galleryImages ?? collect(),
     ])
 @endsection
 

@@ -11,24 +11,27 @@ class AccompagnonController extends Controller
 {
     public function index()
     {
-        $page   = 'accompagnon';
-        $config = ConfigApp::where('page', $page)->pluck('value', 'key');
+        $cfg = ConfigApp::where('page', 'accompagnon')
+            ->get()->keyBy('key')->map(fn($c) => $c->value)->toArray();
 
         return view('back.accompagnon', [
-            'bannerTitle' => $config->get('banner_title', 'MENER UNE VIE PLEINE ET RICHE AVEC L\'AUTISME'),
-            'bannerImage' => $config->get('banner_image')
-                ? Storage::url($config->get('banner_image'))
-                : asset('assets/images/accompagnon/banner.jpg'),
-            'paragraph1'  => $config->get('paragraph1', ''),
-            'formTitle'   => $config->get('form_title', 'INTERVENTION D\'ACHAT DE BALLE'),
+            'state' => 'back',
+            'cfg'   => $cfg,
         ]);
     }
 
-    public function store(Request $request)
+    public function ajaxStore(Request $request)
     {
         $page = 'accompagnon';
 
-        $textFields = ['banner_title', 'paragraph1', 'form_title'];
+        $textFields = [
+            'banner_title_fr',  'banner_title_en',
+            'content_text_fr',  'content_text_en',
+            'btn_programme_fr', 'btn_programme_en',
+            'btn_reserve_fr',   'btn_reserve_en',
+            'form_title_fr',    'form_title_en',
+        ];
+
         foreach ($textFields as $key) {
             if ($request->has($key)) {
                 ConfigApp::updateOrCreate(
@@ -42,10 +45,10 @@ class AccompagnonController extends Controller
             $path = $request->file('banner_image')->store("pages/{$page}", 'public');
             ConfigApp::updateOrCreate(
                 ['key' => 'banner_image', 'page' => $page],
-                ['value' => $path, 'type' => 'image']
+                ['value' => Storage::url($path), 'type' => 'image']
             );
         }
 
-        return redirect()->back()->with('success', 'Accompagnement mis à jour avec succès.');
+        return response()->json(['success' => true, 'message' => 'Sauvegardé avec succès.']);
     }
 }

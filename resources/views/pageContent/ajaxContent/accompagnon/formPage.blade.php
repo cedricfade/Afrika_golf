@@ -4,7 +4,7 @@
         <form action="{{ route('form-command-ball') }}" method="POST" id="commandBallForm">
             @csrf
             <div class="row">
-                <h2 class="fs-xl text-center">{{ __('ajax_accompagnon.form_title') }}</h2>
+                <h2 class="fs-xl text-center" data-acc="form_title">{{ __('ajax_accompagnon.form_title') }}</h2>
                 <div class="col-xl-6">
                     <div class="form-group">
                         <label for="">{{ __('ajax_accompagnon.label_nom') }}</label>

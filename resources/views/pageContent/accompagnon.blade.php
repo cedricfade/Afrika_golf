@@ -14,7 +14,6 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-
         }
 
         .banner-titre h1 {
@@ -22,28 +21,27 @@
             color: #fff !important;
             font-family: "AveniNext" !important;
             font-weight: 100;
-
         }
     </style>
 @endpush
 
-<section class='accompagnon'>
-    <div id="content"></div>
+<section class="accompagnon">
+    <div class="container">
+        <p class="fs-lg" data-acc="content_text" data-acc-html>
+            {!! __('ajax_accompagnon.content_text') !!}
+        </p>
+        <div class="souscrire">
+            <a href="{{ asset('assets/images/program-aagc.pdf') }}" data-acc="btn_programme">
+                {{ __('ajax_accompagnon.content_btn_programme') }}
+            </a>
+            <a href="{{ route('reservations') }}" data-acc="btn_reserve">
+                {{ __('ajax_accompagnon.content_btn_reserve') }}
+            </a>
+        </div>
+    </div>
     <div id="formPage">
         @include('pageContent.ajaxContent.accompagnon.formPage')
     </div>
 </section>
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')
-
-@push('js2')
-    <script>
-        var contentView = function() {
-            $('#content').load("{{ route('accompagnon.ajax.content') }}");
-        };
-
-        $(document).ready(function() {
-            contentView();
-        });
-    </script>
-@endpush

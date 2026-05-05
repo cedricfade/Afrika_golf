@@ -59,6 +59,6 @@ class SponsoringController extends Controller
 
         SponsoringSubmitted::dispatch($sponsoring);
 
-        return $this->successResponse('Votre demande a bien été enregistrée. Un email de confirmation vous a été adressé.');
+        return $this->successResponse(__('Votre demande a bien été enregistrée. Un email de confirmation vous a été adressé.'));
     }
 }

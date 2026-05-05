@@ -3,6 +3,7 @@
     <div class="card-body">
         <h3 class="card-title">{{ $title }}</h3>
         <h2>{!! $subtitle !!}</h2>
+        {{-- 
         <div class="card-text">
             {!! $content !!}
         </div>
@@ -14,5 +15,6 @@
                 <a href="#" class="btn" onclick="event.stopPropagation(); event.preventDefault();">{{ __('partials.download_form') }}</a>
             @endif
         </div>
+        --}}
     </div>
 </div>

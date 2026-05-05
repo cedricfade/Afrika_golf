@@ -30,6 +30,10 @@ Route::get('/langue/{locale}', function (string $locale) {
 })->name('locale.switch');
 
 Route::get('/', [HomeController::class, 'Home'])->name('home');
+Route::get('/ajax/home',         [HomeController::class,        'ajaxContent'])->name('ajax.home.content');         // route('ajax.home.content')
+Route::get('/ajax/mcn',          [McnController::class,         'ajaxContent'])->name('ajax.mcn.content');          // route('ajax.mcn.content')
+Route::get('/ajax/reservations', [ReservationController::class, 'ajaxContent'])->name('ajax.reservations.content'); // route('ajax.reservations.content')
+Route::get('/ajax/tournois',     [TournoisController::class,    'ajaxContent'])->name('ajax.tournois.content');     // route('ajax.tournois.content')
 Route::get('/mcn-cgp', [McnController::class, 'index'])->name('mcn-cgp');
 Route::get('/tournois', [TournoisController::class, 'index'])->name('tournois');
 Route::get('/diners', [DinersController::class, 'index'])->name('diners');

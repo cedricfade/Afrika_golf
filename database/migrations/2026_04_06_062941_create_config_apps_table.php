@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('key');
             $table->string('value');
             $table->string('page')->nullable();
-            $table->enum('type', ['image', 'string'])->default('string');
+            $table->enum('type', ['image', 'string', 'json'])->default('string');
 
             $table->integer('created_at')->nullable();
             $table->integer('created_by')->nullable();

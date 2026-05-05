@@ -3,6 +3,7 @@
     <div class="card-body">
         <h3 class="card-title">{{ $title }}</h3>
         <h2>{!! $subtitle !!}</h2>
+        {{-- 
         <div class="card-text" style="color: white !important;">
             {!! $content !!}
         </div>
@@ -15,5 +16,6 @@
                     le formulaire</a>
             @endif
         </div>
+        --}}
     </div>
 </div>

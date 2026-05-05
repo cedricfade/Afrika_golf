@@ -1,8 +1,8 @@
 @extends('back.main', ['title' => 'Contactez-nous'])
 @section('content')
     @include('pageContent.contact', [
-        'bannerTitle' => 'Contactez-nous',
-        'bannerImage' => asset('assets/images/contact/banner.png'),
+        'bannerTitle' => $bannerTitle ?? 'Contactez-nous',
+        'bannerImage' => $bannerImage ?? asset('assets/images/contact/banner.png'),
     ])
 
     @push('pageModal')
@@ -15,7 +15,7 @@
                     <span class="fw-semibold">Bannière</span>
                 </div>
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('back.contact.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="banner_title" class="form-label fw-semibold">Titre de la bannière</label>
@@ -28,11 +28,13 @@
                             </label>
                             <input type="file" class="form-control form-control-sm mb-2" id="banner_image"
                                 name="banner_image" accept="image/*">
-                            <div class="text-center">
-                                <img src="{{ $bannerImage ?? asset('assets/images/contact/banner.png') }}"
-                                    class="img-fluid rounded" style="max-height:100px; object-fit:cover;">
-                                <small class="d-block text-muted mt-1">Image actuelle</small>
-                            </div>
+                            @if (!empty($bannerImage))
+                                <div class="text-center">
+                                    <img src="{{ $bannerImage }}" class="img-fluid rounded"
+                                        style="max-height:100px; object-fit:cover;">
+                                    <small class="d-block text-muted mt-1">Image actuelle</small>
+                                </div>
+                            @endif
                         </div>
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="fe fe-save me-1"></i> Enregistrer la bannière
@@ -48,23 +50,24 @@
                     <span class="fw-semibold">Contenu de la section</span>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" action="{{ route('back.contact.store') }}">
                         @csrf
                         <div class="mb-3">
                             <label for="section_label" class="form-label fw-semibold">
                                 Libellé de section <small class="text-muted fw-normal">(en-tête court)</small>
                             </label>
                             <input type="text" class="form-control" id="section_label" name="section_label"
-                                value="ENTRER EN CONTACT">
+                                value="{{ $sectionLabel ?? 'ENTRER EN CONTACT' }}">
                         </div>
                         <div class="mb-3">
                             <label for="section_title" class="form-label fw-semibold">Titre principal</label>
                             <input type="text" class="form-control" id="section_title" name="section_title"
-                                value="Demander une Invitation">
+                                value="{{ $sectionTitle ?? 'Demander une Invitation' }}">
                         </div>
                         <div class="mb-3">
                             <label for="section_text" class="form-label fw-semibold">Texte de description</label>
-                            <textarea class="form-control summernote-contact" id="section_text" name="section_text" rows="4">L'Africa Art Golf Cup est un événement exclusif, sur invitation uniquement. Veuillez contacter notre service de conciergerie pour toute question relative à la participation, aux partenariats ou à l'accréditation presse.</textarea>
+                            <textarea class="form-control summernote-contact" id="section_text" name="section_text"
+                                rows="4">{!! $sectionText ?? '' !!}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="fe fe-save me-1"></i> Enregistrer

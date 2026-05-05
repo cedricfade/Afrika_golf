@@ -34,10 +34,20 @@
                                 value="{{ $sousTitle ?? 'ÉDITION 2026' }}">
                         </div>
                         <div class="mb-3">
-                            <label for="banner_description" class="form-label fw-semibold">
-                                <i class="fe fe-align-left me-1"></i> Description de la bannière
-                            </label>
-                            <textarea class="form-control summernote" id="banner_description" name="banner_description" rows="3">{{ $bannerDescription ?? '' }}</textarea>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="banner_description_fr" class="form-label fw-semibold">
+                                        <i class="fe fe-align-left me-1"></i> Description de la bannière (FR)
+                                    </label>
+                                    <textarea class="form-control summernote" id="banner_description_fr" name="banner_description_fr" rows="3">{{ $bannerDescription ?? '' }}</textarea>
+                                </div>
+                                <div class="col">
+                                    <label for="banner_description_en" class="form-label fw-semibold">
+                                        <i class="fe fe-align-left me-1"></i> Description de la bannière (EN)
+                                    </label>
+                                    <textarea class="form-control summernote" id="banner_description_en" name="banner_description_en" rows="3">{{ $bannerDescription ?? '' }}</textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-3 border rounded p-3">
                             <label for="banner_image" class="form-label fw-semibold">

@@ -48,7 +48,7 @@
                 if (i >= slides.length) index = 0;
                 if (i < 0) index = slides.length - 1;
 
-                slider.style.transform = `translateX(-${index * 100}%)`;
+                slider.style.transform = 'translateX(-' + (index * 100) + '%)';
 
                 dots.forEach(dot => dot.classList.remove('active'));
                 dots[index].classList.add('active');

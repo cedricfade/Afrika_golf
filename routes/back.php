@@ -72,9 +72,20 @@ Route::group([
     Route::get('/medias', [MediaController::class, 'index'])->name('medias'); // route('back.medias')
     Route::get('/contactez-nous', [ContactController::class, 'index'])->name('contact'); // route('back.contact')
 
+    // AJAX save — protected by auth, no recaptcha needed
+    Route::post('/ajax/home',         [HomeController::class,        'ajaxStore'])->name('ajax.home');         // route('back.ajax.home')
+    Route::post('/ajax/mcn',          [McnController::class,         'ajaxStore'])->name('ajax.mcn');          // route('back.ajax.mcn')
+    Route::post('/ajax/reservations', [ReservationController::class, 'ajaxStore'])->name('ajax.reservations'); // route('back.ajax.reservations')
+    Route::post('/ajax/accompagnon',  [AccompagnonController::class, 'ajaxStore'])->name('ajax.accompagnon');  // route('back.ajax.accompagnon')
+    Route::post('/ajax/tournois',     [TournoisController::class,    'ajaxStore'])->name('ajax.tournois');     // route('back.ajax.tournois')
+    Route::group(['prefix' => 'ajax/reservations/package-items', 'as' => 'ajax.reservations.package.'], function () {
+        Route::post('/',                  [ReservationController::class, 'addPackageItem'])->name('add');    // route('back.ajax.reservations.package.add')
+        Route::delete('{lang}/{index}',   [ReservationController::class, 'deletePackageItem'])->name('delete'); // route('back.ajax.reservations.package.delete', ['lang'=>'fr','index'=>0])
+    });
+
     // POST routes — reCAPTCHA validated by 'recaptcha' middleware
-    Route::post('/', [HomeController::class, 'store'])->middleware('recaptcha')->name('home.store'); // route('back.home.store')
-    Route::post('/mcn-cgp', [McnController::class, 'store'])->middleware('recaptcha')->name('mcn-cgp.store'); // route('back.mcn-cgp.store')
+    Route::post('/', [HomeController::class, 'ajaxStore'])->middleware('recaptcha')->name('home.store'); // route('back.home.store')
+    Route::post('/mcn-cgp', [McnController::class, 'ajaxStore'])->middleware('recaptcha')->name('mcn-cgp.store'); // route('back.mcn-cgp.store')
     Route::post('/tournois', [TournoisController::class, 'store'])->middleware('recaptcha')->name('tournois.store'); // route('back.tournois.store')
 
     Route::group(['prefix' => 'diners', 'as' => 'diners.'], function () {
@@ -108,7 +119,14 @@ Route::group([
     });
 
     Route::post('/accompagnon', [AccompagnonController::class, 'store'])->middleware('recaptcha')->name('accompagnon.store'); // route('back.accompagnon.store')
-    Route::post('/exposition', [ExpositionController::class, 'store'])->middleware('recaptcha')->name('exposition.store'); // route('back.exposition.store')
+
+    Route::group(['prefix' => 'exposition', 'as' => 'exposition.'], function () {
+        Route::post('/', [ExpositionController::class, 'store'])->middleware('recaptcha')->name('store'); // route('back.exposition.store')
+        Route::group(['prefix' => 'slides', 'as' => 'slides.'], function () {
+            Route::post('/', [ImageSlideController::class, 'store'])->name('store'); // route('back.exposition.slides.store')
+            Route::delete('destroy/{imageSlide}', [ImageSlideController::class, 'destroy'])->name('destroy'); // route('back.exposition.slides.destroy', ['imageSlide' => $imageSlide->id])
+        });
+    });
 
     Route::group(['prefix' => 'destination', 'as' => 'destination.'], function () {
         Route::post('/', [DestinationController::class, 'store'])->middleware('recaptcha')->name('store'); // route('back.destination.store')

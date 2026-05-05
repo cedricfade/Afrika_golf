@@ -15,16 +15,20 @@ class DinersController extends Controller
     {
         $page   = 'diners';
         $config = ConfigApp::where('page', $page)->pluck('value', 'key');
-
         $cities = json_decode($config->get('cities', '[]'), true) ?? [];
 
         return view('back.diners', [
-            'bannerTitle' => $config->get('banner_title', 'Le diners'),
-            'bannerImage' => $config->get('banner_image') ? Storage::url($config->get('banner_image')) : asset('assets/images/diners/banner.png'),
-            'introTitle'  => $config->get('intro_title', 'Un diner sur mesure'),
-            'introText'   => $config->get('intro_text', ''),
-            'cities'      => $cities,
-            'chefs'       => Cooker::where('deleted', false)->get(),
+            'bannerTitleFr' => $config->get('banner_title_fr', 'Le Dîner'),
+            'bannerTitleEn' => $config->get('banner_title_en', 'The Dinner'),
+            'bannerImage'   => $config->get('banner_image')
+                ? Storage::url($config->get('banner_image'))
+                : asset('assets/images/diners/banner.png'),
+            'introTitleFr'  => $config->get('intro_title_fr', 'Un dîner sur mesure'),
+            'introTitleEn'  => $config->get('intro_title_en', 'A tailor-made dinner'),
+            'introTextFr'   => $config->get('intro_text_fr', ''),
+            'introTextEn'   => $config->get('intro_text_en', ''),
+            'cities'        => $cities,
+            'chefs'         => Cooker::where('deleted', false)->get(),
             'galleryImages' => ImageSlide::where('page', $page)->where('deleted', false)->orderBy('ranking')->get(),
         ]);
     }
@@ -33,7 +37,12 @@ class DinersController extends Controller
     {
         $page = 'diners';
 
-        foreach (['banner_title', 'intro_title', 'intro_text'] as $key) {
+        $textFields = [
+            'banner_title_fr', 'banner_title_en',
+            'intro_title_fr',  'intro_title_en',
+            'intro_text_fr',   'intro_text_en',
+        ];
+        foreach ($textFields as $key) {
             if ($request->has($key)) {
                 ConfigApp::updateOrCreate(
                     ['key' => $key, 'page' => $page],
@@ -56,18 +65,20 @@ class DinersController extends Controller
             );
         }
 
-        foreach (['banner_image'] as $key) {
-            if ($request->hasFile($key)) {
-                $old = ConfigApp::where('key', $key)->where('page', $page)->first();
-                if ($old && Storage::disk('public')->exists($old->value)) {
-                    Storage::disk('public')->delete($old->value);
-                }
-                $path = $request->file($key)->store("pages/{$page}", 'public');
-                ConfigApp::updateOrCreate(
-                    ['key' => $key, 'page' => $page],
-                    ['value' => $path, 'type' => 'image']
-                );
+        if ($request->hasFile('banner_image')) {
+            $old = ConfigApp::where('key', 'banner_image')->where('page', $page)->first();
+            if ($old && Storage::disk('public')->exists($old->value)) {
+                Storage::disk('public')->delete($old->value);
             }
+            $path = $request->file('banner_image')->store("pages/{$page}", 'public');
+            ConfigApp::updateOrCreate(
+                ['key' => 'banner_image', 'page' => $page],
+                ['value' => $path, 'type' => 'image']
+            );
+        }
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Diners mis à jour avec succès.']);
         }
 
         return redirect()->back()->with('success', 'Diners mis à jour avec succès.');

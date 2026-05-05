@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('cookers', function (Blueprint $table) {
             $table->id();
             $table->string('nameLogo');
-            $table->text('content');
+            $table->text('content_fr');
+            $table->text('content_en');
             $table->string('image');
 
             $table->integer('created_at')->nullable();

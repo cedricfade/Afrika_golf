@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('title');
-            $table->text('symbole');
+            $table->text('symbole_fr');
+            $table->text('symbole_en');
 
-            $table->string('space');
+            $table->string('space_fr');
+            $table->string('space_en');
+
             $table->integer('price');
 
             $table->integer('ranking');

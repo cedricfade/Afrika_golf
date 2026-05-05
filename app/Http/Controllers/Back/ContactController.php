@@ -11,7 +11,16 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('back.contact');
+        $page   = 'contact';
+        $config = ConfigApp::where('page', $page)->pluck('value', 'key');
+
+        return view('back.contact', [
+            'bannerTitle'  => $config->get('banner_title', 'Contactez-nous'),
+            'bannerImage'  => $config->get('banner_image') ?? asset('assets/images/contact/banner.png'),
+            'sectionLabel' => $config->get('section_label', 'ENTRER EN CONTACT'),
+            'sectionTitle' => $config->get('section_title', 'Demander une Invitation'),
+            'sectionText'  => $config->get('section_text', ''),
+        ]);
     }
 
     public function store(Request $request)

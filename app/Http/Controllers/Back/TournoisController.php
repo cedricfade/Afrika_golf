@@ -12,34 +12,33 @@ class TournoisController extends Controller
 {
     public function index()
     {
-        $page   = 'tournois';
-        $config = ConfigApp::where('page', $page)->pluck('value', 'key');
+        $cfg = ConfigApp::where('page', 'tournois')
+            ->get()->keyBy('key')->map(fn($c) => $c->value)->toArray();
+
+        $build = function (string $locale) {
+            return '<p><b>AFRICA ART GOLF CUP</b>, ' . __('tournois.intro', [], $locale) . '</p>'
+                . '<p><b>' . __('tournois.golfers_title', [], $locale) . '</b> :<br>' . __('tournois.golfers_text', [], $locale) . '</p>'
+                . '<p><b>' . __('tournois.non_golfers_title', [], $locale) . '</b> :<br>' . nl2br(e(__('tournois.non_golfers_text', [], $locale))) . '</p>'
+                . '<p><b>' . __('tournois.gourmets_title', [], $locale) . '</b> :<br>' . nl2br(e(__('tournois.gourmets_text', [], $locale))) . '</p>'
+                . '<p><b>' . __('tournois.esthete_title', [], $locale) . '</b> :<br>' . e(__('tournois.esthete_text', [], $locale)) . '</p>';
+        };
 
         return view('back.tournois', [
-            'bannerTitle'  => $config->get('banner_title', 'Le tournois'),
-            'bannerImage'  => $config->get('banner_image') ? Storage::url($config->get('banner_image')) : asset('assets/images/tournois/banner.png'),
-            'galleryImages' => ImageSlide::where('page', $page)->where('deleted', false)->orderBy('ranking')->get(),
+            'state'         => 'back',
+            'cfg'           => $cfg,
+            'defaultFr'     => $build('fr'),
+            'defaultEn'     => $build('en'),
+            'galleryImages' => ImageSlide::where('page', 'tournois')
+                ->where('deleted', false)->orderBy('ranking')->get(),
         ]);
     }
 
-    public function store(Request $request)
+    public function ajaxStore(Request $request)
     {
         $page = 'tournois';
 
-        $textFields = [
-            'banner_title',
-            'about_title',
-            'about_text',
-            'prog_title',
-            'prog_accroche',
-            'prog_text',
-            'info_format_title',
-            'info_format_text',
-            'info_participants_title',
-            'info_participants_text',
-            'info_prix_title',
-            'info_prix_text',
-        ];
+        $textFields = ['banner_title_fr', 'banner_title_en', 'content_fr', 'content_en'];
+
         foreach ($textFields as $key) {
             if ($request->has($key)) {
                 ConfigApp::updateOrCreate(
@@ -50,17 +49,13 @@ class TournoisController extends Controller
         }
 
         if ($request->hasFile('banner_image')) {
-            $old = ConfigApp::where('key', 'banner_image')->where('page', $page)->first();
-            if ($old && Storage::disk('public')->exists($old->value)) {
-                Storage::disk('public')->delete($old->value);
-            }
             $path = $request->file('banner_image')->store("pages/{$page}", 'public');
             ConfigApp::updateOrCreate(
                 ['key' => 'banner_image', 'page' => $page],
-                ['value' => $path, 'type' => 'image']
+                ['value' => Storage::url($path), 'type' => 'image']
             );
         }
 
-        return redirect()->back()->with('success', 'Tournois mis à jour avec succès.');
+        return response()->json(['success' => true, 'message' => 'Sauvegardé avec succès.']);
     }
 }

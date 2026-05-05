@@ -3,18 +3,27 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\ConfigApp;
 use App\Models\Pack;
-use Illuminate\Support\Facades\Storage;
 
 class FormulaireController extends Controller
 {
     public function index()
     {
-        return view('front.formulaire');
+        $config = ConfigApp::where('page', 'experience')->pluck('value', 'key');
+
+        return view('front.formulaire', [
+            'bannerColor' => $config->get('banner_color', '#0A140F'),
+        ]);
     }
 
     public function show(Pack $pack)
     {
-        return view('front.formulaire', compact('pack'));
+        $config = ConfigApp::where('page', 'experience')->pluck('value', 'key');
+
+        return view('front.formulaire', [
+            'pack'        => $pack,
+            'bannerColor' => $config->get('banner_color', '#0A140F'),
+        ]);
     }
 }

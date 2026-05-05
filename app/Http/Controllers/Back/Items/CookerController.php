@@ -15,14 +15,16 @@ class CookerController extends Controller
     {
         $request->validate([
             'name'    => 'required|string|max:255',
-            'content' => 'required|string',
+            'content_fr' => 'required|string',
+            'content_en' => 'required|string',
             'image'   => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'nameLogo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $data = [
             'name'       => $request->input('name'),
-            'content'    => $request->input('content'),
+            'content_fr' => $request->input('content_fr'),
+            'content_en' => $request->input('content_en'),
             'created_at' => time(),
             'created_by' => Auth::id(),
         ];
@@ -35,6 +37,10 @@ class CookerController extends Controller
 
         Cooker::create($data);
 
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Chef ajouté avec succès.']);
+        }
+
         return redirect()->back()->with('success', 'Chef ajouté avec succès.');
     }
 
@@ -42,13 +48,15 @@ class CookerController extends Controller
     {
         $request->validate([
             'name'    => 'required|string|max:255',
-            'content' => 'required|string',
+            'content_fr' => 'required|string',
+            'content_en' => 'required|string',
             'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'nameLogo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
-        $cooker->name    = $request->input('name');
-        $cooker->content = $request->input('content');
+        $cooker->name       = $request->input('name');
+        $cooker->content_fr = $request->input('content_fr');
+        $cooker->content_en = $request->input('content_en');
 
         if ($request->hasFile('image')) {
             if ($cooker->image && Storage::disk('public')->exists($cooker->image)) {
@@ -65,6 +73,10 @@ class CookerController extends Controller
         }
 
         $cooker->save();
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Chef mis à jour avec succès.']);
+        }
 
         return redirect()->back()->with('success', 'Chef mis à jour avec succès.');
     }
@@ -83,6 +95,10 @@ class CookerController extends Controller
             'deleted_at' => time(),
             'deleted_by' => Auth::id(),
         ]);
+
+        if (request()->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Chef supprimé avec succès.']);
+        }
 
         return redirect()->back()->with('success', 'Chef supprimé avec succès.');
     }

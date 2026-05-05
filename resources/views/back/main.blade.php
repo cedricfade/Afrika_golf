@@ -141,38 +141,33 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
 
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slide');
-            const next = document.querySelector('.next');
-            const prev = document.querySelector('.prev');
-            const dots = document.querySelectorAll('.dot');
+            var slider = document.querySelector('.slider');
+            var next   = document.querySelector('.next');
+            var prev   = document.querySelector('.prev');
+            var dots   = document.querySelectorAll('.dot');
 
-            let index = 0;
+            if (!slider || !next || !prev) return;
+
+            var slides = document.querySelectorAll('.slide');
+            var index  = 0;
 
             function showSlide(i) {
                 if (i >= slides.length) index = 0;
-                if (i < 0) index = slides.length - 1;
+                else if (i < 0) index = slides.length - 1;
+                else index = i;
 
-                slider.style.transform = `translateX(-${index * 100}%)`;
+                slider.style.transform = 'translateX(-' + (index * 100) + '%)';
 
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
+                dots.forEach(function(dot) { dot.classList.remove('active'); });
+                if (dots[index]) dots[index].classList.add('active');
             }
 
-            next.addEventListener('click', () => {
-                index++;
-                showSlide(index);
-            });
+            next.addEventListener('click', function() { showSlide(index + 1); });
+            prev.addEventListener('click', function() { showSlide(index - 1); });
 
-            prev.addEventListener('click', () => {
-                index--;
-                showSlide(index);
-            });
-
-            dots.forEach(dot => {
+            dots.forEach(function(dot) {
                 dot.addEventListener('click', function() {
-                    index = parseInt(this.getAttribute('data-slide'));
-                    showSlide(index);
+                    showSlide(parseInt(this.getAttribute('data-slide')));
                 });
             });
 
@@ -260,9 +255,11 @@
 
     @if (config('services.recaptcha.site_key'))
         <script>
-            // reCAPTCHA v3 — intercepte automatiquement tous les formulaires POST
+            // reCAPTCHA v3 — formulaires POST hors pageModal uniquement
+            // Les formulaires du pageModal sont soumis via AJAX et n'ont pas besoin de reCAPTCHA
             grecaptcha.ready(function() {
                 document.querySelectorAll('form[method="POST"]').forEach(function(form) {
+                    if (form.closest('#pageModal')) return;
                     form.addEventListener('submit', function(e) {
                         e.preventDefault();
                         var submittedForm = this;

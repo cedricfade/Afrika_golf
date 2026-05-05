@@ -15,8 +15,10 @@ class PackController extends Controller
         $request->validate([
             'image'    => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title'    => 'required|string|max:255',
-            'symbole'  => 'required|string',
-            'space'    => 'required|string|max:255',
+            'symbole_fr'  => 'required|string',
+            'symbole_en'  => 'required|string',
+            'space_fr'    => 'required|string|max:255',
+            'space_en'    => 'required|string|max:255',
             'price'    => 'required|numeric',
             'brochure' => 'nullable|file|mimes:pdf|max:10240',
         ]);
@@ -32,13 +34,19 @@ class PackController extends Controller
             'image'      => $path,
             'brochure'   => $brochurePath,
             'title'      => $request->input('title'),
-            'symbole'    => $request->input('symbole'),
-            'space'      => $request->input('space'),
+            'symbole_fr' => $request->input('symbole_fr'),
+            'symbole_en' => $request->input('symbole_en'),
+            'space_fr'   => $request->input('space_fr'),
+            'space_en'   => $request->input('space_en'),
             'price'      => $request->input('price'),
             'ranking'    => Pack::where('deleted', false)->max('ranking') + 1,
             'created_at' => time(),
             'created_by' => Auth::id(),
         ]);
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Pack créé avec succès.']);
+        }
 
         return redirect()->back()->with('success', 'Pack créé avec succès.');
     }
@@ -48,17 +56,21 @@ class PackController extends Controller
         $request->validate([
             'image'    => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title'    => 'required|string|max:255',
-            'symbole'  => 'required|string',
-            'space'    => 'required|string|max:255',
+            'symbole_fr'  => 'required|string',
+            'symbole_en'  => 'required|string',
+            'space_fr'    => 'required|string|max:255',
+            'space_en'    => 'required|string|max:255',
             'price'    => 'required|numeric',
             'brochure' => 'nullable|file|mimes:pdf|max:10240',
         ]);
 
         $data = [
-            'title'   => $request->input('title'),
-            'symbole' => $request->input('symbole'),
-            'space'   => $request->input('space'),
-            'price'   => $request->input('price'),
+            'title'      => $request->input('title'),
+            'symbole_fr' => $request->input('symbole_fr'),
+            'symbole_en' => $request->input('symbole_en'),
+            'space_fr'   => $request->input('space_fr'),
+            'space_en'   => $request->input('space_en'),
+            'price'      => $request->input('price'),
         ];
 
         if ($request->hasFile('image')) {
@@ -77,10 +89,14 @@ class PackController extends Controller
 
         $pack->update($data);
 
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Pack mis à jour avec succès.']);
+        }
+
         return redirect()->back()->with('success', 'Pack mis à jour avec succès.');
     }
 
-    public function destroy(Pack $pack)
+    public function destroy(Request $request, Pack $pack)
     {
         if ($pack->image && Storage::disk('public')->exists($pack->image)) {
             Storage::disk('public')->delete($pack->image);
@@ -95,6 +111,10 @@ class PackController extends Controller
             'deleted_at' => time(),
             'deleted_by' => Auth::id(),
         ]);
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Pack supprimé avec succès.']);
+        }
 
         return redirect()->back()->with('success', 'Pack supprimé avec succès.');
     }

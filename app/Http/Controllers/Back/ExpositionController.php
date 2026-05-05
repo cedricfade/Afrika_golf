@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use App\Models\ConfigApp;
+use App\Models\ImageSlide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Models\ImageSlide;
 
 class ExpositionController extends Controller
 {
@@ -15,20 +15,26 @@ class ExpositionController extends Controller
         $page   = 'exposition';
         $config = ConfigApp::where('page', $page)->pluck('value', 'key');
 
+        $defaultCitationFr = '<h3>QUAND L\'ART RACONTE L\'AFRIQUE</h3><h3>QUAND LE GOLF CRÉE LE LIEN.</h3>';
+        $defaultCitationEn = '<h3>WHEN ART TELLS AFRICA\'S STORY,</h3><h3>WHEN GOLF CREATES THE LINK.</h3>';
+
         return view('back.exposition', [
-            'citation1'       => $config->get('citation1', 'QUAND L\'ART RACONTE L\'AFRIQUE'),
-            'citation2'       => $config->get('citation2', 'QUAND LE GOLF CRÉE LE LIEN.'),
-            'bannerColor'     => $config->get('banner_color', '#FFFCF8'),
-            'subImage'        => $config->get('sub_image')
+            'citation1Fr'      => $config->get('citation1_fr', $defaultCitationFr),
+            'citation1En'      => $config->get('citation1_en', $defaultCitationEn),
+            'bannerColor'      => $config->get('banner_color', '#FFFCF8'),
+            'subImage'         => $config->get('sub_image')
                 ? Storage::url($config->get('sub_image'))
                 : asset('assets/images/exposition/image.png'),
-            'imageHeader'     => $config->get('image_header')
+            'imageHeader'      => $config->get('image_header')
                 ? Storage::url($config->get('image_header'))
                 : asset('assets/images/exposition/banner.png'),
-            'expoText'        => $config->get('expo_text', ''),
-            'dateVernissage'  => $config->get('date_vernissage', ''),
-            'dateCatalogue'   => $config->get('date_catalogue', ''),
-            'galleryImages'     => ImageSlide::where('page', 'destination')->where('deleted', false)->orderBy('ranking')->get(),
+            'expoTextFr'       => $config->get('expo_text_fr', __('exposition.intro')),
+            'expoTextEn'       => $config->get('expo_text_en', trans('exposition.intro', [], 'en')),
+            'dateVernissageFr' => $config->get('date_vernissage_fr', __('exposition.date')),
+            'dateVernissageEn' => $config->get('date_vernissage_en', trans('exposition.date', [], 'en')),
+            'dateCatalogueFr'  => $config->get('date_catalogue_fr', __('exposition.catalogue')),
+            'dateCatalogueEn'  => $config->get('date_catalogue_en', trans('exposition.catalogue', [], 'en')),
+            'galleryImages'    => ImageSlide::whereIn('page', ['exposition', 'destination'])->where('deleted', false)->orderBy('ranking')->get(),
         ]);
     }
 
@@ -36,7 +42,14 @@ class ExpositionController extends Controller
     {
         $page = 'exposition';
 
-        $textFields = ['citation1', 'citation2', 'banner_color', 'expo_text', 'date_vernissage', 'date_catalogue'];
+        $textFields = [
+            'citation1_fr', 'citation1_en',
+            'banner_color',
+            'expo_text_fr', 'expo_text_en',
+            'date_vernissage_fr', 'date_vernissage_en',
+            'date_catalogue_fr', 'date_catalogue_en',
+        ];
+
         foreach ($textFields as $key) {
             if ($request->has($key)) {
                 ConfigApp::updateOrCreate(

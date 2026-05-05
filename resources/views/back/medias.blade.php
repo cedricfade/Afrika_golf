@@ -98,8 +98,8 @@
                                         <div class="mb-2">
                                             <label class="form-label">Forme <span class="text-danger">*</span></label>
                                             <select name="form" class="form-control">
-                                                <option value="lien">lien</option>
                                                 <option value="fichier_externe" selected>Fichier externe</option>
+                                                <option value="lien">lien</option>
                                             </select>
                                         </div>
                                     </div>
@@ -173,8 +173,8 @@
                                         <div class="mb-2">
                                             <label class="form-label">Forme <span class="text-danger">*</span></label>
                                             <select name="form" class="form-control">
-                                                <option value="lien">lien</option>
                                                 <option value="fichier_externe" selected>Fichier externe</option>
+                                                <option value="lien">lien</option>
                                             </select>
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
 
 @push('js')
     <script>
-        $(document).on('change', 'select[name="form"]', function() {
+        $('select[name="form"]').on('change', function() {
             var $form = $(this).closest('form');
             if ($(this).val() === 'lien') {
                 $form.find('[id*="_select_file"]').hide();

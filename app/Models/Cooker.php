@@ -11,7 +11,8 @@ class Cooker extends Model
     protected $fillable = [
         'name',
         'nameLogo',
-        'content',
+        'content_fr',
+        'content_en',
         'image',
         'created_at',
         'created_by',

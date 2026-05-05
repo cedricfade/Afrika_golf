@@ -2,13 +2,13 @@
     <span>{{ __('partials.contact_us') }}</span>
 </div>
 <div class="mb-3 d-flex gap-3">
-    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
-        <i class="fa-brands fa-facebook-f"></i>
+    <a href="https://www.instagram.com/africa.art.golf?igsh=ZmlxYjRydmx2ZXZq" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+        <i class="fa-brands fa-instagram"></i>
     </a>
-    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+    <a href="https://www.linkedin.com/company/africa-art-golf/" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
         <i class="fa-brands fa-linkedin-in"></i>
     </a>
-    <a href="#" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+    <a href="https://x.com/africa_art_golf" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
         <i class="fa-brands fa-x-twitter"></i>
     </a>
 </div>

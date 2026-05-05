@@ -71,17 +71,10 @@
             <img src="{{ $imageHeader }}" class="d-md-none d-block"
                 style="display: block; width: 65%;margin: auto;margin-top: 350px;" alt="AFRICA GOLF CUP">
 
-            @if (isset($citation1) && isset($citation2))
+            @if (!empty($citation1))
                 <div class="citation">
-                    <h3 style="font-family: 'Avenir Next'; font-weight: 400 !important;">
-                        {{ $citation1 }}
-                    </h3>
-                    <h3 style="font-family: 'Avenir Next'; font-weight: 400 !important;">
-                        {{ $citation2 }}
-                    </h3>
-
+                    {!! $citation1 !!}
                     <br><br><br>
-
                     <img src="{{ $subImage }}" alt="" class="sub-image">
                 </div>
             @endif

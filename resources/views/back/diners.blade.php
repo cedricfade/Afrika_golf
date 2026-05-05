@@ -1,24 +1,17 @@
 @extends('back.main', ['title' => 'Dinners'])
 @section('content')
     @include('pageContent.diners', [
-        'bannerTitle' => $bannerTitle ?? 'Le diners',
-        'bannerImage' => $bannerImage ?? asset('assets/images/diners/banner.png'),
-        'introTitle' => $introTitle ?? 'Un diner sur mesure',
-        'introText' => $introText ?? '',
-        'cities' => $cities ?? [],
-        'chefs' => $chefs ?? collect(),
+        'bannerTitle'   => $bannerTitleFr ?? 'Le Dîner',
+        'bannerImage'   => $bannerImage ?? asset('assets/images/diners/banner.png'),
+        'introTitle'    => $introTitleFr ?? 'Un dîner sur mesure',
+        'introText'     => $introTextFr ?? '',
+        'cities'        => $cities ?? [],
+        'chefs'         => $chefs ?? collect(),
         'galleryImages' => $galleryImages ?? collect(),
     ])
 
     @push('pageModal')
         <div class="container py-3">
-
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
 
             {{-- ===== BANNIÈRE ===== --}}
             <div class="card mb-4 border-0 shadow-sm">
@@ -27,12 +20,28 @@
                     <span class="fw-semibold">Bannière</span>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('back.diners.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('back.diners.store') }}" enctype="multipart/form-data" data-ajax
+                        data-reload>
                         @csrf
-                        <div class="mb-3">
-                            <label for="banner_title" class="form-label fw-semibold">Titre de la bannière</label>
-                            <input type="text" class="form-control" id="banner_title" name="banner_title"
-                                value="{{ $bannerTitle ?? 'Le diners' }}">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="banner_title_fr" class="form-label fw-semibold">
+                                        <span class="fi fi-fr me-1"></span> Titre de la bannière (FR)
+                                    </label>
+                                    <input type="text" class="form-control" id="banner_title_fr" name="banner_title_fr"
+                                        value="{{ $bannerTitleFr ?? 'Le Dîner' }}">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="banner_title_en" class="form-label fw-semibold">
+                                        <span class="fi fi-gb me-1"></span> Titre de la bannière (EN)
+                                    </label>
+                                    <input type="text" class="form-control" id="banner_title_en" name="banner_title_en"
+                                        value="{{ $bannerTitleEn ?? 'The Dinner' }}">
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-3 border rounded p-3">
                             <label for="banner_image" class="form-label fw-semibold">
@@ -56,53 +65,62 @@
                 </div>
             </div>
 
-            {{-- ===== SECTION INTRO ===== --}}
-            <div class="card mb-4 border-0 shadow-sm">
-                <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
-                    <i class="fe fe-align-left"></i>
-                    <span class="fw-semibold">Section "Intro"</span>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('back.diners.store') }}">
+            {{-- ===== INTRO FR / EN ===== --}}
+            <div class="row g-3 mb-4">
+                <div class="col-lg-6">
+                    <form method="POST" action="{{ route('back.diners.store') }}" class="card h-100 border-0 shadow-sm"
+                        data-ajax>
                         @csrf
-                        <div class="mb-3">
-                            <label for="intro_title" class="form-label fw-semibold">Titre</label>
-                            <input type="text" class="form-control" id="intro_title" name="intro_title"
-                                value="{{ $introTitle ?? 'Un diner sur mesure' }}">
+                        <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                            <span class="fi fi-fr"></span>
+                            <i class="fe fe-align-left ms-1"></i>
+                            <span class="fw-semibold">Section intro — Français</span>
                         </div>
-                        <div class="mb-3">
-                            <label for="intro_text" class="form-label fw-semibold">Texte d'introduction</label>
-                            <textarea class="form-control summernote-diners" id="intro_text" name="intro_text" rows="3">{!! $introText ?? '' !!}</textarea>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Titre</label>
+                                <input type="text" class="form-control" name="intro_title_fr"
+                                    value="{{ $introTitleFr ?? 'Un dîner sur mesure' }}">
+                            </div>
+                            <div class="mb-0">
+                                <label class="form-label fw-semibold">Texte</label>
+                                <textarea class="form-control summernote-intro" name="intro_text_fr"
+                                    rows="4">{!! $introTextFr ?? '' !!}</textarea>
+                            </div>
                         </div>
-                        <hr>
-                        <h6 class="fw-semibold mb-2">Villes / Dates</h6>
-                        <div class="row g-2 mb-3">
-                            @php
-                                $defaultCities = [
-                                    ['name' => 'Marrakech (Maroc)', 'date' => 'Décembre 2025'],
-                                    ['name' => 'Kinshasa (RD Congo)', 'date' => 'Février 2026'],
-                                    ['name' => 'Abidjan (Côte d\'Ivoire)', 'date' => 'Mars 2026'],
-                                    ['name' => 'Abuja (Nigeria)', 'date' => 'Mars 2026'],
-                                    ['name' => 'Kigali (Rwanda)', 'date' => 'Mai 2026'],
-                                    ['name' => 'Paris / Genève', 'date' => 'Juin 2026'],
-                                ];
-                                $cityList = !empty($cities) ? $cities : $defaultCities;
-                            @endphp
-                            @foreach ($cityList as $i => $city)
-                                <div class="col-12">
-                                    <div class="input-group input-group-sm">
-                                        <span class="input-group-text">{{ $i + 1 }}</span>
-                                        <input type="text" class="form-control" name="city_name[]"
-                                            value="{{ $city['name'] }}" placeholder="Ville">
-                                        <input type="text" class="form-control" name="city_date[]"
-                                            value="{{ $city['date'] }}" placeholder="Date">
-                                    </div>
-                                </div>
-                            @endforeach
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-primary w-100">
+                                <i class="fe fe-save me-1"></i> Enregistrer
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="fe fe-save me-1"></i> Enregistrer
-                        </button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form method="POST" action="{{ route('back.diners.store') }}" class="card h-100 border-0 shadow-sm"
+                        data-ajax>
+                        @csrf
+                        <div class="card-header bg-secondary text-white d-flex align-items-center gap-2">
+                            <span class="fi fi-gb"></span>
+                            <i class="fe fe-align-left ms-1"></i>
+                            <span class="fw-semibold">Section intro — English</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Title</label>
+                                <input type="text" class="form-control" name="intro_title_en"
+                                    value="{{ $introTitleEn ?? 'A tailor-made dinner' }}">
+                            </div>
+                            <div class="mb-0">
+                                <label class="form-label fw-semibold">Text</label>
+                                <textarea class="form-control summernote-intro" name="intro_text_en"
+                                    rows="4">{!! $introTextEn ?? '' !!}</textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-primary w-100">
+                                <i class="fe fe-save me-1"></i> Save
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -135,10 +153,10 @@
                                     data-bs-target="#editChef{{ $chef->id }}">
                                     <i class="fe fe-edit-2"></i>
                                 </button>
-                                <form method="POST" action="{{ route('back.diners.cookers.destroy', $chef) }}"
-                                    onsubmit="return confirm('Supprimer ce chef ?')">
+                                <form method="POST" action="{{ route('back.diners.cookers.destroy', $chef) }}" data-ajax
+                                    data-reload data-confirm="Supprimer ce chef ?">
                                     @csrf @method('DELETE')
-                                    <button class="btn btn-sm btn-outline-danger">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
                                         <i class="fe fe-trash-2"></i>
                                     </button>
                                 </form>
@@ -146,17 +164,28 @@
 
                             {{-- Formulaire d'édition --}}
                             <div class="collapse mt-3" id="editChef{{ $chef->id }}">
-                                <form method="POST" action="{{ route('back.diners.cookers.update', $chef) }}"
-                                    enctype="multipart/form-data">
+                                <form method="POST"
+                                    action="{{ route('back.diners.cookers.update', ['cooker' => $chef->id]) }}"
+                                    enctype="multipart/form-data" data-ajax data-reload>
                                     @csrf
                                     <div class="mb-2">
                                         <label class="form-label fw-semibold">Nom du chef</label>
-                                        <input type="text" class="form-control" name="name"
-                                            value="{{ $chef->name }}" required>
+                                        <input type="text" class="form-control" name="name" value="{{ $chef->name }}"
+                                            required>
                                     </div>
-                                    <div class="mb-2">
-                                        <label class="form-label fw-semibold">Biographie</label>
-                                        <textarea class="form-control summernote-chef" name="content" id="editBio{{ $chef->id }}" rows="4">{!! $chef->content !!}</textarea>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-2">
+                                                <label class="form-label fw-semibold">Biographie (FR)</label>
+                                                <textarea class="form-control summernote-chef" name="content_fr" id="editBioFr{{ $chef->id }}" rows="4">{!! $chef->content_fr !!}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-2">
+                                                <label class="form-label fw-semibold">Biographie (EN)</label>
+                                                <textarea class="form-control summernote-chef" name="content_en" id="editBioEn{{ $chef->id }}" rows="4">{!! $chef->content_en !!}</textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row g-2">
                                         <div class="col-md-6">
@@ -192,16 +221,29 @@
 
                     {{-- Formulaire d'ajout --}}
                     <h6 class="fw-semibold mb-3"><i class="fe fe-plus-circle me-1"></i>Ajouter un chef</h6>
-                    <form method="POST" action="{{ route('back.diners.cookers.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('back.diners.cookers.store') }}" enctype="multipart/form-data"
+                        data-ajax data-reload>
                         @csrf
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Nom du chef <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="name" placeholder="Ex: Jean-Pierre Nkosi"
                                 required>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold">Biographie <span class="text-danger">*</span></label>
-                            <textarea class="form-control summernote-chef" name="content" id="addChefBio" rows="4"></textarea>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Biographie - Français <span
+                                            class="text-danger">*</span></label>
+                                    <textarea class="form-control summernote-chef" name="content_fr" id="addChefBioFr" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Biographie - Anglais <span
+                                            class="text-danger">*</span></label>
+                                    <textarea class="form-control summernote-chef" name="content_en" id="addChefBioEn" rows="4"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -233,8 +275,8 @@
                         <div class="d-flex align-items-center justify-content-between border rounded p-2 mb-2">
                             <img src="{{ Storage::url($slide->content) }}" alt=""
                                 style="height:60px; width:90px; object-fit:cover; border-radius:4px;">
-                            <form method="POST" action="{{ route('back.diners.slides.destroy', $slide->id) }}"
-                                onsubmit="return confirm('Supprimer cette image ?')">
+                            <form method="POST" action="{{ route('back.diners.slides.destroy', $slide->id) }}" data-ajax
+                                data-reload data-confirm="Supprimer cette image ?">
                                 @csrf @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-outline-danger">
                                     <i class="fe fe-trash-2"></i>
@@ -246,7 +288,8 @@
                     @endforelse
                     <hr>
                     <h6 class="fw-semibold text-muted mb-3">Ajouter une image</h6>
-                    <form method="POST" action="{{ route('back.diners.slides.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('back.diners.slides.store') }}" enctype="multipart/form-data"
+                        data-ajax data-reload>
                         @csrf
                         <input type="hidden" name="page" value="diners">
                         <div class="mb-3">
@@ -262,6 +305,15 @@
                 </div>
             </div>
 
+        </div>
+
+        {{-- Toast de notification AJAX --}}
+        <div id="ajaxToast" class="toast align-items-center text-white border-0 position-fixed bottom-0 end-0 m-3"
+            role="alert" aria-live="assertive" aria-atomic="true" style="z-index:9999; min-width:280px;">
+            <div class="d-flex">
+                <div class="toast-body fw-semibold"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
         </div>
     @endpush
 @endsection
@@ -280,10 +332,10 @@
                 toolbar: summernoteToolbarConfig,
             };
 
-            // Initialise les summernotes non-collapse
-            $('#intro_text').summernote(summernoteConfig);
+            $('.summernote-intro').summernote(summernoteConfig);
+            $('#addChefBioFr').summernote(summernoteConfig);
+            $('#addChefBioEn').summernote(summernoteConfig);
 
-            // Initialise les summernotes dans les formes collapse au moment de l'ouverture
             $('[id^="editChef"]').on('shown.bs.collapse', function() {
                 var $ta = $(this).find('.summernote-chef');
                 if (!$ta.next('.note-editor').length) {
@@ -291,8 +343,71 @@
                 }
             });
 
-            // Summernote pour le formulaire d'ajout
-            $('#addChefBio').summernote(summernoteConfig);
+            // ── Toast helper ──────────────────────────────────────────────────
+            var $toast = $('#ajaxToast');
+            var toastInstance = bootstrap.Toast.getOrCreateInstance($toast[0], {
+                delay: 4000
+            });
+
+            function showToast(message, type) {
+                $toast.removeClass('bg-success bg-danger').addClass(type === 'success' ? 'bg-success' :
+                    'bg-danger');
+                $toast.find('.toast-body').html(message);
+                toastInstance.show();
+            }
+
+            // ── Generic AJAX form handler ─────────────────────────────────────
+            $(document).on('submit', 'form[data-ajax]', function(e) {
+                e.preventDefault();
+                var $form = $(this);
+
+                var confirmMsg = $form.data('confirm');
+                if (confirmMsg && !confirm(confirmMsg)) return;
+
+                // Sync Summernote content to underlying textarea before building FormData
+                $form.find('textarea').each(function() {
+                    if ($(this).next('.note-editor').length) {
+                        $(this).val($(this).summernote('code'));
+                    }
+                });
+
+                var $btn = $form.find('[type="submit"]');
+                var btnOriginal = $btn.html();
+                $btn.prop('disabled', true).html(
+                    '<span class="spinner-border spinner-border-sm me-1" role="status"></span> Enregistrement...'
+                );
+
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: $form.attr('method'),
+                    data: new FormData($form[0]),
+                    processData: false,
+                    contentType: false,
+                    success: function(res) {
+                        showToast(res.message || 'Opération réussie.', 'success');
+                        if ($form.is('[data-reload]')) {
+                            setTimeout(function() {
+                                location.reload();
+                            }, 900);
+                        } else {
+                            $btn.prop('disabled', false).html(btnOriginal);
+                        }
+                    },
+                    error: function(xhr) {
+                        var msg = 'Une erreur est survenue.';
+                        if (xhr.responseJSON) {
+                            if (xhr.responseJSON.errors) {
+                                msg = Object.values(xhr.responseJSON.errors).flat().join(
+                                    '<br>');
+                            } else if (xhr.responseJSON.message) {
+                                msg = xhr.responseJSON.message;
+                            }
+                        }
+                        showToast(msg, 'danger');
+                        $btn.prop('disabled', false).html(btnOriginal);
+                    },
+                });
+            });
         });
     </script>
 @endpush

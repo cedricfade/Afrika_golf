@@ -19,7 +19,7 @@
             <div class="col-6 col-md-3 col-xl-3 mb-4">
                 <ul>
                     <span>@lang('CONNEXION')</span>
-                    <li><a href="{{ route('partenaires') }}">@lang('Partenaires')</a></li>
+                    <li><a href="{{ route('partenaires') }}">{{-- @lang('Partenaires') --}}</a></li>
                     <li><a href="{{ route('medias') }}">@lang('Espace média')</a></li>
                     <li><a href="{{ route('contact') }}">@lang('Contacts')</a></li>
                 </ul>

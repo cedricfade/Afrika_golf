@@ -1,6 +1,6 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
     'title' => 'Contactez-nous',
-    'bannerTitle' => __('Contactez-nous'),
+    'bannerTitle' => $bannerTitle ?? __('Contactez-nous'),
     'bannerImage' => $bannerImage ?? asset('assets/images/contact/banner.png'),
 ])
 

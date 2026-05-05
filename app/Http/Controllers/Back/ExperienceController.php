@@ -31,6 +31,10 @@ class ExperienceController extends Controller
             );
         }
 
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Expérience mise à jour avec succès.']);
+        }
+
         return redirect()->back()->with('success', 'Expérience mise à jour avec succès.');
     }
 }

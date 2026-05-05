@@ -2,7 +2,7 @@
     'bannerImage' => $bannerImage ?? asset('assets/images/home/banner.png'),
     'middleImage' => $middleImage ?? asset('assets_custom/home/svg/aagc-kigali.svg'),
     'bottomImage' => $bottomImage ?? asset('assets_custom/home/svg/aagc-golfeur.svg'),
-    'bannerContent' => __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
+    'bannerContent' => $bannerContent ?? __('ACHETER UNE BALLE DE GOLF POUR ACCOMPAGNER LES AUTISTES ADULTES'),
 ])
 <section class="about" id="sectionAbout">
     @include('pageContent.ajaxContent.home.about')
@@ -10,7 +10,7 @@
 
 {{-- FONDATIONS --}}
 <section class="fondations">
-    @include('pageContent.ajaxContent.home.fondations')
+    @include('pageContent.ajaxContent.home.fondations', compact('cfg'))
 </section>
 
 {{-- HOTE EDITION --}}
@@ -33,6 +33,66 @@
 </section>
 
 @include((Auth::user() ? 'back' : 'front') . '.partials.footer')
+
+@push('js2')
+    <script>
+        (function() {
+            // ── Chargement AJAX du contenu home ──────────────────────────────────────
+            $.get('{{ route('ajax.home.content') }}', function(data) {
+
+                // Texte simple ou HTML selon data-home-html
+                $('[data-home]').each(function() {
+                    var key = $(this).data('home');
+                    if (data[key] === undefined || data[key] === null) return;
+                    if ($(this).data('home-html')) {
+                        $(this).html(data[key]);
+                    } else if ($(this).is('img')) {
+                        $(this).attr('src', data[key]);
+                    } else {
+                        $(this).text(data[key]);
+                    }
+                });
+
+                // Background image de la section édition
+                if (data.edition_image) {
+                    var $ed = $('#editionSection');
+                    if ($ed.length) {
+                        $ed.css('background-image', 'url(' + data.edition_image + ')');
+                    }
+                }
+
+                // Liste des items du package participants
+                if (data.package_items && data.package_items.length) {
+                    var $list = $('[data-home-list="package_items"]');
+                    if ($list.length) {
+                        $list.empty();
+                        $.each(data.package_items, function(i, item) {
+                            $list.append(
+                                '• <span class="spanDetail">' +
+                                $('<span>').text(item).html() +
+                                '</span><br>'
+                            );
+                        });
+                    }
+                }
+
+                // Liens mailto / tel
+                $('[data-home-mailto]').each(function() {
+                    var key = $(this).data('home-mailto');
+                    if (data[key]) {
+                        $(this).attr('href', 'mailto:' + data[key]).text(data[key]);
+                    }
+                });
+                $('[data-home-tel]').each(function() {
+                    var key = $(this).data('home-tel');
+                    if (data[key]) {
+                        $(this).attr('href', 'tel:' + data[key]).text(data[key]);
+                    }
+                });
+            });
+        })();
+    </script>
+@endpush
 
 @push('css2')
     <style>

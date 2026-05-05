@@ -29,6 +29,10 @@ class ImageSlideController extends Controller
             'created_by' => Auth::id(),
         ]);
 
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Image ajoutée à la galerie.']);
+        }
+
         return redirect()->back()->with('success', 'Image ajoutée à la galerie.');
     }
 
@@ -43,6 +47,10 @@ class ImageSlideController extends Controller
             'deleted_at' => time(),
             'deleted_by' => Auth::id(),
         ]);
+
+        if (request()->ajax()) {
+            return response()->json(['success' => true, 'message' => 'Image supprimée de la galerie.']);
+        }
 
         return redirect()->back()->with('success', 'Image supprimée de la galerie.');
     }

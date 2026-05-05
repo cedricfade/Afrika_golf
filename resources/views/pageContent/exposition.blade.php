@@ -97,11 +97,14 @@
 <section class="exposition">
     <div class="container">
         <p class="fs-lg">
-            {{ __('exposition.intro') }}
+            {!! $expoText ?? __('exposition.intro') !!}
             <br>
             <br>
-            <b style="color: white">{{ __('exposition.date') }}</b>
+            <b style="color: white">{{ $dateVernissage ?? __('exposition.date') }}</b>
             <br>
+            @if (!empty($dateCatalogue))
+                <span>{{ $dateCatalogue }}</span>
+            @endif
         </p>
         <div class="souscrire">
             <a href="{{ asset('assets/images/program-aagc.pdf') }}">@lang('CONSULTER LE PROGRAMME')</a>

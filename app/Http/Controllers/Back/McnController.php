@@ -11,40 +11,27 @@ class McnController extends Controller
 {
     public function index()
     {
-        $page   = 'mcn';
-        $config = ConfigApp::where('page', $page)->pluck('value', 'key');
+        $cfg = ConfigApp::where('page', 'mcn')
+            ->get()->keyBy('key')->map(fn($c) => $c->value)->toArray();
 
         return view('back.mcn', [
-            'bannerImage'      => $config->get('banner_image')
-                ? Storage::url($config->get('banner_image'))
-                : asset('assets_custom/mcn-cgp/bg.jpg'),
-            'rightImage'       => $config->get('right_image')
-                ? Storage::url($config->get('right_image'))
-                : asset('assets_custom/mcn-cgp/logo-mcn-cgp.png'),
-            'rightBottomImage' => $config->get('right_bottom_image')
-                ? Storage::url($config->get('right_bottom_image'))
-                : asset('assets_custom/mcn-cgp/valoriser-votre-passion.png'),
-            'aboutTitle'       => $config->get('about_title', 'à propos de MCN'),
-            'aboutText'        => $config->get('about_text', ''),
-            'service1Title'    => $config->get('service1_title', 'Nos actions'),
-            'service1Text'     => $config->get('service1_text', ''),
-            'service2Title'    => $config->get('service2_title', 'Notre valeur ajoutée'),
-            'service2Text'     => $config->get('service2_text', ''),
+            'state' => 'back',
+            'cfg'   => $cfg,
         ]);
     }
 
-    public function store(Request $request)
+    public function ajaxStore(Request $request)
     {
         $page = 'mcn';
 
         $textFields = [
-            'about_title',
-            'about_text',
-            'service1_title',
-            'service1_text',
-            'service2_title',
-            'service2_text'
+            'intro_text_fr',    'intro_text_en',
+            'service1_title_fr','service1_text_fr',
+            'service1_title_en','service1_text_en',
+            'service2_title_fr','service2_text_fr',
+            'service2_title_en','service2_text_en',
         ];
+
         foreach ($textFields as $key) {
             if ($request->has($key)) {
                 ConfigApp::updateOrCreate(
@@ -54,17 +41,17 @@ class McnController extends Controller
             }
         }
 
-        $imageFields = ['banner_image', 'right_image', 'right_bottom_image'];
+        $imageFields = ['banner_image', 'right_image', 'right_bottom_image', 'right_bottom_image_en'];
         foreach ($imageFields as $key) {
             if ($request->hasFile($key)) {
                 $path = $request->file($key)->store("pages/{$page}", 'public');
                 ConfigApp::updateOrCreate(
                     ['key' => $key, 'page' => $page],
-                    ['value' => $path, 'type' => 'image']
+                    ['value' => Storage::url($path), 'type' => 'image']
                 );
             }
         }
 
-        return redirect()->back()->with('success', 'MCN-CGP mis à jour avec succès.');
+        return response()->json(['success' => true, 'message' => 'Sauvegardé avec succès.']);
     }
 }

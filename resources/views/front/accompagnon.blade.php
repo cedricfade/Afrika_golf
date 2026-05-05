@@ -1,8 +1,9 @@
 @extends('front.main', ['title' => 'ACCOMPAGNEMENT'])
+
 @section('content')
     @include('pageContent.accompagnon', [
-        'bannerTitle' => __('MENER UNE VIE PLEINE ET RICHE AVEC L’AUTISME'),
-        'bannerImage' => asset('assets/images/accompagnon/banner.jpg'),
+        'bannerTitle' => $bannerTitle,
+        'bannerImage' => $bannerImage,
     ])
 @endsection
 
@@ -11,7 +12,20 @@
 @endpush
 
 @push('js')
-    @stack('js2')
-    @stack('jsSlide')
     @stack('jsAccompagnon')
+    <script>
+        (function () {
+            $.get('{{ route('accompagnon.ajax.content') }}', function (data) {
+                $('[data-acc]').each(function () {
+                    var key = $(this).data('acc');
+                    if (data[key] === undefined || data[key] === null) return;
+                    if ($(this).data('acc-html')) {
+                        $(this).html(data[key]);
+                    } else {
+                        $(this).text(data[key]);
+                    }
+                });
+            });
+        })();
+    </script>
 @endpush

@@ -13,10 +13,10 @@
 <div class="info-participation mb-3">
     <div
         style="
-            background: #0f1c15; 
-            min-height: 170px; 
-            padding: 30px; 
-            color: #fff; 
+            background: #0f1c15;
+            min-height: 170px;
+            padding: 30px;
+            color: #fff;
             border: 0.5px solid #707070;">
         <div class="row mb-3">
             <div class="col-lg-12">
@@ -26,31 +26,31 @@
             </div>
             <div class="col-lg-5 d">
                 <span
-                    style="
-                    color: #C6C6C6; 
-                    text-decoration:none; 
-                    font-family: 'AveniNext'; font-size: 22px;">@lang('nationals')
-                    <b class="text-white">1400$</b> </span>
+                    style="color:#C6C6C6; text-decoration:none; font-family:'AveniNext'; font-size:22px;">
+                    @lang('nationals')
+                    <b class="text-white" data-home="non_national_price">1400$</b>
+                </span>
             </div>
             <div class="col-lg-7">
                 <span
-                    style="
-                        color: #C6C6C6; 
-                        text-decoration:none; 
-                        font-family: 'AveniNext'; font-size: 22px;">@lang('non_nationals')
-                    <b class="text-white">1750$</b> </span>
+                    style="color:#C6C6C6; text-decoration:none; font-family:'AveniNext'; font-size:22px;">
+                    @lang('non_nationals')
+                    <b class="text-white" data-home="non_national_price">1750$</b>
+                </span>
             </div>
         </div>
-        <!--a href="{{ route('experience') }}" target="__blank"
-            class="text-color ff-avenir mt-3 fs-lg lh">@lang('Découvrez nos offres de partenariat')</a-->
         <div>
-            <h3>{{ __('partials.package_title') }}<h3>
-            • <span class="spanDetail">{{ __('partials.package_item1') }}</span> <br>
-            • <span class="spanDetail">{{ __('partials.package_item2') }}</span>  <br>
-            • <span class="spanDetail">{{ __('partials.package_item3') }}</span>  <br>
-            • <span class="spanDetail">{{ __('partials.package_item4') }}</span> <br>
+            <h3 data-home="package_title">{{ __('partials.package_title') }}</h3>
+            <span data-home-list="package_items">
+                • <span class="spanDetail">{{ __('partials.package_item1') }}</span> <br>
+                • <span class="spanDetail">{{ __('partials.package_item2') }}</span> <br>
+                • <span class="spanDetail">{{ __('partials.package_item3') }}</span> <br>
+                • <span class="spanDetail">{{ __('partials.package_item4') }}</span> <br>
+            </span>
             <br>
-            <a href="{{ route('tournois') }}" style="text-decoration: none;color: #b07f49;"><span class="spanDetail">{{ __('partials.package_details') }}</span></a>
+            <a href="{{ route('tournois') }}" style="text-decoration:none; color:#b07f49;">
+                <span class="spanDetail" data-home="package_details">{{ __('partials.package_details') }}</span>
+            </a>
         </div>
     </div>
 </div>

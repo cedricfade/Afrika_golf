@@ -1,5 +1,5 @@
 @include((Auth::user() ? 'back' : 'front') . '.partials.layouts', [
-    'bannerColor' => '#0A140F',
+    'bannerColor' => $bannerColor ?? '#0A140F',
 ])
 
 @push('css2')
@@ -34,8 +34,12 @@
                         'link' => route('formulaire.pack', ['pack' => $pack->id]),
                         'image' => Storage::url($pack->image),
                         'title' => $pack->title,
-                        'subtitle' => $pack->space . ' <b style="color:#b07f49">' . number_format($pack->price, 0, ',', ' ') . ' USD</b>',
-                        'content' => $pack->symbole,
+                        'subtitle' =>
+                            $pack->{'space_' . app()->getLocale()} .
+                            ' <b style="color:#b07f49">' .
+                            number_format($pack->price, 0, ',', ' ') .
+                            ' USD</b>',
+                        'content' => $pack->{'symbole_' . app()->getLocale()},
                         'brochure' => $pack->brochure ? Storage::url($pack->brochure) : null,
                     ])
                 </div>
